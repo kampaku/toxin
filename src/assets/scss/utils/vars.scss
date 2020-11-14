@@ -1,0 +1,30 @@
+// Font
+$mainFont: "Montserrat", Helvetica, Arial, sans-serif;
+$titleFont: "Quicksand", Helvetica, Arial, sans-serif;
+
+// Size
+$mainFontColor: #101010;
+$mainFontSize: 14px;
+$labelFontSize: 12px;
+$titleFontSize: 19px;
+$sub-sectionFontSize: 24px;
+$mainFontWeight: 400;
+$boldFontWeight: 700;
+$mainLineHeight: 1.25;
+$largeLineHeight: 1.7;
+
+$desktopWidth: 1280px;
+$smDesktopWidth: 980px;
+$tableWidth: 768px;
+$phoneWidth: 480px;
+$smPhoneWidth: 320px;
+
+// Main color
+$dark-shade-100: #1f2041;
+$dark-shade-75: #575870;
+$dark-shade-50: #8f8fa0;
+$dark-shade-25: #c7c7cf;
+$dark-shade-5: #f4f4f6;
+$purple-color: #bc9cff;
+$green-color: #6fcf97;
+$button-gradient: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
