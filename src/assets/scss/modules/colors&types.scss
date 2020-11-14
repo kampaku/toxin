@@ -1,0 +1,118 @@
+@import "../utils/vars.scss";
+@import "../utils/font-template.scss";
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  max-width: 1090px;
+  margin-left: 150px;
+}
+
+.ui-header {
+  margin-bottom: 67px;
+}
+
+.colors {
+  width: 70px;
+  height: 70px;
+  margin-right: 40px;
+  border-radius: 6px;
+}
+
+.color__name {
+  color: $dark-shade-100;
+  font-size: 19px;
+  font-family: $mainFont;
+  line-height: 29px;
+
+  p:first-of-type {
+    font-weight: 700;
+  }
+}
+
+.dark-shade-100 {
+  background-color: $dark-shade-100;
+}
+
+.dark-shade-75 {
+  background-color: $dark-shade-75;
+}
+
+.dark-shade-50 {
+  background-color: $dark-shade-50;
+}
+
+.dark-shade-25 {
+  background-color: $dark-shade-25;
+}
+
+.dark-shade-5 {
+  background-color: $dark-shade-5;
+}
+
+.purple {
+  background-color: $purple-color;
+}
+
+.green {
+  background-color: $green-color;
+}
+
+.colors__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.type__wrapper {
+  display: flex;
+  margin-bottom: 50px;
+
+  &--size-xl {
+    font-size: 24px;
+  }
+
+  &--size-l {
+    font-size: 19px;
+  }
+
+  &--size-m {
+    font-size: 14px;
+  }
+
+  &--size-s {
+    font-size: 12px;
+  }
+}
+
+.tag {
+  min-width: 40px;
+  margin-right: 30px;
+  color: $dark-shade-25;
+  font-family: $mainFont;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.font {
+  max-width: 330px;
+}
+
+.sub-section-title {
+  @extend %sub-section-title;
+}
+
+.item-title {
+  @extend %item-title;
+}
+
+.label-text {
+  @extend %label-text;
+}
+
+.body-text {
+  @extend %body-text;
+}

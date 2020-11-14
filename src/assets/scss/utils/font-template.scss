@@ -1,0 +1,38 @@
+@import "./vars.scss";
+
+%sub-section-title {
+  color: $dark-shade-100;
+  font-weight: 700;
+  font-size: 24px;
+  font-family: $titleFont;
+  font-style: normal;
+  line-height: 30px;
+}
+
+%item-title {
+  color: $dark-shade-100;
+  font-weight: 700;
+  font-size: 19px;
+  font-family: $mainFont;
+  font-style: normal;
+  line-height: 24px;
+}
+
+%label-text {
+  color: $dark-shade-100;
+  font-weight: 700;
+  font-size: 12px;
+  font-family: $mainFont;
+  font-style: normal;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+%body-text {
+  color: $dark-shade-75;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: $mainFont;
+  font-style: normal;
+  line-height: 24px;
+}
