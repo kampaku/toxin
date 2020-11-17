@@ -82,7 +82,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '~': PATHS.src,
+      components: `${PATHS.src}/components`,
     }
   },
   plugins: [
