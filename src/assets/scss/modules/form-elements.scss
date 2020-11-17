@@ -19,6 +19,11 @@
     flex-direction: column;
   }
 
+  &__toggle {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__inner {
     margin-bottom: 40px;
   }
@@ -34,4 +39,8 @@
 
 .radio__inner {
   margin-right: 20px;
+}
+
+.toggle__inner {
+  margin-bottom: 18px;
 }

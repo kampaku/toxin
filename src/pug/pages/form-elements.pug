@@ -2,6 +2,7 @@ extends ../layouts/uikit
 include ../../components/input/input-text/input-text
 include ../../components/input/checkbox/checkbox
 include ../../components/input/radio/radio
+include ../../components/input/toggle/toggle
 block variables
   -var title= "Form Flements"
 block content
@@ -23,3 +24,8 @@ block content
         .form-elements__radio
           +radio('Мужчина')(class="radio__inner" name='gender' checked)
           +radio('Женщина')(name='gender')
+      .form-elements__inner
+        h3.form-elements__title Toggle
+        .form-elements__toggle
+          +toggle('Получать спецпредложения')(class="toggle__inner" checked)
+          +toggle('Получать спецпредложения')
