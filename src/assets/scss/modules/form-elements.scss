@@ -1,4 +1,6 @@
 .form-elements {
+  display: flex;
+  justify-content: space-between;
   max-width: 1158px;
   margin: 0 auto;
 
@@ -6,8 +8,26 @@
     display: flex;
     flex-direction: column;
   }
+
+  &__title {
+    margin-bottom: 16px;
+    @extend %label-text;
+  }
+
+  &__checkbox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__inner {
+    margin-bottom: 40px;
+  }
 }
 
 .text-field__wrapper {
   margin-bottom: 20px;
+}
+
+.checkbox__inner {
+  margin-bottom: 10px;
 }

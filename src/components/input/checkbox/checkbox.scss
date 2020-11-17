@@ -1,0 +1,32 @@
+.check {
+  max-width: 225px;
+  padding-left: 30px;
+  color: $dark-shade-50;
+  font-size: 14px;
+  font-family: $mainFont;
+  line-height: 18px;
+
+  &__input {
+    position: absolute;
+    appearance: none;
+    clip: rect(0 0 0 0);
+
+    &:checked + .check__box {
+      background: url("/assets/img/input/checkbox/check.svg") 50% 50% no-repeat;
+      box-shadow: 0 0 0 1px $purple-color;
+    }
+    &:focus + .check__box {
+      box-shadow: 0 0 0 1px $purple-color, 0 0 0 2px $purple-color;
+    }
+  }
+
+  &__box {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    margin-left: -30px;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px $dark-shade-25;
+  }
+}

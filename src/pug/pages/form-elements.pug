@@ -1,5 +1,6 @@
 extends ../layouts/uikit
 include ../../components/input/input-text/input-text
+include ../../components/input/checkbox/checkbox
 block variables
   -var title= "Form Flements"
 block content
@@ -9,3 +10,10 @@ block content
         +input-text('text field', 'Email')
       .text-field__wrapper
         +input-text('text-field', 'This is pretty awesome')(autofocus)
+    .form-elements__wrapper
+      .form-elements__inner
+        h3.form-elements__title Checkbox Buttons
+        .form-elements__checkbox
+          +checkbox('Можно курить')(class='checkbox__inner')
+          +checkbox('Можно с питомцами')(class='checkbox__inner')
+          +checkbox('Можно пригласить гостей (до 10 человек)')
