@@ -4,6 +4,7 @@ include ../../components/input/checkbox/checkbox
 include ../../components/input/radio/radio
 include ../../components/input/toggle/toggle
 include ../../components/button-like/button-like
+include ../../components/rate-button/rate-button
 block variables
   -var title= "Form Flements"
 block content
@@ -35,3 +36,8 @@ block content
         .form-elements__button-like
           +button-like(2)(class="button-like__inner")
           +button-like(12)(class="button-like--active")
+      .form-elements__inner
+        h3.form-elements__title Rate button
+        .form-elements__rate
+          +rate-button(4, "rating1")(class="rate__inner")
+          +rate-button(5, "rating2")

@@ -24,6 +24,10 @@
     flex-direction: column;
   }
 
+  &__rate {
+    display: flex;
+  }
+
   &__inner {
     margin-bottom: 40px;
   }
@@ -47,4 +51,8 @@
 
 .button-like__inner {
   margin-right: 10px;
+}
+
+.rate__inner {
+  margin-right: 20px;
 }

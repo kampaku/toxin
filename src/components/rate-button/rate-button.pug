@@ -1,0 +1,32 @@
+mixin rate-button(n, name)
+  .rate(class=attributes.class)
+    if n == 1
+      input(type="radio" name=name class="rate__star" checked)
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star")
+    if n == 2
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star" checked)
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star") 
+    if n == 3
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star" checked)
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star")
+    if n == 4
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star" checked)
+      input(type="radio" name=name class="rate__star")
+    if n == 5
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star")
+      input(type="radio" name=name class="rate__star" checked)

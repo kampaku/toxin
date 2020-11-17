@@ -1,0 +1,48 @@
+.rate {
+  position: relative;
+  width: 120px;
+  height: 24px;
+  background: url("/assets/img/rate-button/off.svg") repeat-x;
+  background-size: 24px auto;
+
+  &__star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    font-size: inherit;
+    appearance: none;
+
+    &:nth-of-type(1) {
+      z-index: 5;
+      width: 24px;
+    }
+
+    &:nth-of-type(2) {
+      z-index: 4;
+      width: 48px;
+    }
+
+    &:nth-of-type(3) {
+      z-index: 3;
+      width: 72px;
+    }
+
+    &:nth-of-type(4) {
+      z-index: 2;
+      width: 96px;
+    }
+
+    &:nth-of-type(5) {
+      z-index: 1;
+      width: 120px;
+    }
+
+    &:checked {
+      background: url("/assets/img/rate-button/on.svg") repeat-x;
+      background-size: 24px auto;
+    }
+  }
+}
