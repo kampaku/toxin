@@ -1,0 +1,13 @@
+.form-elements {
+  max-width: 1158px;
+  margin: 0 auto;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.text-field__wrapper {
+  margin-bottom: 20px;
+}

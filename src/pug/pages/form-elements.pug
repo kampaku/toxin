@@ -1,0 +1,11 @@
+extends ../layouts/uikit
+include ../../components/input/input-text/input-text
+block variables
+  -var title= "Form Flements"
+block content
+  .form-elements
+    .form-elements__wrapper
+      .text-field__wrapper
+        +input-text('text field', 'Email')
+      .text-field__wrapper
+        +input-text('text-field', 'This is pretty awesome')(autofocus)
