@@ -31,6 +31,15 @@
   &__inner {
     margin-bottom: 40px;
   }
+
+  &__buttons {
+    display: flex;
+    margin-bottom: 30px;
+
+    button:nth-child(1) {
+      margin-right: 20px;
+    }
+  }
 }
 
 .text-field__wrapper {

@@ -41,3 +41,16 @@ block content
         .form-elements__rate
           +rate-button(4, "rating1")(class="rate__inner")
           +rate-button(5, "rating2")
+    .form-elements__wrapper
+      .form-elements__inner
+        h3.form-elements__title Buttons
+        .form-elements__buttons
+          button.button.button--blue click me
+          button.button.button--blue(disabled) click me
+        .form-elements__buttons
+          button.button.button--white click me
+          button.button.button--white(disabled) click me
+        .form-elements__buttons
+          button.button click me
+          button.button(disabled) click me
+        button.button.button--pay перейти к оплате
