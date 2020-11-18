@@ -29,4 +29,8 @@
     border-radius: 4px;
     box-shadow: 0 0 0 1px $dark-shade-25;
   }
+
+  &box__label:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }

@@ -22,13 +22,13 @@ block content
       .form-elements__inner
         h3.form-elements__title Checkbox Buttons
         .form-elements__checkbox
-          +checkbox('Можно курить')(class='checkbox__inner')
-          +checkbox('Можно с питомцами')(class='checkbox__inner')(checked)
+          +checkbox('Можно курить')
+          +checkbox('Можно с питомцами')(checked)
           +checkbox('Можно пригласить гостей (до 10 человек)')(checked)
       .form-elements__inner
         h3.form-elements__title Radio buttons
         .form-elements__radio
-          +radio('Мужчина')(class="radio__inner" name='gender' checked)
+          +radio('Мужчина')(name='gender' checked)
           +radio('Женщина')(name='gender')
       .form-elements__inner
         h3.form-elements__title Toggle
