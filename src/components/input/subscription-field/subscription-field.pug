@@ -1,0 +1,8 @@
+mixin subscription-field(label, placeholder)
+  .text-field
+    .text-field__title
+      span.text-field__label= label
+    .subscription-field  
+      input(class="subscription-field__input" type="email" placeholder=placeholder autofocus=attributes.autofocus)
+      button(class="subscription-field__button")
+        img(src="/assets/img/input/subscription-field/arrow.svg", alt="")

@@ -1,5 +1,6 @@
 extends ../layouts/uikit
 include ../../components/input/input-text/input-text
+include ../../components/input/subscription-field/subscription-field
 include ../../components/input/checkbox/checkbox
 include ../../components/input/radio/radio
 include ../../components/input/toggle/toggle
@@ -10,10 +11,13 @@ block variables
 block content
   .form-elements
     .form-elements__wrapper
+      .form-elements__inner
+        .text-field__wrapper
+          +input-text('text field', 'Email')
+        .text-field__wrapper
+          +input-text('text-field', 'This is pretty awesome')(autofocus)
       .text-field__wrapper
-        +input-text('text field', 'Email')
-      .text-field__wrapper
-        +input-text('text-field', 'This is pretty awesome')(autofocus)
+          +subscription-field('text-field', 'Email')(autofocus)
     .form-elements__wrapper
       .form-elements__inner
         h3.form-elements__title Checkbox Buttons
