@@ -6,6 +6,10 @@
   font-family: $mainFont;
   line-height: 18px;
 
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
   &__input {
     position: absolute;
     appearance: none;
@@ -24,13 +28,26 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    margin-top: 2px;
+    margin-top: -2px;
     margin-left: -30px;
     border-radius: 4px;
     box-shadow: 0 0 0 1px $dark-shade-25;
   }
 
-  &box__label:not(:last-child) {
-    margin-bottom: 10px;
+  &box__title {
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: $mainFont;
+    font-style: normal;
+    line-height: 18px;
+  }
+
+  &box__description {
+    font-weight: normal;
+    font-size: 12px;
+    font-family: $mainFont;
+    font-style: normal;
+    line-height: 14px;
   }
 }

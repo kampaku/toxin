@@ -1,5 +1,13 @@
-mixin checkbox(text)
-  label.check(class="checkbox__label")
+mixin checkbox(title, description)
+  label.check
     input(class="check__input" type="checkbox" checked=attributes.checked)
     span.check__box
-    =text
+    if description
+      .checkbox__text
+        p.checkbox__title
+          =title
+        p.checkbox__description
+          =description
+    else
+      p.checkbox__text
+        =title
