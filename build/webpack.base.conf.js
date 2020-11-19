@@ -46,6 +46,9 @@ module.exports = {
     rules: [{
       test: /\.pug$/,
       loader: 'pug-loader',
+      options: {
+        root: PATHS.src
+      }  
     }, {
       test: /\.js$/,
       loader: 'babel-loader',
@@ -82,7 +85,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      components: `${PATHS.src}/components`,
+      '~components': `${PATHS.src}/components`,
     }
   },
   plugins: [
