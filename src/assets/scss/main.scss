@@ -1,7 +1,7 @@
+@import "utils/reset";
 @import "utils/libs";
 @import "utils/vars";
 @import "utils/fonts";
-@import "utils/reset";
 @import "~components/ui-logo/ui-logo.scss";
 @import "~components/input/input-text/input-text.scss";
 @import "~components/input/subscription-field/subscription-field.scss";
@@ -11,5 +11,6 @@
 @import "~components/button-like/button-like.scss";
 @import "~components/rate-button/rate-button.scss";
 @import "~components/button/button.scss";
+@import "~components/bullet-list/bullet-list.scss";
 @import "modules/colors&types.scss";
 @import "modules/form-elements.scss";
