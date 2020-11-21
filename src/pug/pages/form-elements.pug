@@ -8,6 +8,7 @@ include /components/button-like/button-like
 include /components/rate-button/rate-button
 include /components/bullet-list/bullet-list
 include /components/about-room/about-room
+include /components/review/review
 block variables
   -var title= "Form Flements"
 block content
@@ -72,3 +73,5 @@ block content
       .about-room
         +about-room('/assets/img/about-room/insert_emoticon.png', 'Комфорт', 'Шумопоглощающие стены')
         +about-room('/assets/img/about-room/location_city.png', 'Удобство', 'Окно в каждой из спален')
+      .review
+        +review('/assets/img/review/4el.jpg', 'Рулон Обоев', '5 дней назад', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')

@@ -1,0 +1,11 @@
+mixin review(src, name, time, comment)
+  .review__item
+    img(class="review__img", src=src, alt="ava")
+    span.review__name
+      =name
+    span.review__time
+      =time
+    +button-like(12)(class="button-like--active")
+    p.review__comment
+      =comment
+

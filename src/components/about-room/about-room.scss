@@ -9,10 +9,11 @@
     grid-template-columns: auto auto;
     align-items: center;
     justify-items: center;
+    column-gap: 11px;
   }
 
   &__item:not(:last-child) {
-    margin-bottom: 38px;
+    margin-bottom: 35px;
   }
 
   &__title {
