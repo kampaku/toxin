@@ -7,6 +7,7 @@ include /components/input/toggle/toggle
 include /components/button-like/button-like
 include /components/rate-button/rate-button
 include /components/bullet-list/bullet-list
+include /components/about-room/about-room
 block variables
   -var title= "Form Flements"
 block content
@@ -67,3 +68,7 @@ block content
       .form-elements__inner
         h3.form-elements__title bullet list
         +bullet-list(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
+    .form-elements__wrapper
+      .about-room
+        +about-room('/assets/img/about-room/insert_emoticon.png', 'Комфорт', 'Шумопоглощающие стены')
+        +about-room('/assets/img/about-room/location_city.png', 'Удобство', 'Окно в каждой из спален')
