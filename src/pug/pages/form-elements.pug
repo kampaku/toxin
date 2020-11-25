@@ -9,6 +9,7 @@ include /components/rate-button/rate-button
 include /components/bullet-list/bullet-list
 include /components/about-room/about-room
 include /components/review/review
+include /components/dropdown/dropdown
 block variables
   -var title= "Form Flements"
 block content
@@ -21,6 +22,8 @@ block content
           +input-text('text-field', 'This is pretty awesome')(autofocus)
       .text-field__wrapper
           +subscription-field('text-field', 'Email')(autofocus)
+      .text-field__wrapper
+          +dropdown()
     .form-elements__wrapper
       .form-elements__inner
         h3.form-elements__title Checkbox Buttons
