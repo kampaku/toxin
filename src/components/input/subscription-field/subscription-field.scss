@@ -1,13 +1,13 @@
 .subscription-field {
+  position: relative;
   display: flex;
+  width: 267px;
 
   &__input {
-    width: 223px;
+    width: 100%;
     height: 44px;
-    padding-left: 15px;
-    border-top: 1px solid $dark-shade-25;
-    border-bottom: 1px solid $dark-shade-25;
-    border-left: 1px solid $dark-shade-25;
+    padding: 0 44px 0 15px;
+    border: 1px solid $dark-shade-25;
     border-radius: 4px;
     @extend %body-text;
     &:hover,
@@ -18,12 +18,11 @@
   }
 
   &__button {
+    position: absolute;
+    right: 0;
     width: 44px;
     height: 44px;
     background: none;
-    border-top: 1px solid $dark-shade-25;
-    border-right: 1px solid $dark-shade-25;
-    border-bottom: 1px solid $dark-shade-25;
     cursor: pointer;
   }
 }
