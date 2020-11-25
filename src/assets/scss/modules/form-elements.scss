@@ -2,9 +2,9 @@
   display: grid;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 125px;
   max-width: 1158px;
   margin: 0 auto;
-  column-gap: 125px;
 
   &__wrapper {
     display: flex;
