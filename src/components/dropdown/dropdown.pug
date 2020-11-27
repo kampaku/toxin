@@ -1,0 +1,35 @@
+mixin dropdown()
+  .dropdown
+    .dropdown__header
+      input(class='dropdown__text' readonly placeholder='asdasd')
+      button.dropdown__button
+        img(src="/assets/img/dropdown/expand-more.svg", alt="")
+    .dropdown__inner
+      ul.dropdown__list
+        li.dropdown__item
+          span.dropdown__item-text взрослые
+          .dropdown__item-inner
+            burron.dropdown__item-button
+              img(src="/assets/img/dropdown/minus.png", alt="")
+            span.dropdown__item-amount 0
+            burron.dropdown__item-button
+              img(src="/assets/img/dropdown/plus.png", alt="")
+        li.dropdown__item
+          span.dropdown__item-text дети
+          .dropdown__item-inner
+            burron.dropdown__item-button
+              img(src="/assets/img/dropdown/minus.png", alt="")
+            span.dropdown__item-amount 0
+            burron.dropdown__item-button
+              img(src="/assets/img/dropdown/plus.png", alt="")
+        li.dropdown__item
+          span.dropdown__item-text младенцы
+          .dropdown__item-inner
+            burron.dropdown__item-button
+              img(src="/assets/img/dropdown/minus.png", alt="")
+            span.dropdown__item-amount 0
+            burron.dropdown__item-button
+              img(src="/assets/img/dropdown/plus.png", alt="")
+      .dropdown__buttons
+        button.button очисить
+        button.button применить
