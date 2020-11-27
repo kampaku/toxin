@@ -1,4 +1,6 @@
 .check {
+  display: flex;
+  flex-direction: column;
   max-width: 225px;
   padding-left: 30px;
   color: $dark-shade-50;

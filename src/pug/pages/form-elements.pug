@@ -10,6 +10,7 @@ include /components/bullet-list/bullet-list
 include /components/about-room/about-room
 include /components/review/review
 include /components/dropdown/dropdown
+include /components/expandable-checkbox-list/expandable-checkbox-list
 block variables
   -var title= "Form Flements"
 block content
@@ -25,6 +26,8 @@ block content
       .text-field__wrapper
           h3.form-elements__title dropdown
           +dropdown()
+      .text-field__wrapper
+          +expandable-checkbox-list()
     .form-elements__wrapper
       .form-elements__inner
         h3.form-elements__title Checkbox Buttons

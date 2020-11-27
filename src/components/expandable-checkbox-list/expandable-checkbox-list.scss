@@ -1,0 +1,46 @@
+.expandable-checkbox-list {
+  max-width: 266px;
+}
+
+.checbox-label {
+  @extend %label-text;
+}
+
+.checkbox__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 44px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.checkbox-button__expand {
+  width: 44px;
+  height: 100%;
+  padding-bottom: 5px;
+  background: none;
+  cursor: pointer;
+}
+
+.checkbox-list {
+  display: none;
+  flex-direction: column;
+  background-color: #fff;
+
+  &--active {
+    display: flex;
+  }
+}
+
+.checkbox-button {
+  transition: rotate 0.3s;
+
+  &--active {
+    rotate: 180deg;
+  }
+}
+
+.checkbox-item:not(:last-child) {
+  margin-bottom: 12px;
+}

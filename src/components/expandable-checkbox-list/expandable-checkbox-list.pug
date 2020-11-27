@@ -1,0 +1,19 @@
+mixin expandable-checkbox-list()
+  .expandable-checkbox-list
+    .checkbox__wrapper
+      span.checbox-label expandable checkbox list
+      button.checkbox-button__expand
+        img(class="checkbox-button" src="/assets/img/expandable-checkbox-list/expand-more.svg", alt="")
+    ul.checkbox-list
+      li.checkbox-item
+        +checkbox('Завтрак')
+      li.checkbox-item
+        +checkbox('Письменный стол')
+      li.checkbox-item
+        +checkbox('Стул для кормления')
+      li.checkbox-item
+        +checkbox('Кроватка')
+      li.checkbox-item
+        +checkbox('Телевизор')
+      li.checkbox-item
+        +checkbox('Шампунь')
