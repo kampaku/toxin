@@ -52,5 +52,9 @@
     "webpack-cli": "~3.3.12",
     "webpack-dev-server": "~3.9.0",
     "webpack-merge": "~4.2.2"
+  },
+  "dependencies": {
+    "nouislider": "^14.6.3",
+    "wnumb": "^1.2.0"
   }
 }
