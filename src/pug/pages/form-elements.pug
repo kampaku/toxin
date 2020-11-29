@@ -10,6 +10,7 @@ include /components/bullet-list/bullet-list
 include /components/about-room/about-room
 include /components/review/review
 include /components/dropdown/dropdown
+include /components/range-slider/range-slider
 include /components/expandable-checkbox-list/expandable-checkbox-list
 block variables
   -var title= "Form Flements"
@@ -61,6 +62,8 @@ block content
           +checkbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
           +checkbox('Помощник для инвалидов', 'На 1 этаже вас встретит специалист  и проводит до номера.')
     .form-elements__wrapper
+      .form-elements__inner
+        +range-slider("Range Slider")
       .form-elements__inner
         h3.form-elements__title Buttons
         .form-elements__buttons
