@@ -1,5 +1,6 @@
-mixin dropdown()
+mixin dropdown(label)
   .dropdown
+    p.dropdown__label= label
     .dropdown__header
       input(class='dropdown__text' readonly placeholder='asdasd')
       button.dropdown__button

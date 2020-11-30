@@ -1,8 +1,14 @@
 .dropdown {
-  position: relative;
   width: 320px;
-  height: 44px;
+
   &__header {
+    position: relative;
+    height: 44px;
+  }
+
+  &__label {
+    margin-bottom: 5px;
+    @extend %label-text;
   }
 
   &__text {

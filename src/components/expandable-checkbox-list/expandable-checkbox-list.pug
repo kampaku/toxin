@@ -1,7 +1,7 @@
-mixin expandable-checkbox-list()
+mixin expandable-checkbox-list(label)
   .expandable-checkbox-list
     .checkbox__wrapper
-      span.checbox-label expandable checkbox list
+      span.checbox-label= label
       button.checkbox-button__expand
         img(class="checkbox-button" src="/assets/img/expandable-checkbox-list/expand-more.svg", alt="")
     ul.checkbox-list
