@@ -12,6 +12,7 @@ include /components/review/review
 include /components/dropdown/dropdown
 include /components/range-slider/range-slider
 include /components/expandable-checkbox-list/expandable-checkbox-list
+include /components/input/masked-text/masked-text
 block variables
   -var title= "Form Flements"
 block content
@@ -25,8 +26,10 @@ block content
       .text-field__wrapper
           +subscription-field('text-field', 'Email')(autofocus)
       .text-field__wrapper
-          h3.form-elements__title dropdown
-          +dropdown()
+        h3.form-elements__title dropdown
+        +dropdown()
+      .text-field__wrapper
+        +masked-text('masked text field', 'ДД.ММ.ГГГГ')
       .text-field__wrapper
           +expandable-checkbox-list()
     .form-elements__wrapper
