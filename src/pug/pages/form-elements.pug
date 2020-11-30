@@ -13,6 +13,8 @@ include /components/dropdown/dropdown
 include /components/range-slider/range-slider
 include /components/expandable-checkbox-list/expandable-checkbox-list
 include /components/input/masked-text/masked-text
+include /components/date-dropdown/date-dropdown
+include /components/date-filter/date-filter
 block variables
   -var title= "Form Flements"
 block content
@@ -23,15 +25,18 @@ block content
           +input-text('text field', 'Email')
         .text-field__wrapper
           +input-text('text-field', 'This is pretty awesome')(autofocus)
-      .text-field__wrapper
+        .text-field__wrapper
           +subscription-field('text-field', 'Email')(autofocus)
       .text-field__wrapper
-        h3.form-elements__title dropdown
-        +dropdown()
+        +dropdown('dropdown')
       .text-field__wrapper
         +masked-text('masked text field', 'ДД.ММ.ГГГГ')
       .text-field__wrapper
-          +expandable-checkbox-list()
+        +date-dropdown('date Dropdown', 'date Dropdown')
+      .text-field__wrapper
+        +date-filter('filter date dropdown')
+      .text-field__wrapper
+        +expandable-checkbox-list('expandable checkbox list')
     .form-elements__wrapper
       .form-elements__inner
         h3.form-elements__title Checkbox Buttons
