@@ -9,6 +9,10 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
+
+    &:last-child {
+      margin-bottom: 150px;
+    }
   }
 
   &__wrapper:last-child {
