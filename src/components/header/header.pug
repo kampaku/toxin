@@ -1,0 +1,43 @@
+include /components/logo/logo
+mixin header(login)
+  header.header
+    .container
+      .header__wrapper
+        .header__logo
+          +logo()
+        nav.header__navigation
+          ul.header__navigation-list
+            li.header__navigation-item
+              a(class="header__navigation-link" href="#") О нас
+            li.header__navigation-item
+              a(class="header__navigation-link header__navigation-link--expand" href="#") Услуги
+                img(src="/assets/img/dropdown/expand-more.svg", alt="expand")
+              ul.header__navigation-dropdown
+                li
+                  a(class="header__navigation-link" href="#") Услуга 1
+                li
+                  a(class="header__navigation-link" href="#") Услуга 2
+                li
+                  a(class="header__navigation-link" href="#") Услуга 3
+                li
+                  a(class="header__navigation-link" href="#") Услуга 4
+            li.header__navigation-item
+              a(class="header__navigation-link" href="#") Вакансии
+            li.header__navigation-item
+              a(class="header__navigation-link" href="#") Новости
+            li.header__navigation-item
+              a(class="header__navigation-link header__navigation-link--expand" href="#") Соглашения
+                img(src="/assets/img/dropdown/expand-more.svg", alt="expand")
+              ul.header__navigation-dropdown
+                li
+                  a(class="header__navigation-link" href="#") Соглашение 1
+                li
+                  a(class="header__navigation-link" href="#") Соглашение 2
+            li.header__navigation-item
+              if login
+                a(class="user-name" href="#") Юлий Цезарь
+              else
+                .header-buttons
+                  button.header__button.header__button--white войти
+                  button.header__button.header__button--purple зарегистрироваться
+
