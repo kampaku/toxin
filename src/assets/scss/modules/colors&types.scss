@@ -1,6 +1,10 @@
 @import "../utils/vars.scss";
 @import "../utils/font-template.scss";
 
+body {
+  background-color: #fff;
+}
+
 .main {
   display: flex;
   justify-content: space-between;

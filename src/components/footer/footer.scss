@@ -1,0 +1,132 @@
+@import "utils/fonts";
+.footer {
+  background-color: #fff;
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 100px 0px;
+    column-gap: 40px;
+  }
+
+  &__logo {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    color: $dark-shade-50;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    line-height: 17px;
+  }
+
+  &__title {
+    margin-bottom: 21px;
+    color: $dark-shade-100;
+    font-weight: 700;
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
+
+  &__list-item:not(:last-child) {
+    margin-bottom: 19px;
+  }
+
+  &__subscribe {
+    margin-bottom: 20px;
+    color: $dark-shade-75;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    line-height: 24px;
+  }
+
+  &__description {
+    @extend %body-text;
+  }
+
+  &__column {
+    grid-column: span 2;
+  }
+
+  &__column1 {
+    grid-column: span 3;
+  }
+
+  &__column5 {
+    grid-column: span 3;
+  }
+}
+
+.container__wrapper {
+  border-bottom: 1px solid #dedee3;
+}
+
+.copyright {
+  &__text {
+    color: $dark-shade-75;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    line-height: 17px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 23px 0px;
+  }
+}
+
+.social__icon:not(:last-child) {
+  margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 120px 0px;
+    &__wrapper {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      padding: 0;
+      column-gap: 0;
+    }
+
+    &__description {
+      display: none;
+    }
+
+    &__column2 {
+      display: none;
+    }
+    &__column3 {
+      display: none;
+    }
+    &__column4 {
+      display: none;
+    }
+    &__column5 {
+      display: none;
+    }
+  }
+
+  .container__wrapper {
+    border: 0;
+  }
+
+  .copyright__wrapper {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .copyright__text {
+    margin-bottom: 25px;
+  }
+}

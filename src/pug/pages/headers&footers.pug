@@ -1,7 +1,11 @@
 extends /pug/layouts/uikit
 include /components/header/header
+include /components/footer/footer
 block content
-  .page__wrapper
-    +header()
-  .page__wrapper
-    +header("login")
+  .wrapper
+    .page__wrapper
+      +header()
+    .page__wrapper
+      +header("login")
+    .page__wrapper
+      +footer()
