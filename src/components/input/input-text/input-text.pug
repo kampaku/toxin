@@ -1,5 +1,6 @@
 mixin input-text(label, placeholder)
   .text-field
-    .text-field__title
-      span.text-field__label= label
+    if label
+      .text-field__title
+        span.text-field__label= label
     input(class="text-field__input" type="text" placeholder=placeholder autofocus=attributes.autofocus)
