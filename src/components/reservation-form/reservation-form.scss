@@ -1,0 +1,124 @@
+.reservation-form {
+  max-width: 380px;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+
+  &__inner {
+    padding: 40px 30px 30px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__room-number {
+    @extend %sub-section-title;
+  }
+
+  &__room-number-sign {
+    font-weight: 700;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    line-height: 17px;
+  }
+
+  &__luxury-text {
+    color: $purple-color;
+    font-weight: 700;
+    font-size: 12px;
+    font-family: $mainFont;
+    font-style: normal;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
+
+  &__price-per-day-text {
+    color: $dark-shade-50;
+    font-weight: 400;
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    line-height: 18px;
+  }
+  &__price-per-day {
+    align-self: end;
+    color: $dark-shade-50;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    line-height: 18px;
+  }
+
+  &__prices {
+    margin-bottom: 30px;
+  }
+
+  &__prices-item {
+    display: flex;
+    justify-content: space-between;
+    @extend %body-text;
+  }
+
+  &__prices-item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__prices-item-text {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 239px;
+    word-wrap: break-word;
+  }
+
+  &__prices-item-info {
+    position: relative;
+    display: block;
+  }
+
+  &__tooltip {
+    position: absolute;
+    right: 0;
+    width: 150px;
+    padding: 5px;
+    color: $dark-shade-75;
+    background-color: #000;
+    visibility: hidden;
+  }
+
+  &__total-price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    @extend %item-title;
+  }
+
+  &__total-price-dashed {
+    position: relative;
+    flex-grow: 1;
+    &::before {
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+      width: calc(100% - 10px);
+      border-bottom: 1px dashed $dark-shade-25;
+      content: "";
+    }
+  }
+
+  &__date-dropdown {
+    margin-bottom: 20px;
+  }
+
+  &__dropdown {
+    margin-bottom: 20px;
+  }
+}
+
+.reservation-form__prices-item-info:hover +.reservation-form__prices-item-info {
+  visibility: visible;
+}

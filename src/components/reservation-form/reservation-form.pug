@@ -1,0 +1,39 @@
+include /components/date-dropdown/date-dropdown
+include /components/dropdown/dropdown
+mixin reservation-form(luxury)
+  form.reservation-form
+    .reservation-form__inner
+      .reservation-form__header
+        .reservation-form__room-number
+          span.reservation-form__room-number-sign №
+          span  888
+          if luxury
+            span.reservation-form__luxury-text люкс
+        .reservation-form__price-per-day
+          span 9 990₽ 
+          span.reservation-form__price-per-day-text в сутки
+      .reservation-form__date-dropdown
+        +date-dropdown('прибытие', 'выезд')
+      .reservation-form__dropdown
+        +dropdown('гости')
+      .reservation-form__prices
+        .reservation-form__prices-item
+          span.reservation-form__prices-item-text 9 990₽ х 4 суток
+          span.reservation-form__prices-item-price 39 960₽
+        .reservation-form__prices-item
+          .reservation-form__prices-item-text
+            p Сбор за услуги: скидка 2 179₽
+            img(class="reservation-form__prices-item-info" src="/assets/img/reservation-form/info.svg", alt="icon")
+            .reservation-form__tooltip подсказка
+          span.reservation-form__prices-item-price 0₽
+        .reservation-form__prices-item
+          .reservation-form__prices-item-text
+            p Сбор за дополнительные услугии
+            img(class="reservation-form__prices-item-info" src="/assets/img/reservation-form/info.svg", alt="icon")
+            .reservation-form__tooltip подсказка
+          span.reservation-form__prices-item-price 300₽
+      .reservation-form__total-price
+        span Итого
+        .reservation-form__total-price-dashed
+        span 38 081₽
+      button.button.button--arrow забронировать
