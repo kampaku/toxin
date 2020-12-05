@@ -1,0 +1,11 @@
+.cards {
+  &__wrapper {
+    display: inline-block;
+    margin-bottom: 40px;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+  }
+}

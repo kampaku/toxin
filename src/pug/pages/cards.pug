@@ -1,0 +1,10 @@
+extends /pug/layouts/uikit
+include /components/search-form/search-form
+include /components/registration-form/registration-form
+block content
+  .container
+    .cards__column
+      .cards__wrapper
+        +search-form()
+      .cards__wrapper
+        +registration-form()
