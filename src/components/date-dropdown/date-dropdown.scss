@@ -5,4 +5,13 @@
     display: flex;
     justify-content: space-between;
   }
+
+  &__button {
+    position: absolute;
+    right: 0;
+    width: 44px;
+    height: 100%;
+    background: none;
+    cursor: pointer;
+  }
 }
