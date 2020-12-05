@@ -1,0 +1,53 @@
+.registration-form {
+  max-width: 380px;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+  &__inner {
+    padding: 40px 30px 30px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    @extend %sub-section-title;
+  }
+
+  &__text-fields {
+    margin-bottom: 10px;
+  }
+
+  &__radio {
+    display: flex;
+    margin-bottom: 25px;
+  }
+
+  &__masked-field {
+    margin-bottom: 20px;
+  }
+
+  &__toggle {
+    margin-bottom: 25px;
+  }
+
+  &__button {
+    margin-bottom: 30px;
+  }
+
+  &__login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__text {
+    color: #000;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    line-height: 18px;
+  }
+}
+
+.text-fields__inner:not(:last-child) {
+  margin-bottom: 10px;
+}
