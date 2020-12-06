@@ -77,16 +77,21 @@
 
   &__prices-item-info {
     position: relative;
+  }
+
+  &__info-icon {
     display: block;
   }
 
   &__tooltip {
     position: absolute;
-    right: 0;
-    width: 150px;
+    left: 0;
+    z-index: 5;
+    width: 75px;
     padding: 5px;
     color: $dark-shade-75;
-    background-color: #000;
+    background-color: $dark-shade-25;
+    border-radius: 6px;
     visibility: hidden;
   }
 
@@ -119,6 +124,6 @@
   }
 }
 
-.reservation-form__prices-item-info:hover +.reservation-form__prices-item-info {
+.reservation-form__prices-item-info:hover .reservation-form__tooltip {
   visibility: visible;
 }
