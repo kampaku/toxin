@@ -1,0 +1,15 @@
+include /components/input/input-text/input-text
+mixin login-form()
+  form.login-form
+    .login-form__inner
+      h3.login-form__title Войти
+      .login-form__text-fields
+        .text-fields__inner
+          +input-text('', 'Имя')
+        .text-fields__inner
+          +input-text('', 'Фамилия')
+      .login-form__button
+        button.button.button--arrow войти
+      .login-form__login
+        span.login-form__text Нет аккаунта на Toxin?
+        button.button.button--white создать
