@@ -1,0 +1,9 @@
+.registration {
+  display: flex;
+  background: center / cover no-repeat
+    url("/assets/img/backgrounds/registration-bg.jpg");
+
+  &__registration-form {
+    margin: 18px auto;
+  }
+}
