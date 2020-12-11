@@ -1,0 +1,9 @@
+extends /pug/layouts/main
+include /components/search-form/search-form
+block variables
+  -var title = "Landing page"
+block content
+  .landing-page
+    .container
+      .landing-page__search-form
+        +search-form()

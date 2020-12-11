@@ -1,0 +1,10 @@
+.landing-page {
+  min-height: 900px;
+  padding: 1px;
+  background: center / cover no-repeat
+    url("/assets/img/backgrounds/landing-page-bg.jpg");
+
+  &__search-form {
+    margin-top: 70px;
+  }
+}
