@@ -1,0 +1,144 @@
+.room-card {
+  max-width: 270px;
+  background-color: #fff;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+
+  &__inner {
+    padding: 20px 17px 19px 20px;
+  }
+
+  &__slider {
+    position: relative;
+    img {
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+
+    &-dots {
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    &-dot--active {
+      background-color: #fff;
+    }
+
+    &-dot:not(:last-child) {
+      margin-right: 4px;
+    }
+
+    &-button {
+      position: absolute;
+      width: 44px;
+      height: 100%;
+      background: transparent;
+      visibility: hidden;
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    &-button:hover {
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0) 99.99%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+
+    &-button--left {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &-button--right {
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    &:hover .room-card__slider-button {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $dark-shade-5;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__room-number {
+    color: $dark-shade-100;
+    font-weight: 700;
+    font-size: 19px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    line-height: 23px;
+  }
+
+  &__room-number-sign {
+    font-weight: 700;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    line-height: 17px;
+  }
+
+  &__luxury-text {
+    color: $purple-color;
+    font-weight: 700;
+    font-size: 12px;
+    font-family: $mainFont;
+    font-style: normal;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
+
+  &__price-per-day,
+  &__reviews {
+    align-self: flex-end;
+    color: $dark-shade-50;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    line-height: 18px;
+  }
+
+  &__price-per-day-text,
+  &__rewiews-text {
+    color: $dark-shade-50;
+    font-weight: 400;
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    line-height: 18px;
+  }
+}
