@@ -1,0 +1,59 @@
+.search-room {
+  display: flex;
+  width: 100%;
+  margin-top: 30px;
+  &__filter {
+    width: 100%;
+    max-width: 266px;
+    margin-right: 60px;
+  }
+
+  &__date-filter {
+    margin-bottom: 20px;
+  }
+
+  &__guest {
+    margin-bottom: 30px;
+  }
+
+  &__range-slider {
+    margin-bottom: 25px;
+  }
+
+  &__checkbox-title {
+    display: inline-block;
+    margin-bottom: 18px;
+    @extend %label-text;
+  }
+
+  &__checkbox {
+    max-width: 223px;
+    margin-bottom: 25px;
+
+    &:nth-child(n + 1) {
+      max-width: 240px;
+      margin-bottom: 27px;
+    }
+  }
+
+  &__comfort {
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    @extend %sub-section-title;
+  }
+
+  &__search-results {
+    width: 100%;
+  }
+
+  &__room-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    width: 100%;
+    column-gap: 12px;
+    row-gap: 22px;
+  }
+}

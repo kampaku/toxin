@@ -1,7 +1,7 @@
 .check {
   display: flex;
   flex-direction: column;
-  max-width: 225px;
+  max-width: 100%;
   padding-left: 30px;
   color: $dark-shade-50;
   font-size: 14px;
@@ -9,7 +9,7 @@
   line-height: 18px;
 
   &:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 13px;
   }
 
   &__input {
