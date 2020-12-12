@@ -1,12 +1,14 @@
 .range-slider {
+  margin-bottom: 10px;
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
 
-  &__value {
+  &__value,
+  &__text {
     color: $dark-shade-50;
     font-weight: 400;
     font-size: 12px;
@@ -15,7 +17,7 @@
     line-height: 15px;
   }
 
-  &__text {
+  &__label {
     @extend %label-text;
   }
 

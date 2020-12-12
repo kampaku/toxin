@@ -2,10 +2,10 @@ import noUiSlider from 'nouislider';
 import wNumb from 'wNumb';
 import 'nouislider/distribute/nouislider.css';
 
-let slider = document.querySelector('.range-slider');
+let rangeSlider = document.querySelector('.range-slider');
 let value = document.querySelector('.range-slider__value');
 
-noUiSlider.create(slider, {
+noUiSlider.create(rangeSlider, {
   start: [5000, 10000],
   behaviour: 'drag',
   step: 1000,
@@ -22,8 +22,8 @@ noUiSlider.create(slider, {
   
 });
 
-slider.noUiSlider.on('update', function (values) {
+rangeSlider.noUiSlider.on('update', function (values) {
   value.innerHTML = values.join(' - ');
 });
 
-export default slider;
+export default rangeSlider;

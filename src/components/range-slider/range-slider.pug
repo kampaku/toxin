@@ -1,6 +1,8 @@
-mixin range-slider(text)
+mixin range-slider(label, text)
   .range-slider__wrapper
     .range-slider__header
-      span.range-slider__text= text
+      span.range-slider__label= label
       span.range-slider__value 
     .range-slider
+    if text
+      span.range-slider__text= text
