@@ -61,6 +61,16 @@
       margin-right: 20px;
     }
   }
+
+  &__review {
+    max-width: 630px;
+  }
+
+  &__about-room {
+    display: grid;
+    grid-auto-rows: 1fr;
+    row-gap: 40px;
+  }
 }
 
 .text-field__wrapper {
