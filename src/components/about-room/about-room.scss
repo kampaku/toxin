@@ -1,19 +1,11 @@
 .about-room {
-  display: flex;
-  flex-direction: column;
-  max-width: 290px;
-
   &__item {
     display: grid;
     grid-template-rows: auto auto;
-    grid-template-columns: auto auto;
+    grid-template-columns: 48px auto;
     align-items: center;
     justify-items: center;
-    column-gap: 11px;
-  }
-
-  &__item:not(:last-child) {
-    margin-bottom: 35px;
+    column-gap: 10px;
   }
 
   &__title {
