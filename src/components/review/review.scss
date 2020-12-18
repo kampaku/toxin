@@ -1,16 +1,10 @@
 .review {
-  display: flex;
-  flex-direction: column;
-  max-width: 630px;
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  grid-template-columns: repeat(2, auto);
+  column-gap: 10px;
 
-  &__item {
-    display: grid;
-    grid-template-rows: repeat(4, auto);
-    grid-template-columns: repeat(2, auto);
-    column-gap: 10px;
-  }
-
-  &__item:not(:last-child) {
+  &:not(:last-child) {
     margin-bottom: 22px;
   }
 
