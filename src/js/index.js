@@ -7,13 +7,17 @@ import checkboxListOpen from '../components/expandable-checkbox-list/expandable-
 import headerLink from '../components/header/header';
 import rangeSlider from '../components/range-slider/range-slider';
 import Slider from '../components/room-card/room-card';
+import makeChart from '../components/chart/chart';
 
 
 let sliders = document.querySelectorAll('.room-card__slider');
+if (sliders) {
+  sliders.forEach(slider => new Slider(slider).init());
+}
 buttonLike();
 dropdown();
 checkboxListOpen();
 headerLink();
-sliders.forEach(slider => new Slider(slider).init());
+makeChart({greatCount: 130, goodCount: 65, satisfactorilyCount: 65, bad: 0});
 
 
