@@ -1,0 +1,89 @@
+.chart {
+  margin-right: 28px;
+  &__wrapper {
+    display: flex;
+  }
+  &__unit {
+    fill: none;
+    stroke-width: 1;
+  }
+
+  &__unit:nth-child(1) {
+    stroke: #6fcf97;
+    // stroke-dasharray: 25 100;
+    // stroke-dashoffset: 0;
+  }
+
+  &__unit:nth-child(2) {
+    stroke: #ffe39c;
+    // stroke-dasharray: 50 100;
+    // stroke-dashoffset: -25;
+  }
+
+  &__unit:nth-child(3) {
+    stroke: #bc9cff;
+    // stroke-dasharray: 25 100;
+    // stroke-dashoffset: -75;
+  }
+
+  &__unit:nth-child(4) {
+    stroke: #626981;
+  }
+
+  &__text {
+    font-weight: 700;
+    font-family: $mainFont;
+    fill: #bc9cff;
+  }
+
+  &__number {
+    text-anchor: middle;
+    font-size: 7px;
+    line-height: 29px;
+  }
+
+  &__label {
+    text-anchor: middle;
+    font-size: 3px;
+    line-height: 15px;
+    text-transform: uppercase;
+    transform: translateY(5px);
+  }
+
+  &__legend {
+    align-self: flex-end;
+    @extend %body-text;
+  }
+
+  &__legend-item {
+    position: relative;
+    padding-left: 15px;
+  }
+
+  &__legend-item::before {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translateY(50%);
+    content: "";
+  }
+
+  &__legend-item:nth-child(1)::before {
+    background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
+  }
+
+  &__legend-item:nth-child(2)::before {
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+  }
+
+  &__legend-item:nth-child(3)::before {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  }
+
+  &__legend-item:nth-child(4)::before {
+    background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
+  }
+}
