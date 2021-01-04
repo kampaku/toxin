@@ -1,17 +1,19 @@
 export default function makeChart(obj) {
-  const units = document.querySelectorAll('.chart__unit'),
-  number = document.querySelector('.chart__number'),
-  { greatCount, goodCount, satisfactorilyCount, bad } = obj;
-  const sum = greatCount + goodCount + satisfactorilyCount + bad;
-  const arr = [goodCount, greatCount,satisfactorilyCount, bad];
+  const units = document.querySelectorAll('.chart__unit');
+  const votes = document.querySelector('.chart__number');
+  const chartValues = Object.values(obj);
+  const sum = chartValues.reduce((prev, curr) => prev + curr);
+
   let dashoffset = 0;
-  if(units && number) {
-    number.textContent = sum;
+
+  if(units && votes) {
+    const fullCircle = 100;
+    votes.textContent = sum;
+
     units.forEach((el, i) => {
-      el.style.strokeDasharray = `${100 / (sum / arr[i])} 100`;
+      el.style.strokeDasharray = `${fullCircle / (sum / chartValues[i])} ${fullCircle}`;
       el.style.strokeDashoffset = dashoffset;
-      dashoffset -= 100 / (sum / arr[i]); 
+      dashoffset -= fullCircle / (sum / chartValues[i]);
     });
   }
-  
 }

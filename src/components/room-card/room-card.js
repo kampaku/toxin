@@ -1,3 +1,5 @@
+const activeDot = 'room-card__slider-dot--active';
+
 export default class Slider {
   constructor (elem) {
     this.slideIndex = 1;
@@ -8,23 +10,23 @@ export default class Slider {
     this.dots = elem.querySelectorAll('.room-card__slider-dot');
   }
 
-  showSlides(n) {
-    if (n > this.slides.length) this.slideIndex = 1;
-    if (n < 1) this.slideIndex = this.slides.length;
+  showSlides(sliderNum) {
+    if (sliderNum > this.slides.length) this.slideIndex = 1;
+    if (sliderNum < 1) this.slideIndex = this.slides.length;
 
     this.slides.forEach((slide) => slide.style.display = "none");
-    this.dots.forEach((dot) => dot.classList.remove('room-card__slider-dot--active'));
+    this.dots.forEach((dot) => dot.classList.remove(activeDot));
 
     this.slides[this.slideIndex - 1].style.display = "block";
-    this.dots[this.slideIndex - 1].classList.add('room-card__slider-dot--active');
+    this.dots[this.slideIndex - 1].classList.add(activeDot);
   }
   
-  nextSlide (n) {
-    this.showSlides(this.slideIndex += n)
+  nextSlide (sliderNum) {
+    this.showSlides(this.slideIndex += sliderNum)
   }
   
-  currentSlide (n) {
-    this.showSlides(this.slideIndex = n)
+  currentSlide (sliderNum) {
+    this.showSlides(this.slideIndex = sliderNum)
   }
   
   init() {
@@ -39,12 +41,14 @@ export default class Slider {
     
     this.dotsWrap.addEventListener('click', (event) => {
       let target = event.target;
+      
       for (let i = 0; i < this.dots.length + 1; i++) {
-        if (target.classList.contains('room-card__slider-dot') && target == this.dots[i - 1]) {
+        if (target.classList.contains('room-card__slider-dot') && target === this.dots[i - 1]) {
           this.currentSlide(i);
         }
       }
     });
+
     this.showSlides(this.slideIndex);
   }
 }

@@ -11,13 +11,15 @@ import makeChart from '../components/chart/chart';
 
 
 let sliders = document.querySelectorAll('.room-card__slider');
+
 if (sliders) {
   sliders.forEach(slider => new Slider(slider).init());
 }
+
 buttonLike();
 dropdown();
 checkboxListOpen();
 headerLink();
-makeChart({greatCount: 130, goodCount: 65, satisfactorilyCount: 65, bad: 0});
+makeChart({goodCount: 65, greatCount: 130, satisfactorilyCount: 65, bad: 0});
 
 
