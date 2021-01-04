@@ -29,7 +29,9 @@ block content
         .text-field__wrapper
           +subscription-field('text-field', 'Email')(autofocus)
       .text-field__wrapper
-        +dropdown('dropdown')
+        +dropdown('dropdown', ['взрослые', 'дети', 'младенцы'])
+      .text-field__wrapper
+        +dropdown('dropdown', ['спальни', 'кровати', 'ванные комнаты'])
       .text-field__wrapper
         +masked-text('masked text field', 'ДД.ММ.ГГГГ')
       .text-field__wrapper

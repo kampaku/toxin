@@ -29,7 +29,7 @@ block content
         .search-room__date-filter
           +date-filter('даты пребывания в отеле')
         .search-room__guest
-          +dropdown('гости')
+          +dropdown('гости', ['взрослые', 'дети', 'младенцы'])
         .search-room__range-slider
           +range-slider('диапазон цены', 'Стоимость за сутки пребывания в номере')
         .search-room__checkbox
@@ -42,7 +42,7 @@ block content
           +checkbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
           +checkbox('Помощник для инвалидов', 'На 1 этаже вас встретит специалист  и проводит до номера.')
         .search-room__comfort
-          +dropdown('удобства номера')
+          +dropdown('удобства номера', ['взрослые', 'дети', 'младенцы'])
         .search-room_expandable-checkbox
           +expandable-checkbox-list('дополнительные удобства')
       .search-room__search-results

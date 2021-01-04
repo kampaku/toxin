@@ -1,4 +1,4 @@
-mixin dropdown(label)
+mixin dropdown(label, arr)
   .dropdown
     p.dropdown__label= label
     .dropdown__header
@@ -6,31 +6,16 @@ mixin dropdown(label)
       button.dropdown__button
         img(src="/assets/img/dropdown/expand-more.svg", alt="")
     .dropdown__inner
-      ul.dropdown__list
-        li.dropdown__item
-          span.dropdown__item-text взрослые
-          .dropdown__item-inner
-            burron.dropdown__item-button
-              img(src="/assets/img/dropdown/minus.png", alt="")
-            span.dropdown__item-amount 0
-            burron.dropdown__item-button
-              img(src="/assets/img/dropdown/plus.png", alt="")
-        li.dropdown__item
-          span.dropdown__item-text дети
-          .dropdown__item-inner
-            burron.dropdown__item-button
-              img(src="/assets/img/dropdown/minus.png", alt="")
-            span.dropdown__item-amount 0
-            burron.dropdown__item-button
-              img(src="/assets/img/dropdown/plus.png", alt="")
-        li.dropdown__item
-          span.dropdown__item-text младенцы
-          .dropdown__item-inner
-            burron.dropdown__item-button
-              img(src="/assets/img/dropdown/minus.png", alt="")
-            span.dropdown__item-amount 0
-            burron.dropdown__item-button
-              img(src="/assets/img/dropdown/plus.png", alt="")
+      ul(class="dropdown__list" data-dropdown-type="guests")
+        each el in arr
+          li(class="dropdown__item" data-type=el)
+            span.dropdown__item-text= el
+            .dropdown__item-inner
+              button(class="dropdown__item-button button" data-button="minus")
+                img(src="/assets/img/dropdown/minus.png", alt="minus")
+              span.dropdown__item-amount 0
+              button(class="dropdown__item-button button" data-button="plus")
+                img(src="/assets/img/dropdown/plus.png", alt="plus")
       .dropdown__buttons
-        button.button очисить
+        button.button очистить
         button.button применить

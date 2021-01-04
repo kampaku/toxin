@@ -7,5 +7,5 @@ mixin search-form()
       .search-form__date-dropdown
         +date-dropdown('прибытие', 'выезд')
       .search-form__dropdown
-        +dropdown('гости')
+        +dropdown('гости', ['взрослые', 'дети', 'младенцы'])
       button.button.button--arrow подобрать номер
