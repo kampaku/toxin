@@ -4,6 +4,6 @@ module.exports = {
             "stylelint-prettier/recommended"],
   plugins: ["stylelint-order", "stylelint-scss"],
   rules: {
-
+    "max-nesting-depth": [3, { ignore: ["blockless-at-rules", "pseudo-classes"] }],
   }
 };
