@@ -20,7 +20,7 @@ if (sliders) {
 
 burgerMenu()
 buttonLike();
-dropdownItems.forEach(elem => new Dropdown(elem).init());
+//dropdownItems.forEach(elem => new Dropdown(elem).init());
 checkboxListOpen();
 headerLink();
 makeChart({goodCount: 65, greatCount: 130, satisfactorilyCount: 65, bad: 0});

@@ -1,7 +1,7 @@
-let header = document.querySelector('.header');
+const header = document.querySelector('.header');
 
 function headerLink() {
-  let links = header.querySelectorAll('.header__navigation-link--expand');
+  const links = header.querySelectorAll('.header__navigation-link--expand');
   links.forEach(el => {
     el.addEventListener('click', (e) => {
       el.nextSibling.classList.toggle('header__navigation-dropdown--active');
@@ -10,10 +10,20 @@ function headerLink() {
 }
 
 function burgerMenu() {
-  let btn = header.querySelector('.header__burger');
+  const burgerBtn = header.querySelector('.header__burger');
+  const menu = header.querySelector('.header__navigation-list');
+  let menuIsActive = false;
 
-  btn.addEventListener('click', () => {
-    btn.classList.toggle('header__burger--active');
+  burgerBtn.addEventListener('click', () => {
+    if (menuIsActive) {
+      document.body.style.overflow = 'visible';
+      menuIsActive = !menuIsActive;
+    } else {
+      document.body.style.overflow = 'hidden';
+      menuIsActive = !menuIsActive;
+    }
+    burgerBtn.classList.toggle('header__burger--active');
+    menu.classList.toggle('header__navigation-list--active');
   })
 }
 
