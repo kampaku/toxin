@@ -1,5 +1,9 @@
 .chart {
   margin-right: 28px;
+
+  @media screen and (max-width: $smPhoneWidth) {
+    margin-right: 0px;
+  }
   &__wrapper {
     display: flex;
   }
