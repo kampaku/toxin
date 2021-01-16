@@ -42,7 +42,8 @@
   }
 
   &--arrow {
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     height: 44px;
     color: #fff;
     background: url("/assets/img/button/arrow.svg") 95% 50% no-repeat,
