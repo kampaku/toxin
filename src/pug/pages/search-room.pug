@@ -5,6 +5,7 @@ include /components/range-slider/range-slider
 include /components/input/checkbox/checkbox
 include /components/expandable-checkbox-list/expandable-checkbox-list
 include /components/room-card/room-card
+include /components/pagination/pagination
 block variables
   -var title= "Search room"
   -
@@ -50,3 +51,5 @@ block content
         .search-room__room-cards
           each card in cards
             +room-card(card)
+        .search-room__pagination
+          +pagination()

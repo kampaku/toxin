@@ -2,10 +2,18 @@
   display: flex;
   width: 100%;
   margin-top: 30px;
+
+  @media screen and (max-width: $tableWidth) {
+    flex-direction: column;
+  }
   &__filter {
     width: 100%;
     max-width: 266px;
     margin-right: 60px;
+
+    @media screen and (max-width: $tableWidth) {
+      margin: 0 auto 20px;
+    }
   }
 
   &__date-filter {
@@ -28,11 +36,10 @@
 
   &__checkbox {
     max-width: 223px;
-    margin-bottom: 25px;
+    margin-bottom: 27px;
 
-    &:nth-child(n + 1) {
-      max-width: 240px;
-      margin-bottom: 27px;
+    &:nth-child(5) {
+      max-width: 260px;
     }
   }
 
@@ -53,7 +60,18 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
     width: 100%;
+    margin-bottom: 40px;
     column-gap: 12px;
     row-gap: 22px;
+
+    @media screen and (max-width: $phoneWidth) {
+      justify-items: center;
+    }
+  }
+
+  &__pagination {
+    width: min-content;
+    margin: 0 auto;
+    margin-bottom: 70px;
   }
 }
