@@ -157,7 +157,7 @@
     background: transparent;
     cursor: pointer;
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: $smDesktopWidth) {
       display: block;
     }
 
@@ -225,7 +225,4 @@
     transform: translateY(50%);
     content: "";
   }
-}
-
-@media screen and (max-width: 900px) {
 }
