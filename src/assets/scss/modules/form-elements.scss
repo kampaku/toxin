@@ -71,6 +71,10 @@
     grid-auto-rows: 1fr;
     row-gap: 40px;
   }
+
+  &__pagination {
+    margin-bottom: 50px;
+  }
 }
 
 .text-field__wrapper {
