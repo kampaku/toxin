@@ -1,9 +1,14 @@
 .registration {
   display: flex;
-  background: center / cover no-repeat
+  align-items: center;
+  justify-content: center;
+  min-height: 683px;
+  padding: 0 20px;
+  background: center 100% / cover no-repeat
     url("/assets/img/backgrounds/registration-bg.jpg");
 
   &__registration-form {
-    margin: 18px auto;
+    width: 100%;
+    max-width: 380px;
   }
 }
