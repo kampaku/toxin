@@ -15,33 +15,33 @@ mixin footer()
               h3.footer__title навигация
               ul.footer__list
                 li.footer__list-item
-                  a(class="footer__link" href="#") О нас
+                  a(class="footer__link" href="/mock-address") О нас
                 li.footer__list-item
-                  a(class="footer__link" href="#") Новости
+                  a(class="footer__link" href="/mock-address") Новости
                 li.footer__list-item
-                  a(class="footer__link" href="#") Служба поддержки
+                  a(class="footer__link" href="/mock-address") Служба поддержки
                 li.footer__list-item
-                  a(class="footer__link" href="#") Услуги
+                  a(class="footer__link" href="/mock-address") Услуги
           .footer__column.footer__column3
             h3.footer__title о нас
             ul.footer__list
                 li.footer__list-item
-                  a(class="footer__link" href="#") О сервисе
+                  a(class="footer__link" href="/mock-address") О сервисе
                 li.footer__list-item
-                  a(class="footer__link" href="#") Наша команда
+                  a(class="footer__link" href="/mock-address") Наша команда
                 li.footer__list-item
-                  a(class="footer__link" href="#") Вакансии
+                  a(class="footer__link" href="/mock-address") Вакансии
                 li.footer__list-item
-                  a(class="footer__link" href="#") Инвесторы
+                  a(class="footer__link" href="/mock-address") Инвесторы
           .footer__column.footer__column4
               h3.footer__title Служба поддержки
               ul.footer__list
                 li.footer__list-item
-                  a(class="footer__link" href="#") Соглашения
+                  a(class="footer__link" href="/mock-address") Соглашения
                 li.footer__list-item
-                  a(class="footer__link" href="#") Сообщества
+                  a(class="footer__link" href="/mock-address") Сообщества
                 li.footer__list-item
-                  a(class="footer__link" href="#") Связь с нами
+                  a(class="footer__link" href="/mock-address") Связь с нами
           .footer__column.footer__column5
             h3.footer__title Подписка
             p(class="footer__subscribe") Получайте специальные предложения и новости сервиса
@@ -52,6 +52,9 @@ mixin footer()
           p.copyright__text
             |Copyright © 2018 Toxin отель. Все права зачищены.
           .social
-            img(class="social__icon" src="/assets/img/footer/twitter.png", alt="twitter")
-            img(class="social__icon" src="/assets/img/footer/facebook.png", alt="facebook")
-            img(class="social__icon" src="/assets/img/footer/instagram.png", alt="instagram")
+            a( class="social__link" href="https://twitter.com/toxin")
+              img(class="social__icon" src="/assets/img/footer/twitter.png", alt="twitter")
+            a( class="social__link" href="https://facebook.com/toxin")
+              img(class="social__icon" src="/assets/img/footer/facebook.png", alt="facebook")
+            a( class="social__link" href="https://instagram.com/toxin")  
+              img(class="social__icon" src="/assets/img/footer/instagram.png", alt="instagram")
