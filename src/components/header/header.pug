@@ -36,8 +36,8 @@ mixin header(login)
                 a(class="user-name" href="/mock-address") Юлий Цезарь
               else
                 .header-buttons
-                  button.header__button.header__button--white войти
-                  button.header__button.header__button--purple зарегистрироваться
+                  a(class="header__button header__button--white" href="/sign-in.html") войти
+                  a(class="header__button header__button--purple" href="/registration.html") зарегистрироваться
           button(class="header__burger")
             span.header__burger-line
 

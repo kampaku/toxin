@@ -51,7 +51,7 @@
     color: $dark-shade-50;
     font-weight: 400;
     font-size: 14px;
-    font-family: "Montserrat" sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     line-height: 17px;
     cursor: pointer;
@@ -129,12 +129,12 @@
     padding: 10px 20px;
     font-weight: 700;
     font-size: 12px;
-    font-family: "Montserrat" sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     line-height: 1.2;
     text-transform: uppercase;
     border-radius: 22px;
-    cursor: pointer;
+
     @media screen and (max-width: $phoneWidth) {
       font-size: 18px;
     }
