@@ -3,7 +3,7 @@ mixin dropdown(label, arr)
     p.dropdown__label= label
     .dropdown__header
       input(class='dropdown__text' readonly placeholder='asdasd')
-      button.dropdown__button
+      button(class="dropdown__button" type="button")
         img(src="/assets/img/dropdown/expand-more.svg", alt="")
     .dropdown__inner
       ul(class="dropdown__list" data-dropdown-type="guests")
@@ -11,10 +11,10 @@ mixin dropdown(label, arr)
           li(class="dropdown__item" data-type=el)
             span.dropdown__item-text= el
             .dropdown__item-inner
-              button(class="dropdown__item-button button" data-button="minus")
+              button(class="dropdown__item-button button" type="button" data-button="minus")
                 img(src="/assets/img/dropdown/minus.png", alt="minus")
               span.dropdown__item-amount 0
-              button(class="dropdown__item-button button" data-button="plus")
+              button(class="dropdown__item-button button" type="button" data-button="plus")
                 img(src="/assets/img/dropdown/plus.png", alt="plus")
       .dropdown__buttons
         button.button очистить
