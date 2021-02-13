@@ -1,6 +1,7 @@
 const header = document.querySelector('.header');
 
 function headerLink() {
+  if(!header) return;
   const links = header.querySelectorAll('.header__navigation-link--expand');
   links.forEach(el => {
     el.addEventListener('click', (e) => {
@@ -10,6 +11,7 @@ function headerLink() {
 }
 
 function burgerMenu() {
+  if(!header) return;
   const burgerBtn = header.querySelector('.header__burger');
   const menu = header.querySelector('.header__navigation-list');
   let menuIsActive = false;
