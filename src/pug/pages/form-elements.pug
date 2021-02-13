@@ -30,9 +30,9 @@ block content
         .text-field__wrapper
           +subscription-field('text-field', 'Email')(autofocus)
       .text-field__wrapper
-        +dropdown('dropdown', ['взрослые', 'дети', 'младенцы'])
+        +dropdown({label : 'гости', items: ['взрослые', 'дети', 'младенцы'], type: 'js-guest', holder: 'Cколько гостей'})
       .text-field__wrapper
-        +dropdown('dropdown', ['спальни', 'кровати', 'ванные комнаты'])
+        +dropdown({label: 'удобства номера', items: ['спальни', 'кровати', 'ванные комнаты'], type: 'js-comfort', holder: 'Удобства'})
       .text-field__wrapper
         +masked-text('masked text field', 'ДД.ММ.ГГГГ')
       .text-field__wrapper
