@@ -56,6 +56,8 @@ class DateDropdown {
 
   swapMonth(year, month) {
     this.date = new Date(year, month);
+    let currentDate = new Date();
+    if(this.date.getMonth() < currentDate.getMonth()) return;
     let newYear = this.date.getFullYear();
     let newMonth = this.date.getMonth();
     this.destroy();
@@ -84,7 +86,6 @@ class DateDropdown {
       'Ноябрь',
       'Декабрь',
     ];
-    console.log(dateOptions)
     const { days, year, month } = this.getDays(dateOptions);
     const calendar = renderElement({
       elementTag: 'div',
