@@ -8,11 +8,14 @@ import rangeSlider from '../components/range-slider/range-slider';
 import Slider from '../components/room-card/room-card';
 import makeChart from '../components/chart/chart';
 import { dropdownTypes } from '../components/dropdown/dropdown-types';
+import { DateDropdown } from '../components/date-dropdown/date-dropdown';
 
 const sliders = document.querySelectorAll('.room-card__slider');
 const dropdownGuestElement = document.querySelector('.js-guest');
 const dropdownComfortElement = document.querySelector('.js-comfort');
 const { guests, rooms } = dropdownTypes;
+const dateWrapper = document.querySelector('.date-dropdown__wrapper');
+
 
 if (sliders) {
   sliders.forEach((slider) => new Slider(slider).init());
@@ -26,6 +29,12 @@ try {
   dropdownGuest.init();
   dropdownComfort.init();
 } catch (error) {}
+
+try {
+  const calendar = new DateDropdown(dateWrapper);
+  calendar.init();
+} catch (error) {}
+
 
 checkboxListOpen();
 headerLink();
