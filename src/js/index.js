@@ -14,7 +14,8 @@ const sliders = document.querySelectorAll('.room-card__slider');
 const dropdownGuestElement = document.querySelector('.js-guest');
 const dropdownComfortElement = document.querySelector('.js-comfort');
 const { guests, rooms } = dropdownTypes;
-const dateWrapper = document.querySelector('.date-dropdown__wrapper');
+const dateWrapper = document.querySelector('.js-date-dropdown');
+const dateFilter = document.querySelector('.date-filter');
 
 
 if (sliders) {
@@ -35,6 +36,10 @@ try {
   calendar.init();
 } catch (error) {}
 
+// try {
+//   const dateFilterCalendar = new DateDropdown(dateFilter);
+//   dateFilterCalendar.init();
+// } catch (error) {}
 
 checkboxListOpen();
 headerLink();

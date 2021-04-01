@@ -1,14 +1,14 @@
 mixin date-dropdown(label1, label2)
-  .date-dropdown__wrapper
+  .date-dropdown__wrapper.js-date-dropdown
     .date-dropdown
       p.dropdown__label= label1
         .dropdown__header
-          input(class='dropdown__text' readonly placeholder='asdasd')
-          button(class="date-dropdown__button" type="button")
+          input(class='date-dropdown__input js-date-input' readonly placeholder='ДД.ММ.ГГГГ')
+          button(class="date-dropdown__button js-expand-button" type="button")
             img(src="/assets/img/dropdown/expand-more.svg", alt="")
     .date-dropdown
       p.dropdown__label= label2
         .dropdown__header
-          input(class='dropdown__text' readonly placeholder='asdasd')
-          button(class="date-dropdown__button" type="button")
+          input(class='date-dropdown__input js-date-input' readonly placeholder='ДД.ММ.ГГГГ')
+          button(class="date-dropdown__button js-expand-button" type="button")
             img(src="/assets/img/dropdown/expand-more.svg", alt="")

@@ -15,12 +15,29 @@
     background: none;
     cursor: pointer;
   }
+
+  &__input {
+    width: 100%;
+    height: 44px;
+    padding: 0 20px 0 15px;
+    border: 1px solid $dark-shade-25;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    cursor: default;
+    @extend %body-text;
+    &:hover,
+    &:focus {
+      color: $dark-shade-75;
+      border-color: $dark-shade-50;
+    }
+  }
 }
 
 .calendar {
   position: absolute;
   top: 70px;
   z-index: 5;
+  display: none;
   max-width: 320px;
   padding: 20px;
   font-size: 12px;
@@ -29,6 +46,10 @@
   border: 1px solid $dark-shade-25;
   border-radius: 4px;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+  &--open {
+    display: block;
+  }
 
   &__header {
     display: flex;
@@ -45,10 +66,11 @@
 
   &__week {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 
     &-day {
-      display: inline-block;
+      // display: inline-block;
       width: 14.2%;
       height: 40px;
       color: $purple-color;
@@ -61,9 +83,11 @@
   &__days-container {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 20px;
   }
 
   &__day {
+    position: relative;
     display: inline-block;
     width: 14.2%;
     height: 40px;
@@ -72,6 +96,7 @@
     font-family: $mainFont;
     line-height: 40px;
     text-align: center;
+    cursor: pointer;
 
     &--active {
       color: $dark-shade-50;
@@ -81,6 +106,48 @@
       color: #fff;
       background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
       border-radius: 50%;
+    }
+
+    &--selected {
+      color: #fff;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-radius: 50%;
+    }
+
+    &--selected-bg::before {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      opacity: 0.25;
+      content: '';
+    }
+
+    // &--selected-bg::before ~ &--selected-bg::before {
+    //   position: absolute;
+    //   display: block;
+    //   width: 100%;
+    //   height: 100%;
+    //   color: #fff;
+    //   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    //   border-radius: 50%;
+    //   opacity: 0.25;
+    //   content: '';
+    // }
+
+    &--selected-bg:nth-child() {
+      // position: absolute;
+      // top: 0;
+      // z-index: 100;
+      // display: block;
+      // width: 100%;
+      // height: 100%;
+      // color: green;
+      background: green;
+      // opacity: 0.25;
+      // content: 'jj';
     }
   }
 
@@ -97,5 +164,10 @@
       background: url('/assets/img/date-dropdown/arrow_back.svg') no-repeat center;
       transform: scale(-1, 1);
     }
+  }
+
+  &__buttons-container {
+    display: flex;
+    justify-content: space-between;
   }
 }

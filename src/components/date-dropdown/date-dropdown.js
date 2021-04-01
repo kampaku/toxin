@@ -22,10 +22,40 @@ function renderElement(options) {
   return element;
 }
 
+function addZero(number) {
+  return number > 9 ? number : '0' + number;
+}
+
+const weekDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+const months = [
+  'Январь',
+  'Февраль',
+  'Март',
+  'Апрель',
+  'Май',
+  'Июнь',
+  'Июль',
+  'Август',
+  'Сентябрь',
+  'Октябрь',
+  'Ноябрь',
+  'Декабрь',
+];
+
 class DateDropdown {
   constructor(dropWrapper) {
+    this.inputs;
     this.dropCalendar = dropWrapper;
     this.date;
+    this.setDaysRange = this.setDaysRange.bind(this);
+    this.dateArival;
+    this.dateDeparture;
+    this.today;
+    this.btnClear;
+    this.btnApply;
+    this.clear = this.clear.bind(this);
+    this.apply = this.apply.bind(this);
+    this.expand = this.expand.bind(this);
   }
 
   getDays(options) {
@@ -43,7 +73,7 @@ class DateDropdown {
     for (let i = 1; i <= lastDayOfCurrentMonth; i++) {
       days[1].push(i);
     }
-    if((days[0].length + days[1].length) > daysAmount) {
+    if (days[0].length + days[1].length > daysAmount) {
       daysAmount = 42;
     }
     const remainingDays = daysAmount - days[0].length - days[1].length;
@@ -57,37 +87,70 @@ class DateDropdown {
   swapMonth(year, month) {
     this.date = new Date(year, month);
     let currentDate = new Date();
-    if(this.date.getMonth() < currentDate.getMonth()) return;
+    if (
+      this.date.getMonth() < currentDate.getMonth() &&
+      this.date.getFullYear() <= currentDate.getFullYear()
+    )
+      return;
     let newYear = this.date.getFullYear();
     let newMonth = this.date.getMonth();
     this.destroy();
-    this.renderCalendar(this.dropCalendar, { year: newYear, month : newMonth });
+    this.renderCalendar(this.dropCalendar, { year: newYear, month: newMonth });
+    this.expand();
   }
 
-  destroy() {
-    const calendar = this.dropCalendar.querySelector('.calendar');
-    calendar.remove();
+  setDaysRange(e) {
+    const target = e.target.closest('.calendar__day--active');
+    if (!target) return;
+    if (this.dateArival && this.dateDeparture) {
+      // this.dateArival = null;
+      // this.dateDeparture = null;
+      return;
+    }
+
+    const currentDay = this.today.getDate();
+    const currentMonth = this.today.getMonth();
+
+    if (target.textContent < currentDay && currentMonth == this.date.getMonth()) return;
+    target.classList.add('calendar__day--selected');
+
+    if (!this.dateArival) {
+      this.dateArival = new Date(this.date.getFullYear(), this.date.getMonth(), target.textContent);
+    } else {
+      this.dateDeparture = new Date(
+        this.date.getFullYear(),
+        this.date.getMonth(),
+        target.textContent,
+      );
+    }
+
+    if (this.dateArival > this.dateDeparture) {
+      [this.dateArival, this.dateDeparture] = [this.dateDeparture, this.dateArival];
+    }
+
+    if (this.dateArival && this.dateDeparture) {
+      const daysContainer = target.parentElement.childNodes;
+      daysContainer.forEach((element) => {
+        const tempDate = new Date(
+          this.date.getFullYear(),
+          this.date.getMonth(),
+          element.textContent,
+        );
+
+        if (
+          tempDate >= this.dateArival &&
+          tempDate <= this.dateDeparture &&
+          element.classList.contains('calendar__day--active')
+        ) {
+          element.classList.add('calendar__day--selected-bg');
+        }
+      });
+    }
   }
 
   renderCalendar(parentElement, dateOptions) {
-
-    const weekDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
-    const months = [
-      'Январь',
-      'Февраль',
-      'Март',
-      'Апрель',
-      'Май',
-      'Июнь',
-      'Июль',
-      'Август',
-      'Сентябрь',
-      'Октябрь',
-      'Ноябрь',
-      'Декабрь',
-    ];
     const { days, year, month } = this.getDays(dateOptions);
-    const calendar = renderElement({
+    this.calendar = renderElement({
       elementTag: 'div',
       elementClasses: ['calendar'],
       parentElement: parentElement,
@@ -95,7 +158,7 @@ class DateDropdown {
     const calendarHeader = renderElement({
       elementTag: 'div',
       elementClasses: ['calendar__header'],
-      parentElement: calendar,
+      parentElement: this.calendar,
     });
     const previousMonthButton = renderElement({
       elementTag: 'button',
@@ -129,11 +192,10 @@ class DateDropdown {
       this.swapMonth(year, month + 1);
     });
 
-
     const week = renderElement({
       elementTag: 'div',
       elementClasses: ['calendar__week'],
-      parentElement: calendar,
+      parentElement: this.calendar,
     });
     weekDays.forEach((day) => {
       renderElement({
@@ -146,11 +208,12 @@ class DateDropdown {
     const daysContainer = renderElement({
       elementTag: 'div',
       elementClasses: ['calendar__days-container'],
-      parentElement: calendar,
+      parentElement: this.calendar,
     });
 
+    daysContainer.addEventListener('click', this.setDaysRange);
+
     const currentMonthIndexInDays = 1;
-    const today = new Date();
 
     days.forEach((arr, index) => {
       arr.forEach((day) => {
@@ -161,13 +224,31 @@ class DateDropdown {
             parentElement: daysContainer,
             elementText: day,
           });
+
           const isToday =
-            day === today.getDate() && month == today.getMonth() && year == today.getFullYear();
+            day === this.today.getDate() &&
+            month == this.today.getMonth() &&
+            year == this.today.getFullYear();
+
           if (isToday) {
             dayElement.classList.add('calendar__day--today');
           }
+
+          if (this.dateArival && this.dateDeparture) {
+            const tempDate = new Date(this.date.getFullYear(), this.date.getMonth(), day);
+
+            if (
+              tempDate >= this.dateArival &&
+              tempDate <= this.dateDeparture &&
+              dayElement.classList.contains('calendar__day--active')
+            ) {
+              dayElement.classList.add('calendar__day--selected');
+              dayElement.classList.add('calendar__day--selected-bg');
+            }
+          }
           return;
         }
+
         const dayElement = renderElement({
           elementTag: 'span',
           elementClasses: ['calendar__day'],
@@ -176,15 +257,86 @@ class DateDropdown {
         });
       });
     });
+
+    const btnContainer = renderElement({
+      elementTag: 'div',
+      elementClasses: ['calendar__buttons-container'],
+      parentElement: this.calendar,
+    });
+
+    this.btnClear = renderElement({
+      elementTag: 'buttun',
+      elementClasses: ['button'],
+      parentElement: btnContainer,
+      elementText: 'очистить',
+    });
+
+    this.btnClear.addEventListener('click', this.clear);
+
+    this.btnApply = renderElement({
+      elementTag: 'buttun',
+      elementClasses: ['button'],
+      parentElement: btnContainer,
+      elementText: 'применить',
+    });
+
+    this.btnApply.addEventListener('click', this.apply);
   }
 
-  init() {
+  apply() {
+    const arrivalDay = addZero(this.dateArival.getDate());
+    const departureDay = addZero(this.dateDeparture.getDate());
+    let arivalMonth = addZero(this.dateArival.getMonth());
+    let departureMonth = addZero(this.dateDeparture.getMonth());
+    const arivalYear = this.dateArival.getFullYear();
+    const departureYear = this.dateDeparture.getFullYear();
+    if (this.inputs.length > 1) {
+      const [firstInput, secondInput] = this.inputs;
+      firstInput.value = `${arrivalDay}.${arivalMonth}.${arivalYear}`;
+      secondInput.value = `${departureDay}.${departureMonth}.${departureYear}`;
+    } else {
+      const [input] = this.inputs;
+      arivalMonth = months[this.dateArival.getMonth()].slice(0, 3).toLowerCase();
+      departureMonth = months[this.dateDeparture.getMonth()].slice(0, 3).toLowerCase();
+      input.value = `${arrivalDay} ${arivalMonth} - ${departureDay} ${departureMonth}`;
+    }
+    this.expand();
+  }
+
+  clear() {
     this.date = new Date();
     let currentYear = this.date.getFullYear();
     let currentMonth = this.date.getMonth();
-    this.renderCalendar(this.dropCalendar, { year: currentYear, month : currentMonth });
+    this.dateArival = null;
+    this.dateDeparture = null;
+    this.inputs.forEach((input) => (input.value = ''));
+    this.destroy();
+    this.renderCalendar(this.dropCalendar, { year: currentYear, month: currentMonth });
+    this.expand();
+  }
 
-  
+  expand() {
+    this.calendar.classList.toggle('calendar--open');
+  }
+
+  destroy() {
+    this.calendar.remove();
+  }
+
+  init() {
+    this.inputs = this.dropCalendar.querySelectorAll('.js-date-input');
+    // const expandButton = this.dropCalendar.querySelectorAll('.js-expand-button');
+    // console.log(expandButton)
+    this.date = new Date();
+    this.today = new Date();
+    let currentYear = this.date.getFullYear();
+    let currentMonth = this.date.getMonth();
+    this.renderCalendar(this.dropCalendar, { year: currentYear, month: currentMonth });
+    const expandButtons = this.dropCalendar.querySelectorAll('.js-expand-button');
+    expandButtons.forEach((button) => {
+      console.log(button)
+      button.addEventListener('click', this.expand);
+    })
   }
 }
 
