@@ -18,7 +18,7 @@
     clip: rect(0 0 0 0);
 
     &:checked + .check__box {
-      background: url("/assets/img/input/checkbox/check.svg") 50% 50% no-repeat;
+      background: url('/assets/img/input/checkbox/check.svg') 50% 50% no-repeat;
       box-shadow: 0 0 0 1px $purple-color;
     }
     &:focus + .check__box {

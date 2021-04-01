@@ -11,7 +11,7 @@
     clip: rect(0 0 0 0);
 
     &:checked + .radio__button {
-      background: url("/assets/img/input/radio/radio.svg") 50% 50% no-repeat;
+      background: url('/assets/img/input/radio/radio.svg') 50% 50% no-repeat;
       box-shadow: 0 0 0 1px $purple-color;
     }
 

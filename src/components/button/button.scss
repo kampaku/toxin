@@ -3,7 +3,7 @@
   color: $purple-color;
   font-weight: 700;
   font-size: 12px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-style: normal;
   line-height: 15px;
   text-transform: uppercase;
@@ -47,7 +47,7 @@
     max-width: 320px;
     height: 44px;
     color: #fff;
-    background: url("/assets/img/arrow.svg") 95% 50% no-repeat,
+    background: url('/assets/img/arrow.svg') 95% 50% no-repeat,
       linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     border-radius: 22px;
   }
