@@ -9,7 +9,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   devServer: {
     contentBase: baseWebpackConfig.externals.paths.dist,
     port: 8081,
-    openPage: ['search-room.html', 'form-elements.html'],
+    openPage: ['landing-page.html'],
     overlay: {
       warnings: true,
       errors: true
