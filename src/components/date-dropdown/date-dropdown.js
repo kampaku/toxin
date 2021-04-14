@@ -99,19 +99,26 @@ class DateDropdown {
     this.expand();
   }
 
+  isDayInRange(tempDate, element) {
+    return tempDate >= this.dateArival &&
+      tempDate <= this.dateDeparture &&
+      element.classList.contains('calendar__day--active');
+  }
+
   setDaysRange(e) {
     const target = e.target.closest('.calendar__day--active');
+    const isDaysSelected = this.dateArival && this.dateDeparture;
+
     if (!target) return;
-    if (this.dateArival && this.dateDeparture) {
-      // this.dateArival = null;
-      // this.dateDeparture = null;
+    if (isDaysSelected) {
       return;
     }
 
     const currentDay = this.today.getDate();
     const currentMonth = this.today.getMonth();
+    const isPrevMonthDays = target.textContent < currentDay && currentMonth == this.date.getMonth();
 
-    if (target.textContent < currentDay && currentMonth == this.date.getMonth()) return;
+    if (isPrevMonthDays) return;
     target.classList.add('calendar__day--selected');
 
     if (!this.dateArival) {
@@ -124,25 +131,30 @@ class DateDropdown {
       );
     }
 
+    const isSameDay =
+      this.dateDeparture && this.dateArival.getTime() == this.dateDeparture.getTime();
+    if (isSameDay) {
+      this.dateDeparture = null;
+      return;
+    }
+
     if (this.dateArival > this.dateDeparture) {
       [this.dateArival, this.dateDeparture] = [this.dateDeparture, this.dateArival];
     }
 
     if (this.dateArival && this.dateDeparture) {
       const daysContainer = target.parentElement.childNodes;
-      daysContainer.forEach((element) => {
+      daysContainer.forEach((dayElement, dayNumber) => {
         const tempDate = new Date(
           this.date.getFullYear(),
           this.date.getMonth(),
-          element.textContent,
+          dayElement.textContent,
         );
 
-        if (
-          tempDate >= this.dateArival &&
-          tempDate <= this.dateDeparture &&
-          element.classList.contains('calendar__day--active')
-        ) {
-          element.classList.add('calendar__day--selected-bg');
+        if (this.isDayInRange(tempDate, dayElement)) {
+          if (Number(dayElement.textContent) === this.dateArival.getDate()) dayElement.classList.add('calendar__day--range-first');
+          if (Number(dayElement.textContent) === this.dateDeparture.getDate()) dayElement.classList.add('calendar__day--range-last');
+          dayElement.classList.add('calendar__day--range');
         }
       });
     }
@@ -216,7 +228,7 @@ class DateDropdown {
     const currentMonthIndexInDays = 1;
 
     days.forEach((arr, index) => {
-      arr.forEach((day) => {
+      arr.forEach((day, dayNumber) => {
         if (index === currentMonthIndexInDays) {
           const dayElement = renderElement({
             elementTag: 'span',
@@ -227,8 +239,8 @@ class DateDropdown {
 
           const isToday =
             day === this.today.getDate() &&
-            month == this.today.getMonth() &&
-            year == this.today.getFullYear();
+            month === this.today.getMonth() &&
+            year === this.today.getFullYear();
 
           if (isToday) {
             dayElement.classList.add('calendar__day--today');
@@ -237,15 +249,13 @@ class DateDropdown {
           if (this.dateArival && this.dateDeparture) {
             const tempDate = new Date(this.date.getFullYear(), this.date.getMonth(), day);
 
-            if (
-              tempDate >= this.dateArival &&
-              tempDate <= this.dateDeparture &&
-              dayElement.classList.contains('calendar__day--active')
-            ) {
-              dayElement.classList.add('calendar__day--selected');
-              dayElement.classList.add('calendar__day--selected-bg');
+            if (this.isDayInRange(tempDate, dayElement)) {
+              if (dayNumber === this.dateArival.getDate() - 1) dayElement.classList.add('calendar__day--selected', 'calendar__day--range-first');
+              if (dayNumber === this.dateDeparture.getDate() - 1) dayElement.classList.add('calendar__day--selected', 'calendar__day--range-last');
+              dayElement.classList.add('calendar__day--range');
             }
           }
+
           return;
         }
 
@@ -334,9 +344,9 @@ class DateDropdown {
     this.renderCalendar(this.dropCalendar, { year: currentYear, month: currentMonth });
     const expandButtons = this.dropCalendar.querySelectorAll('.js-expand-button');
     expandButtons.forEach((button) => {
-      console.log(button)
+      console.log(button);
       button.addEventListener('click', this.expand);
-    })
+    });
   }
 }
 
