@@ -279,6 +279,9 @@ class DateDropdown {
       elementClasses: ['button'],
       parentElement: btnContainer,
       elementText: 'очистить',
+      attributes: {
+        type: 'button',
+      }
     });
 
     this.btnClear.addEventListener('click', this.clear);
@@ -288,6 +291,9 @@ class DateDropdown {
       elementClasses: ['button'],
       parentElement: btnContainer,
       elementText: 'применить',
+      attributes: {
+        type: 'button',
+      }
     });
 
     this.btnApply.addEventListener('click', this.apply);
