@@ -275,7 +275,7 @@ class DateDropdown {
     });
 
     this.btnClear = renderElement({
-      elementTag: 'buttun',
+      elementTag: 'button',
       elementClasses: ['button'],
       parentElement: btnContainer,
       elementText: 'очистить',
@@ -284,7 +284,7 @@ class DateDropdown {
     this.btnClear.addEventListener('click', this.clear);
 
     this.btnApply = renderElement({
-      elementTag: 'buttun',
+      elementTag: 'button',
       elementClasses: ['button'],
       parentElement: btnContainer,
       elementText: 'применить',

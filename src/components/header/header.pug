@@ -4,13 +4,14 @@ mixin header(login)
     .container
       .header__wrapper
         .header__logo
-          +logo()
+          a(class="header__logo-link" href="/landing-page.html")
+            +logo()
         nav.header__navigation
           ul.header__navigation-list
             li.header__navigation-item
               a(class="header__navigation-link" href="/mock-address") О нас
             li.header__navigation-item
-              p(class="header__navigation-link header__navigation-link--expand" href="/mock-address") Услуги
+              div(class="header__navigation-link header__navigation-link--expand") Услуги
               ul.header__navigation-dropdown
                 li
                   a(class="header__navigation-link" href="/mock-address") Услуга 1
@@ -25,7 +26,7 @@ mixin header(login)
             li.header__navigation-item
               a(class="header__navigation-link" href="/mock-address") Новости
             li.header__navigation-item
-              p(class="header__navigation-link header__navigation-link--expand" href="/mock-address") Соглашения
+              div(class="header__navigation-link header__navigation-link--expand") Соглашения
               ul.header__navigation-dropdown
                 li
                   a(class="header__navigation-link" href="/mock-address") Соглашение 1
