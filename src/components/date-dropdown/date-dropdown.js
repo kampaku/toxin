@@ -341,8 +341,6 @@ class DateDropdown {
 
   init() {
     this.inputs = this.dropCalendar.querySelectorAll('.js-date-input');
-    // const expandButton = this.dropCalendar.querySelectorAll('.js-expand-button');
-    // console.log(expandButton)
     this.date = new Date();
     this.today = new Date();
     let currentYear = this.date.getFullYear();
@@ -350,7 +348,6 @@ class DateDropdown {
     this.renderCalendar(this.dropCalendar, { year: currentYear, month: currentMonth });
     const expandButtons = this.dropCalendar.querySelectorAll('.js-expand-button');
     expandButtons.forEach((button) => {
-      console.log(button);
       button.addEventListener('click', this.expand);
     });
   }
