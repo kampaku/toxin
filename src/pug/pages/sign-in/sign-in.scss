@@ -1,0 +1,13 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 683px;
+  padding: 0 20px;
+  background: center 100% / cover no-repeat url('../../../assets/img/backgrounds/registration-bg.jpg');
+
+  &__login-form {
+    width: 100%;
+    max-width: 380px;
+  }
+}

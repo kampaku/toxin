@@ -1,8 +1,8 @@
 extends /pug/layouts/main
 include /components/dropdown/dropdown
-include /components/date-filter/date-filter
+include /components/date-dropdown/date-dropdown
 include /components/range-slider/range-slider
-include /components/input/checkbox/checkbox
+include /components/checkbox/checkbox
 include /components/expandable-checkbox-list/expandable-checkbox-list
 include /components/room-card/room-card
 include /components/pagination/pagination
@@ -28,7 +28,7 @@ block content
     .search-room
       .search-room__filter
         .search-room__date-filter
-          +date-filter('даты пребывания в отеле')
+          +date-dropdown('даты пребывания в отеле')
         .search-room__guest
           +dropdown({label: 'гости', items: ['взрослые', 'дети', 'младенцы'], type: 'js-guest', holder: 'Cколько гостей'})
         .search-room__range-slider

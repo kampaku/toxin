@@ -1,8 +1,13 @@
 extends /pug/layouts/uikit
 include /components/header/header
 include /components/footer/footer
+include /components/logo/logo
+block variables
+  -var title = "headers&footers"
 block content
-  .wrapper
+  .content--headers-footers
+    header.ui-header
+      +logo()
     .page__wrapper
       +header()
     .page__wrapper

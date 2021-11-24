@@ -1,0 +1,105 @@
+extends /pug/layouts/uikit
+include /components/input-text/input-text
+include /components/subscription-field/subscription-field
+include /components/checkbox/checkbox
+include /components/radio/radio
+include /components/toggle/toggle
+include /components/button-like/button-like
+include /components/pagination/pagination
+include /components/rate-button/rate-button
+include /components/bullet-list/bullet-list
+include /components/about-room/about-room
+include /components/review/review
+include /components/dropdown/dropdown
+include /components/range-slider/range-slider
+include /components/expandable-checkbox-list/expandable-checkbox-list
+include /components/date-dropdown/date-dropdown
+include /components/button/button
+  include /components/logo/logo
+block variables
+  -var title= "Form Flements"
+  -var review = {name: 'Рулон Обоев', src: '/assets/img/review/4el.jpg', time: '5 дней назад', likes: '12', liked: true, comment: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'}
+block content
+  .content--form-elements
+    header.ui-header
+      +logo()
+    .form-elements
+      .form-elements__wrapper
+        .form-elements__inner
+          .text-field__wrapper
+            +input-text('text field', 'Email')
+          .text-field__wrapper
+            +input-text('text-field', 'This is pretty awesome')(autofocus)
+          .text-field__wrapper
+            +subscription-field('text-field', 'Email')(autofocus)
+        .text-field__wrapper
+          +dropdown({label : 'гости', items: ['взрослые', 'дети', 'младенцы'], type: 'js-guest', holder: 'Cколько гостей'})
+        .text-field__wrapper
+          +dropdown({label: 'удобства номера', items: ['спальни', 'кровати', 'ванные комнаты'], type: 'js-comfort', holder: 'Удобства'})
+        .text-field__wrapper
+          +input-text('masked text field', 'ДД.ММ.ГГГГ', 'mask')
+        .text-field__wrapper
+          +date-dropdown('date Dropdown', 'date Dropdown')
+        .text-field__wrapper
+          +date-dropdown('filter date dropdown')
+        .text-field__wrapper
+          +expandable-checkbox-list('expandable checkbox list')
+      .form-elements__wrapper
+        .form-elements__inner
+          h3.form-elements__title Checkbox Buttons
+          .form-elements__checkbox
+            +checkbox('Можно курить')
+            +checkbox('Можно с питомцами')(checked)
+            +checkbox('Можно пригласить гостей (до 10 человек)')(checked)
+        .form-elements__inner
+          h3.form-elements__title Radio buttons
+          .form-elements__radio
+            +radio('Мужчина')(name='gender' checked)
+            +radio('Женщина')(name='gender')
+        .form-elements__inner
+          h3.form-elements__title Toggle
+          .form-elements__toggle
+            +toggle('Получать спецпредложения')(class="toggle__inner" checked)
+            +toggle('Получать спецпредложения')
+        .form-elements__inner
+          h3.form-elements__title like button
+          .form-elements__button-like
+            +button-like(2)(class="button-like__inner")
+            +button-like(12)(class="button-like--active")
+        .form-elements__inner
+          h3.form-elements__title Rate button
+          .form-elements__rate
+            +rate-button(4, "rating1")(class="rate__inner")
+            +rate-button(5, "rating2")
+        .form-elements__inner
+          h3.form-elements__title Checkbox Buttons
+          .form-elements__checkbox
+            +checkbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
+            +checkbox('Помощник для инвалидов', 'На 1 этаже вас встретит специалист  и проводит до номера.')
+      .form-elements__wrapper
+        .form-elements__inner
+          +range-slider("Range Slider")
+        .form-elements__inner
+          h3.form-elements__title Buttons
+          .form-elements__buttons
+            +button({'color': 'blue', 'tag': 'button', 'text': 'click me'})
+            button.button.button--blue(disabled) click me
+          .form-elements__buttons
+            +button({'color': 'white', 'tag': 'button', 'text': 'click me'})
+            +button({"color": "white", "tag": "a", "href": "/sign-in.html", "text": "войти"})
+          .form-elements__buttons
+            +button({ 'color': 'transparent', 'tag': 'button', 'text': 'click me' })
+            button.button(disabled) click me
+          button.button.button--arrow перейти к оплате
+        .form-elements__pagination
+          h3.form-elements__title pagination
+          +pagination()
+        .form-elements__inner
+          h3.form-elements__title bullet list
+          +bullet-list(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
+      .form-elements__wrapper
+        .form-elements__about-room
+          +about-room('/assets/img/about-room/insert_emoticon.png', 'Комфорт', 'Шумопоглощающие стены')
+          +about-room('/assets/img/about-room/location_city.png', 'Удобство', 'Окно в каждой из спален')
+        .form-elements__review
+          +review(review)
