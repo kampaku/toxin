@@ -73,14 +73,16 @@ module.exports = {
       { test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i, type: 'asset/resource',
         generator: {
           filename: 'assets/images/[name][hash][ext]'
-        }
+        },
+        exclude: /fonts/,
       },
       //
       // // Fonts and SVGs: Inline files
-      { test: /\.(woff(2)?|eot|ttf|otf)$/, type: 'asset/resource',
+      { test: /\.(woff(2)?|eot|ttf|otf|svg)$/, type: 'asset/resource',
         generator: {
           filename: 'assets/fonts/[name][ext]'
-        }
+        },
+        include: /fonts/,
       },
     ],
   },
