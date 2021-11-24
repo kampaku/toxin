@@ -3,10 +3,8 @@
   flex-direction: column;
   max-width: 100%;
   padding-left: 30px;
-  color: $dark-shade-50;
-  font-size: 14px;
-  font-family: $mainFont;
   line-height: 18px;
+  @extend %body-text;
 
   &:not(:last-child) {
     margin-bottom: 13px;
@@ -18,7 +16,7 @@
     clip: rect(0 0 0 0);
 
     &:checked + .check__box {
-      background: url('/assets/img/input/checkbox/check.svg') 50% 50% no-repeat;
+      background: url('./check.svg') 50% 50% no-repeat;
       box-shadow: 0 0 0 1px $purple-color;
     }
     &:focus + .check__box {

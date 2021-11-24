@@ -1,3 +1,5 @@
+import './date-dropdown.scss';
+
 function renderElement(options) {
   const { elementTag, elementClasses, parentElement, elementText, attributes } = options;
   const element = document.createElement(elementTag);
@@ -56,6 +58,7 @@ class DateDropdown {
     this.clear = this.clear.bind(this);
     this.apply = this.apply.bind(this);
     this.expand = this.expand.bind(this);
+    this.init();
   }
 
   getDays(options) {

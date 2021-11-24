@@ -1,3 +1,5 @@
+import './chart.scss';
+
 export default function makeChart(obj) {
   const units = document.querySelectorAll('.chart__unit');
   const votes = document.querySelector('.chart__number');

@@ -1,11 +1,12 @@
 include /components/logo/logo
+include /components/button/button
 mixin header(login)
   header.header
     .container
       .header__wrapper
         .header__logo
           a(class="header__logo-link" href="/landing-page.html")
-            +logo()
+            +logo('text')
         nav.header__navigation
           ul.header__navigation-list
             li.header__navigation-item
@@ -37,8 +38,8 @@ mixin header(login)
                 a(class="user-name" href="/mock-address") Юлий Цезарь
               else
                 .header-buttons
-                  a(class="header__button header__button--white" href="/sign-in.html") войти
-                  a(class="header__button header__button--purple" href="/registration.html") зарегистрироваться
+                  +button({"color": "white", "tag": "a", "href": "/sign-in.html", "text": "войти"})
+                  +button({"color": "blue", "tag": "a", "href": "/registration.html", "text": "зарегистрироваться"})
           button(class="header__burger")
             span.header__burger-line
 

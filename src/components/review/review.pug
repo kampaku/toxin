@@ -1,7 +1,7 @@
 include /components/button-like/button-like
 mixin review(obj)
   -var {src, name, time, comment, likes, liked} = obj
-  .review
+  .review.js-review
     img(class="review__img", src=src, alt="ava")
     span.review__name
       =name

@@ -1,0 +1,13 @@
+mixin button(options)
+  -var {color, tag, text, href} = options
+  -
+    var themes = {
+      'white': 'button button--white',
+      'blue': 'button button--blue',
+      'transparent': 'button',
+      'arrow': 'button button--arrow'
+    }
+  if  tag === 'button'
+    button(class=themes[color])= text
+  if tag === 'a'
+    a(class=themes[color], href=href)= text

@@ -1,3 +1,5 @@
+import './dropdown.scss';
+
 function getDeclension(n, wordForms) {
   n = Math.abs(n) % 100;
   let n1 = n % 10;
@@ -26,6 +28,7 @@ class Dropdown {
     this.applyButton;
     this.clear = this.clear.bind(this);
     this.apply = this.apply.bind(this);
+    this.init();
   }
 
   getItem(itemElement) {

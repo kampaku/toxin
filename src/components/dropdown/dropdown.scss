@@ -82,11 +82,11 @@
       cursor: pointer;
 
       &--minus {
-        background-image: url('/assets/img/dropdown/minus.png');
+        background: url('./minus.png'), transparent;
       }
 
       &--plus {
-        background-image: url('/assets/img/dropdown/plus.png');
+        background: url('./plus.png'), transparent;
       }
 
       &:disabled {

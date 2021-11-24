@@ -1,3 +1,6 @@
+import './header.scss';
+import '~components/button/button';
+
 const header = document.querySelector('.header');
 
 function headerLink() {

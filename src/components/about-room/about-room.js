@@ -1,0 +1,1 @@
+import './about-room.scss';

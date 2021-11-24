@@ -1,9 +1,9 @@
-include /components/input/input-text/input-text
-include /components/input/radio/radio
-include /components/input/masked-text/masked-text
-include /components/input/toggle/toggle
+include /components/input-text/input-text
+include /components/radio/radio
+include /components/toggle/toggle
+include /components/button/button
 mixin registration-form()
-  form.registration-form
+  form.registration-form.js-registration-form
     .registration-form__inner
       h3.registration-form__title Регистрация аккаунта
       .registration-form__text-fields
@@ -15,7 +15,7 @@ mixin registration-form()
         +radio('Мужчина')(name='name')
         +radio('Женщина')(name='name')
       .registration-form__masked-field
-        +masked-text('дата рождения', 'ДД.ММ.ГГГГ')
+        +input-text('дата рождения', 'ДД.ММ.ГГГГ', 'mask')
       .registration-form__text-fields
         .text-fields__inner
           +input-text('данные для входа в сервис', 'Email')
@@ -24,7 +24,7 @@ mixin registration-form()
       .registration-form__toggle
         +toggle('Получать спецпредложения')
       .registration-form__button
-        button.button.button--arrow перейти к оплате
+        +button({"tag": "button", "color": "arrow", "text": "перейти к оплате"})
       .registration-form__login
         span.registration-form__text Уже есть аккаунт на Toxin
-        a(class="button button--white" href="/sign-in.html") войти
+        +button({"color": "white", "tag": "a", "href": "/sign-in.html", "text": "войти"})

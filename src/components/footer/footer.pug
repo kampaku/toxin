@@ -1,5 +1,5 @@
 include /components/logo/logo
-include /components/input/subscription-field/subscription-field
+include /components/subscription-field/subscription-field
 mixin footer()
   footer.footer
     .container__wrapper
@@ -7,7 +7,7 @@ mixin footer()
         .footer__wrapper
           .footer__column.footer__column1
             .footer__logo
-              +logo()
+              +logo("text")
             p.footer__description 
               |Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
           .footer__column.footer__column2

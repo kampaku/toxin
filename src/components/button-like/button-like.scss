@@ -6,14 +6,14 @@
   font-size: 10px;
   font-family: $mainFont;
   line-height: 12px;
-  background: url('/assets/img/button-like/like.svg') 15% 50% no-repeat;
+  background: url('./like.svg') 15% 50% no-repeat;
   border: 1px solid $dark-shade-25;
   border-radius: 10px;
   cursor: pointer;
 
   &--active {
     color: $purple-color;
-    background: url('/assets/img/button-like/like-active.svg') 15% 50% no-repeat;
+    background: url('./like-active.svg') 15% 50% no-repeat;
     border-color: $purple-color;
   }
 }

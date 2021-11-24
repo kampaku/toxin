@@ -1,8 +1,10 @@
 .rate {
   position: relative;
+  display: flex;
+  gap: 10px;
   width: 120px;
   height: 24px;
-  background: url("/assets/img/rate-button/off.svg") repeat-x;
+  background: url('./off.svg') repeat-x;
   background-size: 24px auto;
 
   &__star {
@@ -41,7 +43,7 @@
     }
 
     &:checked {
-      background: url("/assets/img/rate-button/on.svg") repeat-x;
+      background: url('./on.svg') repeat-x;
       background-size: 24px auto;
     }
   }

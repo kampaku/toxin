@@ -1,42 +1,50 @@
 .button {
+  display: inline-block;
   padding: 0;
   color: $purple-color;
   font-weight: 700;
   font-size: 12px;
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
-  line-height: 15px;
+  line-height: 14px;
+  text-align: center;
   text-transform: uppercase;
   background: none;
   border: 0;
   cursor: pointer;
+  transition: all 0.2s;
 
-  &:disabled {
+  &:hover {
     color: $dark-shade-50;
   }
 
   &--blue {
-    width: 99px;
-    height: 44px;
+    padding: 0 20px;
     color: #fff;
-    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    line-height: 44px;
+    background: $button-gradient;
     border-radius: 22px;
 
-    &:disabled {
+    &:hover {
       color: #fff;
       opacity: 0.5;
     }
   }
 
   &--white {
-    width: 99px;
-    padding: 12px 0;
+    position: relative;
+    padding: 0 20px;
     color: $purple-color;
+    line-height: 44px;
     text-align: center;
-    border: 2px solid;
+    background-image: linear-gradient(white, white),
+      linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    background-clip: padding-box, border-box;
+    background-origin: border-box;
+    border: 2px solid transparent;
     border-radius: 22px;
 
-    &:disabled {
+    &:hover {
       color: $purple-color;
       opacity: 0.5;
     }
@@ -45,10 +53,15 @@
   &--arrow {
     width: 100%;
     max-width: 320px;
-    height: 44px;
     color: #fff;
-    background: url('/assets/img/arrow.svg') 95% 50% no-repeat,
+    line-height: 44px;
+    background: url('./arrow.svg') 95% 50% no-repeat,
       linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     border-radius: 22px;
+
+    &:hover {
+      color: #fff;
+      opacity: 0.5;
+    }
   }
 }

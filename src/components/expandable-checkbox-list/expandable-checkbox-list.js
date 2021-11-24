@@ -1,3 +1,5 @@
+import './expandable-checkbox-list.scss';
+
 export default function checkboxListOpen() {
   let btn = document.querySelector('.checkbox__wrapper');
   let list = document.querySelector('.checkbox-list');

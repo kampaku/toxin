@@ -1,3 +1,6 @@
+import './room-card.scss';
+import '~components/rate-button/rate-button';
+
 const activeDot = 'room-card__slider-dot--active';
 
 export default class Slider {

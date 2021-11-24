@@ -1,6 +1,7 @@
+import 'nouislider/dist/nouislider.css';
+import './range-slider.scss';
 import noUiSlider from 'nouislider';
-import wNumb from 'wNumb';
-import 'nouislider/distribute/nouislider.css';
+import wNumb from 'wnumb';
 
 let rangeSlider = document.querySelector('.range-slider');
 let value = document.querySelector('.range-slider__value');
@@ -20,7 +21,6 @@ if (rangeSlider) {
       thousand: ' ',
       suffix: '₽'
     })
-    
   });
   
   rangeSlider.noUiSlider.on('update', function (values) {

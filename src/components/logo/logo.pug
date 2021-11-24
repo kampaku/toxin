@@ -1,3 +1,8 @@
-mixin logo()
+mixin logo(text)
   .logo
-    img(class="logo__img" src="/assets/img/logo/logo.svg", alt="logo")
+    if (text)
+      a(class="logo-link" href='/landing-page.html')
+        img(class="logo__img" src="./assets/img/logo/logo.svg", alt="logo")
+    else
+      a(class="logo-link" href='/landing-page.html')
+        img(src="./assets/img/logo/ui-logo.svg", alt="logo")
