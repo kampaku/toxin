@@ -2,39 +2,19 @@
 @import 'utils/libs';
 @import 'utils/vars';
 @import 'utils/fonts';
-@import '~components/ui-logo/ui-logo.scss';
-@import '~components/input/input-text/input-text.scss';
-@import '~components/input/subscription-field/subscription-field.scss';
-@import '~components/input/checkbox/checkbox.scss';
-@import '~components/input/radio/radio.scss';
-@import '~components/input/toggle/toggle.scss';
-@import '~components/input/masked-text/masked-text.scss';
-@import '~components/button-like/button-like.scss';
-@import '~components/pagination/pagination.scss';
-@import '~components/rate-button/rate-button.scss';
-@import '~components/button/button.scss';
-@import '~components/bullet-list/bullet-list.scss';
-@import '~components/about-room/about-room.scss';
-@import '~components/review/review.scss';
-@import '~components/dropdown/dropdown.scss';
-@import '~components/range-slider/range-slider.scss';
-@import '~components/expandable-checkbox-list/expandable-checkbox-list.scss';
-@import '~components/date-dropdown/date-dropdown.scss';
-@import '~components/date-filter/date-filter.scss';
-@import '~components/header/header.scss';
-@import '~components/footer/footer.scss';
-@import '~components/search-form/search-form.scss';
-@import '~components/registration-form/registration-form.scss';
-@import '~components/reservation-form/reservation-form.scss';
-@import '~components/login-form/login-form.scss';
-@import '~components/room-card/room-card.scss';
-@import '~components/chart/chart.scss';
-@import 'pages/colors&types.scss';
-@import 'pages/form-elements.scss';
-@import 'pages/headers&footers.scss';
-@import 'pages/cards.scss';
-@import 'pages/landing-page.scss';
-@import 'pages/registration.scss';
-@import 'pages/sign-in.scss';
-@import 'pages/search-room.scss';
-@import 'pages/room-details.scss';
+
+html {
+  font-size: 100%;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
