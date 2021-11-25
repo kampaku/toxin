@@ -34,10 +34,10 @@
 }
 
 .checkbox-button {
-  transition: rotate 0.3s;
+  transition: transform 0.3s;
 
   &--active {
-    rotate: 180deg;
+    transform: rotate(180deg);
   }
 }
 

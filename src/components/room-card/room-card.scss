@@ -96,29 +96,24 @@
   }
 
   &__room-number {
-    color: $dark-shade-100;
-    font-weight: 700;
-    font-size: 19px;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    line-height: 23px;
+    @extend %item-title;
   }
 
   &__room-number-sign {
-    font-weight: 700;
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-weight: $boldFontWeight;
+    font-size: $mainFontSize;
+    font-family: $mainFont;
     font-style: normal;
-    line-height: 17px;
+    line-height: $mainLineHeight;
   }
 
   &__luxury-text {
     color: $purple-color;
-    font-weight: 700;
-    font-size: 12px;
+    font-weight: $boldFontWeight;
+    font-size: $labelFontSize;
     font-family: $mainFont;
     font-style: normal;
-    line-height: 15px;
+    line-height: $mainLineHeight;
     text-transform: uppercase;
   }
 
@@ -126,20 +121,20 @@
   &__reviews {
     align-self: flex-end;
     color: $dark-shade-50;
-    font-weight: 700;
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-weight: $mainFontWeight;
+    font-size: $mainFontSize;
+    font-family: $mainFont;
     font-style: normal;
-    line-height: 18px;
+    line-height: $largeLineHeight;
   }
 
   &__price-per-day-text,
   &__rewiews-text {
     color: $dark-shade-50;
-    font-weight: 400;
-    font-size: 12px;
-    font-family: 'Montserrat', sans-serif;
+    font-weight: $mainLineHeight;
+    font-size: $labelFontSize;
+    font-family: $mainFont;
     font-style: normal;
-    line-height: 18px;
+    line-height: 1.5;
   }
 }

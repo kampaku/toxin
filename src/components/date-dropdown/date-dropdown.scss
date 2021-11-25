@@ -42,7 +42,7 @@
   display: none;
   max-width: 320px;
   padding: 20px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-family: $mainFont;
   background-color: #fff;
   border: 1px solid $dark-shade-25;
@@ -61,8 +61,8 @@
   }
 
   &__date {
-    font-weight: 700;
-    font-size: 19px;
+    font-weight: $boldFontWeight;
+    font-size: $titleFontSize;
     line-height: 1.2;
   }
 
@@ -75,7 +75,7 @@
       width: 14.2%;
       height: 40px;
       color: $purple-color;
-      font-weight: bold;
+      font-weight: $boldFontWeight;
       line-height: 40px;
       text-align: center;
     }
@@ -93,7 +93,7 @@
     width: 14.2%;
     height: 40px;
     color: $dark-shade-25;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-family: $mainFont;
     line-height: 40px;
     text-align: center;

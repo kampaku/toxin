@@ -29,15 +29,15 @@
   }
 
   &__text {
-    font-weight: 700;
+    font-weight: $boldFontWeight;
     font-family: $mainFont;
     fill: #bc9cff;
   }
 
   &__number {
     text-anchor: middle;
-    font-size: 7px;
-    line-height: 29px;
+    font-size: 0.438rem;
+    line-height: 1.2;
   }
 
   &__label {

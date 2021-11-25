@@ -39,12 +39,9 @@
   }
 
   &__text {
-    color: #000;
-    font-weight: 400;
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    line-height: 18px;
+    color: $dark-shade-100;
+    @extend %body-text;
+    line-height: 1.25;
   }
 }
 

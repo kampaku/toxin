@@ -13,7 +13,7 @@
     grid-column: 2 / 3;
     justify-self: start;
     @extend %item-title;
-    font-size: 0.875rem;
+    font-size: $mainFontSize;
     color: $dark-shade-75;
   }
 
@@ -22,9 +22,9 @@
     grid-column: 2 / 3;
     justify-self: start;
     color: $dark-shade-75;
-    font-size: 14px;
+    font-size: $mainFontSize;
     font-family: $mainFont;
-    line-height: 24px;
+    line-height: $largeLineHeight;
   }
 
   &__img {

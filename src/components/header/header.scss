@@ -49,11 +49,8 @@
   &__navigation-link {
     display: block;
     color: $dark-shade-50;
-    font-weight: 400;
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    line-height: 17px;
+    @extend %body-text;
+    line-height: 1.2;
     cursor: pointer;
 
     @media screen and (max-width: $phoneWidth) {
@@ -191,11 +188,8 @@
   position: relative;
   margin-left: 20px;
   color: $dark-shade-50;
-  font-weight: 400;
-  font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  line-height: 17px;
+  @extend %body-text;
+  line-height: 1.2;
 
   &::before {
     position: absolute;

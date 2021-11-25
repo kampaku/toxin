@@ -2,13 +2,8 @@
   display: inline-block;
   padding: 0;
   color: $purple-color;
-  font-weight: 700;
-  font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
-  font-style: normal;
-  line-height: 14px;
+  @extend %label-text;
   text-align: center;
-  text-transform: uppercase;
   background: none;
   border: 0;
   cursor: pointer;

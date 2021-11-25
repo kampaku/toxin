@@ -10,11 +10,11 @@
   &__value,
   &__text {
     color: $dark-shade-50;
-    font-weight: 400;
-    font-size: 12px;
-    font-family: 'Montserrat', sans-serif;
+    font-weight: $mainFontWeight;
+    font-size: 0.75rem;
+    font-family: $mainFont;
     font-style: normal;
-    line-height: 15px;
+    line-height: $mainLineHeight;
   }
 
   &__label {

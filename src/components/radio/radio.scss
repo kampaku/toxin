@@ -2,9 +2,9 @@
   max-width: 225px;
   padding-left: 30px;
   color: $dark-shade-50;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-family: $mainFont;
-  line-height: 18px;
+  line-height: $mainLineHeight;
 
   &__input {
     appearance: none;

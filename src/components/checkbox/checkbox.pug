@@ -3,7 +3,7 @@ mixin checkbox(title, description)
     input(class="check__input" type="checkbox" checked=attributes.checked)
     span.check__box
     if description
-      .checkbox__text.checkbox__rich-text
+      .checkbox__text.checkbox__text--rich
         span.checkbox__title
           =title
         span.checkbox__description

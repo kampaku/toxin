@@ -27,12 +27,12 @@
 
 .color__name {
   color: $dark-shade-100;
-  font-size: 19px;
+  font-size: $titleFontSize;
   font-family: $mainFont;
-  line-height: 29px;
+  line-height: $largeLineHeight;
 
   p:first-of-type {
-    font-weight: 700;
+    font-weight: $boldFontWeight;
   }
 }
 
@@ -75,19 +75,19 @@
   margin-bottom: 50px;
 
   &--size-xl {
-    font-size: 24px;
+    font-size: $sub-sectionFontSize
   }
 
   &--size-l {
-    font-size: 19px;
+    font-size: $titleFontSize;
   }
 
   &--size-m {
-    font-size: 14px;
+    font-size: $mainFont;
   }
 
   &--size-s {
-    font-size: 12px;
+    font-size: $labelFontSize;
   }
 }
 

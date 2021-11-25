@@ -14,22 +14,13 @@
 
   &__link {
     color: $dark-shade-50;
-    font-weight: 400;
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    line-height: 17px;
+    @extend %body-text;
+    line-height: 1.2;
   }
 
   &__title {
     margin-bottom: 21px;
-    color: $dark-shade-100;
-    font-weight: 700;
-    font-size: 12px;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    line-height: 15px;
-    text-transform: uppercase;
+    @extend %label-text;
   }
 
   &__list-item:not(:last-child) {
@@ -38,12 +29,7 @@
 
   &__subscribe {
     margin-bottom: 20px;
-    color: $dark-shade-75;
-    font-weight: 400;
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    line-height: 24px;
+    @extend %body-text;
   }
 
   &__description {
@@ -69,12 +55,8 @@
 
 .copyright {
   &__text {
-    color: $dark-shade-75;
-    font-weight: 400;
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    line-height: 17px;
+    @extend %body-text;
+    line-height: 1.4;
     text-align: center;
   }
 
