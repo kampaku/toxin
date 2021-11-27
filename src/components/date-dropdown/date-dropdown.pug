@@ -5,11 +5,11 @@ mixin date-dropdown(label1, label2)
       .dropdown__header
         input(class='date-dropdown__input js-date-input' readonly placeholder='ДД.ММ.ГГГГ')
         button(class="date-dropdown__button js-expand-button" type="button")
-          img(src="/assets/img/dropdown/expand-more.svg", alt="")
+          img(src=require("/src/assets/img/icons/expand-more.svg"), alt="expand")
     if label2
       .date-dropdown
         .dropdown__label= label2
         .dropdown__header
           input(class='date-dropdown__input js-date-input' readonly placeholder='ДД.ММ.ГГГГ')
           button(class="date-dropdown__button js-expand-button" type="button")
-            img(src="/assets/img/dropdown/expand-more.svg", alt="")
+            img(src=require("/src/assets/img/icons/expand-more.svg"), alt="expand")

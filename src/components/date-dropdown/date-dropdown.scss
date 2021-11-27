@@ -143,12 +143,12 @@
     cursor: pointer;
 
     &--prev {
-      background: url('./arrow.svg') no-repeat center;
+      background: url('/src/assets/img/icons/arrow-purple.svg') no-repeat center;
+      transform: scale(-1, 1);
     }
 
     &--next {
-      background: url('./arrow.svg') no-repeat center;
-      transform: scale(-1, 1);
+      background: url('/src/assets/img/icons/arrow-purple.svg') no-repeat center;
     }
   }
 

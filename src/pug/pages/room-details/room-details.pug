@@ -8,27 +8,27 @@ block variables
   -var title= "Информация о номере"
   -
     var reviews = [
-      {name: "Рулон Обоев", src: "/assets/img/review/4el.jpg", time: "5 дней назад", likes: "12", liked: true, comment: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."},
-      {name: "Патрисия Стёклышкова", src: "/assets/img/review/tetka.jpg", time: "Неделю назад", likes: "2", comment: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"}
+      {name: "Рулон Обоев", src: require("/src/assets/img/review/4el.jpg"), time: "5 дней назад", likes: "12", liked: true, comment: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."},
+      {name: "Патрисия Стёклышкова", src: require("/src/assets/img/review/tetka.jpg"), time: "Неделю назад", likes: "2", comment: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"}
     ]
 block content
   .room-details
     .room-details__pictures
       .room-details__picture
-        img(src="/assets/img/room-picture/image-1.jpg", alt="room picture")
+        img(src=require("/src/assets/img/room-picture/image-1.jpg"), alt="room picture")
       .room-details__picture
-        img(src="/assets/img/room-picture/image-2.jpg", alt="room picture")
+        img(src=require("/src/assets/img/room-picture/image-2.jpg"), alt="room picture")
       .room-details__picture
-        img(src="/assets/img/room-picture/image-3.jpg", alt="room picture")
+        img(src=require("/src/assets/img/room-picture/image-3.jpg"), alt="room picture")
     .container
       .room-details__info
         .room-details__about-room
           .room-details__about-room-title
             h3.room-details__title Сведения о номере
           .room-details__about-room-container
-            +about-room("/assets/img/about-room/insert_emoticon.png", "Комфорт", "Шумопоглощающие стены")
-            +about-room("/assets/img/about-room/location_city.png", "Удобство", "Окно в каждой из спален")
-            +about-room("/assets/img/about-room/whatshot.png", "Уют", "Номер оснащён камином")
+            +about-room(require("/src/assets/img/icons/insert_emoticon.svg"), "Комфорт", "Шумопоглощающие стены")
+            +about-room(require("/src/assets/img/icons/location_city.svg"), "Удобство", "Окно в каждой из спален")
+            +about-room(require("/src/assets/img/icons/whatshot.svg"), "Уют", "Номер оснащён камином")
         .room-details__rating
           .room-details__rating-title
             h3.room-details__title Впечатления от номера

@@ -4,7 +4,7 @@
   gap: 10px;
   width: 120px;
   height: 24px;
-  background: url('./off.svg') repeat-x;
+  background: url('/src/assets/img/icons/off.svg') repeat-x;
   background-size: 24px auto;
 
   &__star {
@@ -43,7 +43,7 @@
     }
 
     &:checked {
-      background: url('./on.svg') repeat-x;
+      background: url('/src/assets/img/icons/on.svg') repeat-x;
       background-size: 24px auto;
     }
   }

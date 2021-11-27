@@ -5,7 +5,7 @@ mixin dropdown(obj)
     .dropdown__header
       input(class="dropdown__text" readonly placeholder=holder)
       button(class="dropdown__button" type="button")
-        img(src="/assets/img/dropdown/expand-more.svg", alt="")
+        img(src=require("/src/assets/img/icons/expand-more.svg"), alt="")
     .dropdown__inner
       ul(class="dropdown__list")
         each el in items

@@ -2,7 +2,7 @@ mixin logo(text)
   .logo
     if (text)
       a(class="logo-link" href='/landing-page.html')
-        img(class="logo__img" src="./assets/img/logo/logo.svg", alt="logo")
+        img(class="logo__img" src=require("/src/assets/img/icons/logo.svg"), alt="logo")
     else
       a(class="logo-link" href='/landing-page.html')
-        img(src="./assets/img/logo/ui-logo.svg", alt="logo")
+        img(src=require("/src/assets/img/icons/ui-logo.svg"), alt="logo")

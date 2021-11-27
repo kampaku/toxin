@@ -3,6 +3,7 @@
   padding: 0;
   color: $purple-color;
   @extend %label-text;
+  line-height: 1;
   text-align: center;
   background: none;
   border: 0;
@@ -16,7 +17,6 @@
   &--blue {
     padding: 0 20px;
     color: #fff;
-    line-height: 44px;
     background: $button-gradient;
     border-radius: 22px;
 
@@ -30,7 +30,6 @@
     position: relative;
     padding: 0 20px;
     color: $purple-color;
-    line-height: 44px;
     text-align: center;
     background-image: linear-gradient(white, white),
       linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
@@ -47,10 +46,10 @@
 
   &--arrow {
     width: 100%;
+    padding: 0 20px;
     max-width: 320px;
     color: #fff;
-    line-height: 44px;
-    background: url('./arrow.svg') 95% 50% no-repeat,
+    background: url('/src/assets/img/icons/arrow-white.svg') 95% 50% no-repeat,
       linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
     border-radius: 22px;
 
@@ -58,5 +57,15 @@
       color: #fff;
       opacity: 0.5;
     }
+  }
+
+  &--m {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  &--s {
+    padding-top: 9px;
+    padding-bottom: 9px;
   }
 }
