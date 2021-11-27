@@ -10,7 +10,7 @@ mixin login-form()
         .text-fields__inner
           +input-text('', 'Фамилия')
       .login-form__button
-        +button({"tag": "button", "color": "arrow", "text": "войти"})
+        +button({"tag": "button", "color": "arrow", "text": "войти", "size": "m"})
       .login-form__login
         span.login-form__text Нет аккаунта на Toxin?
-        +button({"tag": "a", "href": "/registration.html", "color": "white", "text": "создать"})
+        +button({"tag": "a", "href": "/registration.html", "color": "white", "text": "создать", "size": "m"})

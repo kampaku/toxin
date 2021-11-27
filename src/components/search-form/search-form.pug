@@ -1,5 +1,6 @@
 include /components/date-dropdown/date-dropdown
 include /components/dropdown/dropdown
+include /components/button/button
 mixin search-form() 
   form.search-form.js-search-form
     .search-form__inner
@@ -8,4 +9,4 @@ mixin search-form()
         +date-dropdown('прибытие', 'выезд')
       .search-form__dropdown
         +dropdown({label: 'гости', items: ['взрослые', 'дети', 'младенцы'], type: 'js-guest', holder: 'Cколько гостей'})
-      button.button.button--arrow подобрать номер
+      +button({"color": "arrow", "tag": "a", "href": "/search-room.html", "text": "подобрать номер", 'size': 'm'})
