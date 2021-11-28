@@ -36,7 +36,7 @@
 
   &__checkbox {
     max-width: 223px;
-    margin-bottom: 27px;
+    margin-bottom: 35px;
 
     &:nth-child(5) {
       max-width: 260px;
@@ -71,7 +71,6 @@
 
   &__pagination {
     width: min-content;
-    margin: 0 auto;
-    margin-bottom: 70px;
+    margin: 0 auto 70px;
   }
 }
