@@ -7,14 +7,18 @@ html {
   font-size: 100%;
 }
 
-@media (max-width: 768px) {
-  html {
-    font-size: 80%;
-  }
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+@media (max-width: $phoneWidth) {
+  html {
+    font-size: 80%;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
 }

@@ -58,7 +58,7 @@
     justify-content: space-between;
     color: $dark-shade-50;
     font-weight: $mainFontWeight;
-    font-size: $labelFontSize;
+    font-size: $mainFontSize;
     font-family: $mainFont;
     font-style: normal;
     line-height: 1.2;
@@ -130,4 +130,10 @@
 
 .reservation-form__prices-item-info:hover .reservation-form__tooltip {
   visibility: visible;
+}
+
+@media (max-width: $phoneWidth) {
+  .reservation-form__prices-item-text {
+    max-width: 190px;
+  }
 }

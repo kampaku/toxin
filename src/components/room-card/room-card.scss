@@ -121,7 +121,7 @@
   &__reviews {
     align-self: flex-end;
     color: $dark-shade-50;
-    font-weight: $mainFontWeight;
+    font-weight: $boldFontWeight;
     font-size: $mainFontSize;
     font-family: $mainFont;
     font-style: normal;
@@ -132,7 +132,7 @@
   &__rewiews-text {
     color: $dark-shade-50;
     font-weight: $mainLineHeight;
-    font-size: $labelFontSize;
+    font-size: $mainFontSize;
     font-family: $mainFont;
     font-style: normal;
     line-height: 1.5;
