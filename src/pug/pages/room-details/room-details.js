@@ -9,6 +9,4 @@ import '~components/reservation-form/reservation-form';
 import '~components/review/review.js';
 import makeChart from '~components/chart/chart';
 
-console.log('s');
 makeChart({ goodCount: 65, greatCount: 130, satisfactorilyCount: 65, bad: 0 });
-console.log('d');

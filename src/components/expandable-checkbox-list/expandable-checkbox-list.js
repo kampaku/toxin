@@ -1,13 +1,17 @@
 import './expandable-checkbox-list.scss';
 
-export default function checkboxListOpen() {
-  let btn = document.querySelector('.checkbox__wrapper');
-  let list = document.querySelector('.checkbox-list');
-  let img = document.querySelector('.checkbox-button');
-  if (btn) {
-    btn.addEventListener('click', () => {
-      list.classList.toggle('checkbox-list--active');
-      img.classList.toggle('checkbox-button--active');
+export default class ExpandCheckbox {
+  constructor(elem) {
+    this.btn = elem.querySelector('.checkbox__wrapper');
+    this.list = elem.querySelector('.checkbox-list');
+    this.img = elem.querySelector('.checkbox-button');
+    this.init();
+  }
+
+  init() {
+    this.btn.addEventListener('click', () => {
+      this.list.classList.toggle('checkbox-list--active');
+      this.img.classList.toggle('checkbox-button--active');
     })
   }
 }
