@@ -32,4 +32,5 @@ function burgerMenu() {
   })
 }
 
-export { headerLink, burgerMenu }
+headerLink();
+burgerMenu();
