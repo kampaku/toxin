@@ -11,6 +11,7 @@ export default class Slider {
     this.next = elem.querySelector('.room-card__slider-button--right');
     this.dotsWrap = elem.querySelector('.room-card__slider-dots');
     this.dots = elem.querySelectorAll('.room-card__slider-dot');
+    this.init();
   }
 
   showSlides(sliderNum) {
