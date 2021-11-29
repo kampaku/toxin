@@ -28,6 +28,7 @@
     flex-direction: row;
     grid-row: 2 / 3;
     grid-column: 1 / 4;
+    justify-content: space-between;
 
     .about-room {
       margin-right: 170px;
@@ -67,7 +68,7 @@
   }
 
   &__review {
-    max-width: 630px;
+    max-width: 730px;
   }
 
   &__about-room {
@@ -95,4 +96,10 @@
 
 .rate__inner {
   margin-right: 20px;
+}
+
+.ui-header {
+  margin-bottom: 70px;
+  margin-left: 30px;
+  padding-top: 30px;
 }

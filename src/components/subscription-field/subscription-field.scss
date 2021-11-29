@@ -10,6 +10,7 @@
     border: 1px solid $dark-shade-25;
     border-radius: 4px;
     @extend %body-text;
+
     &:hover,
     &:focus {
       color: $dark-shade-75;

@@ -1,5 +1,6 @@
 .range-slider {
   margin-bottom: 10px;
+
   &__header {
     display: flex;
     align-items: center;
@@ -32,6 +33,7 @@
 
 .noUi-horizontal {
   height: 6px;
+
   .noUi-handle {
     top: -6px;
     right: -6px;
@@ -41,6 +43,7 @@
     border: 2px solid #fff;
     border-radius: 50%;
     box-shadow: none;
+
     &::before,
     &::after {
       content: none;

@@ -1,6 +1,7 @@
 .footer {
   background-color: #fff;
   border-top: 1px solid #b3b3bc;
+
   &__wrapper {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -14,8 +15,8 @@
 
   &__link {
     color: $dark-shade-50;
-    @extend %body-text;
     line-height: 1.2;
+    @extend %body-text;
   }
 
   &__title {
@@ -55,9 +56,9 @@
 
 .copyright {
   &__text {
-    @extend %body-text;
     line-height: 1.4;
     text-align: center;
+    @extend %body-text;
   }
 
   &__wrapper {
@@ -75,6 +76,7 @@
 @media (max-width: $tableWidth) {
   .footer {
     padding: 120px 0px;
+
     &__wrapper {
       grid-template-columns: 1fr;
       justify-items: center;
@@ -89,12 +91,15 @@
     &__column2 {
       display: none;
     }
+
     &__column3 {
       display: none;
     }
+
     &__column4 {
       display: none;
     }
+
     &__column5 {
       display: none;
     }

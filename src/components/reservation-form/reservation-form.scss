@@ -43,6 +43,7 @@
     font-style: normal;
     line-height: 1.5;
   }
+
   &__price-per-day {
     align-self: end;
     color: $dark-shade-50;
@@ -107,6 +108,7 @@
   &__total-price-dashed {
     position: relative;
     flex-grow: 1;
+
     &::before {
       position: absolute;
       bottom: 5px;

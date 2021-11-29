@@ -2,13 +2,13 @@
   display: inline-block;
   padding: 0;
   color: $purple-color;
-  @extend %label-text;
   line-height: 1;
   text-align: center;
   background: none;
   border: 0;
   cursor: pointer;
   transition: all 0.2s;
+  @extend %label-text;
 
   &:hover {
     color: $dark-shade-50;
@@ -46,8 +46,8 @@
 
   &--arrow {
     width: 100%;
-    padding: 0 20px;
     max-width: 320px;
+    padding: 0 20px;
     color: #fff;
     background: url('/src/assets/img/icons/arrow-white.svg') 95% 50% no-repeat,
       linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);

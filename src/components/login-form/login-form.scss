@@ -28,8 +28,8 @@
 
   &__text {
     color: #000;
-    @extend %body-text;
     line-height: 1.2;
+    @extend %body-text;
   }
 }
 

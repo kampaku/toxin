@@ -27,6 +27,7 @@
     border-top-right-radius: 4px;
     cursor: default;
     @extend %body-text;
+
     &:hover,
     &:focus {
       color: $dark-shade-75;
@@ -38,7 +39,7 @@
 .calendar {
   position: absolute;
   top: 70px;
-  z-index: 5;
+  z-index: 20;
   display: none;
   max-width: 320px;
   padding: 20px;

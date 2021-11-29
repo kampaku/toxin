@@ -27,6 +27,7 @@
       visibility: hidden;
       opacity: 0;
       transition: all 0.3s ease-in-out;
+
       &--active {
         visibility: visible;
         opacity: 1;
@@ -49,9 +50,9 @@
   &__navigation-link {
     display: block;
     color: $dark-shade-50;
-    @extend %body-text;
     line-height: 1.2;
     cursor: pointer;
+    @extend %body-text;
 
     @media screen and (max-width: $phoneWidth) {
       font-size: 18px;
@@ -175,9 +176,11 @@
       left: 4px;
       transform: rotate(-45deg);
     }
+
     .header__burger-line::before {
       transform: rotate(90deg) translatey(6px);
     }
+
     .header__burger-line::after {
       transform: rotate(90deg) translatey(-6px);
     }
@@ -188,8 +191,8 @@
   position: relative;
   margin-left: 20px;
   color: $dark-shade-50;
-  @extend %body-text;
   line-height: 1.2;
+  @extend %body-text;
 
   &::before {
     position: absolute;

@@ -12,9 +12,9 @@
     grid-row: 1 / 2;
     grid-column: 2 / 3;
     justify-self: start;
-    @extend %item-title;
-    font-size: $mainFontSize;
     color: $dark-shade-75;
+    font-size: $mainFontSize;
+    @extend %item-title;
   }
 
   &__text {
