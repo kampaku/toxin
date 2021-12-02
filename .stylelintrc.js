@@ -1,9 +1,8 @@
 module.exports = {
-  extends: ["stylelint-config-airbnb",
+  customSyntax: "postcss-scss",
+  extends: [
             "stylelint-config-rational-order",
-            "stylelint-prettier/recommended"],
-  plugins: ["stylelint-order", "stylelint-scss"],
-  rules: {
-    "max-nesting-depth": [3, { ignore: ["blockless-at-rules", "pseudo-classes"] }],
-  }
+            "stylelint-prettier/recommended"
+  ],
+  plugins: ["stylelint-order", "stylelint-config-rational-order/plugin", "stylelint-scss"],
 };
