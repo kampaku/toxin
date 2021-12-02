@@ -65,7 +65,6 @@ class DateDropdown {
     let daysAmount = 35;
     const { year, month } = options;
     const firstDayOfWeekOfMonth = new Date(year, month).getDay();
-    const lastDayOfWeekOfMonth = new Date(year, month).getDay();
     const lastDayOfCurrentMonth = new Date(year, month + 1, 0).getDate();
     const days = [[], [], []];
 
@@ -147,7 +146,7 @@ class DateDropdown {
 
     if (this.dateArival && this.dateDeparture) {
       const daysContainer = target.parentElement.childNodes;
-      daysContainer.forEach((dayElement, dayNumber) => {
+      daysContainer.forEach((dayElement) => {
         const tempDate = new Date(
           this.date.getFullYear(),
           this.date.getMonth(),
@@ -188,7 +187,7 @@ class DateDropdown {
       this.swapMonth(year, month - 1);
     });
 
-    const date = renderElement({
+    renderElement({
       elementTag: 'span',
       elementClasses: ['calendar__date'],
       parentElement: calendarHeader,
@@ -262,7 +261,7 @@ class DateDropdown {
           return;
         }
 
-        const dayElement = renderElement({
+        renderElement({
           elementTag: 'span',
           elementClasses: ['calendar__day'],
           parentElement: daysContainer,
