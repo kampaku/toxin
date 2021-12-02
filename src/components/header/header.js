@@ -7,7 +7,7 @@ function headerLink() {
   if(!header) return;
   const links = header.querySelectorAll('.header__navigation-link--expand');
   links.forEach(el => {
-    el.addEventListener('click', (e) => {
+    el.addEventListener('click', () => {
       el.nextSibling.classList.toggle('header__navigation-dropdown--active');
     });
   });
