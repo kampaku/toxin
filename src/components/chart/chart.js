@@ -1,21 +1,23 @@
 import './chart.scss';
 
-export default function makeChart(obj) {
-  const units = document.querySelectorAll('.chart__unit');
-  const votes = document.querySelector('.chart__number');
-  const chartValues = Object.values(obj);
-  const sum = chartValues.reduce((prev, curr) => prev + curr);
+export default class Chart {
+  constructor(elem, options) {
+    this.units = elem.querySelectorAll('.chart__unit');
+    this.votes = elem.querySelector('.chart__number');
+    this.chartValues = Object.values(options);
+    this.sum = this.chartValues.reduce((prev, curr) => prev + curr);
+    this.dashoffset = 0;
+    this.init();
+  }
 
-  let dashoffset = 0;
-
-  if(units && votes) {
+  init() {
     const fullCircle = 100;
-    votes.textContent = sum;
+    this.votes.textContent = this.sum;
 
-    units.forEach((el, i) => {
-      el.style.strokeDasharray = `${fullCircle / (sum / chartValues[i])} ${fullCircle}`;
-      el.style.strokeDashoffset = dashoffset;
-      dashoffset -= fullCircle / (sum / chartValues[i]);
+    this.units.forEach((el, i) => {
+      el.style.strokeDasharray = `${fullCircle / (this.sum / this.chartValues[i])} ${fullCircle}`;
+      el.style.strokeDashoffset = this.dashoffset;
+      this.dashoffset -= fullCircle / (this.sum / this.chartValues[i]);
     });
   }
 }
