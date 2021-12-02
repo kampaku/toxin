@@ -36,7 +36,7 @@ module.exports = {
       template: `${PAGES_DIR}${page}/${page}.pug`,
       filename: `./${page}.html`,
       favicon: `${paths.public}/favicon.ico`,
-      inject: 'body'
+      inject: 'body',
     })),
   ],
 
@@ -44,29 +44,32 @@ module.exports = {
   module: {
     rules: [
       // JavaScript: Use Babel to transpile JavaScript files
-      { test: /\.pug$/, use: [
+      {
+        test: /\.pug$/, use: [
           {
             loader: 'pug-loader',
             options: {
-              root: paths.src
-            }
-          }
-        ]
+              root: paths.src,
+            },
+          },
+        ],
       },
       { test: /\.js$/, use: ['babel-loader'], exclude: /node_modules/ },
 
       // Images: Copy image files to build folder
-      { test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i, type: 'asset/resource',
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i, type: 'asset/resource',
         generator: {
-          filename: 'assets/images/[name][hash][ext]'
+          filename: 'assets/images/[name][hash][ext]',
         },
         exclude: /fonts/,
       },
       //
       // // Fonts and SVGs: Inline files
-      { test: /\.(woff(2)?|eot|ttf|otf|svg)$/, type: 'asset/resource',
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg)$/, type: 'asset/resource',
         generator: {
-          filename: 'assets/fonts/[name][ext]'
+          filename: 'assets/fonts/[name][ext]',
         },
         include: /fonts/,
       },
@@ -79,10 +82,10 @@ module.exports = {
           name: 'vendors',
           test: /node_modules/,
           chunks: 'all',
-          enforce: true
-        }
-      }
-    }
+          enforce: true,
+        },
+      },
+    },
   },
 
   resolve: {
