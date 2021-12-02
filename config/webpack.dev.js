@@ -9,7 +9,9 @@ module.exports = merge(common, {
   mode: 'development',
   cache: {
     type: 'filesystem',
-    allowCollectingMemory: true,
+    buildDependencies: {
+      config: [__filename],
+    }
   },
 
   // Control how source maps are generated
@@ -31,7 +33,6 @@ module.exports = merge(common, {
       {
         test: /\.(scss|css)$/,
         use: [
-          'thread-loader',
           'style-loader',
           {
             loader: 'css-loader',
@@ -48,7 +49,6 @@ module.exports = merge(common, {
           },
         ],
       },
-      { test: /\.js$/, use: ['thread-loader'], exclude: /node_modules/ },
     ],
   },
 })
