@@ -1,0 +1,12 @@
+{
+  "ignorePatterns": ["dist", "node_modules", "config"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2020
+  },
+  "extends": "eslint:recommended"
+}
