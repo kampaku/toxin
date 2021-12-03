@@ -82,15 +82,12 @@ block content
         .form-elements__inner
           h3.form-elements__title Buttons
           .form-elements__buttons
-            +button({'color': 'blue', 'tag': 'button', 'text': 'click me'})
-            button.button.button--blue(disabled) click me
+            +button({'color': 'blue', 'tag': 'button', 'text': 'click me', "size": "m"})
           .form-elements__buttons
-            +button({'color': 'white', 'tag': 'button', 'text': 'click me'})
-            +button({"color": "white", "tag": "a", "href": "/sign-in.html", "text": "войти"})
+            +button({'color': 'white', 'tag': 'button', 'text': 'click me', "size": "m"})
           .form-elements__buttons
-            +button({ 'color': 'transparent', 'tag': 'button', 'text': 'click me' })
-            button.button(disabled) click me
-          button.button.button--arrow перейти к оплате
+            +button({ 'color': 'transparent', 'tag': 'button', 'text': 'click me', "size": "m"})
+          +button({ 'color': 'arrow', 'tag': 'button', 'text': 'перейти к оплате', "size": "m"})
         .form-elements__pagination
           h3.form-elements__title pagination
           +pagination()
