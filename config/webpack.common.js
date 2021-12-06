@@ -21,7 +21,7 @@ module.exports = {
   output: {
     path: paths.build,
     filename: '[name].[contenthash].js',
-    publicPath: '/',
+    publicPath: '',
   },
 
   // Customize the webpack build process
