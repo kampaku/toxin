@@ -38,17 +38,17 @@ module.exports = merge(common, {
           },
         ],
       },
-      // {
-      //   test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i, type: 'asset/resource',
-      //   use: [{
-      //     loader: 'image-webpack-loader',
-      //     options: {
-      //       webp: {
-      //         quality: 80
-      //       }
-      //     }
-      //   }]
-      // }
+      {
+        test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i, type: 'asset/resource',
+        use: [{
+          loader: 'image-webpack-loader',
+          options: {
+            webp: {
+              quality: 80
+            }
+          }
+        }]
+      }
     ],
   },
   plugins: [
