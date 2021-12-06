@@ -21,8 +21,7 @@ module.exports = merge(common, {
   devServer: {
     historyApiFallback: true,
     static: [`${paths.src}`],
-    // open: ['landing-page.html'],
-    open: false,
+    open: ['landing-page.html'],
     compress: true,
     hot: true,
     port: 8081,
