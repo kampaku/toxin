@@ -90,7 +90,7 @@ module.exports = {
 
   resolve: {
     modules: [paths.src, 'node_modules'],
-    extensions: ['.pug', '.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json'],
     alias: {
       '~src': `${paths.src}`,
       '~scss': `${paths.src}/assets/scss`,
