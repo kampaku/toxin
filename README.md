@@ -13,15 +13,15 @@ ___
 
 ### Список страниц:
 
-1. [Главная](https://toxin-hotel.netlify.app/landing-page.html)
-2. [Подбор номеров](https://toxin-hotel.netlify.app/search-room.html)
-3. [Информация о номере](https://toxin-hotel.netlify.app/room-details.html)
-4. [Регистрация](https://toxin-hotel.netlify.app/registration.html)
-5. [Вход](https://toxin-hotel.netlify.app/sign-in.html)
-6. [Цвета и шрифты](https://toxin-hotel.netlify.app/colors-types.html)
-7. [Элементы форм](https://toxin-hotel.netlify.app/form-elements.html)
-8. [Хедер и футер](https://toxin-hotel.netlify.app/headers&footers.html)
-8. [Карточки](https://toxin-hotel.netlify.app/cards.html)
+1. [Главная](https://hotel-toxin.vercel.app/landing-page.html)
+2. [Подбор номеров](https://hotel-toxin.vercel.app/search-room.html)
+3. [Информация о номере](https://hotel-toxin.vercel.app/room-details.html)
+4. [Регистрация](https://hotel-toxin.vercel.app/registration.html)
+5. [Вход](https://hotel-toxin.vercel.app/sign-in.html)
+6. [Цвета и шрифты](https://hotel-toxin.vercel.app/colors-types.html)
+7. [Элементы форм](https://hotel-toxin.vercel.app/form-elements.html)
+8. [Хедер и футер](https://hotel-toxin.vercel.app/headers&footers.html)
+8. [Карточки](https://hotel-toxin.vercel.app/cards.html)
 
 #### Использованные плагины: 
 
