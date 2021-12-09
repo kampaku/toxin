@@ -1,7 +1,14 @@
 .room-details {
+
+  &__container {
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+
   &__pictures {
     display: grid;
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: repeat(2, 243px);
     grid-template-columns: repeat(3, auto);
     margin-bottom: 70px;
 

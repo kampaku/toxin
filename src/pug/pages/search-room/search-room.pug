@@ -24,32 +24,31 @@ block variables
         {luxury: false, number: 352, price: "5 000₽", star: 3, reviews: 55, images: ['room-12.jpg', 'room-11.jpg', 'room-12.jpg', 'room-11.jpg']}
       ]
 block content
-  .container
-    .search-room
-      .search-room__filter
-        .search-room__date-filter
-          +date-dropdown('даты пребывания в отеле')
-        .search-room__guest
-          +dropdown({label: 'гости', items: ['взрослые', 'дети', 'младенцы'], type: 'js-guest', holder: 'Cколько гостей'})
-        .search-room__range-slider
-          +range-slider('диапазон цены', 'Стоимость за сутки пребывания в номере')
-        .search-room__checkbox
-          span.search-room__checkbox-title правила дома
-          +checkbox('Можно курить')
-          +checkbox('Можно с питомцами')
-          +checkbox('Можно пригласить гостей (до 10 человек)')
-        .search-room__checkbox
-          span.search-room__checkbox-title доступность
-          +checkbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
-          +checkbox('Помощник для инвалидов', 'На 1 этаже вас встретит специалист  и проводит до номера.')
-        .search-room__comfort
-          +dropdown({label: 'удобства номера', items: ['спальни', 'кровати', 'ванные комнаты'], type: 'js-comfort', holder: 'Удобства'})
-        .search-room_expandable-checkbox
-          +expandable-checkbox-list('дополнительные удобства')
-      .search-room__search-results
-        h1.search-room__title Номера, которые мы для вас подобрали
-        .search-room__room-cards
-          each card in cards
-            +room-card(card)
-        .search-room__pagination
-          +pagination()
+  .search-room
+    .search-room__filter
+      .search-room__date-filter
+        +date-dropdown('даты пребывания в отеле')
+      .search-room__guest
+        +dropdown({label: 'гости', items: ['взрослые', 'дети', 'младенцы'], type: 'js-guest', holder: 'Cколько гостей'})
+      .search-room__range-slider
+        +range-slider('диапазон цены', 'Стоимость за сутки пребывания в номере')
+      .search-room__checkbox
+        span.search-room__checkbox-title правила дома
+        +checkbox('Можно курить')
+        +checkbox('Можно с питомцами')
+        +checkbox('Можно пригласить гостей (до 10 человек)')
+      .search-room__checkbox
+        span.search-room__checkbox-title доступность
+        +checkbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
+        +checkbox('Помощник для инвалидов', 'На 1 этаже вас встретит специалист  и проводит до номера.')
+      .search-room__comfort
+        +dropdown({label: 'удобства номера', items: ['спальни', 'кровати', 'ванные комнаты'], type: 'js-comfort', holder: 'Удобства'})
+      .search-room_expandable-checkbox
+        +expandable-checkbox-list('дополнительные удобства')
+    .search-room__search-results
+      h1.search-room__title Номера, которые мы для вас подобрали
+      .search-room__room-cards
+        each card in cards
+          +room-card(card)
+      .search-room__pagination
+        +pagination()
