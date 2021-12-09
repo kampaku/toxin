@@ -1,32 +1,25 @@
 .landing-page {
+  display: grid;
+  grid-template-areas:
+    '. form .'
+    '. text .';
+  grid-template-rows: repeat(2, minmax(400px, max-content));
+  grid-template-columns: auto minmax(320px, 1160px) auto;
+  padding: 0 20px;
   background: center / cover no-repeat url('/src/assets/img/backgrounds/landing-page-bg.jpg');
 
-  &__wrapper {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-
-    @media screen and (max-width: $tableWidth) {
-      grid-template-columns: 1fr;
-    }
-  }
-
   &__search-form {
+    grid-area: form;
     margin-top: 70px;
   }
 
   &__text {
-    grid-row: 2;
-    grid-column: 2;
+    grid-area: text;
     align-self: end;
     justify-self: right;
     max-width: 290px;
     margin-bottom: 18px;
     text-align: right;
     @extend %body-text;
-
-    @media screen and (max-width: $tableWidth) {
-      grid-column: 1;
-    }
   }
 }
