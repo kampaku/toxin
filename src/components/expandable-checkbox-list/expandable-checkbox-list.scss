@@ -1,4 +1,5 @@
 .expandable-checkbox-list {
+  position: relative;
   max-width: 266px;
 }
 
@@ -24,12 +25,19 @@
 }
 
 .checkbox-list {
-  display: none;
+  position: absolute;
+  display: flex;
   flex-direction: column;
   background-color: #fff;
+  transform: translateY(-20%);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
 
   &--active {
-    display: flex;
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
   }
 }
 
