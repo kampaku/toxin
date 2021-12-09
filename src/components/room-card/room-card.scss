@@ -120,22 +120,25 @@
 
   &__price-per-day,
   &__reviews {
+
+    display: flex;
+    align-items: flex-end;
     align-self: flex-end;
     color: $dark-shade-50;
     font-weight: $boldFontWeight;
     font-size: $mainFontSize;
     font-family: $mainFont;
     font-style: normal;
-    line-height: $largeLineHeight;
+    line-height: $mainLineHeight;
   }
 
   &__price-per-day-text,
   &__rewiews-text {
     color: $dark-shade-50;
-    font-weight: $mainLineHeight;
+    font-weight: $mainFontWeight;
     font-size: $mainFontSize;
     font-family: $mainFont;
     font-style: normal;
-    line-height: 1.5;
+    line-height: $mainLineHeight;
   }
 }
