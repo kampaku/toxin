@@ -53,11 +53,16 @@
   &__legend {
     align-self: flex-end;
     @extend %body-text;
+    line-height: $mainLineHeight;
   }
 
   &__legend-item {
     position: relative;
     padding-left: 15px;
+  }
+
+  &__legend-item + &__legend-item {
+    margin-top: 7px;
   }
 
   &__legend-item::before {
