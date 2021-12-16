@@ -9,7 +9,7 @@ function getDeclension(n, wordForms) {
   if (n1 > 1 && n1 < 5) {
     return wordForms[1];
   }
-  if (n1 == 1) {
+  if (n1 === 1) {
     return wordForms[0];
   }
   return wordForms[2];
@@ -19,9 +19,6 @@ class Dropdown {
   constructor(dropdown, dropdownType) {
     this.dropdown = dropdown;
     this.dropdownType = dropdownType;
-    this.openBtn;
-    this.list;
-    this.listItems;
     this.buttonHandler = this.buttonHandler.bind(this);
     this.itemAmount;
     this.clearButton;
@@ -43,9 +40,9 @@ class Dropdown {
       this.calculateItem(target);
       const sum = this.itemsAmount();
       if (sum === 0) {
-        this.clearButton.hidden = 'true';
+        this.clearButton.style.visibility = 'hidden';
       } else {
-        this.clearButton.hidden = '';
+        this.clearButton.style.visibility = 'visible';
       }
       this.changeText(sum);
     }
@@ -110,7 +107,7 @@ class Dropdown {
     this.listItems.forEach((item) => {
       this.checkNegativeValue(item);
     });
-    this.clearButton.hidden = 'true';
+    this.clearButton.style.visibility = 'hidden';
   }
 
   apply() {
