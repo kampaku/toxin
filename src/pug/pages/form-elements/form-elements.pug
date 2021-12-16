@@ -27,9 +27,9 @@ block content
       .form-elements__wrapper
         .form-elements__inner
           .text-field__wrapper
-            +input-text('text field', 'Email')
+            +input-text({ label: 'text field', placeholder: 'Email', type: 'email' })
           .text-field__wrapper
-            +input-text('text-field', 'This is pretty awesome')(autofocus)
+            +input-text({ label: 'text-field', placeholder: 'This is pretty awesome' })(autofocus)
           .text-field__wrapper
             +subscription-field('text-field', 'Email')(autofocus)
         .text-field__wrapper
@@ -37,7 +37,7 @@ block content
         .text-field__wrapper
           +dropdown({label: 'удобства номера', items: ['спальни', 'кровати', 'ванные комнаты'], type: 'js-comfort', holder: 'Удобства'})
         .text-field__wrapper
-          +input-text('masked text field', 'ДД.ММ.ГГГГ', 'mask')
+          +input-text({ label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', mask: 'mask' })
         .text-field__wrapper
           +date-dropdown('date Dropdown', 'date Dropdown')
         .text-field__wrapper

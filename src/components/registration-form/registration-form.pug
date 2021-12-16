@@ -8,19 +8,19 @@ mixin registration-form()
       h3.registration-form__title Регистрация аккаунта
       .registration-form__text-fields
         .text-fields__inner
-          +input-text('', 'Имя')
+          +input-text({ placeholder: 'Имя' })
         .text-fields__inner
-          +input-text('', 'Фамилия')
+          +input-text({ placeholder: 'Фамилия' })
       .registration-form__radio
-        +radio('Мужчина')(name='name')
+        +radio('Мужчина')(name='name', checked)
         +radio('Женщина')(name='name')
       .registration-form__masked-field
-        +input-text('дата рождения', 'ДД.ММ.ГГГГ', 'mask')
+        +input-text({ label: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', mask: 'mask' })
       .registration-form__text-fields
         .text-fields__inner
-          +input-text('данные для входа в сервис', 'Email')
+          +input-text({ label: 'данные для входа в сервис', placeholder: 'Email', type: 'email' })
         .text-fields__inner
-          +input-text('', 'Пароль')
+          +input-text({ placeholder: 'Пароль' })
       .registration-form__toggle
         +toggle('Получать спецпредложения')
       .registration-form__button

@@ -6,9 +6,9 @@ mixin login-form()
       h3.login-form__title Войти
       .login-form__text-fields
         .text-fields__inner
-          +input-text('', 'Имя')
+          +input-text({ placeholder: 'Email', type: 'email' })
         .text-fields__inner
-          +input-text('', 'Фамилия')
+          +input-text({ placeholder: 'Пароль', type: 'password' })
       .login-form__button
         +button({"tag": "button", "color": "arrow", "text": "войти", "size": "m"})
       .login-form__login
