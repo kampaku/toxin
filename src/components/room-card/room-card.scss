@@ -92,7 +92,7 @@
 
   &__rating {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
   }
 
@@ -120,9 +120,6 @@
 
   &__price-per-day,
   &__reviews {
-    display: flex;
-    align-items: flex-end;
-    align-self: flex-end;
     color: $dark-shade-50;
     font-weight: $boldFontWeight;
     font-size: $mainFontSize;
