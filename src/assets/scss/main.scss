@@ -4,7 +4,10 @@
 @import 'utils/fonts';
 
 html {
+  color: $dark-shade-100;
   font-size: 100%;
+  font-family: $mainFont;
+  background-color: $background-color;
 }
 
 @media (max-width: $phoneWidth) {
