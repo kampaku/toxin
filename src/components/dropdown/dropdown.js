@@ -35,7 +35,7 @@ class Dropdown {
   }
 
   buttonHandler(e) {
-    const target = e.target.closest('.dropdown__item-button');
+    const target = e.target.closest('.js-dropdown__item-button');
     if (target) {
       this.calculateItem(target);
       const sum = this.itemsAmount();
@@ -50,7 +50,7 @@ class Dropdown {
 
   changeText(sum) {
     let textValue = [];
-    const dropdownText = this.dropdown.querySelector('.dropdown__text');
+    const dropdownText = this.dropdown.querySelector('.js-dropdown__text');
 
     if (this.dropdownType.wordForms && sum > 0) {
       textValue.push(`${sum} ${getDeclension(sum, this.dropdownType.wordForms)}`);
@@ -67,7 +67,7 @@ class Dropdown {
 
   calculateItem(target) {
     const itemElement = target.closest('li');
-    const itemAmount = itemElement.querySelector('.dropdown__item-amount');
+    const itemAmount = itemElement.querySelector('.js-dropdown__item-amount');
     const item = this.getItem(itemElement);
 
     if (target.dataset.button === 'plus') {
@@ -89,7 +89,7 @@ class Dropdown {
   }
 
   checkNegativeValue(itemElement) {
-    const btnMinus = itemElement.querySelector('.dropdown__item-button--minus');
+    const btnMinus = itemElement.querySelector('.js-dropdown__item-button--minus');
     const item = this.getItem(itemElement);
 
     if (item.value === 0) {
@@ -100,7 +100,7 @@ class Dropdown {
   }
 
   clear() {
-    const itemAmounts = this.list.querySelectorAll('.dropdown__item-amount');
+    const itemAmounts = this.list.querySelectorAll('.js-dropdown__item-amount');
     this.dropdownType.items.forEach((item) => (item.value = 0));
     itemAmounts.forEach((amount) => (amount.textContent = 0));
     this.changeText();
@@ -116,7 +116,7 @@ class Dropdown {
 
   render() {
     this.listItems.forEach((item) => {
-      const itemAmount = item.querySelector('.dropdown__item-amount');
+      const itemAmount = item.querySelector('.js-dropdown__item-amount');
       itemAmount.textContent = this.getItem(item).value;
     });
     const sum = this.itemsAmount();
@@ -127,11 +127,11 @@ class Dropdown {
   }
 
   init() {
-    this.openBtn = this.dropdown.querySelector('.dropdown__button');
-    this.list = this.dropdown.querySelector('.dropdown__inner');
+    this.openBtn = this.dropdown.querySelector('.js-dropdown__button');
+    this.list = this.dropdown.querySelector('.js-dropdown__inner');
     this.clearButton = this.dropdown.querySelector('.js-button-clear');
     this.applyButton = this.dropdown.querySelector('.js-button-apply');
-    this.listItems = this.list.querySelectorAll('.dropdown__item');
+    this.listItems = this.list.querySelectorAll('.js-dropdown__item');
 
     if (this.openBtn) {
       this.openBtn.addEventListener('click', () => {

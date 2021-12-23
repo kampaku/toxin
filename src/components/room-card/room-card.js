@@ -6,11 +6,11 @@ const activeDot = 'room-card__slider-dot--active';
 export default class Slider {
   constructor (elem) {
     this.slideIndex = 1;
-    this.slides = elem.querySelectorAll('.room-card__slider-slide');
-    this.prev = elem.querySelector('.room-card__slider-button--left');
-    this.next = elem.querySelector('.room-card__slider-button--right');
-    this.dotsWrap = elem.querySelector('.room-card__slider-dots');
-    this.dots = elem.querySelectorAll('.room-card__slider-dot');
+    this.slides = elem.querySelectorAll('.js-room-card__slider-slide');
+    this.prev = elem.querySelector('.js-room-card__slider-button--left');
+    this.next = elem.querySelector('.js-room-card__slider-button--right');
+    this.dotsWrap = elem.querySelector('.js-room-card__slider-dots');
+    this.dots = elem.querySelectorAll('.js-room-card__slider-dot');
     this.init();
   }
 

@@ -1,19 +1,19 @@
 mixin expandable-checkbox-list(label)
-  .expandable-checkbox-list.js-expandable-checkbox-list
-    .checkbox__wrapper
-      span.checkbox-label= label
-      button.checkbox-button__expand
-        img(class="checkbox-button" src=require("/src/assets/img/icons/expand-more.svg"), alt="expand")
-    ul.checkbox-list
-      li.checkbox-item
+  .expandable-checkbox__list.js-expandable-checkbox__list
+    .expandable-checkbox__wrapper.js-expandable-checkbox__wrapper
+      span.expandable-checkbox__label= label
+      button.expandable-checkbox__button-expand.js-expandable-checkbox__button-expand
+        img(class="checkbox-button js-checkbox-button" src=require("/src/assets/img/icons/expand-more.svg"), alt="expand")
+    ul.expandable-checkbox__items.js-expandable-checkbox__items
+      li.expandable-checkbox__item
         +checkbox('Завтрак')
-      li.checkbox-item
+      li.expandable-checkbox__item
         +checkbox('Письменный стол')
-      li.checkbox-item
+      li.expandable-checkbox__item
         +checkbox('Стул для кормления')
-      li.checkbox-item
+      li.expandable-checkbox__item
         +checkbox('Кроватка')
-      li.checkbox-item
+      li.expandable-checkbox__item
         +checkbox('Телевизор')
-      li.checkbox-item
+      li.expandable-checkbox__item
         +checkbox('Шампунь')

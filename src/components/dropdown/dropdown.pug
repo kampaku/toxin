@@ -3,18 +3,18 @@ mixin dropdown(obj)
   div(class=`dropdown ${type}`)
     p.dropdown__label= label
     .dropdown__header
-      input(class="dropdown__text" readonly placeholder=holder)
-      button(class="dropdown__button" type="button")
+      input(class="dropdown__text js-dropdown__text" readonly placeholder=holder)
+      button(class="dropdown__button js-dropdown__button" type="button")
         img(src=require("/src/assets/img/icons/expand-more.svg"), alt="")
-    .dropdown__inner
+    .dropdown__inner.js-dropdown__inner
       ul(class="dropdown__list")
         each el in items
-          li(class="dropdown__item" data-type=el)
+          li(class="dropdown__item js-dropdown__item" data-type=el)
             span.dropdown__item-text= el
             .dropdown__item-inner
-              button(class="dropdown__item-button dropdown__item-button--minus" type="button" data-button="minus")
-              span.dropdown__item-amount 0
-              button(class="dropdown__item-button dropdown__item-button--plus" type="button" data-button="plus")
+              button(class="dropdown__item-button js-dropdown__item-button dropdown__item-button--minus js-dropdown__item-button--minus" type="button" data-button="minus")
+              span.dropdown__item-amount.js-dropdown__item-amount 0
+              button(class="dropdown__item-button js-dropdown__item-button dropdown__item-button--plus js-dropdown__item-button--plus" type="button" data-button="plus")
       .dropdown__buttons
         button(class="button js-button-clear" type="button") очистить
         button(class="button dropdown__button-apply js-button-apply" type="button") применить

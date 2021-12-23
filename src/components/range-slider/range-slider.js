@@ -3,8 +3,8 @@ import './range-slider.scss';
 import noUiSlider from 'nouislider';
 import wNumb from 'wnumb';
 
-let rangeSlider = document.querySelector('.range-slider');
-let value = document.querySelector('.range-slider__value');
+let rangeSlider = document.querySelector('.js-range-slider');
+let value = document.querySelector('.js-range-slider__value');
 
 if (rangeSlider) {
   noUiSlider.create(rangeSlider, {

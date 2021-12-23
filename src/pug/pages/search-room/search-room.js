@@ -19,7 +19,7 @@ const dropdownGuestElement = document.querySelector('.js-guest');
 const dropdownComfortElement = document.querySelector('.js-comfort');
 const { guests, rooms } = dropdownTypes;
 const roomCards = document.querySelectorAll('.js-room-card');
-const expandCheckbox = document.querySelector('.js-expandable-checkbox-list');
+const expandCheckbox = document.querySelector('.js-expandable-checkbox__list');
 
 roomCards.forEach(card => new Slider(card));
 

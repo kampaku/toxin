@@ -2,8 +2,8 @@ import './chart.scss';
 
 export default class Chart {
   constructor(elem, options) {
-    this.units = elem.querySelectorAll('.chart__unit');
-    this.votes = elem.querySelector('.chart__number');
+    this.units = elem.querySelectorAll('.js-chart__unit');
+    this.votes = elem.querySelector('.js-chart__number');
     this.chartValues = Object.values(options);
     this.sum = this.chartValues.reduce((prev, curr) => prev + curr);
     this.dashoffset = 0;

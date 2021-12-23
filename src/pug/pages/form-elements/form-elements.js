@@ -4,7 +4,7 @@ import '~components/logo/logo';
 import '~components/about-room/about-room';
 import '~components/bullet-list/bullet-list';
 import '~components/button/button';
-import '~components/button-like/button-like';
+import '~components/button-like/ButtonLike';
 import '~components/checkbox/checkbox';
 import '~components/date-dropdown/date-dropdown';
 import '~components/dropdown/dropdown';

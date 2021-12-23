@@ -1,6 +1,6 @@
 import './review.scss';
-import '~components/button-like/button-like';
-import ButtonLike from '~components/button-like/button-like';
+import '~components/button-like/ButtonLike';
+import ButtonLike from '~components/button-like/ButtonLike';
 
 const reviews = document.querySelectorAll('.js-review');
 

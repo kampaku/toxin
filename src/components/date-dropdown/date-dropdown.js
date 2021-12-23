@@ -50,7 +50,7 @@ class DateDropdown {
     this.dropCalendar = dropWrapper;
     this.date;
     this.setDaysRange = this.setDaysRange.bind(this);
-    this.dateArival;
+    this.dateArrival;
     this.dateDeparture;
     this.today;
     this.btnClear;
@@ -102,14 +102,14 @@ class DateDropdown {
   }
 
   isDayInRange(tempDate, element) {
-    return tempDate >= this.dateArival &&
+    return tempDate >= this.dateArrival &&
       tempDate <= this.dateDeparture &&
       element.classList.contains('calendar__day--active');
   }
 
   setDaysRange(e) {
     const target = e.target.closest('.calendar__day--active');
-    const isDaysSelected = this.dateArival && this.dateDeparture;
+    const isDaysSelected = this.dateArrival && this.dateDeparture;
 
     if (!target) return;
     if (isDaysSelected) {
@@ -123,8 +123,8 @@ class DateDropdown {
     if (isPrevMonthDays) return;
     target.classList.add('calendar__day--selected');
 
-    if (!this.dateArival) {
-      this.dateArival = new Date(this.date.getFullYear(), this.date.getMonth(), target.textContent);
+    if (!this.dateArrival) {
+      this.dateArrival = new Date(this.date.getFullYear(), this.date.getMonth(), target.textContent);
     } else {
       this.dateDeparture = new Date(
         this.date.getFullYear(),
@@ -134,17 +134,17 @@ class DateDropdown {
     }
 
     const isSameDay =
-      this.dateDeparture && this.dateArival.getTime() == this.dateDeparture.getTime();
+      this.dateDeparture && this.dateArrival.getTime() == this.dateDeparture.getTime();
     if (isSameDay) {
       this.dateDeparture = null;
       return;
     }
 
-    if (this.dateArival > this.dateDeparture) {
-      [this.dateArival, this.dateDeparture] = [this.dateDeparture, this.dateArival];
+    if (this.dateArrival > this.dateDeparture) {
+      [this.dateArrival, this.dateDeparture] = [this.dateDeparture, this.dateArrival];
     }
 
-    if (this.dateArival && this.dateDeparture) {
+    if (this.dateArrival && this.dateDeparture) {
       const daysContainer = target.parentElement.childNodes;
       daysContainer.forEach((dayElement) => {
         const tempDate = new Date(
@@ -154,7 +154,7 @@ class DateDropdown {
         );
 
         if (this.isDayInRange(tempDate, dayElement)) {
-          if (Number(dayElement.textContent) === this.dateArival.getDate()) dayElement.classList.add('calendar__day--range-first');
+          if (Number(dayElement.textContent) === this.dateArrival.getDate()) dayElement.classList.add('calendar__day--range-first');
           if (Number(dayElement.textContent) === this.dateDeparture.getDate()) dayElement.classList.add('calendar__day--range-last');
           dayElement.classList.add('calendar__day--range');
         }
@@ -248,11 +248,11 @@ class DateDropdown {
             dayElement.classList.add('calendar__day--today');
           }
 
-          if (this.dateArival && this.dateDeparture) {
+          if (this.dateArrival && this.dateDeparture) {
             const tempDate = new Date(this.date.getFullYear(), this.date.getMonth(), day);
 
             if (this.isDayInRange(tempDate, dayElement)) {
-              if (dayNumber === this.dateArival.getDate() - 1) dayElement.classList.add('calendar__day--selected', 'calendar__day--range-first');
+              if (dayNumber === this.dateArrival.getDate() - 1) dayElement.classList.add('calendar__day--selected', 'calendar__day--range-first');
               if (dayNumber === this.dateDeparture.getDate() - 1) dayElement.classList.add('calendar__day--selected', 'calendar__day--range-last');
               dayElement.classList.add('calendar__day--range');
             }
@@ -302,21 +302,21 @@ class DateDropdown {
   }
 
   apply() {
-    const arrivalDay = addZero(this.dateArival.getDate());
+    const arrivalDay = addZero(this.dateArrival.getDate());
     const departureDay = addZero(this.dateDeparture.getDate());
-    let arivalMonth = addZero(this.dateArival.getMonth());
+    let arrivalMonth = addZero(this.dateArrival.getMonth());
     let departureMonth = addZero(this.dateDeparture.getMonth());
-    const arivalYear = this.dateArival.getFullYear();
+    const arrivalYear = this.dateArrival.getFullYear();
     const departureYear = this.dateDeparture.getFullYear();
     if (this.inputs.length > 1) {
       const [firstInput, secondInput] = this.inputs;
-      firstInput.value = `${arrivalDay}.${arivalMonth}.${arivalYear}`;
+      firstInput.value = `${arrivalDay}.${arrivalMonth}.${arrivalYear}`;
       secondInput.value = `${departureDay}.${departureMonth}.${departureYear}`;
     } else {
       const [input] = this.inputs;
-      arivalMonth = months[this.dateArival.getMonth()].slice(0, 3).toLowerCase();
+      arrivalMonth = months[this.dateArrival.getMonth()].slice(0, 3).toLowerCase();
       departureMonth = months[this.dateDeparture.getMonth()].slice(0, 3).toLowerCase();
-      input.value = `${arrivalDay} ${arivalMonth} - ${departureDay} ${departureMonth}`;
+      input.value = `${arrivalDay} ${arrivalMonth} - ${departureDay} ${departureMonth}`;
     }
     this.expand();
   }
@@ -325,7 +325,7 @@ class DateDropdown {
     this.date = new Date();
     let currentYear = this.date.getFullYear();
     let currentMonth = this.date.getMonth();
-    this.dateArival = null;
+    this.dateArrival = null;
     this.dateDeparture = null;
     this.inputs.forEach((input) => (input.value = ''));
     this.destroy();
