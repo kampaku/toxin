@@ -1,19 +1,16 @@
 mixin expandable-checkbox-list(label)
+  -
+    var labels = [
+      'Завтрак', 'Письменный стол',
+      'Стул для кормления', 'Кроватка'
+    ]
+
   .expandable-checkbox__list.js-expandable-checkbox__list
     .expandable-checkbox__wrapper.js-expandable-checkbox__wrapper
       span.expandable-checkbox__label= label
       button.expandable-checkbox__button-expand.js-expandable-checkbox__button-expand
         img(class="checkbox-button js-checkbox-button" src=require("/src/assets/img/icons/expand-more.svg"), alt="expand")
     ul.expandable-checkbox__items.js-expandable-checkbox__items
-      li.expandable-checkbox__item
-        +checkbox('Завтрак')
-      li.expandable-checkbox__item
-        +checkbox('Письменный стол')
-      li.expandable-checkbox__item
-        +checkbox('Стул для кормления')
-      li.expandable-checkbox__item
-        +checkbox('Кроватка')
-      li.expandable-checkbox__item
-        +checkbox('Телевизор')
-      li.expandable-checkbox__item
-        +checkbox('Шампунь')
+      each label in labels
+        li.expandable-checkbox__item
+          +checkbox(label)

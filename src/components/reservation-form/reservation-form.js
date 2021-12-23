@@ -1,10 +1,10 @@
 import './reservation-form.scss';
 import '~components/button/button';
-import '~components/date-dropdown/date-dropdown';
-import '~components/dropdown/dropdown';
-import { DateDropdown } from '~components/date-dropdown/date-dropdown';
+import '~components/date-dropdown/DateDropdown';
+import '~components/dropdown/Dropdown';
+import { DateDropdown } from '~components/date-dropdown/DateDropdown';
 import { dropdownTypes } from '~components/dropdown/dropdown-types';
-import { Dropdown } from '~components/dropdown/dropdown';
+import { Dropdown } from '~components/dropdown/Dropdown';
 
 const reservationForm = document.querySelector('.js-reservation-form');
 const dateDropdown = reservationForm && reservationForm.querySelector('.js-date-dropdown');

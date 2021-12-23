@@ -4,6 +4,7 @@
   max-width: 100%;
   padding-left: 30px;
   line-height: 1.2;
+  cursor: pointer;
   @extend %body-text;
 
   &:not(:last-child) {

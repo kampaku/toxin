@@ -22,12 +22,12 @@ mixin room-card(obj)
           span.room-card__room-number-sign №&nbsp;
           span= number
           if luxury
-            span.room-card__luxury-text &nbsp люкс
+            span.room-card__luxury-text &nbsp;люкс
         .room-card__price-per-day
           span=  price
-          span.room-card__price-per-day-text в сутки
+          span.room-card__price-per-day-text &nbsp;в сутки
       .room-card__rating
         +rate-button(star)
         a(class="room-card__reviews" href="/room-details.html")
           span= reviews
-          span.room-card__reviews-text &nbsp Отзывов
+          span.room-card__reviews-text &nbsp;Отзывов
