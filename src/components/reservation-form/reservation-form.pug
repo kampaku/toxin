@@ -11,7 +11,7 @@ mixin reservation-form(luxury)
           if luxury
             span.reservation-form__luxury-text люкс
         .reservation-form__price-per-day
-          span 9 990₽ 
+          span 9&nbsp990₽
           span.reservation-form__price-per-day-text в сутки
       .reservation-form__date-dropdown
         +date-dropdown('прибытие', 'выезд')
@@ -19,8 +19,8 @@ mixin reservation-form(luxury)
         +dropdown({label: 'гости', items:['взрослые', 'дети', 'младенцы'], type:'js-guest', holder: 'Сколько гостей'})
       .reservation-form__prices
         .reservation-form__prices-item
-          span.reservation-form__prices-item-text 9 990₽ х 4 суток
-          span.reservation-form__prices-item-price 39 960₽
+          span.reservation-form__prices-item-text 9&nbsp990₽ х 4 суток
+          span.reservation-form__prices-item-price 39&nbsp960₽
         .reservation-form__prices-item
           .reservation-form__prices-item-text
             p Сбор за услуги: скидка 2 179₽
@@ -38,5 +38,5 @@ mixin reservation-form(luxury)
       .reservation-form__total-price
         span Итого
         .reservation-form__total-price-dashed
-        span 38 081₽
+        span 38&nbsp081₽
       +button({"color": "arrow", "tag": "a", "href": "/search-room.html", "text": "забронировать", 'size': 'm'})
