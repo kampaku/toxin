@@ -47,6 +47,7 @@
   &__price-per-day {
     align-self: end;
     color: $dark-shade-50;
+    font-size: $mainFontSize;
     @extend %label-text;
   }
 
