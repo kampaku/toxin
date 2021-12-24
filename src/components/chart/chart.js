@@ -15,7 +15,8 @@ export default class Chart {
     this.votes.textContent = this.sum;
 
     this.units.forEach((el, i) => {
-      el.style.strokeDasharray = `${fullCircle / (this.sum / this.chartValues[i])} ${fullCircle}`;
+      const dashArrayX = fullCircle / (this.sum / this.chartValues[i])
+      el.style.strokeDasharray = `${dashArrayX > 0 ? dashArrayX - 1 : 0} ${fullCircle}`;
       el.style.strokeDashoffset = this.dashoffset;
       this.dashoffset -= fullCircle / (this.sum / this.chartValues[i]);
     });
