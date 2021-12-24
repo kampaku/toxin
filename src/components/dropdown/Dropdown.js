@@ -89,7 +89,7 @@ class Dropdown {
   }
 
   checkNegativeValue(itemElement) {
-    const btnMinus = itemElement.querySelector('.js-dropdown__item-button--minus');
+    const btnMinus = itemElement.querySelector('.js-dropdown__item-button_minus');
     const item = this.getItem(itemElement);
 
     if (item.value === 0) {
@@ -111,7 +111,7 @@ class Dropdown {
   }
 
   apply() {
-    this.list.classList.remove('dropdown__inner--active');
+    this.list.classList.remove('dropdown__inner_active');
   }
 
   render() {
@@ -135,7 +135,7 @@ class Dropdown {
 
     if (this.openBtn) {
       this.openBtn.addEventListener('click', () => {
-        this.list.classList.toggle('dropdown__inner--active');
+        this.list.classList.toggle('dropdown__inner_active');
       });
     }
 

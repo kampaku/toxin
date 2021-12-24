@@ -36,7 +36,7 @@
       cursor: pointer;
     }
 
-    &-dot--active {
+    &-dot_active {
       background-color: #fff;
     }
 
@@ -64,12 +64,12 @@
       );
     }
 
-    &-button--left {
+    &-button_left {
       top: 50%;
       transform: translateY(-50%);
     }
 
-    &-button--right {
+    &-button_right {
       top: 50%;
       right: 0;
       transform: translateY(-50%) rotate(180deg);

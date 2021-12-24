@@ -1,12 +1,10 @@
 .about-room {
-  &__item {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 48px auto;
-    align-items: center;
-    justify-items: center;
-    column-gap: 10px;
-  }
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 48px auto;
+  align-items: center;
+  justify-items: center;
+  column-gap: 10px;
 
   &__title {
     grid-row: 1 / 2;

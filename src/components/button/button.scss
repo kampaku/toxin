@@ -14,7 +14,7 @@
     color: $dark-shade-50;
   }
 
-  &--blue {
+  &_theme_blue {
     padding: 0 20px;
     color: #fff;
     background: $button-gradient;
@@ -26,7 +26,7 @@
     }
   }
 
-  &--white {
+  &_theme_white {
     position: relative;
     padding: 0 20px;
     color: $purple-color;
@@ -44,7 +44,7 @@
     }
   }
 
-  &--arrow {
+  &_theme_arrow {
     width: 100%;
     max-width: 320px;
     padding: 0 20px;
@@ -59,12 +59,12 @@
     }
   }
 
-  &--m {
+  &_size_m {
     padding-top: 15px;
     padding-bottom: 15px;
   }
 
-  &--s {
+  &_size_s {
     padding-top: 9px;
     padding-bottom: 9px;
   }

@@ -10,8 +10,8 @@ export default class ExpandableCheckbox {
 
   init() {
     this.container.addEventListener('click', () => {
-      this.list.classList.toggle('expandable-checkbox__items--active');
-      this.img.classList.toggle('expandable-checkbox__button-expand--active');
+      this.list.classList.toggle('expandable-checkbox__items_active');
+      this.img.classList.toggle('expandable-checkbox__button-expand_active');
     })
   }
 }

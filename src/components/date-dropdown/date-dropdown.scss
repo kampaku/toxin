@@ -50,7 +50,7 @@
   border-radius: 4px;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
-  &--open {
+  &_open {
     display: block;
   }
 
@@ -100,23 +100,23 @@
     text-align: center;
     cursor: pointer;
 
-    &--active {
+    &_active {
       color: $dark-shade-50;
     }
 
-    &--today {
+    &_today {
       color: #fff;
       background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
       border-radius: 50%;
     }
 
-    &--selected {
+    &_selected {
       color: #fff;
       background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       border-radius: 50%;
     }
 
-    &--range::before {
+    &_range::before {
       position: absolute;
       display: block;
       width: 100%;
@@ -127,12 +127,12 @@
       content: '';
     }
 
-    &--range-first::before {
+    &_range-first::before {
       right: 0;
       width: 50%;
     }
 
-    &--range-last::before {
+    &_range-last::before {
       left: 0;
       width: 50%;
     }
@@ -143,12 +143,12 @@
     height: 24px;
     cursor: pointer;
 
-    &--prev {
+    &_prev {
       background: url('/src/assets/img/icons/arrow-purple.svg') no-repeat center;
       transform: scale(-1, 1);
     }
 
-    &--next {
+    &_next {
       background: url('/src/assets/img/icons/arrow-purple.svg') no-repeat center;
     }
   }

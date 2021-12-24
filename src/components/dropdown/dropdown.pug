@@ -12,9 +12,9 @@ mixin dropdown(obj)
           li(class="dropdown__item js-dropdown__item" data-type=el)
             span.dropdown__item-text= el
             .dropdown__item-inner
-              button(class="dropdown__item-button js-dropdown__item-button dropdown__item-button--minus js-dropdown__item-button--minus" type="button" data-button="minus")
+              button(class="dropdown__item-button js-dropdown__item-button dropdown__item-button_minus js-dropdown__item-button_minus" type="button" data-button="minus")
               span.dropdown__item-amount.js-dropdown__item-amount 0
-              button(class="dropdown__item-button js-dropdown__item-button dropdown__item-button--plus js-dropdown__item-button--plus" type="button" data-button="plus")
+              button(class="dropdown__item-button js-dropdown__item-button dropdown__item-button_plus js-dropdown__item-button_plus" type="button" data-button="plus")
       .dropdown__buttons
         button(class="button js-button-clear" type="button") очистить
         button(class="button dropdown__button-apply js-button-apply" type="button") применить

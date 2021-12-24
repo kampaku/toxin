@@ -37,7 +37,7 @@
   opacity: 0;
   transition: all 0.3s;
 
-  &--active {
+  &_active {
     transform: translateY(0);
     visibility: visible;
     opacity: 1;
@@ -47,7 +47,7 @@
 .expandable-checkbox__button-expand {
   transition: transform 0.3s;
 
-  &--active {
+  &_active {
     transform: rotate(180deg);
   }
 }

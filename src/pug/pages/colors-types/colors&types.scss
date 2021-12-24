@@ -1,4 +1,4 @@
-.content--colors-type {
+.content_colors-type {
   background-color: #fff;
 }
 
@@ -74,19 +74,19 @@
   display: flex;
   margin-bottom: 50px;
 
-  &--size-xl {
+  &_size-xl {
     font-size: $sub-sectionFontSize;
   }
 
-  &--size-l {
+  &_size-l {
     font-size: $titleFontSize;
   }
 
-  &--size-m {
+  &_size-m {
     font-size: $mainFont;
   }
 
-  &--size-s {
+  &_size-s {
     font-size: $labelFontSize;
   }
 }

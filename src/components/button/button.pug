@@ -2,15 +2,15 @@ mixin button(options)
   -var { color, tag, text, href, size } = options
   -
     var themes = {
-      'white': 'button button--white',
-      'blue': 'button button--blue',
+      'white': 'button button_theme_white',
+      'blue': 'button button_theme_blue',
       'transparent': 'button',
-      'arrow': 'button button--arrow'
+      'arrow': 'button button_theme_arrow'
     }
   -
     var sizes = {
-      'm': 'button--m',
-      's': 'button--s'
+      'm': 'button_size_m',
+      's': 'button_size_s'
     }
   if  tag === 'button'
     button(class=`${themes[color]} ${sizes[size]}`)= text
