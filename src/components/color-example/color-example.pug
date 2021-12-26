@@ -1,0 +1,15 @@
+mixin color-exampmle({ code, color})
+  -
+    var classes = {
+      "Dark Shade 100%": "color-example_dark_100",
+      "Dark Shade 75%": "color-example_dark_75",
+      "Dark Shade 50%": "color-example_dark_50",
+      "Dark Shade 25%": "color-example_dark_25",
+      "Dark Shade 5%": "color-example_dark_5",
+      "Purple": "color-example_purple",
+      "Green": "color-example_green",
+    }
+  .color-example
+    .color-example__preview(class=`${classes[color]}`)
+    .color-example__name= color
+    .color-example__code= code
