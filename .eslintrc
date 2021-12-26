@@ -1,5 +1,9 @@
 {
-  "ignorePatterns": ["dist", "node_modules", "config"],
+  "ignorePatterns": [
+    "dist",
+    "node_modules",
+    "config"
+  ],
   "env": {
     "browser": true,
     "node": true
@@ -8,5 +12,38 @@
     "sourceType": "module",
     "ecmaVersion": 2020
   },
-  "extends": "eslint:recommended"
+  "plugins": [
+    "import"
+  ],
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "unknown",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "newlines-between": "always",
+        "warnOnUnassignedImports": true
+      }
+    ],
+    "import/newline-after-import": "error"
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./config/webpack.common.js"
+      }
+    }
+  }
 }
