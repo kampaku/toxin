@@ -1,4 +1,6 @@
 .room-details {
+  margin-bottom: 75px;
+
   &__container {
     max-width: 1200px;
     margin: 0 auto;
@@ -65,7 +67,6 @@
     grid-template-rows: repeat(3, auto);
     grid-template-columns: minmax(250px, 291px) minmax(300px, 349px) 380px;
     justify-items: left;
-    margin-bottom: 70px;
 
     @media screen and (max-width: $smDesktopWidth) {
       grid-column-gap: 10px;
@@ -94,7 +95,7 @@
   &__about-room-container {
     display: grid;
     grid-auto-rows: 1fr;
-    row-gap: 45px;
+    row-gap: 48px;
   }
 
   &__about-room-title {
@@ -112,7 +113,7 @@
     }
 
     .review:not(:last-child) {
-      margin-bottom: 10px;
+      margin-bottom: 25px;
     }
   }
 
