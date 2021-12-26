@@ -1,5 +1,6 @@
+import 'components/button/button';
+
 import './header.scss';
-import '~components/button/button';
 
 const header = document.querySelector('.js-header');
 
