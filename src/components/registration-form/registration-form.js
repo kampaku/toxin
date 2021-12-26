@@ -6,7 +6,7 @@ import '~components/toggle/toggle';
 import IMask from 'imask';
 
 const registrationForm = document.querySelector('.js-registration-form');
-const maskedInput = registrationForm && registrationForm.querySelector('.js-text-field__input');
+const maskedInput = registrationForm && registrationForm.querySelector('.js-input-text__input');
 if (maskedInput) {
   IMask(
     maskedInput,

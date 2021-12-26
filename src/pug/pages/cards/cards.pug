@@ -10,22 +10,21 @@ block variables
 
 block content
   .content_card
-    header.ui-header
+    header.cards__header
       +logo()
-    .container
-      .cards__wrapper
-        .cards__column
-          .cards__item
-            +search-form()
-          .cards__item
-            +registration-form()
-        .cards__column
-          .cards__item
-            +reservation-form('luxury')
-          .cards__item
-            +login-form()
-        .cards__column
-          .cards__item
-            +room-card({luxury: true, number: 888, price: "9 900₽", star: 5, reviews: 145, images: ['room-1.jpg', 'room-2.jpg', 'room-1.jpg', 'room-2.jpg',]})
-          .cards__item
-            +room-card({luxury: false, number: 840, price: "9 900₽", star: 4, reviews: 65, images: ['room-2.jpg', 'room-1.jpg', 'room-2.jpg', 'room-1.jpg',]})
+    .cards__wrapper
+      .cards__column
+        .cards__item
+          +search-form()
+        .cards__item
+          +registration-form()
+      .cards__column
+        .cards__item
+          +reservation-form('luxury')
+        .cards__item
+          +login-form()
+      .cards__column
+        .cards__item
+          +room-card({luxury: true, number: 888, price: "9 900₽", star: 5, reviews: 145, images: ['room-1.jpg', 'room-2.jpg', 'room-1.jpg', 'room-2.jpg',]})
+        .cards__item
+          +room-card({luxury: false, number: 840, price: "9 900₽", star: 4, reviews: 65, images: ['room-2.jpg', 'room-1.jpg', 'room-2.jpg', 'room-1.jpg',]})

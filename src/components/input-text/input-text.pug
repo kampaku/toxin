@@ -1,9 +1,9 @@
-mixin input-text({label, placeholder, mask, type = 'text'})
-  .text-field
+mixin input-text({label, placeholder, mask = false, type = 'text'})
+  .input-text
     if label
-      .text-field__title
-        span.text-field__label= label
+      .input-text__title
+        span.input-text__label= label
     if mask
-      input(class=`text-field__input js-text-field__input` type="text" placeholder=placeholder autofocus=attributes.autofocus)
+      input(class="input-text__input js-input-text__input" type="text" placeholder=placeholder autofocus=attributes.autofocus)
     else
-      input(class="text-field__input" type=type placeholder=placeholder autofocus=attributes.autofocus)
+      input(class="input-text__input" type=type placeholder=placeholder autofocus=attributes.autofocus)

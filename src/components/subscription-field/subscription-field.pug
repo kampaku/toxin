@@ -1,8 +1,10 @@
-mixin subscription-field(label, placeholder)
-  .text-field
-    .text-field__title
-      span.text-field__label= label
-    .subscription-field  
-      input(class="subscription-field__input" type="email" placeholder=placeholder autofocus=attributes.autofocus)
+mixin subscription-field({ label = false, placeholder = "Email" } = {})
+  .subscription-field
+    if label
+      .subscription-field__title
+        span.subscription-field__label= label
+    .subscription-field__wrapper
+      input(class="subscription-field__input" type="email"
+        placeholder=placeholder autofocus=attributes.autofocus)
       button(class="subscription-field__button")
-        img(src=require("/src/assets/img/icons/arrow-purple.svg"), alt="")
+        img(src=require("/src/assets/img/icons/arrow-purple.svg"), alt="subscribe button")

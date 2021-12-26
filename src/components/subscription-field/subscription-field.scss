@@ -1,7 +1,20 @@
 .subscription-field {
-  position: relative;
-  display: flex;
-  max-width: 267px;
+  &__wrapper {
+    position: relative;
+    display: flex;
+    max-width: 267px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+  &__label {
+    @extend %label-text;
+  }
 
   &__input {
     width: 100%;
@@ -10,12 +23,12 @@
     border: 1px solid $dark-shade-25;
     border-radius: 4px;
     @extend %body-text;
+  }
 
-    &:hover,
-    &:focus {
-      color: $dark-shade-75;
-      border-color: $dark-shade-50;
-    }
+  &:hover,
+  &:focus-within {
+    color: $dark-shade-75;
+    border-color: $dark-shade-50;
   }
 
   &__button {

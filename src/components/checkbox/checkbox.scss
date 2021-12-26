@@ -1,4 +1,4 @@
-.check {
+.checkbox {
   display: flex;
   flex-direction: column;
   max-width: 100%;
@@ -16,12 +16,12 @@
     appearance: none;
     clip: rect(0 0 0 0);
 
-    &:checked + .check__box {
+    &:checked + .checkbox__box {
       background: url('/src/assets/img/icons/check.svg') 50% 50% no-repeat;
       box-shadow: 0 0 0 1px $purple-color;
     }
 
-    &:focus + .check__box {
+    &:focus + .checkbox__box {
       box-shadow: 0 0 0 1px $purple-color, 0 0 0 2px $purple-color;
     }
   }
@@ -36,7 +36,7 @@
     box-shadow: 0 0 0 1px $dark-shade-25;
   }
 
-  &box__title {
+  &__title {
     margin-bottom: 5px;
     font-weight: $boldFontWeight;
     font-size: $mainFontSize;
@@ -45,7 +45,7 @@
     line-height: $mainLineHeight;
   }
 
-  &box__description {
+  &__description {
     font-weight: normal;
     font-size: $labelFontSize;
     font-family: $mainFont;
