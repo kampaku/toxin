@@ -1,0 +1,28 @@
+.colors-type {
+  background-color: #fff;
+
+  &__header {
+    margin-bottom: 70px;
+    margin-left: 30px;
+    padding-top: 30px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  &__column {
+    max-width: 425px;
+  }
+
+  &__color:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &__type:not(:last-child) {
+    margin-bottom: 50px;
+  }
+}
