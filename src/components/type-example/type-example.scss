@@ -1,0 +1,28 @@
+.type-example {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+
+  &__tag {
+    min-width: 37px;
+    color: $dark-shade-25;
+    font-weight: $mainFontWeight;
+    text-align: right;
+  }
+
+  &__text_xl {
+    @extend %sub-section-title;
+  }
+
+  &__text_l {
+    @extend %item-title;
+  }
+
+  &__text_m {
+    @extend %label-text;
+  }
+
+  &__text_s {
+    @extend %body-text;
+  }
+}
