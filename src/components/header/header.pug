@@ -3,41 +3,40 @@ include /components/button/button
 mixin header(login)
   header.header.js-header
     .header__container
-      .header__wrapper
-        .header__logo
-          +logo('text')
-        nav.header__navigation
-          ul.header__navigation-list.js-header__navigation-list
-            li.header__navigation-item
-              a(class="header__navigation-link" href="/mock-address") О нас
-            li.header__navigation-item
-              div(class="header__navigation-link header__navigation-link_expand js-header__navigation-link_expand") Услуги
-              ul.header__navigation-dropdown
-                li
-                  a(class="header__navigation-link" href="/mock-address") Услуга 1
-                li
-                  a(class="header__navigation-link" href="/mock-address") Услуга 2
-                li
-                  a(class="header__navigation-link" href="/mock-address") Услуга 3
-                li
-                  a(class="header__navigation-link" href="/mock-address") Услуга 4
-            li.header__navigation-item
-              a(class="header__navigation-link" href="/mock-address") Вакансии
-            li.header__navigation-item
-              a(class="header__navigation-link" href="/mock-address") Новости
-            li.header__navigation-item
-              div(class="header__navigation-link header__navigation-link_expand js-header__navigation-link_expand") Соглашения
-              ul.header__navigation-dropdown
-                li
-                  a(class="header__navigation-link" href="/mock-address") Соглашение 1
-                li
-                  a(class="header__navigation-link" href="/mock-address") Соглашение 2
-            li.header__navigation-item
-              if login
-                a(class="user-name" href="/mock-address") Юлий Цезарь
-              else
-                .header-buttons
-                  +button({"color": "white", "tag": "a", "href": "/sign-in.html", "text": "войти", 'size': 's'})
-                  +button({"color": "blue", "tag": "a", "href": "/registration.html", "text": "зарегистрироваться", 'size': 's'})
-          button(class="header__burger js-header__burger")
-            span.header__burger-line
+      .header__logo
+        +logo('text')
+      nav.header__navigation
+        ul.header__navigation-list.js-header__navigation-list
+          li.header__navigation-item
+            a(class="header__navigation-link" href="/mock-address") О нас
+          li.header__navigation-item
+            div(class="header__navigation-link header__navigation-link_expand js-header__navigation-link_expand") Услуги
+            ul.header__navigation-dropdown
+              li
+                a(class="header__navigation-link" href="/mock-address") Услуга 1
+              li
+                a(class="header__navigation-link" href="/mock-address") Услуга 2
+              li
+                a(class="header__navigation-link" href="/mock-address") Услуга 3
+              li
+                a(class="header__navigation-link" href="/mock-address") Услуга 4
+          li.header__navigation-item
+            a(class="header__navigation-link" href="/mock-address") Вакансии
+          li.header__navigation-item
+            a(class="header__navigation-link" href="/mock-address") Новости
+          li.header__navigation-item
+            div(class="header__navigation-link header__navigation-link_expand js-header__navigation-link_expand") Соглашения
+            ul.header__navigation-dropdown
+              li
+                a(class="header__navigation-link" href="/mock-address") Соглашение 1
+              li
+                a(class="header__navigation-link" href="/mock-address") Соглашение 2
+          li.header__navigation-item
+            if login
+              a(class="user-name" href="/mock-address") Юлий Цезарь
+            else
+              .header-buttons
+                +button({"color": "white", "tag": "a", "href": "/sign-in.html", "text": "войти", 'size': 's'})
+                +button({"color": "blue", "tag": "a", "href": "/registration.html", "text": "зарегистрироваться", 'size': 's'})
+        button(class="header__burger js-header__burger")
+          span.header__burger-line
