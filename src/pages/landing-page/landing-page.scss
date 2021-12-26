@@ -6,7 +6,7 @@
   grid-template-rows: repeat(2, minmax(400px, max-content));
   grid-template-columns: auto minmax(280px, 1160px) auto;
   padding: 0 20px;
-  background: center / cover no-repeat url('/src/assets/img/backgrounds/landing-page-bg.jpg');
+  background: center / cover no-repeat url('assets/img/backgrounds/landing-page-bg.jpg');
 
   &__search-form {
     grid-area: form;

@@ -1,8 +1,6 @@
 import '~scss/main.scss';
 
 import 'components/checkbox/checkbox';
-import 'components/dropdown/Dropdown';
-import 'components/expandable-checkbox-list/ExpandableCheckbox';
 import 'components/footer/footer';
 import 'components/header/header';
 import 'components/pagination/pagination';
