@@ -1,17 +1,19 @@
-import './search-room.scss';
 import '~scss/main.scss';
-import '~components/checkbox/checkbox';
-import '~components/dropdown/Dropdown';
-import '~components/expandable-checkbox-list/ExpandableCheckbox';
-import '~components/footer/footer';
-import '~components/header/header';
-import '~components/pagination/pagination';
-import '~components/range-slider/range-slider';
-import '~components/room-card/room-card';
-import { DateDropdown } from '~components/date-dropdown/DateDropdown';
-import { dropdownTypes } from '~components/dropdown/dropdown-types';
-import { Dropdown } from '~components/dropdown/Dropdown';
-import ExpandableCheckbox from '../../../components/expandable-checkbox-list/ExpandableCheckbox';
+
+import 'components/checkbox/checkbox';
+import 'components/dropdown/Dropdown';
+import 'components/expandable-checkbox-list/ExpandableCheckbox';
+import 'components/footer/footer';
+import 'components/header/header';
+import 'components/pagination/pagination';
+import 'components/range-slider/range-slider';
+import 'components/room-card/room-card';
+import { DateDropdown } from 'components/date-dropdown/DateDropdown';
+import { Dropdown } from 'components/dropdown/Dropdown';
+import { dropdownTypes } from 'components/dropdown/dropdown-types';
+import ExpandableCheckbox from 'components/expandable-checkbox-list/ExpandableCheckbox';
+
+import './search-room.scss';
 
 const dateDropdown = document.querySelector('.js-date-dropdown');
 const dropdownGuestElement = document.querySelector('.js-guest');

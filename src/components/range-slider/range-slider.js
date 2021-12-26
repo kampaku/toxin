@@ -1,7 +1,8 @@
-import 'nouislider/dist/nouislider.css';
-import './range-slider.scss';
 import noUiSlider from 'nouislider';
 import wNumb from 'wnumb';
+import 'nouislider/dist/nouislider.css';
+
+import './range-slider.scss';
 
 let rangeSlider = document.querySelector('.js-range-slider');
 let value = document.querySelector('.js-range-slider__value');
@@ -22,7 +23,7 @@ if (rangeSlider) {
       suffix: '₽'
     })
   });
-  
+
   rangeSlider.noUiSlider.on('update', function (values) {
     value.innerHTML = values.join(' - ');
   });
