@@ -4,7 +4,7 @@ const fs = require('fs')
 
 const paths = require('./paths')
 
-const PAGES_DIR = `${paths.src}/pug/pages/`
+const PAGES_DIR = `${paths.src}/pages/`
 const PAGES = fs.readdirSync(PAGES_DIR)
 const entryPoints = PAGES.map(page => {
   const pageName = page.split('.')[0]
@@ -21,7 +21,6 @@ module.exports = {
   output: {
     path: paths.build,
     filename: '[name].[contenthash].js',
-    publicPath: '/',
   },
 
   // Customize the webpack build process
@@ -94,7 +93,7 @@ module.exports = {
     alias: {
       '~src': `${paths.src}`,
       '~scss': `${paths.src}/assets/scss`,
-      '~pages': `${paths.src}/pug/pages`,
+      '~pages': `${paths.src}/pages`,
       '~components': `${paths.src}/components`,
     },
   },
