@@ -1,0 +1,4 @@
+mixin social-link({ link, img })
+  .social-link
+    a(class="social-link" href=`${link}` target="_blank" rel="noopener noreferrer")
+      img(class="social-link__icon" src=require(`/src/assets/img/icons/${img}.svg`), alt=`${img} link`)
