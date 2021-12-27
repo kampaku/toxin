@@ -1,8 +1,10 @@
 .footer {
+  margin-top: auto;
   background-color: #fff;
   border-top: 1px solid #b3b3bc;
 
   &__container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -13,6 +15,20 @@
     grid-template-columns: repeat(12, 1fr);
     padding: 100px 0;
     column-gap: 40px;
+  }
+
+  &__copyright {
+    padding: 24px 0;
+    border-top: 1px solid #dedee3;
+
+    &-text {
+      @extend %body-text;
+    }
+  }
+
+  &__copyright-wrapper {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__logo {
@@ -40,14 +56,20 @@
   }
 
   &__description {
+    line-height: $largeLineHeight;
     @extend %body-text;
   }
 
-  &__column {
+  &__social {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__column2 {
     grid-column: span 2;
   }
 
-  &__column1 {
+  &__column3 {
     grid-column: span 3;
   }
 
@@ -56,32 +78,13 @@
   }
 }
 
-.container__wrapper {
-  border-bottom: 1px solid #dedee3;
-}
-
-.copyright {
-  &__text {
-    line-height: 1.4;
-    text-align: center;
-    @extend %body-text;
-  }
-
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 30px 0px;
-  }
-}
-
-.social__link:not(:last-child) {
-  margin-right: 20px;
-}
-
 @media (max-width: $tableWidth) {
   .footer {
     padding: 120px 0px;
+
+    &__logo {
+      margin-bottom: 0;
+    }
 
     &__wrapper {
       grid-template-columns: 1fr;
@@ -98,29 +101,21 @@
       display: none;
     }
 
-    &__column3 {
+    &__column3:not(:first-child) {
       display: none;
     }
 
-    &__column4 {
-      display: none;
+    &__copyright {
+      padding: 20px 0;
+      border: 0;
+
+      &-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+      }
     }
-
-    &__column5 {
-      display: none;
-    }
-  }
-
-  .container__wrapper {
-    border: 0;
-  }
-
-  .copyright__wrapper {
-    flex-direction: column;
-    padding: 0;
-  }
-
-  .copyright__text {
-    margin-bottom: 25px;
   }
 }
