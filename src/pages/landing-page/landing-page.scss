@@ -8,6 +8,10 @@
   padding: 0 20px;
   background: center / cover no-repeat url('assets/img/backgrounds/landing-page-bg.jpg');
 
+  @media (max-width: $phoneWidth) {
+    padding: 0 10px;
+  }
+
   &__search-form {
     grid-area: form;
     margin-top: 70px;

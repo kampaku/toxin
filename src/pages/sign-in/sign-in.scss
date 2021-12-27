@@ -6,6 +6,10 @@
   padding: 0 20px;
   background: center 100% / cover no-repeat url('../../assets/img/backgrounds/registration-bg.jpg');
 
+  @media (max-width: $phoneWidth) {
+    padding: 0 10px;
+  }
+
   &__login-form {
     width: 100%;
     max-width: 380px;
