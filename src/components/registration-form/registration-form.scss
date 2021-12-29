@@ -19,6 +19,10 @@
   &__radio {
     display: flex;
     margin-bottom: 25px;
+
+    &-button + &-button {
+      margin-left: 20px;
+    }
   }
 
   &__masked-field {
