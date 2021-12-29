@@ -1,5 +1,5 @@
 mixin radio(text)
-  label.radio(class="radio__label")
+  label.radio
     input(class="radio__input" type="radio" name=attributes.name checked=attributes.checked)
     span.radio__button
-    =text
+    span.radio__label=text
