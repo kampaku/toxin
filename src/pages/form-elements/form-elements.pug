@@ -22,7 +22,7 @@ block variables
   -var review = {name: 'Рулон Обоев', src: require('/src/assets/img/review/4el.jpg'), time: '5 дней назад', likes: '12', liked: true, comment: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'}
 block content
   .content_form-elements
-    header.ui-header
+    header.form-elements__header
       +logo()
     .form-elements
       .form-elements__wrapper
@@ -55,8 +55,10 @@ block content
         .form-elements__inner
           h3.form-elements__title Radio buttons
           .form-elements__radio
-            +radio('Мужчина')(name='gender' checked)
-            +radio('Женщина')(name='gender')
+            .form-elements__radio-button
+              +radio('Мужчина')(name='gender' checked)
+            .form-elements__radio-button
+              +radio('Женщина')(name='gender')
         .form-elements__inner
           h3.form-elements__title Toggle
           .form-elements__toggle

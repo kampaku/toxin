@@ -10,6 +10,12 @@
   margin: 0 auto;
   column-gap: 125px;
 
+  &__header {
+    margin-bottom: 70px;
+    margin-left: 30px;
+    padding-top: 30px;
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -43,6 +49,14 @@
   &__checkbox {
     display: flex;
     flex-direction: column;
+  }
+
+  &__radio {
+    display: flex;
+  }
+
+  &__radio-button + &__radio-button {
+    margin-left: 20px;
   }
 
   &__toggle {
@@ -96,10 +110,4 @@
 
 .rate__inner {
   margin-right: 20px;
-}
-
-.ui-header {
-  margin-bottom: 70px;
-  margin-left: 30px;
-  padding-top: 30px;
 }
