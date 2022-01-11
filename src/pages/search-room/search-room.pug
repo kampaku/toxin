@@ -23,6 +23,12 @@ block variables
         {luxury: false, number: 444, price: "5 000₽", star: 3, reviews: 15, images: ['room-11.jpg', 'room-10.jpg', 'room-11.jpg', 'room-10.jpg']},
         {luxury: false, number: 352, price: "5 000₽", star: 3, reviews: 55, images: ['room-12.jpg', 'room-11.jpg', 'room-12.jpg', 'room-11.jpg']}
       ]
+  -
+    var checkboxList = [
+      { label: 'Завтрак' }, { label: 'Письменный стол', checked: true },
+      { label: 'Стул для кормления', checked: true }, { label: 'Кроватка', checked: true },
+      { label: 'Телевизор' }, { label: 'Шампунь' }
+    ]
 block content
   .search-room
     .search-room__filter
@@ -44,7 +50,7 @@ block content
       .search-room__comfort
         +dropdown({label: 'удобства номера', items: ['спальни', 'кровати', 'ванные комнаты'], type: 'js-comfort', holder: 'Удобства'})
       .search-room_expandable-checkbox
-        +expandable-checkbox-list('дополнительные удобства')
+        +expandable-checkbox-list('дополнительные удобства', checkboxList)
     .search-room__search-results
       h1.search-room__title Номера, которые мы для вас подобрали
       .search-room__room-cards
