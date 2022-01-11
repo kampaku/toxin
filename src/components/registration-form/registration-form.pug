@@ -17,12 +17,12 @@ mixin registration-form()
         .registration-form__radio-button
           +radio('Женщина')(name='name')
       .registration-form__masked-field
-        +input-text({ label: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', mask: 'mask' })
+        +input-text({ label: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', mask: 'mask', type: 'text' })
       .registration-form__text-fields
         .text-fields__inner
           +input-text({ label: 'данные для входа в сервис', placeholder: 'Email', type: 'email' })
         .text-fields__inner
-          +input-text({ placeholder: 'Пароль' })
+          +input-text({ placeholder: 'Пароль', type: 'password' })
       .registration-form__toggle
         +toggle('Получать спецпредложения')
       .registration-form__button
