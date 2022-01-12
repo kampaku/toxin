@@ -1,0 +1,56 @@
+.mock-page {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: lightcyan;
+}
+
+.pages-links {
+  display: flex;
+  gap: 30px;
+}
+
+.page-links__title {
+  @extend %sub-section-title;
+}
+
+.url-list__pages {
+  list-style-type: '🔰';
+}
+
+.url-list__ui {
+  list-style-type: '✨';
+}
+
+.url-list__link {
+  position: relative;
+  display: inline-block;
+  color: $dark-shade-100;
+  font-size: $mainFontSize;
+  line-height: $largeLineHeight;
+  text-decoration: none;
+  @extend %label-text;
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    background-color: $purple-color;
+    transform: scaleY(0.2);
+    transform-origin: center bottom;
+    transition: all 0.3s;
+    content: '';
+    inset: 0;
+  }
+
+  &:hover {
+    color: ghostwhite;
+  }
+  &:hover::after {
+    transform: scaleY(1);
+  }
+}
+
+.url-list__item:not(:last-child) {
+  margin-bottom: 20px;
+}
