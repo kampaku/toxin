@@ -1,7 +1,11 @@
-@import 'utils/reset';
-@import 'utils/libs';
 @import 'utils/vars';
 @import 'utils/fonts';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html {
   color: $dark-shade-100;
@@ -14,6 +18,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: $phoneWidth) {

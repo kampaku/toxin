@@ -61,6 +61,7 @@
   }
 
   &__title {
+    margin: 0;
     @extend %item-title;
   }
 
@@ -103,7 +104,7 @@
   }
 
   &__about-room-title {
-    margin-bottom: 20px;
+    margin: 0 0 20px;
   }
 
   &__reviews {
@@ -125,7 +126,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
   }
 
   &__review-count {
@@ -165,10 +166,11 @@
   }
 
   &__cancel-title {
-    margin-bottom: 20px;
+    margin: 0 0 20px;
   }
 
   &__cancel-text {
+    margin: 0;
     line-height: $largeLineHeight;
     @extend %body-text;
   }
@@ -183,7 +185,7 @@
     }
 
     &-title {
-      margin-bottom: 20px;
+      margin: 0 0 20px;
     }
   }
 

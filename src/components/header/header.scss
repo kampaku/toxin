@@ -15,8 +15,8 @@
   &__navigation-list {
     display: flex;
     align-items: center;
-    list-style: none;
     padding: 0;
+    list-style: none;
 
     @media screen and (max-width: $smDesktopWidth) {
       position: fixed;
@@ -78,12 +78,12 @@
 
   &__burger {
     position: relative;
-    border: none;
     z-index: 20;
     display: none;
     width: 36px;
     height: 36px;
     background: transparent;
+    border: none;
     cursor: pointer;
 
     @media screen and (max-width: $smDesktopWidth) {

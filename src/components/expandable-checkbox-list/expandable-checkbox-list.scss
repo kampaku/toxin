@@ -25,12 +25,12 @@
 
 .expandable-checkbox__items {
   position: absolute;
-  padding: 10px 0;
   right: 0;
   left: 0;
   z-index: 5;
   display: flex;
   flex-direction: column;
+  padding: 10px 0;
   background-color: #fff;
   transform: translateY(-20%);
   visibility: hidden;
@@ -45,6 +45,7 @@
 }
 
 .expandable-checkbox__button-expand {
+  border: 0;
   transition: transform 0.3s;
 
   &_active {

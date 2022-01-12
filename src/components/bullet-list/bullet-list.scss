@@ -1,5 +1,8 @@
 .bullet {
   max-width: 261px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 
   &__items {
     position: relative;

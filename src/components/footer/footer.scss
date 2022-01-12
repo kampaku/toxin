@@ -22,6 +22,7 @@
     border-top: 1px solid #dedee3;
 
     &-text {
+      margin: 0;
       @extend %body-text;
     }
   }
@@ -32,18 +33,25 @@
   }
 
   &__logo {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   &__link {
     color: $dark-shade-50;
     line-height: 1.2;
+    text-decoration: none;
     @extend %body-text;
   }
 
   &__title {
-    margin-bottom: 21px;
+    margin: 5px 0 20px 0;
     @extend %label-text;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   &__list-item:not(:last-child) {
@@ -56,6 +64,7 @@
   }
 
   &__description {
+    margin: 0;
     line-height: $largeLineHeight;
     @extend %body-text;
   }

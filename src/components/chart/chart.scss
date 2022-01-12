@@ -52,8 +52,11 @@
 
   &__legend {
     align-self: flex-end;
-    @extend %body-text;
+    margin: 0;
+    padding: 0;
     line-height: $mainLineHeight;
+    list-style: none;
+    @extend %body-text;
   }
 
   &__legend-item {
