@@ -6,7 +6,7 @@
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
   &__inner {
-    padding: 20px 17px 19px 20px;
+    padding: 20px 20px 20px 22px;
   }
 
   &__slider {
@@ -49,6 +49,7 @@
       width: 44px;
       height: 100%;
       background: transparent;
+      border: 0;
       visibility: hidden;
       cursor: pointer;
       opacity: 0;
@@ -66,12 +67,14 @@
 
     &-button_left {
       top: 50%;
+      border: 0;
       transform: translateY(-50%);
     }
 
     &-button_right {
       top: 50%;
       right: 0;
+      border: 0;
       transform: translateY(-50%) rotate(180deg);
     }
 
@@ -92,11 +95,12 @@
 
   &__rating {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
   }
 
   &__room-number {
+    text-decoration: none;
     @extend %item-title;
   }
 
@@ -126,6 +130,7 @@
     font-family: $mainFont;
     font-style: normal;
     line-height: $mainLineHeight;
+    text-decoration: none;
   }
 
   &__price-per-day-text,
@@ -136,5 +141,9 @@
     font-family: $mainFont;
     font-style: normal;
     line-height: $mainLineHeight;
+  }
+
+  &__price-per-day-text {
+    font-size: $labelFontSize;
   }
 }

@@ -82,6 +82,10 @@
     width: 100%;
     max-width: 239px;
     word-wrap: break-word;
+
+    p {
+      margin: 0;
+    }
   }
 
   &__prices-item-info {
