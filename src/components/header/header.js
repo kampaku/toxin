@@ -1,18 +1,9 @@
 import 'components/button/button';
+import 'components/header-menu/header-menu'
 
 import './header.scss';
 
 const header = document.querySelector('.js-header');
-
-function headerLink() {
-  if(!header) return;
-  const links = header.querySelectorAll('.js-header__navigation-link_expand');
-  links.forEach(el => {
-    el.addEventListener('click', () => {
-      el.nextSibling.classList.toggle('header__navigation-dropdown_active');
-    });
-  });
-}
 
 function burgerMenu() {
   if(!header) return;
@@ -33,5 +24,4 @@ function burgerMenu() {
   })
 }
 
-headerLink();
 burgerMenu();

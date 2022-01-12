@@ -1,6 +1,15 @@
 include /components/logo/logo
 include /components/button/button
+include /components/header-menu/header-menu
 mixin header(login)
+  -
+    var menuItems = [
+      { label: 'О нас', link: '/mock-address' },
+      { label: 'Услуги', submenu: [{label: 'Услуга 1' }, { label: 'Услуга 2', link: '/mock-address'}] },
+      { label: 'Вакансии', link: '/mock-address' },
+      { label: 'Новости', link: '/mock-address' },
+      { label: 'Соглашения', submenu: [{ label: 'Соглашение 1', link: '/mock-address'}, { label: 'Соглашение 2', link: '/mock-address'}] }
+    ]
   header.header.js-header
     .header__container
       .header__logo
@@ -8,29 +17,8 @@ mixin header(login)
       nav.header__navigation
         ul.header__navigation-list.js-header__navigation-list
           li.header__navigation-item
-            a(class="header__navigation-link" href="/mock-address") О нас
-          li.header__navigation-item
-            div(class="header__navigation-link header__navigation-link_expand js-header__navigation-link_expand") Услуги
-            ul.header__navigation-dropdown
-              li
-                a(class="header__navigation-link" href="/mock-address") Услуга 1
-              li
-                a(class="header__navigation-link" href="/mock-address") Услуга 2
-              li
-                a(class="header__navigation-link" href="/mock-address") Услуга 3
-              li
-                a(class="header__navigation-link" href="/mock-address") Услуга 4
-          li.header__navigation-item
-            a(class="header__navigation-link" href="/mock-address") Вакансии
-          li.header__navigation-item
-            a(class="header__navigation-link" href="/mock-address") Новости
-          li.header__navigation-item
-            div(class="header__navigation-link header__navigation-link_expand js-header__navigation-link_expand") Соглашения
-            ul.header__navigation-dropdown
-              li
-                a(class="header__navigation-link" href="/mock-address") Соглашение 1
-              li
-                a(class="header__navigation-link" href="/mock-address") Соглашение 2
+            .header__menu
+              +header-menu(menuItems)
           li.header__navigation-item
             if login
               a(class="user-name" href="/mock-address") Юлий Цезарь
