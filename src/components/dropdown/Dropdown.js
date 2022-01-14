@@ -36,22 +36,28 @@ class Dropdown {
 
   buttonHandler(e) {
     const target = e.target.closest('.js-dropdown__item-button');
-    if (target) {
-      this.calculateItem(target);
-      const sum = this.itemsAmount();
-      if (sum === 0) {
-        this.clearButton.style.visibility = 'hidden';
-      } else {
-        this.clearButton.style.visibility = 'visible';
-      }
-      this.changeText(sum);
+    if (!target) return;
+
+    this.calculateItem(target);
+    const sum = this.itemsAmount();
+    this.changeText(sum);
+    if (!this.clearButton) return;
+    if (sum === 0) {
+      this.clearButton.style.visibility = 'hidden';
+    } else {
+      this.clearButton.style.visibility = 'visible';
     }
   }
 
   changeText(sum) {
     let textValue = [];
     const dropdownText = this.dropdown.querySelector('.js-dropdown__text');
-
+    sum -= this.dropdownType.items.reduce((prev, curr) => {
+      if (curr.ignore) {
+        return prev + curr.value;
+      }
+      return prev + 0;
+    }, 0);
     if (this.dropdownType.wordForms && sum > 0) {
       textValue.push(`${sum} ${getDeclension(sum, this.dropdownType.wordForms)}`);
     }
@@ -84,8 +90,7 @@ class Dropdown {
   }
 
   itemsAmount() {
-    const sum = this.dropdownType.items.reduce((acc, curr) => curr.value + acc, 0);
-    return sum;
+    return this.dropdownType.items.reduce((acc, curr) => curr.value + acc, 0);
   }
 
   checkNegativeValue(itemElement) {
@@ -127,7 +132,7 @@ class Dropdown {
   }
 
   init() {
-    this.openBtn = this.dropdown.querySelector('.js-dropdown__button');
+    this.openBtn = this.dropdown.querySelector('.js-dropdown__header');
     this.list = this.dropdown.querySelector('.js-dropdown__inner');
     this.clearButton = this.dropdown.querySelector('.js-button-clear');
     this.applyButton = this.dropdown.querySelector('.js-button-apply');
@@ -136,6 +141,7 @@ class Dropdown {
     if (this.openBtn) {
       this.openBtn.addEventListener('click', () => {
         this.list.classList.toggle('dropdown__inner_active');
+        this.openBtn.classList.toggle('dropdown__header_active');
       });
     }
 
@@ -146,8 +152,10 @@ class Dropdown {
     });
 
     this.list.addEventListener('click', this.buttonHandler);
-    this.clearButton.addEventListener('click', this.clear);
-    this.applyButton.addEventListener('click', this.apply);
+    if (this.clearButton && this.applyButton) {
+      this.clearButton.addEventListener('click', this.clear);
+      this.applyButton.addEventListener('click', this.apply);
+    }
   }
 }
 

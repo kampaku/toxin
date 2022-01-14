@@ -5,6 +5,16 @@
   &__header {
     position: relative;
     height: 44px;
+    border: 1px solid $dark-shade-25;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    cursor: pointer;
+
+    &_active,
+    &:hover,
+    &:focus-within {
+      border-color: $dark-shade-50;
+    }
   }
 
   &__label {
@@ -17,26 +27,20 @@
     height: 44px;
     padding: 0 87px 0 15px;
     text-overflow: ellipsis;
-    border: 1px solid $dark-shade-25;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    cursor: default;
+    background: none;
+    border: 0;
+    outline: none;
+    cursor: pointer;
     @extend %body-text;
-
-    &:hover,
-    &:focus {
-      color: $dark-shade-75;
-      border-color: $dark-shade-50;
-    }
   }
 
   &__inner {
     display: none;
     padding: 5px 6px 10px 15px;
     background-color: #fff;
-    border-right: 1px solid $dark-shade-25;
-    border-bottom: 1px solid $dark-shade-25;
-    border-left: 1px solid $dark-shade-25;
+    border-right: 1px solid $dark-shade-50;
+    border-bottom: 1px solid $dark-shade-50;
+    border-left: 1px solid $dark-shade-50;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
 
@@ -50,7 +54,7 @@
   }
 
   &__list {
-    margin: 0 0 20px;
+    margin: 0;
     padding: 0;
     list-style: none;
   }
@@ -83,7 +87,6 @@
       height: 30px;
       border: 0;
       border-radius: 50%;
-      cursor: pointer;
 
       &_minus {
         background: url('/src/assets/img/icons/minus.svg'), transparent;
@@ -106,6 +109,7 @@
     height: 100%;
     background: none;
     border: 0;
+    outline: none;
     cursor: pointer;
   }
 
@@ -116,5 +120,6 @@
   &__buttons {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
   }
 }

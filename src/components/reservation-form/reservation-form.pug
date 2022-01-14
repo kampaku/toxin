@@ -16,7 +16,7 @@ mixin reservation-form(luxury)
       .reservation-form__date-dropdown
         +date-dropdown('прибытие', 'выезд')
       .reservation-form__dropdown
-        +dropdown({label: 'гости', items:['взрослые', 'дети', 'младенцы'], type:'js-guest', holder: 'Сколько гостей'})
+        +dropdown({label: 'гости', items:['взрослые', 'дети', 'младенцы'], type:'js-guest', holder: 'Сколько гостей', buttons: true })
       .reservation-form__prices
         .reservation-form__prices-item
           span.reservation-form__prices-item-text 9&nbsp;990₽ х 4 суток

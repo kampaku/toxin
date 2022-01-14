@@ -35,14 +35,14 @@ block content
       .search-room__date-filter
         +date-dropdown('даты пребывания в отеле')
       .search-room__guest
-        +dropdown({label: 'гости', items: ['взрослые', 'дети', 'младенцы'], type: 'js-guest', holder: 'Сколько гостей'})
+        +dropdown({label: 'гости', items: ['взрослые', 'дети', 'младенцы'], type: 'js-guest', buttons: true, holder: 'Сколько гостей'})
       .search-room__range-slider
         +range-slider('диапазон цены', 'Стоимость за сутки пребывания в номере')
       .search-room__checkbox
         span.search-room__checkbox-title правила дома
         +checkbox('Можно курить')
-        +checkbox('Можно с питомцами')
-        +checkbox('Можно пригласить гостей (до 10 человек)')
+        +checkbox('Можно с питомцами')(checked)
+        +checkbox('Можно пригласить гостей (до 10 человек)')(checked)
       .search-room__checkbox
         span.search-room__checkbox-title доступность
         +checkbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')

@@ -3,7 +3,7 @@ const dropdownTypes = {
     items: [
       { name: 'взрослые', value: 2 },
       { name: 'дети', value: 0 },
-      { name: 'младенцы', value: 1, wordForms: ['младенец', 'младенца', 'младенцев']},
+      { name: 'младенцы', value: 1, ignore: true, wordForms: ['младенец', 'младенца', 'младенцев']},
     ],
     wordForms: ['гость', 'гостя', 'гостей'],
   },
