@@ -20,9 +20,6 @@ class Dropdown {
     this.dropdown = dropdown;
     this.dropdownType = dropdownType;
     this.buttonHandler = this.buttonHandler.bind(this);
-    this.itemAmount;
-    this.clearButton;
-    this.applyButton;
     this.clear = this.clear.bind(this);
     this.apply = this.apply.bind(this);
     this.init();
@@ -125,8 +122,9 @@ class Dropdown {
       itemAmount.textContent = this.getItem(item).value;
     });
     const sum = this.itemsAmount();
+
     if (sum === 0) {
-      this.clearButton.hidden = 'true';
+      this.clearButton.style.visibility = 'hidden';
     }
     this.changeText(sum);
   }

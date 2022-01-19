@@ -8,5 +8,11 @@ mixin search-form()
       .search-form__date-dropdown
         +date-dropdown('прибытие', 'выезд')
       .search-form__dropdown
-        +dropdown({label: 'гости', items: ['взрослые', 'дети', 'младенцы'], type: 'js-guest', holder: 'Сколько гостей'})
+        +dropdown({
+          label: 'гости',
+          items: ['взрослые', 'дети', 'младенцы'],
+          container: 'js-guest',
+          holder: 'Сколько гостей',
+          buttons: true
+        })
       +button({"color": "arrow", "tag": "a", "href": "/search-room.html", "text": "подобрать номер", 'size': 'm'})

@@ -1,12 +1,12 @@
 mixin dropdown(obj)
-  -var {label, items, type, holder, buttons, open} = obj
-  div(class=`dropdown ${type}`)
+  -var {label, items, container, holder, buttons, opened} = obj
+  div(class=`dropdown ${container}`)
     p.dropdown__label= label
-    .dropdown__header.js-dropdown__header(class=`${open ? 'dropdown__header_active': ''}`)
+    .dropdown__header.js-dropdown__header(class=`${opened ? 'dropdown__header_active': ''}`)
       input(class="dropdown__text js-dropdown__text" readonly placeholder=holder type='text')
       button(class="dropdown__button" type="button")
         img(src=require("/src/assets/img/icons/expand-more.svg"), alt="")
-    .dropdown__inner.js-dropdown__inner(class=`${open ? 'dropdown__inner_active': ''}`)
+    .dropdown__inner.js-dropdown__inner(class=`${opened ? 'dropdown__inner_active': ''}`)
       ul(class="dropdown__list")
         each el in items
           li(class="dropdown__item js-dropdown__item" data-type=el)

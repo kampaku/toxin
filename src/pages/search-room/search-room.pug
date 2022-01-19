@@ -35,7 +35,12 @@ block content
       .search-room__date-filter
         +date-dropdown('даты пребывания в отеле')
       .search-room__guest
-        +dropdown({label: 'гости', items: ['взрослые', 'дети', 'младенцы'], type: 'js-guest', buttons: true, holder: 'Сколько гостей'})
+        +dropdown({
+          label: 'гости',
+          items: ['взрослые', 'дети', 'младенцы'],
+          container: 'js-guest',
+          buttons: true,
+          holder: 'Сколько гостей'})
       .search-room__range-slider
         +range-slider('диапазон цены', 'Стоимость за сутки пребывания в номере')
       .search-room__checkbox
@@ -48,7 +53,12 @@ block content
         +checkbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
         +checkbox('Помощник для инвалидов', 'На 1 этаже вас встретит специалист  и проводит до номера.')
       .search-room__comfort
-        +dropdown({label: 'удобства номера', items: ['спальни', 'кровати', 'ванные комнаты'], type: 'js-comfort', holder: 'Удобства'})
+        +dropdown({
+          label: 'удобства номера',
+          items: ['спальни', 'кровати', 'ванные комнаты'],
+          container: 'js-comfort',
+          holder: 'Удобства'
+        })
       .search-room_expandable-checkbox
         +expandable-checkbox-list('дополнительные удобства', checkboxList)
     .search-room__search-results
