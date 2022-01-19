@@ -37,14 +37,14 @@ class DateDropdown {
         }
       }],
       onShow: () => {
-        document.addEventListener('mousedown', docListener)
+        document.addEventListener('mousedown', hideCalendar)
       },
       onHide: () => {
-        document.removeEventListener('mousedown', docListener)
+        document.removeEventListener('mousedown', hideCalendar)
       }
     })
-    const docListener = (e) => {
-      if (!e.target.closest('.calendar')) {
+    const hideCalendar = (e) => {
+      if (!e.target.closest('.date-dropdown__calendar')) {
         this.datePick.hide();
       }
     }
