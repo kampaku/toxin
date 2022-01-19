@@ -18,6 +18,7 @@ const dropdownGuestElement = document.querySelector('.js-guest');
 const dropdownComfortElement = document.querySelector('.js-comfort');
 const { guests, rooms } = dropdownTypes;
 const expandCheckbox = document.querySelector('.js-expandable-checkbox__list');
+const expandCheckbox = document.querySelector('.js-expand-box');
 
 if (dropdownGuestElement) {
   new Dropdown(dropdownGuestElement, guests);
