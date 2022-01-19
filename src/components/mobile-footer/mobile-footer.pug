@@ -1,0 +1,17 @@
+include /components/logo/logo
+include /components/social-link/social-link
+
+mixin mobile-footer()
+  -
+    var socialLinks = [
+      { link: 'https://twitter.com/toxin', img: 'twitter' },
+      { link: 'https://facebook.com/toxin', img: 'facebook' },
+      { link: 'https://instagram.com/toxin', img: 'instagram' }
+    ]
+  footer.mobile-footer
+    .mobile-footer__logo
+      +logo("text")
+    p.mobile-footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
+    .mobile-footer__social
+      each link in socialLinks
+        +social-link(link)

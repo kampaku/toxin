@@ -1,6 +1,7 @@
 extends /layouts/uikit
 include /components/header/header
 include /components/footer/footer
+include /components/mobile-footer/mobile-footer
 include /components/logo/logo
 block variables
   -var title = "headers & footers"
@@ -14,3 +15,5 @@ block content
       +header("login")
     .headers-footers__wrapper
       +footer()
+    .headers-footers__wrapper
+      +mobile-footer()
