@@ -1,9 +1,9 @@
 .header-menu {
   display: flex;
-  list-style: none;
   align-items: center;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  list-style: none;
 
   @media (max-width: $smDesktopWidth) {
     flex-direction: column;
@@ -56,8 +56,8 @@
     display: none;
     width: 120px;
     margin: 0;
-    list-style: none;
     padding: 0 5px 10px;
+    list-style: none;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
