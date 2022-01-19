@@ -31,8 +31,7 @@
   }
 
   &_theme_white {
-    position: relative;
-    padding: 0 20px;
+    padding: 0 18px;
     color: $mainBrandColor;
     text-align: center;
     background-image: linear-gradient(white, white),
@@ -69,7 +68,7 @@
   }
 
   &_size_s {
-    padding-top: 9px;
-    padding-bottom: 9px;
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
 }
