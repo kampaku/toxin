@@ -13,7 +13,7 @@
 
     &:checked + .radio__button {
       background: url('/src/assets/img/icons/radio.svg') 50% 50% no-repeat;
-      box-shadow: 0 0 0 1px $purple-color;
+      box-shadow: 0 0 0 1px $mainBrandColor;
     }
 
     &:checked ~ .radio__label {
@@ -21,7 +21,7 @@
     }
 
     &:focus-visible + .radio__button {
-      box-shadow: 0 0 0 1px $dark-shade-25, 0 0 0 2px $purple-color;
+      box-shadow: 0 0 0 1px $dark-shade-25, 0 0 0 2px $mainBrandColor;
     }
   }
 

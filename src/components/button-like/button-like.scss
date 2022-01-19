@@ -12,8 +12,8 @@
   cursor: pointer;
 
   &_active {
-    color: $purple-color;
+    color: $mainBrandColor;
     background: url('/src/assets/img/icons/like-active.svg') 15% 50% no-repeat;
-    border-color: $purple-color;
+    border-color: $mainBrandColor;
   }
 }

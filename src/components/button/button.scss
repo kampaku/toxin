@@ -4,7 +4,7 @@
   justify-content: center;
   margin: 0;
   padding: 0;
-  color: $purple-color;
+  color: $mainBrandColor;
   line-height: 1;
   text-align: center;
   text-decoration: none;
@@ -21,7 +21,7 @@
   &_theme_blue {
     padding: 0 20px;
     color: #fff;
-    background: $button-gradient;
+    background: $mainGradient;
     border-radius: 22px;
 
     &:hover {
@@ -33,7 +33,7 @@
   &_theme_white {
     position: relative;
     padding: 0 20px;
-    color: $purple-color;
+    color: $mainBrandColor;
     text-align: center;
     background-image: linear-gradient(white, white),
       linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
@@ -43,7 +43,7 @@
     border-radius: 22px;
 
     &:hover {
-      color: $purple-color;
+      color: $mainBrandColor;
       opacity: 0.5;
     }
   }

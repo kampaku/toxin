@@ -18,11 +18,11 @@
 
     &:checked + .checkbox__box {
       background: url('/src/assets/img/icons/check.svg') 50% 50% no-repeat;
-      box-shadow: 0 0 0 1px $purple-color;
+      box-shadow: 0 0 0 1px $mainBrandColor;
     }
 
     &:focus-visible + .checkbox__box {
-      box-shadow: 0 0 0 1px $purple-color, 0 0 0 2px $purple-color;
+      box-shadow: 0 0 0 1px $mainBrandColor, 0 0 0 2px $mainBrandColor;
     }
   }
 

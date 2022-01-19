@@ -10,11 +10,11 @@
     appearance: none;
 
     &:checked + .toggle__slider {
-      box-shadow: 0 0 0 1px $purple-color;
+      box-shadow: 0 0 0 1px $mainBrandColor;
     }
 
     &:focus-visible + .toggle__slider {
-      box-shadow: 0 0 0 1px $purple-color, 0 0 0 2px $purple-color;
+      box-shadow: 0 0 0 1px $mainBrandColor, 0 0 0 2px $mainBrandColor;
     }
 
     &:checked + .toggle__slider::before {
