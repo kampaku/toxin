@@ -3,7 +3,7 @@
   grid-template-areas:
     '. form .'
     '. text .';
-  grid-template-rows: repeat(2, minmax(400px, max-content));
+  grid-template-rows: repeat(2, minmax(385px, max-content));
   grid-template-columns: auto minmax(280px, 1160px) auto;
   padding: 0 20px;
   background: center / cover no-repeat url('assets/img/backgrounds/landing-page-bg.jpg');
