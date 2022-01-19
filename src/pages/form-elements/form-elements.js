@@ -8,8 +8,6 @@ import 'components/bullet-list/bullet-list';
 import 'components/button/button';
 import 'components/checkbox/checkbox';
 import 'components/button-like/ButtonLike';
-import 'components/date-dropdown/DateDropdown';
-import 'components/dropdown/Dropdown';
 import 'components/input-text/input-text';
 import 'components/pagination/pagination';
 import 'components/radio/radio';
@@ -19,11 +17,52 @@ import 'components/rate-button/rate-button';
 import 'components/subscription-field/subscription-field';
 import 'components/review/review';
 import ExpandCheckbox from 'components/expandable-checkbox-list/ExpandableCheckbox';
+import { dropdownTypes } from 'components/dropdown/dropdown-types';
+import { DateDropdown } from 'components/date-dropdown/DateDropdown';
+import { Dropdown } from 'components/dropdown/Dropdown';
 
 import './form-elements.scss';
 
 const maskedInput = document.querySelector('.js-input-text__input');
-const expandCheckbox = document.querySelector('.js-expandable-checkbox__list');
+const expandCheckbox = document.querySelector('.js-expand-box');
+const expandCheckboxOpened = document.querySelector('.js-expand-box-opened');
+const dropdownGuestElement = document.querySelector('.js-guest');
+const dropdownGuestOpenedElement = document.querySelector('.js-guest-opened');
+const dropdownZeroGuestElement = document.querySelector('.js-zero-guest-opened');
+const dropdownComfortElement = document.querySelector('.js-comfort');
+const dropdownComfortElementOpened = document.querySelector('.js-comfort-opened');
+const doubleDate = document.querySelector('.js-double-date');
+const filterDate = document.querySelector('.js-filter-date');
+const { rooms, guests, zeroGuests } = dropdownTypes;
+
+if (doubleDate) {
+  new DateDropdown(doubleDate);
+}
+
+if (filterDate) {
+  new DateDropdown(filterDate);
+}
+
+if (dropdownGuestElement) {
+  new Dropdown(dropdownGuestElement, zeroGuests);
+}
+
+if (dropdownGuestOpenedElement) {
+  new Dropdown(dropdownGuestOpenedElement, guests);
+}
+
+if (dropdownComfortElementOpened) {
+  new Dropdown(dropdownComfortElementOpened, rooms)
+}
+
+if (dropdownComfortElement) {
+  new Dropdown(dropdownComfortElement, rooms);
+}
+
+if (dropdownZeroGuestElement) {
+  new Dropdown(dropdownZeroGuestElement, zeroGuests)
+}
+
 if (maskedInput) {
   IMask(
     maskedInput,
@@ -40,4 +79,7 @@ if (maskedInput) {
   )
 }
 
+if (expandCheckboxOpened) {
+  new ExpandCheckbox(expandCheckboxOpened)
+}
 new ExpandCheckbox(expandCheckbox);

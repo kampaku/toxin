@@ -1,46 +1,50 @@
 .content_form-elements {
   background-color: #fff;
+  margin-bottom: 50px;
 }
 
 .form-elements {
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr 1fr 1fr;
-  max-width: 1158px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 150px;
+  max-width: 1160px;
   margin: 0 auto;
-  column-gap: 125px;
+  column-gap: 70px;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__column {
+    width: 100%;
+    max-width: 320px;
+    &_s {
+      max-width: 266px;
+    }
+
+    &_l {
+      max-width: 720px;
+    }
+  }
+
+  &__block + &__block {
+    margin-top: 20px;
+  }
+
+  &__block + &__block_margin-large {
+    margin-top: 40px;
+  }
+
+  &__block_size_s {
+    max-width: 266px;
+  }
 
   &__header {
     margin-bottom: 70px;
     margin-left: 30px;
     padding-top: 30px;
   }
-
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
-
-    &:last-child {
-      margin-bottom: 150px;
-    }
-  }
-
-  &__wrapper:last-child {
-    display: flex;
-  }
-
-  &__wrapper:nth-child(4) {
-    display: flex;
-    flex-direction: row;
-    grid-row: 2 / 3;
-    grid-column: 1 / 4;
-    justify-content: space-between;
-
-    .about-room {
-      margin-right: 170px;
-    }
-  }
-
   &__title {
     margin-bottom: 16px;
     @extend %label-text;
@@ -62,14 +66,17 @@
   &__toggle {
     display: flex;
     flex-direction: column;
+    row-gap: 10px;
   }
 
   &__rate {
     display: flex;
+    column-gap: 20px;
   }
 
-  &__inner {
-    margin-bottom: 40px;
+  &__button-like {
+    display: flex;
+    column-gap: 10px;
   }
 
   &__buttons {
@@ -80,34 +87,4 @@
       margin-right: 20px;
     }
   }
-
-  &__review {
-    max-width: 730px;
-  }
-
-  &__about-room {
-    display: grid;
-    grid-auto-rows: 1fr;
-    row-gap: 40px;
-  }
-
-  &__pagination {
-    margin-bottom: 50px;
-  }
-}
-
-.text-field__wrapper {
-  margin-bottom: 20px;
-}
-
-.toggle__inner {
-  margin-bottom: 18px;
-}
-
-.button-like__inner {
-  margin-right: 10px;
-}
-
-.rate__inner {
-  margin-right: 20px;
 }
