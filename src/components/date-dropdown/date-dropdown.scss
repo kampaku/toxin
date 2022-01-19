@@ -2,11 +2,22 @@
   width: 100%;
   max-width: 100%;
 
-  &__wrapper {
+  &__header {
     position: relative;
+
+    &:hover,
+    &:focus-within {
+      color: $dark-shade-75;
+      border-color: $dark-shade-50;
+    }
+  }
+
+  &__wrapper {
     display: flex;
     gap: 20px;
     justify-content: space-between;
+    width: 100%;
+    max-width: 320px;
   }
 
   &__button {
@@ -26,22 +37,188 @@
     border: 1px solid $dark-shade-25;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    cursor: default;
+    cursor: pointer;
     @extend %body-text;
 
     &:hover,
-    &:focus {
-      color: $dark-shade-75;
-      border-color: $dark-shade-50;
+    &:focus-visible {
+      outline: none;
     }
+  }
+
+  &__label {
+    margin: 0 0 5px;
+    @extend %label-text;
   }
 }
 
-.calendar {
-  position: absolute;
-  top: 70px;
-  z-index: 20;
-  display: none;
+.air-datepicker {
+  box-sizing: border-box;
+  --adp-day-cell-height: 39px;
+  --adp-nav-height: 20px;
+  --adp-cell-background-color-selected: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  --adp-background-color-selected-other-month: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  --adp-background-color-selected-other-month-focused: linear-gradient(
+    180deg,
+    #bc9cff 0%,
+    #8ba4f9 100%
+  );
+  --adp-cell-background-color-in-range: rgba(188, 156, 255, 0.25);
+  --adp-cell-background-color-selected-hover: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  --adp-cell-background-color-in-range-hover: rgba(188, 156, 255, 0.25);
+  --adp-background-color-in-range: rgba(188, 156, 255, 0.25);
+  --adp-background-color-in-range-focused: rgba(188, 156, 255, 0.25);
+  --adp-color: rgba(31, 32, 65, 0.5);
+  --adp-color-other-month: rgba(31, 32, 65, 0.25);
+  --adp-btn-color: #bc9cff;
+  --adp-btn-height: 100%;
+  --adp-nav-arrow-color: #bc9cff;
+  --adp-btn-color-hover: rgba(31, 32, 65, 0.5);
+  --adp-cell-border-radius: 50%;
+  --adp-pointer-size: 0;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  @media (max-width: $smPhoneWidth) {
+    --adp-day-cell-height: 32px;
+  }
+}
+
+.air-datepicker-nav--title {
+  color: $dark-shade-100;
+  font-weight: $boldFontWeight;
+  font-size: $titleFontSize;
+  line-height: 1.2;
+}
+
+.air-datepicker--navigation {
+  margin-bottom: 20px;
+}
+
+.air-datepicker--content {
+  padding: 0;
+}
+
+.air-datepicker-nav {
+  box-sizing: border-box;
+  height: 25px;
+  padding: 0;
+  border: 0;
+}
+
+.air-datepicker-body--day-name {
+  height: 39px;
+  color: $purple-color;
+  font-weight: $boldFontWeight;
+  line-height: $mainLineHeight;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.air-datepicker-cell {
+  font-size: 0.75rem;
+  font-family: $mainFont;
+
+  &.-current- {
+    color: #ffffff;
+    font-weight: 700;
+    background: #6fcf97;
+    border-radius: 50%;
+
+    &.-in-range- {
+      color: inherit;
+      background: var(--adp-background-color-in-range);
+    }
+  }
+
+  &.-range-from- {
+    color: #ffffff;
+    font-weight: 700;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    border-radius: 50%;
+
+    &::before {
+      position: absolute;
+      right: 0;
+      z-index: -1;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      opacity: 0.25;
+      content: '';
+    }
+  }
+
+  &.-range-to- {
+    color: #ffffff;
+    font-weight: 700;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    border-radius: 50%;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      z-index: -1;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      opacity: 0.25;
+      content: '';
+    }
+  }
+
+  &.-focus- {
+    color: #ffffff;
+    font-weight: 700;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    border-radius: 50%;
+  }
+
+  &.-in-range- {
+    color: $dark-shade-75;
+    border-radius: 0;
+  }
+
+  &.-month- {
+    color: inherit;
+    background: none;
+    border-radius: 0;
+  }
+
+  &.-year- {
+    color: inherit;
+    background: none;
+    border-radius: 0;
+  }
+}
+
+.air-datepicker--buttons {
+  margin-top: 20px;
+  padding: 0;
+  border: 0;
+}
+
+.air-datepicker-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.air-datepicker-button {
+  padding: 0;
+  font-weight: $boldFontWeight;
+  font-size: $labelFontSize;
+  font-family: $mainFont;
+  text-transform: uppercase;
+
+  &:hover {
+    background: none;
+  }
+}
+
+.date-dropdown__calendar {
+  box-sizing: border-box;
   width: 100%;
   max-width: 320px;
   padding: 20px;
@@ -50,124 +227,14 @@
   background-color: #fff;
   border: 1px solid $dark-shade-25;
   border-radius: 4px;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
 
-  @media (max-width: $phoneWidth) {
+  @media (max-width: $smPhoneWidth) {
+    max-width: 260px;
     padding: 20px 10px;
   }
 
-  &_open {
-    display: block;
-  }
-
-  &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-  }
-
-  &__date {
-    font-weight: $boldFontWeight;
-    font-size: $titleFontSize;
-    line-height: 1.2;
-  }
-
-  &__week {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
-    &-day {
-      width: 14.2%;
-      height: 40px;
-      color: $purple-color;
-      font-weight: $boldFontWeight;
-      line-height: 40px;
-      text-align: center;
-    }
-  }
-
-  &__days-container {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  &__day {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 40px;
-    color: $dark-shade-25;
-    font-size: 0.75rem;
-    font-family: $mainFont;
-    text-align: center;
-    cursor: pointer;
-
-    @media (max-width: $smPhoneWidth) {
-      height: 35px;
-    }
-
-    &_active {
-      color: $dark-shade-50;
-    }
-
-    &_today {
-      color: #fff;
-      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-      border-radius: 50%;
-    }
-
-    &_selected {
-      color: #fff;
-      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-      border-radius: 50%;
-    }
-
-    &_range::before {
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 100%;
-      color: #fff;
-      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-      opacity: 0.25;
-      content: '';
-    }
-
-    &_range-first::before {
-      right: 0;
-      width: 50%;
-    }
-
-    &_range-last::before {
-      left: 0;
-      width: 50%;
-    }
-  }
-
-  &__button {
-    width: 24px;
-    height: 24px;
-    border: 0;
-    cursor: pointer;
-
-    &_prev {
-      background: url('/src/assets/img/icons/arrow-purple.svg') no-repeat center;
-      transform: scale(-1, 1);
-    }
-
-    &_next {
-      background: url('/src/assets/img/icons/arrow-purple.svg') no-repeat center;
-    }
-  }
-
-  &__buttons-container {
-    display: flex;
-    justify-content: space-between;
+  &_s {
+    --adp-day-cell-height: 32px;
   }
 }

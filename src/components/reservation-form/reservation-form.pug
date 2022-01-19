@@ -14,7 +14,7 @@ mixin reservation-form(luxury)
           span 9&nbsp;990₽
           span.reservation-form__price-per-day-text &nbsp;в сутки
       .reservation-form__date-dropdown
-        +date-dropdown('прибытие', 'выезд')
+        +date-dropdown({ label1: 'прибытие', label2: 'выезд', container: 'js-date-dropdown' })
       .reservation-form__dropdown
         +dropdown({label: 'гости', items:['взрослые', 'дети', 'младенцы'], container:'js-guest', holder: 'Сколько гостей', buttons: true })
       .reservation-form__prices

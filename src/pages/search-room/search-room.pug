@@ -33,7 +33,7 @@ block content
   .search-room
     .search-room__filter
       .search-room__date-filter
-        +date-dropdown('даты пребывания в отеле')
+        +date-dropdown({ label1: 'даты пребывания в отеле', container: 'js-filter-date' })
       .search-room__guest
         +dropdown({
           label: 'гости',
@@ -60,7 +60,11 @@ block content
           holder: 'Удобства'
         })
       .search-room_expandable-checkbox
-        +expandable-checkbox-list('дополнительные удобства', checkboxList)
+        +expandable-checkbox-list({
+          label: 'дополнительные удобства',
+          list: checkboxList,
+          container: 'js-expand-box'
+        })
     .search-room__search-results
       h1.search-room__title Номера, которые мы для вас подобрали
       .search-room__room-cards

@@ -6,7 +6,7 @@ mixin search-form()
     .search-form__inner
       h2.search-form__title Найдём номера под ваши пожелания
       .search-form__date-dropdown
-        +date-dropdown('прибытие', 'выезд')
+        +date-dropdown({ label1: 'прибытие', label2: 'выезд', container: 'js-date-dropdown' })
       .search-form__dropdown
         +dropdown({
           label: 'гости',
