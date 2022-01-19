@@ -9,12 +9,13 @@
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 13px 20px;
   }
 
   &__navigation-list {
     display: flex;
     align-items: center;
+    margin: 0;
     padding: 0;
     list-style: none;
 
@@ -73,7 +74,6 @@
   }
 
   &__logo {
-    padding: 15px 0;
   }
 
   &__burger {
@@ -134,7 +134,6 @@
       transform: rotate(90deg) translatey(-6px);
     }
   }
-}
 
 .user-name {
   position: relative;
