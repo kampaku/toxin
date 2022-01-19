@@ -21,7 +21,7 @@
       box-shadow: 0 0 0 1px $purple-color;
     }
 
-    &:focus + .checkbox__box {
+    &:focus-visible + .checkbox__box {
       box-shadow: 0 0 0 1px $purple-color, 0 0 0 2px $purple-color;
     }
   }

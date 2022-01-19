@@ -11,9 +11,10 @@
     @extend %body-text;
 
     &:hover,
-    &:focus {
+    &:focus-within {
       color: $dark-shade-75;
       border-color: $dark-shade-50;
+      outline: none;
     }
   }
 

@@ -13,7 +13,7 @@
       box-shadow: 0 0 0 1px $purple-color;
     }
 
-    &:focus + .toggle__slider {
+    &:focus-visible + .toggle__slider {
       box-shadow: 0 0 0 1px $purple-color, 0 0 0 2px $purple-color;
     }
 

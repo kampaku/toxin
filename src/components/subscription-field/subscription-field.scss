@@ -3,6 +3,14 @@
     position: relative;
     display: flex;
     max-width: 267px;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+    &:hover,
+    &:focus-within {
+      color: $dark-shade-75;
+      border-color: $dark-shade-50;
+      outline: none;
+    }
   }
 
   &__title {
@@ -20,15 +28,11 @@
     width: 100%;
     height: 44px;
     padding: 0 44px 0 15px;
-    border: 1px solid $dark-shade-25;
+    background: none;
+    border: 0;
     border-radius: 4px;
+    outline: none;
     @extend %body-text;
-  }
-
-  &:hover,
-  &:focus-within {
-    color: $dark-shade-75;
-    border-color: $dark-shade-50;
   }
 
   &__button {
