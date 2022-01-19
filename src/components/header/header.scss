@@ -135,21 +135,23 @@
     }
   }
 
-.user-name {
-  position: relative;
-  margin-left: 20px;
-  color: $dark-shade-50;
-  line-height: 1.2;
-  @extend %body-text;
+  &__user-name {
+    position: relative;
+    margin-left: 20px;
+    color: $dark-shade-50;
+    line-height: $mainLineHeight;
+    text-decoration: none;
+    @extend %body-text;
 
-  &::before {
-    position: absolute;
-    bottom: 50%;
-    left: -20px;
-    width: 1px;
-    height: 30px;
-    background-color: #e9e9ec;
-    transform: translateY(50%);
-    content: '';
+    &::before {
+      position: absolute;
+      bottom: 50%;
+      left: -20px;
+      width: 1px;
+      height: 30px;
+      background-color: #e9e9ec;
+      transform: translateY(50%);
+      content: '';
+    }
   }
 }

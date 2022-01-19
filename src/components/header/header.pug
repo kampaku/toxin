@@ -21,7 +21,7 @@ mixin header(login)
               +header-menu(menuItems)
           li.header__navigation-item
             if login
-              a(class="user-name" href="/mock-address") Юлий Цезарь
+              a(class="header__user-name" href="/mock-address") Юлий Цезарь
             else
               .header-buttons
                 +button({"color": "white", "tag": "a", "href": "/sign-in.html", "text": "войти", 'size': 's'})
