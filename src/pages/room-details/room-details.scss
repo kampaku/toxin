@@ -97,14 +97,8 @@
     }
   }
 
-  &__about-room-container {
-    display: grid;
-    grid-auto-rows: 1fr;
-    row-gap: 48px;
-  }
-
   &__about-room-title {
-    margin: 0 0 20px;
+    margin: 0 0 25px;
   }
 
   &__reviews {

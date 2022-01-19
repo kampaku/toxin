@@ -1,7 +1,7 @@
-mixin about-room(src, title, text)
+include /components/about-room-item/about-room-item
+
+mixin about-room(items)
   .about-room
-    img(class="about-room__img" src=src, alt="icon")
-    span.about-room__title
-      =title
-    span.about-room__text
-      =text
+    each item in items
+      .about-room__item
+        +about-room-item(item.src, item.title, item.text)

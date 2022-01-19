@@ -11,6 +11,12 @@ block variables
       {name: "Рулон Обоев", src: require("/src/assets/img/review/4el.jpg"), time: "5 дней назад", likes: "12", liked: true, comment: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."},
       {name: "Патрисия Стёклышкова", src: require("/src/assets/img/review/tetka.jpg"), time: "Неделю назад", likes: "2", comment: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"}
     ]
+  -
+    var aboutRoomItems = [
+      {src: require("/src/assets/img/icons/insert-emoticon.svg"), title: "Комфорт", text: "Шумопоглощающие стены"},
+      {src: require("/src/assets/img/icons/location-city.svg"), title: "Удобство", text: "Окно в каждой из спален"},
+      {src: require("/src/assets/img/icons/whatshot.svg"), title: "Уют", text: "Номер оснащён камином"}
+    ]
 block content
   .room-details
     .room-details__pictures
@@ -26,9 +32,7 @@ block content
           .room-details__about-room-title
             h3.room-details__title Сведения о номере
           .room-details__about-room-container
-            +about-room(require("/src/assets/img/icons/insert-emoticon.svg"), "Комфорт", "Шумопоглощающие стены")
-            +about-room(require("/src/assets/img/icons/location-city.svg"), "Удобство", "Окно в каждой из спален")
-            +about-room(require("/src/assets/img/icons/whatshot.svg"), "Уют", "Номер оснащён камином")
+            +about-room(aboutRoomItems)
         .room-details__rating
           .room-details__rating-title
             h3.room-details__title Впечатления от номера
