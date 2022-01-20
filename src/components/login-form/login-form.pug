@@ -10,7 +10,7 @@ mixin login-form()
         .login-form__text-field
           +input-text({ placeholder: 'Пароль', type: 'password' })
       .login-form__button
-        +button({"tag": "button", "color": "arrow", "text": "войти", "size": "m"})
+        +button({"tag": "button", "color": "arrow", "text": "войти", "size": "m", "submit": true})
       .login-form__login
         span.login-form__text Нет аккаунта на Toxin?
         +button({"tag": "a", "href": "/registration.html", "color": "white", "text": "создать", "size": "m"})

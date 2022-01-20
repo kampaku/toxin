@@ -1,5 +1,5 @@
 mixin button(options)
-  -var { color, tag, text, href, size } = options
+  -var { color, tag, text, href, size, submit = false } = options
   -
     var themes = {
       'white': 'button button_theme_white',
@@ -14,6 +14,6 @@ mixin button(options)
       'xs': 'button_size_xs'
     }
   if  tag === 'button'
-    button(class=`${themes[color]} ${sizes[size]}`)= text
+    button(class=`${themes[color]} ${sizes[size]}` type=`${submit ? "submit" : "button"}`)= text
   if tag === 'a'
     a(class=`${themes[color]} ${sizes[size]}`, href=href)= text

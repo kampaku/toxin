@@ -15,4 +15,11 @@ mixin search-form()
           holder: 'Сколько гостей',
           buttons: true
         })
-      +button({"color": "arrow", "tag": "a", "href": "/search-room.html", "text": "подобрать номер", 'size': 'm'})
+      +button({
+        "color": "arrow",
+        "tag": "button",
+        "href": "/search-room.html",
+        "text": "подобрать номер",
+        "size": "m",
+        "submit": true
+      })
