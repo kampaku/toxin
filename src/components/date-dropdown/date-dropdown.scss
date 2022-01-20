@@ -35,8 +35,7 @@
     height: 44px;
     padding: 0 40px 0 15px;
     border: 1px solid $dark-shade-25;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-radius: 4px;
     cursor: pointer;
     @extend %body-text;
 
@@ -75,7 +74,6 @@
   --adp-nav-arrow-color: #bc9cff;
   --adp-btn-color-hover: rgba(31, 32, 65, 0.5);
   --adp-pointer-size: 0;
-
 
   * {
     box-sizing: border-box;

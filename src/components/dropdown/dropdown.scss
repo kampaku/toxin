@@ -6,11 +6,15 @@
     position: relative;
     height: 44px;
     border: 1px solid $dark-shade-25;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-radius: 4px;
     cursor: pointer;
 
-    &_active,
+    &_active {
+      border-color: $dark-shade-50;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
     &:hover,
     &:focus-within {
       border-color: $dark-shade-50;
