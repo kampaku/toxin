@@ -12,7 +12,6 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
-    "air-datepicker": "^3.1.0",
     "autoprefixer": "^10.4.0",
     "babel-loader": "^8.2.3",
     "clean-webpack-plugin": "^4.0.0",
@@ -50,6 +49,7 @@
   "dependencies": {
     "imask": "^6.2.2",
     "nouislider": "^15.5.0",
-    "wnumb": "^1.2.0"
+    "wnumb": "^1.2.0",
+    "air-datepicker": "^3.1.0"
   }
 }
