@@ -5,8 +5,8 @@ class Slider {
   constructor (elem) {
     this.slideIndex = 1;
     this.slides = elem.querySelectorAll('.js-room-card__slider-slide');
-    this.prev = elem.querySelector('.js-room-card__slider-button_left');
-    this.next = elem.querySelector('.js-room-card__slider-button_right');
+    this.prev = elem.querySelector('.js-room-card__slider-button_direction_left');
+    this.next = elem.querySelector('.js-room-card__slider-button_direction_right');
     this.dotsWrap = elem.querySelector('.js-room-card__slider-dots');
     this.activeDot = 'room-card__slider-dot_active';
     this.dots = elem.querySelectorAll('.js-room-card__slider-dot');
