@@ -3,13 +3,13 @@
 ___
 **Команды:**
 
-`npm run start` - режим разработки 
+`npm run start` - режим разработки
 
 `npm run build` - сборка
 
 `npm run stylelint` - проверка стилей
-    
-`npm run stylelint:fix` - исправление стилей  
+
+`npm run stylelint:fix` - исправление стилей
 
 ### Список страниц:
 
@@ -23,8 +23,9 @@ ___
 8. [Хедер и футер](https://hotel-toxin.vercel.app/headers&footers.html)
 8. [Карточки](https://hotel-toxin.vercel.app/cards.html)
 
-#### Использованные плагины: 
+#### Использованные плагины:
 
 + imask: 6.2.2
 + nouislider: 15.5.0
 + wnumb: 1.2.0
++ air-datepicker: 3.1.0
