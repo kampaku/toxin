@@ -13,21 +13,21 @@ mixin room-card(obj)
         .room-card__slider-dot.js-room-card__slider-dot
       .room-card__slider-buttons
         button.room-card__slider-button.room-card__slider-button_left.js-room-card__slider-button_left
-          img(src=require("/src/assets/img/icons/next-slide.svg"), alt="button-left")
+          img(class="room-card__slider-button-image" src=require("/src/assets/img/icons/next-slide.svg"), alt="button-left")
         button.room-card__slider-button.room-card__slider-button_right.js-room-card__slider-button_right
-          img(src=require("/src/assets/img/icons/next-slide.svg"), alt="button-right")
+          img(class="room-card__slider-button-image" src=require("/src/assets/img/icons/next-slide.svg"), alt="button-right")
     .room-card__inner
       .room-card__info
-        a(class="room-card__room-number" href="/room-details.html")
+        a(class="room-card__room-number-link" href="/room-details.html")
           span.room-card__room-number-sign №&nbsp;
-          span= number
+          span.room-card__room-number= number
           if luxury
             span.room-card__luxury-text &nbsp;люкс
         .room-card__price-per-day
-          span=  price
+          span.room-card__price=  price
           span.room-card__price-per-day-text &nbsp;в сутки
       .room-card__rating
         +rate-button(star)
         a(class="room-card__reviews" href="/room-details.html")
-          span= reviews
+          span.room-card__reviews-number= reviews
           span.room-card__reviews-text &nbsp;Отзывов

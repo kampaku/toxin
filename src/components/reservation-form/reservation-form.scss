@@ -17,7 +17,7 @@
     margin-bottom: 20px;
   }
 
-  &__room-number {
+  &__room-number-wrapper {
     @extend %sub-section-title;
   }
 
@@ -39,7 +39,7 @@
     text-transform: uppercase;
   }
 
-  &__price-per-day-text {
+  &__price-text {
     color: $dark-shade-50;
     font-weight: $mainFontWeight;
     font-size: $labelFontSize;
@@ -48,7 +48,7 @@
     line-height: 1.5;
   }
 
-  &__price-per-day {
+  &__price-wrapper {
     align-self: end;
     color: $dark-shade-50;
     font-size: $mainFontSize;
@@ -63,7 +63,7 @@
   &__prices-item {
     display: flex;
     justify-content: space-between;
-    color: $dark-shade-50;
+    color: $dark-shade-75;
     font-weight: $mainFontWeight;
     font-size: $mainFontSize;
     font-family: $mainFont;
@@ -82,10 +82,6 @@
     width: 100%;
     max-width: 239px;
     word-wrap: break-word;
-
-    p {
-      margin: 0;
-    }
   }
 
   &__prices-item-info {
@@ -108,14 +104,14 @@
     visibility: hidden;
   }
 
-  &__total-price {
+  &__total {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
     @extend %item-title;
   }
 
-  &__total-price-dashed {
+  &__total-dashed {
     position: relative;
     flex-grow: 1;
 
