@@ -5,9 +5,9 @@ mixin login-form()
     .login-form__inner
       h3.login-form__title Войти
       .login-form__text-fields
-        .text-fields__inner
+        .login-form__text-field
           +input-text({ placeholder: 'Email', type: 'email' })
-        .text-fields__inner
+        .login-form__text-field
           +input-text({ placeholder: 'Пароль', type: 'password' })
       .login-form__button
         +button({"tag": "button", "color": "arrow", "text": "войти", "size": "m"})

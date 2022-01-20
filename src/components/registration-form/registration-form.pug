@@ -7,9 +7,9 @@ mixin registration-form()
     .registration-form__inner
       h3.registration-form__title Регистрация аккаунта
       .registration-form__text-fields
-        .text-fields__inner
+        .registration-form__text-field
           +input-text({ placeholder: 'Имя' })
-        .text-fields__inner
+        .tregistration-form__text-field
           +input-text({ placeholder: 'Фамилия' })
       .registration-form__radio
         .registration-form__radio-button
@@ -19,9 +19,9 @@ mixin registration-form()
       .registration-form__masked-field
         +input-text({ label: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', mask: 'mask', type: 'text' })
       .registration-form__text-fields
-        .text-fields__inner
+        .registration-form__text-field
           +input-text({ label: 'данные для входа в сервис', placeholder: 'Email', type: 'email' })
-        .text-fields__inner
+        .registration-form__text-field
           +input-text({ placeholder: 'Пароль', type: 'password' })
       .registration-form__toggle
         +toggle('Получать спецпредложения')

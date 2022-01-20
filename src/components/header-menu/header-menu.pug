@@ -6,7 +6,7 @@ mixin header-menu(items)
           .header-menu__link.header-menu__link_expand.js-header-menu__link_expand= item.label
           ul.header-menu__submenu
             each element in item.submenu
-              li
+              li.header-menu__submenu-item
                 a(class='header-menu__link' href= element.link)= element.label
         else
           a(class='header-menu__link' href= item.link)= item.label

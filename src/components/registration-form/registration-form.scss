@@ -16,6 +16,10 @@
     margin-bottom: 10px;
   }
 
+  &__text-field:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
   &__radio {
     display: flex;
     margin-bottom: 25px;
@@ -48,8 +52,4 @@
     line-height: 1.25;
     @extend %body-text;
   }
-}
-
-.text-fields__inner:not(:last-child) {
-  margin-bottom: 10px;
 }
