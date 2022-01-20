@@ -68,7 +68,7 @@
   --adp-background-color-in-range: rgba(188, 156, 255, 0.25);
   --adp-background-color-in-range-focused: rgba(188, 156, 255, 0.25);
   --adp-color: rgba(31, 32, 65, 0.5);
-  --adp-color-disabled: rgba(31, 32, 65, 0.5);;
+  --adp-color-disabled: rgba(31, 32, 65, 0.5);
   --adp-color-other-month: rgba(31, 32, 65, 0.25);
   --adp-color-other-month-hover: #ffffff;
   --adp-btn-color: #bc9cff;
@@ -140,8 +140,8 @@
   &.-range-from- {
     color: #ffffff;
     font-weight: 700;
-    border-radius: 50%;
     background: $mainGradient;
+    border-radius: 50%;
 
     &::before {
       position: absolute;
@@ -158,8 +158,8 @@
   &.-range-to- {
     color: #ffffff;
     font-weight: 700;
-    border-radius: 50%;
     background: $mainGradient;
+    border-radius: 50%;
 
     &::before {
       position: absolute;
@@ -202,7 +202,7 @@
   &.-disabled-.-range-to-,
   &.-disabled-.-range-from-,
   &.-disabled-.-range-from-::before {
-    opacity: .3;
+    opacity: 0.3;
   }
 }
 
