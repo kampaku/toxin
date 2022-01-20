@@ -68,7 +68,9 @@
   --adp-background-color-in-range: rgba(188, 156, 255, 0.25);
   --adp-background-color-in-range-focused: rgba(188, 156, 255, 0.25);
   --adp-color: rgba(31, 32, 65, 0.5);
+  --adp-color-disabled: rgba(31, 32, 65, 0.5);;
   --adp-color-other-month: rgba(31, 32, 65, 0.25);
+  --adp-color-other-month-hover: #ffffff;
   --adp-btn-color: #bc9cff;
   --adp-btn-height: 100%;
   --adp-nav-arrow-color: #bc9cff;
@@ -129,12 +131,17 @@
       color: inherit;
       background: var(--adp-background-color-in-range);
     }
+
+    &.-focus- {
+      color: #ffffff;
+    }
   }
 
   &.-range-from- {
     color: #ffffff;
     font-weight: 700;
     border-radius: 50%;
+    background: $mainGradient;
 
     &::before {
       position: absolute;
@@ -152,6 +159,7 @@
     color: #ffffff;
     font-weight: 700;
     border-radius: 50%;
+    background: $mainGradient;
 
     &::before {
       position: absolute;
@@ -187,6 +195,14 @@
     color: inherit;
     background: none;
     border-radius: 0;
+  }
+
+  &.-disabled-.-focus-,
+  &.-disabled-.-in-range-,
+  &.-disabled-.-range-to-,
+  &.-disabled-.-range-from-,
+  &.-disabled-.-range-from-::before {
+    opacity: .3;
   }
 }
 
@@ -228,9 +244,5 @@
   @media (max-width: $smPhoneWidth) {
     max-width: 260px;
     padding: 20px 10px;
-  }
-
-  &_s {
-    --adp-day-cell-height: 32px;
   }
 }
