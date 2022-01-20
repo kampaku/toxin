@@ -28,6 +28,7 @@ class DateDropdown {
       this.initializeOne();
     }
     this.datePick.update({
+      minDate: new Date(),
       buttons: ['clear', {
         content: () => {
           return 'применить'
