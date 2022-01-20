@@ -1,10 +1,10 @@
 mixin subscription-field({ label = false, placeholder = "Email" } = {})
-  .subscription-field
+  form.subscription-field.js-subscription-field
     if label
       .subscription-field__title
         span.subscription-field__label= label
     .subscription-field__wrapper
       input(class="subscription-field__input" type="email"
         placeholder=placeholder autofocus=attributes.autofocus)
-      button(class="subscription-field__button")
+      button(class="subscription-field__button" type="submit")
         img(src=require("/src/assets/img/icons/arrow-purple.svg"), alt="subscribe button")
