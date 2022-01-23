@@ -1,60 +1,60 @@
-.expandable-checkbox__list {
-  position: relative;
-  max-width: 266px;
-}
-
-.expandable-checkbox__label {
-  @extend %label-text;
-}
-
-.expandable-checkbox__wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 5px;
-  cursor: pointer;
-}
-
-.expandable-checkbox__button-expand {
-  width: 44px;
-  height: 100%;
-  padding-bottom: 5px;
-  background: none;
-  cursor: pointer;
-}
-
-.expandable-checkbox__items {
-  position: absolute;
-  right: 0;
-  left: 0;
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 10px 0;
-  list-style: none;
-  background-color: #fff;
-  transform: translateY(-20%);
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.3s;
-
-  &_active {
-    transform: translateY(0);
-    visibility: visible;
-    opacity: 1;
+.expandable-checkbox {
+  &__list {
+    position: relative;
+    max-width: 266px;
   }
-}
 
-.expandable-checkbox__button-expand {
-  border: 0;
-  transition: transform 0.3s;
-
-  &_active {
-    transform: rotate(180deg);
+  &__label {
+    @extend %label-text;
   }
-}
 
-.expandable-checkbox__item:not(:last-child) {
-  margin-bottom: 14px;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+
+  &__button-expand {
+    width: 44px;
+    background: none;
+    cursor: pointer;
+  }
+
+  &__items {
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+    background-color: #fff;
+    transform: translateY(-20%);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+
+    &_active {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &__button-expand {
+    border: 0;
+    transition: transform 0.3s;
+
+    &_active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
 }
