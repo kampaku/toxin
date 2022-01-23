@@ -73,9 +73,6 @@
     }
   }
 
-  &__logo {
-  }
-
   &__burger {
     position: relative;
     z-index: 20;
@@ -127,11 +124,11 @@
     }
 
     .header__burger-line::before {
-      transform: rotate(90deg) translatey(6px);
+      transform: rotate(90deg) translateY(6px);
     }
 
     .header__burger-line::after {
-      transform: rotate(90deg) translatey(-6px);
+      transform: rotate(90deg) translateY(-6px);
     }
   }
 
