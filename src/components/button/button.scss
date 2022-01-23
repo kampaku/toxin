@@ -62,18 +62,20 @@
     }
   }
 
-  &_size_m {
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
+  &_size {
+    &_m {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
 
-  &_size_s {
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
+    &_s {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
 
-  &_size_xs {
-    padding-top: 4px;
-    padding-bottom: 4px;
+    &_xs {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
   }
 }
