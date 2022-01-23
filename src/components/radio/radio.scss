@@ -1,6 +1,6 @@
 .radio {
+  display: flex;
   max-width: max-content;
-  padding-left: 22px;
   color: $dark-shade-50;
   font-size: 0.875rem;
   font-family: $mainFont;
@@ -8,6 +8,7 @@
   cursor: pointer;
 
   &__input {
+    position: absolute;
     appearance: none;
     clip: rect(0 0 0 0);
 
@@ -26,10 +27,9 @@
   }
 
   &__button {
-    position: absolute;
     width: 20px;
     height: 20px;
-    margin-left: -30px;
+    margin-right: 10px;
     border-radius: 50%;
     box-shadow: 0 0 0 1px $dark-shade-25;
   }
