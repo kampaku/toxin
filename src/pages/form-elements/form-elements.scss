@@ -14,11 +14,11 @@
     margin-bottom: 100px;
 
     &_margin_l {
-      margin-bottom: 170px;
+      margin-bottom: 172px;
     }
 
     &_margin_xl {
-      margin-bottom: 230px;
+      margin-bottom: 224px;
     }
   }
 
@@ -74,6 +74,7 @@
 
   &__checkbox {
     display: flex;
+    row-gap: 10px;
     flex-direction: column;
   }
 
@@ -96,6 +97,10 @@
     column-gap: 20px;
   }
 
+  &__review {
+    margin-top: 7px;
+  }
+
   &__button-like {
     display: flex;
     column-gap: 10px;
@@ -103,7 +108,7 @@
 
   &__buttons {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 27px;
 
     button:nth-child(1) {
       margin-right: 20px;

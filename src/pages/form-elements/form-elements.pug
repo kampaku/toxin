@@ -21,7 +21,7 @@ block variables
   -var title = "Form Elements"
   -
     var review = {
-      name: 'Рулон Обоев',
+      name: 'Мурад Сарафанов',
       src: require('/src/assets/img/review/4el.jpg'),
       time: '5 дней назад',
       likes: '12',
@@ -98,7 +98,7 @@ block content
         .form-elements__column
           .form-elements__block.form-elements__block_margin_l
             +range-slider("Range Slider")
-          .form-elements__block.form-elements__block_margin_l
+          .form-elements__block.form-elements__block_margin_xl
             h3.form-elements__title Buttons
             .form-elements__buttons
               +button({ 'color': 'blue', 'tag': 'button', 'text': 'click me', "size": "m" })
@@ -158,7 +158,7 @@ block content
               list: checkboxList,
               container: 'js-expand-box'
             })
-          .form-elements__block.form-elements__block_margin_l.form-elements__block_size_s
+          .form-elements__block.form-elements__block_margin_xl.form-elements__block_size_s
             +expandable-checkbox-list({
               label: 'expandable checkbox list',
               list: checkboxList,
@@ -183,5 +183,5 @@ block content
           .form-elements__block
             +about-room(aboutRoomItems)
         .form-elements__column.form-elements__column_l
-          .form-elements__block
+          .form-elements__block.form-elements__review
             +review(review)
