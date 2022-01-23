@@ -48,6 +48,7 @@
   }
 
   &__text {
+    margin: 0;
     text-align: center;
     @extend %body-text;
   }
