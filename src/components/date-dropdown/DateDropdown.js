@@ -58,11 +58,11 @@ class DateDropdown {
       nextHtml: `<svg><path d="M 19,10 l 7,7 l -7,7"></path><path d="M 26,17 l -16,0"></path></svg>`,
       classes: 'date-dropdown__calendar',
       altField: this.dropdowns[1],
-      altFieldDateFormat: 'dd MM yyyy',
+      altFieldDateFormat: 'dd.MM.yyyy',
       container: this.root,
       range: true,
       multipleDates: true,
-      dateFormat: 'dd MM yyyy',
+      dateFormat: 'dd.MM.yyyy',
       navTitles: {
         days: 'MMMM yyyy',
       },
