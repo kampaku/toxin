@@ -5,23 +5,30 @@ import './header.scss';
 
 const header = document.querySelector('.js-header');
 
-function burgerMenu() {
-  if(!header) return;
-  const burgerBtn = header.querySelector('.js-header__burger');
-  const menu = header.querySelector('.js-header__navigation-list');
-  let menuIsActive = false;
+class BurgerMenu {
+  constructor(element) {
+    this.button = element.querySelector('.js-header__burger');
+    this.menu = element.querySelector('.js-header__navigation-list');
+    this.menuIsActive = false;
+    this.toggleMenu = this.toggleMenu.bind(this);
+    this.bindListener();
+  }
 
-  burgerBtn.addEventListener('click', () => {
-    if (menuIsActive) {
+  toggleMenu() {
+    if (this.menuIsActive) {
       document.body.style.overflow = 'visible';
-      menuIsActive = !menuIsActive;
+      this.menuIsActive = !this.menuIsActive;
     } else {
       document.body.style.overflow = 'hidden';
-      menuIsActive = !menuIsActive;
+      this.menuIsActive = !this.menuIsActive;
     }
-    burgerBtn.classList.toggle('header__burger_active');
-    menu.classList.toggle('header__navigation-list_active');
-  })
+    this.button.classList.toggle('header__burger_active');
+    this.menu.classList.toggle('header__navigation-list_active');
+  }
+
+  bindListener() {
+    this.button.addEventListener('click', this.toggleMenu);
+  }
 }
 
-burgerMenu();
+new BurgerMenu(header);
