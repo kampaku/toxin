@@ -7,10 +7,7 @@ mixin review(obj)
       =name
     span.review__time
       =time
-    if liked
-      +button-like(likes)(class="button-like_active")
-    else
-      +button-like(likes)
+    +button-like(likes, liked)
     p.review__comment
       =comment
 
