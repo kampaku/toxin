@@ -1,19 +1,19 @@
 mixin button(options)
-  -var { color, tag, text, href, size, submit = false } = options
   -
-    var themes = {
-      'white': 'button button_theme_white',
-      'blue': 'button button_theme_blue',
-      'transparent': 'button',
-      'arrow': 'button button_theme_arrow'
+    const { color, tag, text, href, size, submit = false } = options
+    const themes = {
+      'white': 'button_theme_white',
+      'blue': 'button_theme_blue',
+      'arrow': 'button_theme_arrow'
     }
-  -
-    var sizes = {
+
+    const sizes = {
       'm': 'button_size_m',
       's': 'button_size_s',
       'xs': 'button_size_xs'
     }
-  if  tag === 'button'
-    button(class=`${themes[color]} ${sizes[size]}` type=`${submit ? "submit" : "button"}`)= text
-  if tag === 'a'
-    a(class=`${themes[color]} ${sizes[size]}`, href=href)= text
+
+    const isSubmit = submit ? 'submit' : 'button'
+    const buttonType = tag === 'button' ? isSubmit : false
+
+  #{tag}(class=`button ${themes[color]} ${sizes[size]}` type=buttonType href=href)= text
