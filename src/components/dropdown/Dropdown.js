@@ -132,8 +132,8 @@ class Dropdown {
   init() {
     this.openBtn = this.dropdown.querySelector('.js-dropdown__header');
     this.list = this.dropdown.querySelector('.js-dropdown__inner');
-    this.clearButton = this.dropdown.querySelector('.js-button-clear');
-    this.applyButton = this.dropdown.querySelector('.js-button-apply');
+    this.clearButton = this.dropdown.querySelector('.js-dropdown-button-clear');
+    this.applyButton = this.dropdown.querySelector('.js-dropdown-button-apply');
     this.listItems = this.list.querySelectorAll('.js-dropdown__item');
 
     if (this.openBtn) {
