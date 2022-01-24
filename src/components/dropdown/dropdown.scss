@@ -93,12 +93,14 @@
       border-radius: 50%;
       cursor: pointer;
 
-      &_icon_minus {
-        background: url('/src/assets/img/icons/minus.svg'), transparent;
-      }
+      &_icon {
+        &_minus {
+          background: url('/src/assets/img/icons/minus.svg'), transparent;
+        }
 
-      &_icon_plus {
-        background: url('/src/assets/img/icons/plus.svg'), transparent;
+        &_plus {
+          background: url('/src/assets/img/icons/plus.svg'), transparent;
+        }
       }
 
       &:disabled {
@@ -107,7 +109,7 @@
     }
   }
 
-  &__button {
+  &__button-expand {
     position: absolute;
     right: 0;
     width: 44px;
@@ -118,8 +120,26 @@
     cursor: pointer;
   }
 
-  &__button-apply {
-    margin-left: auto;
+  &__button-apply,
+  &__button-clear {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 2px 0;
+    color: $mainBrandColor;
+    line-height: 1.1;
+    text-align: center;
+    text-decoration: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.2s;
+    @extend %label-text;
+
+    &:hover {
+      color: $dark-shade-50;
+    }
   }
 
   &__buttons {
