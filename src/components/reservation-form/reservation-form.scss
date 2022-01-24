@@ -82,10 +82,20 @@
     width: 100%;
     max-width: 239px;
     word-wrap: break-word;
+
+    @media (max-width: $phoneWidth) {
+      max-width: 190px;
+    }
   }
 
   &__prices-item-info {
     position: relative;
+
+    &:hover {
+      .reservation-form__tooltip {
+        visibility: visible;
+      }
+    }
   }
 
   &__info-icon {
@@ -133,15 +143,5 @@
 
   &__dropdown {
     margin-bottom: 20px;
-  }
-}
-
-.reservation-form__prices-item-info:hover .reservation-form__tooltip {
-  visibility: visible;
-}
-
-@media (max-width: $phoneWidth) {
-  .reservation-form__prices-item-text {
-    max-width: 190px;
   }
 }
