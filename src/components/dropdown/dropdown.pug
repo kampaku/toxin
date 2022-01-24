@@ -1,5 +1,5 @@
 mixin dropdown(obj)
-  -var {label, items, container, holder, buttons, opened} = obj
+  -const {label, items, container, holder, buttons, opened} = obj
   div(class=`dropdown ${container}`)
     p.dropdown__label= label
     .dropdown__header.js-dropdown__header(class=`${opened ? 'dropdown__header_active': ''}`)

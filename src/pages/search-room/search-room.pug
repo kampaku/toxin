@@ -7,9 +7,10 @@ include /components/expandable-checkbox-list/expandable-checkbox-list
 include /components/room-card/room-card
 include /components/pagination/pagination
 block variables
-  -var title= "Подбор номеров"
   -
-    var cards = [
+    const title= "Подбор номеров"
+
+    const cards = [
         {luxury: true, number: 888, price: "9 900₽", star: 5, reviews: 145, images: ['room-1.jpg', 'room-2.jpg', 'room-1.jpg', 'room-2.jpg']},
         {luxury: false, number: 840, price: "9 900₽", star: 4, reviews: 65, images: ['room-2.jpg', 'room-3.jpg', 'room-2.jpg', 'room-3.jpg']},
         {luxury: false, number: 980, price: "8 500₽", star: 3, reviews: 35, images: ['room-3.jpg', 'room-2.jpg', 'room-3.jpg', 'room-2.jpg']},
@@ -23,8 +24,8 @@ block variables
         {luxury: false, number: 444, price: "5 000₽", star: 3, reviews: 15, images: ['room-11.jpg', 'room-10.jpg', 'room-11.jpg', 'room-10.jpg']},
         {luxury: false, number: 352, price: "5 000₽", star: 3, reviews: 55, images: ['room-12.jpg', 'room-11.jpg', 'room-12.jpg', 'room-11.jpg']}
       ]
-  -
-    var checkboxList = [
+
+    const checkboxList = [
       { label: 'Завтрак' }, { label: 'Письменный стол', checked: true },
       { label: 'Стул для кормления', checked: true }, { label: 'Кроватка', checked: true },
       { label: 'Телевизор' }, { label: 'Шампунь' }
@@ -61,7 +62,7 @@ block content
           container: 'js-comfort',
           holder: 'Удобства'
         })
-      .search-room_expandable-checkbox
+      .search-room__expandable-checkbox
         +expandable-checkbox-list({
           label: 'дополнительные удобства',
           list: checkboxList,

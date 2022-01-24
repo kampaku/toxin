@@ -3,7 +3,7 @@ include /components/button/button
 include /components/header-menu/header-menu
 mixin header(login)
   -
-    var menuItems = [
+    const menuItems = [
       { label: 'О нас', link: '/mock-address' },
       { label: 'Услуги', submenu: [{label: 'Услуга 1' }, { label: 'Услуга 2', link: '/mock-address'}] },
       { label: 'Вакансии', link: '/mock-address' },
