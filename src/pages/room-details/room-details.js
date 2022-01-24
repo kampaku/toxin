@@ -10,5 +10,5 @@ import Chart from 'components/chart/Chart';
 
 import './room-details.scss';
 
-const chartElem = document.querySelector('.js-chart');
+const chartElem = document.querySelector('.js-chart-wrapper');
 new Chart(chartElem, { goodCount: 65, greatCount: 130, satisfactorilyCount: 65, bad: 0 });
