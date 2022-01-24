@@ -11,12 +11,12 @@ class DateDropdown {
   }
 
   init() {
-    this.dropdowns = this.root.querySelectorAll('.js-date-input');
+    this.dropdowns = this.root.querySelectorAll('.js-date-dropdown-input');
 
     if (this.inline) {
-      const label = this.root.querySelector('.js-date-label');
-      const input = this.root.querySelector('.js-date-input');
-      const expandButton = this.root.querySelector('.js-expand-button');
+      const label = this.root.querySelector('.js-date-dropdown-label');
+      const input = this.root.querySelector('.js-date-dropdown-input');
+      const expandButton = this.root.querySelector('.js-date-dropdown-expand-button');
       label.style.display = 'none';
       input.style.display = 'none';
       expandButton.style.display = 'none';
@@ -100,7 +100,7 @@ class DateDropdown {
   }
 
   bindListeners() {
-    const expandButtons = this.root.querySelectorAll('.js-expand-button');
+    const expandButtons = this.root.querySelectorAll('.js-date-dropdown-expand-button');
     expandButtons.forEach(btn => btn.addEventListener('click', () => {
       if (!this.datePick.$datepicker.isConnected) {
         this.datePick.show();
