@@ -45,13 +45,15 @@ block content
         +range-slider('диапазон цены', 'Стоимость за сутки пребывания в номере')
       .search-room__checkbox
         span.search-room__checkbox-title правила дома
-        +checkbox('Можно курить')
-        +checkbox('Можно с питомцами')(checked)
-        +checkbox('Можно пригласить гостей (до 10 человек)')(checked)
+        .search-room__checkbox-wrapper
+          +checkbox('Можно курить')
+          +checkbox('Можно с питомцами')(checked)
+          +checkbox('Можно пригласить гостей (до 10 человек)')(checked)
       .search-room__checkbox
         span.search-room__checkbox-title доступность
-        +checkbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
-        +checkbox('Помощник для инвалидов', 'На 1 этаже вас встретит специалист  и проводит до номера.')
+        .search-room__checkbox-wrapper
+          +checkbox('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
+          +checkbox('Помощник для инвалидов', 'На 1 этаже вас встретит специалист  и проводит до номера.')
       .search-room__comfort
         +dropdown({
           label: 'удобства номера',
