@@ -3,6 +3,10 @@
   background-color: #fff;
   border-top: 1px solid #b3b3bc;
 
+  @media (max-width: $tableWidth) {
+    padding: 120px 0;
+  }
+
   &__container {
     width: 100%;
     max-width: 1200px;
@@ -15,25 +19,49 @@
     grid-template-columns: repeat(12, 1fr);
     padding: 100px 0;
     column-gap: 40px;
+
+    @media (max-width: $tableWidth) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      padding: 0;
+      column-gap: 0;
+    }
   }
 
   &__copyright {
     padding: 24px 0;
     border-top: 1px solid #dedee3;
 
+    @media (max-width: $tableWidth) {
+      padding: 20px 0;
+      border: 0;
+    }
+
     &-text {
       margin: 0;
       @extend %body-text;
     }
-  }
 
-  &__copyright-wrapper {
-    display: flex;
-    justify-content: space-between;
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width: $tableWidth) {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+      }
+    }
   }
 
   &__logo {
     margin-bottom: 15px;
+
+    @media (max-width: $tableWidth) {
+      margin-bottom: 0;
+    }
   }
 
   &__link {
@@ -67,6 +95,10 @@
     margin: 0;
     line-height: $largeLineHeight;
     @extend %body-text;
+
+    @media (max-width: $tableWidth) {
+      display: none;
+    }
   }
 
   &__social {
@@ -76,55 +108,23 @@
 
   &__column2 {
     grid-column: span 2;
+
+    @media (max-width: $tableWidth) {
+      display: none;
+    }
   }
 
   &__column3 {
     grid-column: span 3;
+
+    &:not(:first-child) {
+      @media (max-width: $tableWidth) {
+        display: none;
+      }
+    }
   }
 
   &__column5 {
     grid-column: span 3;
-  }
-}
-
-@media (max-width: $tableWidth) {
-  .footer {
-    padding: 120px 0px;
-
-    &__logo {
-      margin-bottom: 0;
-    }
-
-    &__wrapper {
-      grid-template-columns: 1fr;
-      justify-items: center;
-      padding: 0;
-      column-gap: 0;
-    }
-
-    &__description {
-      display: none;
-    }
-
-    &__column2 {
-      display: none;
-    }
-
-    &__column3:not(:first-child) {
-      display: none;
-    }
-
-    &__copyright {
-      padding: 20px 0;
-      border: 0;
-
-      &-wrapper {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-        justify-items: center;
-        text-align: center;
-      }
-    }
   }
 }
