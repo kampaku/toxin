@@ -1,8 +1,7 @@
 mixin logo(text)
   .logo
-    if (text)
-      a(class="logo-link" href='/landing-page.html')
+    a(class="logo__link" href='/landing-page.html')
+      if (text)
         img(class="logo__img" src=require("/src/assets/img/icons/logo.svg"), alt="logo")
-    else
-      a(class="logo-link" href='/landing-page.html')
+      else
         img(src=require("/src/assets/img/icons/ui-logo.svg"), alt="logo")

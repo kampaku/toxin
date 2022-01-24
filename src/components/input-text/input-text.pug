@@ -3,7 +3,4 @@ mixin input-text({label, placeholder, mask = false, type = 'text'})
     if label
       .input-text__title
         span.input-text__label= label
-    if mask
-      input(class="input-text__input js-input-text__input" type="text" placeholder=placeholder autofocus=attributes.autofocus)
-    else
-      input(class="input-text__input" type=type placeholder=placeholder autofocus=attributes.autofocus)
+    input(class=`input-text__input ${mask && 'js-input-text__input'}` type=type placeholder=placeholder autofocus=attributes.autofocus)
