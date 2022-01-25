@@ -67,17 +67,19 @@
       );
     }
 
-    &-button_direction_left {
-      top: 50%;
-      border: 0;
-      transform: translateY(-50%);
-    }
+    &-button_direction {
+      &_left {
+        top: 50%;
+        border: 0;
+        transform: translateY(-50%);
+      }
 
-    &-button_direction_right {
-      top: 50%;
-      right: -1px;
-      border: 0;
-      transform: translateY(-50%) rotate(180deg);
+      &_right {
+        top: 50%;
+        right: -1px;
+        border: 0;
+        transform: translateY(-50%) rotate(180deg);
+      }
     }
 
     &:hover .room-card__slider-button {
