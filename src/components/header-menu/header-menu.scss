@@ -32,7 +32,7 @@
     @extend %body-text;
 
     @media screen and (max-width: $phoneWidth) {
-      font-size: 18px;
+      font-size: 1.2rem;
     }
 
     &_expand {
