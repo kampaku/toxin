@@ -21,7 +21,8 @@
     @extend %sub-section-title;
   }
 
-  &__room-number-sign {
+  &__room-number-sign,
+  &__luxury-text {
     font-weight: $boldFontWeight;
     font-size: $mainFontSize;
     font-family: $mainFont;
@@ -31,11 +32,7 @@
 
   &__luxury-text {
     color: $mainBrandColor;
-    font-weight: $boldFontWeight;
     font-size: $labelFontSize;
-    font-family: $mainFont;
-    font-style: normal;
-    line-height: $mainLineHeight;
     text-transform: uppercase;
   }
 
@@ -58,42 +55,42 @@
 
   &__prices {
     margin-bottom: 35px;
-  }
 
-  &__prices-item {
-    display: flex;
-    justify-content: space-between;
-    color: $dark-shade-75;
-    font-weight: $mainFontWeight;
-    font-size: $mainFontSize;
-    font-family: $mainFont;
-    font-style: normal;
-    line-height: 1.2;
-  }
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      color: $dark-shade-75;
+      font-weight: $mainFontWeight;
+      font-size: $mainFontSize;
+      font-family: $mainFont;
+      font-style: normal;
+      line-height: 1.2;
 
-  &__prices-item:not(:last-child) {
-    margin-bottom: 15px;
-  }
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
 
-  &__prices-item-text {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 239px;
-    word-wrap: break-word;
+      &-text {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 239px;
+        word-wrap: break-word;
 
-    @media (max-width: $phoneWidth) {
-      max-width: 190px;
-    }
-  }
+        @media (max-width: $phoneWidth) {
+          max-width: 190px;
+        }
+      }
 
-  &__prices-item-info {
-    position: relative;
+      &-info {
+        position: relative;
 
-    &:hover {
-      .reservation-form__tooltip {
-        visibility: visible;
+        &:hover {
+          .reservation-form__tooltip {
+            visibility: visible;
+          }
+        }
       }
     }
   }
@@ -119,19 +116,19 @@
     justify-content: space-between;
     margin-bottom: 20px;
     @extend %item-title;
-  }
 
-  &__total-dashed {
-    position: relative;
-    flex-grow: 1;
+    &-dashed {
+      position: relative;
+      flex-grow: 1;
 
-    &::before {
-      position: absolute;
-      bottom: 5px;
-      left: 5px;
-      width: calc(100% - 10px);
-      border-bottom: 1px dashed $dark-shade-25;
-      content: '';
+      &::before {
+        position: absolute;
+        bottom: 5px;
+        left: 5px;
+        width: calc(100% - 10px);
+        border-bottom: 1px dashed $dark-shade-25;
+        content: '';
+      }
     }
   }
 

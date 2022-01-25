@@ -18,47 +18,49 @@
     color: $dark-shade-50;
   }
 
-  &_theme_blue {
-    padding: 0 20px;
-    color: #fff;
-    background: $mainGradient;
-    border-radius: 22px;
-
-    &:hover {
+  &_theme {
+    &_blue {
+      padding: 0 20px;
       color: #fff;
-      opacity: 0.5;
+      background: $mainGradient;
+      border-radius: 22px;
+
+      &:hover {
+        color: #fff;
+        opacity: 0.5;
+      }
     }
-  }
 
-  &_theme_white {
-    padding: 0 18px;
-    color: $mainBrandColor;
-    text-align: center;
-    background-image: linear-gradient(white, white),
-      linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    background-clip: padding-box, border-box;
-    background-origin: border-box;
-    border: 2px solid transparent;
-    border-radius: 22px;
-
-    &:hover {
+    &_white {
+      padding: 0 18px;
       color: $mainBrandColor;
-      opacity: 0.5;
-    }
-  }
-
-  &_theme_arrow {
-    width: 100%;
-    max-width: 320px;
-    padding: 0 20px;
-    color: #fff;
-    background: url('/src/assets/img/icons/arrow-white.svg') 95% 50% no-repeat,
+      text-align: center;
+      background-image: linear-gradient(white, white),
       linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-    border-radius: 22px;
+      background-clip: padding-box, border-box;
+      background-origin: border-box;
+      border: 2px solid transparent;
+      border-radius: 22px;
 
-    &:hover {
+      &:hover {
+        color: $mainBrandColor;
+        opacity: 0.5;
+      }
+    }
+
+    &_arrow {
+      width: 100%;
+      max-width: 320px;
+      padding: 0 20px;
       color: #fff;
-      opacity: 0.5;
+      background: url('/src/assets/img/icons/arrow-white.svg') 95% 50% no-repeat,
+      linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-radius: 22px;
+
+      &:hover {
+        color: #fff;
+        opacity: 0.5;
+      }
     }
   }
 

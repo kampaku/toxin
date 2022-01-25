@@ -29,31 +29,35 @@
     font-weight: $mainFontWeight;
   }
 
-  &_dark_100 {
-    background-color: $dark-shade-100;
-  }
+  &_color {
+    &_green {
+      background-color: $secondBrandColor;
+    }
 
-  &_dark_75 {
-    background-color: $dark-shade-75;
-  }
+    &_purple {
+      background-color: $mainBrandColor;
+    }
 
-  &_dark_50 {
-    background-color: $dark-shade-50;
-  }
+    &_dark {
+      &-100 {
+        background-color: $dark-shade-100;
+      }
 
-  &_dark_25 {
-    background-color: $dark-shade-25;
-  }
+      &-75 {
+        background-color: $dark-shade-75;
+      }
 
-  &_dark_5 {
-    background-color: $dark-shade-5;
-  }
+      &-50 {
+        background-color: $dark-shade-50;
+      }
 
-  &_green {
-    background-color: $secondBrandColor;
-  }
+      &-25 {
+        background-color: $dark-shade-25;
+      }
 
-  &_purple {
-    background-color: $mainBrandColor;
+      &-5 {
+        background-color: $dark-shade-5;
+      }
+    }
   }
 }

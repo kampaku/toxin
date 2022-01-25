@@ -10,19 +10,21 @@
     text-align: right;
   }
 
-  &__text_xl {
-    @extend %sub-section-title;
-  }
+  &__text_size {
+    &_xl {
+      @extend %sub-section-title;
+    }
 
-  &__text_l {
-    @extend %item-title;
-  }
+    &_l {
+      @extend %item-title;
+    }
 
-  &__text_m {
-    @extend %label-text;
-  }
+    &_m {
+      @extend %label-text;
+    }
 
-  &__text_s {
-    @extend %body-text;
+    &_s {
+      @extend %body-text;
+    }
   }
 }
