@@ -1,8 +1,8 @@
 mixin range-slider(label, text)
-  .range-slider__wrapper
+  .range-slider
     .range-slider__header
       span.range-slider__label= label
       span.range-slider__value.js-range-slider__value
-    .range-slider.js-range-slider
+    .range-slider__container.js-range-slider__container
     if text
       span.range-slider__text= text

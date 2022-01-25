@@ -41,10 +41,10 @@ block variables
       {src: require("/src/assets/img/icons/location-city.svg"), title: "Удобство", text: "Окно в каждой из спален"},
     ]
 block content
-  .content_form-elements
+  .form-elements
     header.form-elements__header
       +logo()
-    .form-elements
+    .form-elements__wrapper
       .form-elements__row
         .form-elements__column
           .form-elements__block
@@ -183,6 +183,6 @@ block content
         .form-elements__column
           .form-elements__block
             +about-room(aboutRoomItems)
-        .form-elements__column.form-elements__column_l
+        .form-elements__column.form-elements__column_size_l
           .form-elements__block.form-elements__review
             +review(review)

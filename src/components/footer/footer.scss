@@ -106,25 +106,23 @@
     gap: 20px;
   }
 
-  &__column2 {
-    grid-column: span 2;
+  &__column_size {
+    &_s {
+      grid-column: span 2;
 
-    @media (max-width: $tableWidth) {
-      display: none;
-    }
-  }
-
-  &__column3 {
-    grid-column: span 3;
-
-    &:not(:first-child) {
       @media (max-width: $tableWidth) {
         display: none;
       }
     }
-  }
 
-  &__column5 {
-    grid-column: span 3;
+    &_m {
+      grid-column: span 3;
+
+      &:not(:first-child) {
+        @media (max-width: $tableWidth) {
+          display: none;
+        }
+      }
+    }
   }
 }

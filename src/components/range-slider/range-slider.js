@@ -4,7 +4,7 @@ import 'nouislider/dist/nouislider.css';
 
 import './range-slider.scss';
 
-let rangeSlider = document.querySelector('.js-range-slider');
+let rangeSlider = document.querySelector('.js-range-slider__container');
 let value = document.querySelector('.js-range-slider__value');
 
 if (rangeSlider) {

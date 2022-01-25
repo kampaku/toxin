@@ -1,5 +1,5 @@
 .range-slider {
-  margin-bottom: 10px;
+  max-width: 266px;
 
   &__header {
     display: flex;
@@ -22,8 +22,8 @@
     @extend %label-text;
   }
 
-  &__wrapper {
-    max-width: 266px;
+  &__container {
+    margin-bottom: 10px;
   }
 }
 

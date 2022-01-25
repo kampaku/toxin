@@ -1,8 +1,6 @@
 .expandable-checkbox {
-  &__list {
-    position: relative;
-    max-width: 266px;
-  }
+  position: relative;
+  max-width: 266px;
 
   &__label {
     @extend %label-text;

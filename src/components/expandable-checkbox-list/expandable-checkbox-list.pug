@@ -1,5 +1,5 @@
 mixin expandable-checkbox-list({ label, list, container, opened })
-  .expandable-checkbox__list(class=container)
+  .expandable-checkbox(class=container)
     .expandable-checkbox__wrapper.js-expandable-checkbox__wrapper
       span.expandable-checkbox__label= label
       button.expandable-checkbox__button-expand.js-expandable-checkbox__button-expand(class=`${opened && 'expandable-checkbox__button-expand_active'}`)

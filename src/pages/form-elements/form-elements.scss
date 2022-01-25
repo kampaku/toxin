@@ -1,13 +1,13 @@
-.content_form-elements {
+.form-elements {
   margin-bottom: 50px;
   background-color: #fff;
-}
 
-.form-elements {
-  display: flex;
-  flex-direction: column;
-  max-width: 1160px;
-  margin: 0 auto;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
 
   &__row {
     display: flex;
@@ -25,11 +25,8 @@
   &__column {
     width: 100%;
     max-width: 320px;
-    &_s {
-      max-width: 266px;
-    }
 
-    &_l {
+    &_size_l {
       max-width: 720px;
     }
 
@@ -67,6 +64,7 @@
     margin-left: 30px;
     padding-top: 30px;
   }
+
   &__title {
     margin: 0 0 16px;
     @extend %label-text;
