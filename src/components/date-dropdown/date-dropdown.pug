@@ -1,15 +1,15 @@
 mixin date-dropdown({ label1, label2, container })
   .date-dropdown(class=container)
     .date-dropdown__wrapper
-      .date-dropdown__label.js-date-dropdown-label= label1
+      .date-dropdown__label.js-date-dropdown__label= label1
       .date-dropdown__header
-        input(class='date-dropdown__input js-date-dropdown-input' readonly placeholder='ДД.ММ.ГГГГ')
-        button(class="date-dropdown__expand-button js-date-dropdown-expand-button" type="button")
+        input(class='date-dropdown__input js-date-dropdown__input' readonly placeholder='ДД.ММ.ГГГГ')
+        button(class="date-dropdown__expand-button js-date-dropdown__expand-button" type="button")
           img(src=require("/src/assets/img/icons/expand-more.svg"), alt="expand")
     if label2
       .date-dropdown__wrapper
         .date-dropdown__label= label2
         .date-dropdown__header
-          input(class='date-dropdown__input js-date-dropdown-input' readonly placeholder='ДД.ММ.ГГГГ')
-          button(class="date-dropdown__expand-button js-date-dropdown-expand-button" type="button")
+          input(class='date-dropdown__input js-date-dropdown__input' readonly placeholder='ДД.ММ.ГГГГ')
+          button(class="date-dropdown__expand-button js-date-dropdown__expand-button" type="button")
             img(src=require("/src/assets/img/icons/expand-more.svg"), alt="expand")
