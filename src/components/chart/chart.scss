@@ -1,12 +1,13 @@
 .chart {
-  margin-right: 28px;
+  display: flex;
 
-  @media screen and (max-width: $smPhoneWidth) {
-    margin-right: 10px;
-  }
 
-  &__wrapper {
-    display: flex;
+  &__units {
+    margin-right: 28px;
+
+    @media screen and (max-width: $smPhoneWidth) {
+      margin-right: 10px;
+    }
   }
 
   &__unit {
