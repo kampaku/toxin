@@ -1,16 +1,20 @@
 mixin pagination()
+  -
+    const links = [
+      {pageNum: "1", active: true},
+      {pageNum: "2"},
+      {pageNum: "3"},
+      {pageNum: "..."},
+      {pageNum: "15"},
+    ]
   .pagination
     ul.pagination__list
-      li(class="pagination__item pagination__item_active")
-        a(class="pagination__link pagination__link_active" href="/page1") 1
-      li(class="pagination__item") 
-        a(class="pagination__link" href="/page2") 2
-      li(class="pagination__item") 
-        a(class="pagination__link" href="/page3") 3
-      li(class="pagination__item") 
-        span(class="pagination__link") ...
-      li(class="pagination__item") 
-        a(class="pagination__link" href="/page15") 15
-      li(class="pagination__item")
-        a(class="pagination__link pagination__next" href="/page2")
+      each link in links
+        li.pagination__item(class=link.active && "pagination__item_active")
+          if link.pageNum === '...'
+            span.pagination__link= link.pageNum
+          else
+            a.pagination__link(class=link.active && "pagination__link_active" href="/mock-link")= link.pageNum
+      li.pagination__item
+        a(class="pagination__link pagination__next" href="/mock-link")
     p.pagination__text 1 – 12 из 100+ вариантов аренды
