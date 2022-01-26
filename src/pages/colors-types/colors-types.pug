@@ -25,14 +25,14 @@ block variables
     ]
 block content
   .colors-types
-    header.colors-type__header
+    header.colors-types__header
       +logo()
-    .colors-type__container
-      .colors-type__column
+    .colors-types__container
+      .colors-types__column
         each color in colors
-          .colors-type__color
-            +color-exampmle(color)
-      .colors-type__column
+          .colors-types__color
+            +color-example(color)
+      .colors-types__column
         each type in types
           .colors-type__type
             +type-example(type)
