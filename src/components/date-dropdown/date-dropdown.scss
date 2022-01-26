@@ -1,3 +1,195 @@
+.air-datepicker {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 320px;
+  padding: 20px;
+  font-size: 0.75rem;
+  font-family: $mainFont;
+  background-color: #fff;
+  border: 1px solid $dark-shade-25;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+
+  @media (max-width: $smPhoneWidth) {
+    max-width: 260px;
+    padding: 20px 10px;
+  }
+
+  --adp-day-cell-height: 39px;
+  --adp-nav-height: 20px;
+  --adp-cell-background-color-selected: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  --adp-background-color-selected-other-month: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  --adp-background-color-selected-other-month-focused: linear-gradient(
+      180deg,
+      #bc9cff 0%,
+      #8ba4f9 100%
+  );
+  --adp-cell-background-color-in-range: rgba(188, 156, 255, 0.25);
+  --adp-cell-background-color-selected-hover: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  --adp-cell-background-color-in-range-hover: rgba(188, 156, 255, 0.25);
+  --adp-background-color-in-range: rgba(188, 156, 255, 0.25);
+  --adp-background-color-in-range-focused: rgba(188, 156, 255, 0.25);
+  --adp-color: rgba(31, 32, 65, 0.5);
+  --adp-color-disabled: rgba(31, 32, 65, 0.3);
+  --adp-color-other-month: rgba(31, 32, 65, 0.25);
+  --adp-color-other-month-hover: #ffffff;
+  --adp-btn-color: #bc9cff;
+  --adp-btn-height: 100%;
+  --adp-nav-arrow-color: #bc9cff;
+  --adp-btn-color-hover: rgba(31, 32, 65, 0.5);
+  --adp-pointer-size: 0;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  @media (max-width: $smPhoneWidth) {
+    --adp-day-cell-height: 32px;
+  }
+
+  &-nav--title {
+    color: $dark-shade-100;
+    font-weight: $boldFontWeight;
+    font-size: $titleFontSize;
+    line-height: 1.2;
+  }
+
+  &--navigation {
+    margin-bottom: 20px;
+  }
+
+  &-nav {
+    height: 25px;
+    padding: 0;
+    border: 0;
+  }
+
+  &--content {
+    padding: 0;
+  }
+
+  &-body--day-name {
+    height: 39px;
+    color: $mainBrandColor;
+    font-weight: $boldFontWeight;
+    line-height: $mainLineHeight;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &-cell {
+    font-size: 0.75rem;
+    font-family: $mainFont;
+
+    &.-current- {
+      color: #ffffff;
+      font-weight: 700;
+      background: $secondaryGradient;
+      border-radius: 50%;
+
+      &.-in-range- {
+        color: inherit;
+        background: var(--adp-background-color-in-range);
+      }
+
+      &.-focus- {
+        color: #ffffff;
+      }
+    }
+
+    &.-range-from- {
+      color: #ffffff;
+      font-weight: 700;
+      background: $mainGradient;
+      border-radius: 50%;
+
+      &::before {
+        position: absolute;
+        right: 0;
+        z-index: -1;
+        width: 50%;
+        height: 100%;
+        background: $mainGradient;
+        opacity: 0.25;
+        content: '';
+      }
+    }
+
+    &.-range-to- {
+      color: #ffffff;
+      font-weight: 700;
+      background: $mainGradient;
+      border-radius: 50%;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        z-index: -1;
+        width: 50%;
+        height: 100%;
+        background: $mainGradient;
+        opacity: 0.25;
+        content: '';
+      }
+    }
+
+    &.-focus- {
+      color: #ffffff;
+      font-weight: 700;
+      background: $mainGradient;
+      border-radius: 50%;
+    }
+
+    &.-in-range- {
+      color: $dark-shade-75;
+      border-radius: 0;
+    }
+
+    &.-month- {
+      color: inherit;
+      background: none;
+      border-radius: 0;
+    }
+
+    &.-year- {
+      color: inherit;
+      background: none;
+      border-radius: 0;
+    }
+
+    &.-disabled-.-focus-,
+    &.-disabled-.-in-range-,
+    &.-disabled-.-range-to-,
+    &.-disabled-.-range-from-,
+    &.-disabled-.-range-from-::before {
+      opacity: 0.3;
+    }
+  }
+
+  &--buttons {
+    margin-top: 20px;
+    padding: 0;
+    border: 0;
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-button {
+    padding: 0;
+    font-weight: $boldFontWeight;
+    font-size: $labelFontSize;
+    font-family: $mainFont;
+    text-transform: uppercase;
+
+    &:hover {
+      background: none;
+    }
+  }
+}
+
 .date-dropdown {
   display: flex;
   gap: 20px;
@@ -51,198 +243,3 @@
   }
 }
 
-.air-datepicker {
-  box-sizing: border-box;
-  --adp-day-cell-height: 39px;
-  --adp-nav-height: 20px;
-  --adp-cell-background-color-selected: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  --adp-background-color-selected-other-month: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  --adp-background-color-selected-other-month-focused: linear-gradient(
-    180deg,
-    #bc9cff 0%,
-    #8ba4f9 100%
-  );
-  --adp-cell-background-color-in-range: rgba(188, 156, 255, 0.25);
-  --adp-cell-background-color-selected-hover: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
-  --adp-cell-background-color-in-range-hover: rgba(188, 156, 255, 0.25);
-  --adp-background-color-in-range: rgba(188, 156, 255, 0.25);
-  --adp-background-color-in-range-focused: rgba(188, 156, 255, 0.25);
-  --adp-color: rgba(31, 32, 65, 0.5);
-  --adp-color-disabled: rgba(31, 32, 65, 0.3);
-  --adp-color-other-month: rgba(31, 32, 65, 0.25);
-  --adp-color-other-month-hover: #ffffff;
-  --adp-btn-color: #bc9cff;
-  --adp-btn-height: 100%;
-  --adp-nav-arrow-color: #bc9cff;
-  --adp-btn-color-hover: rgba(31, 32, 65, 0.5);
-  --adp-pointer-size: 0;
-
-  * {
-    box-sizing: border-box;
-  }
-
-  @media (max-width: $smPhoneWidth) {
-    --adp-day-cell-height: 32px;
-  }
-}
-
-.air-datepicker-nav--title {
-  color: $dark-shade-100;
-  font-weight: $boldFontWeight;
-  font-size: $titleFontSize;
-  line-height: 1.2;
-}
-
-.air-datepicker--navigation {
-  margin-bottom: 20px;
-}
-
-.air-datepicker--content {
-  padding: 0;
-}
-
-.air-datepicker-nav {
-  box-sizing: border-box;
-  height: 25px;
-  padding: 0;
-  border: 0;
-}
-
-.air-datepicker-body--day-name {
-  height: 39px;
-  color: $mainBrandColor;
-  font-weight: $boldFontWeight;
-  line-height: $mainLineHeight;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.air-datepicker-cell {
-  font-size: 0.75rem;
-  font-family: $mainFont;
-
-  &.-current- {
-    color: #ffffff;
-    font-weight: 700;
-    background: $secondaryGradient;
-    border-radius: 50%;
-
-    &.-in-range- {
-      color: inherit;
-      background: var(--adp-background-color-in-range);
-    }
-
-    &.-focus- {
-      color: #ffffff;
-    }
-  }
-
-  &.-range-from- {
-    color: #ffffff;
-    font-weight: 700;
-    background: $mainGradient;
-    border-radius: 50%;
-
-    &::before {
-      position: absolute;
-      right: 0;
-      z-index: -1;
-      width: 50%;
-      height: 100%;
-      background: $mainGradient;
-      opacity: 0.25;
-      content: '';
-    }
-  }
-
-  &.-range-to- {
-    color: #ffffff;
-    font-weight: 700;
-    background: $mainGradient;
-    border-radius: 50%;
-
-    &::before {
-      position: absolute;
-      left: 0;
-      z-index: -1;
-      width: 50%;
-      height: 100%;
-      background: $mainGradient;
-      opacity: 0.25;
-      content: '';
-    }
-  }
-
-  &.-focus- {
-    color: #ffffff;
-    font-weight: 700;
-    background: $mainGradient;
-    border-radius: 50%;
-  }
-
-  &.-in-range- {
-    color: $dark-shade-75;
-    border-radius: 0;
-  }
-
-  &.-month- {
-    color: inherit;
-    background: none;
-    border-radius: 0;
-  }
-
-  &.-year- {
-    color: inherit;
-    background: none;
-    border-radius: 0;
-  }
-
-  &.-disabled-.-focus-,
-  &.-disabled-.-in-range-,
-  &.-disabled-.-range-to-,
-  &.-disabled-.-range-from-,
-  &.-disabled-.-range-from-::before {
-    opacity: 0.3;
-  }
-}
-
-.air-datepicker--buttons {
-  margin-top: 20px;
-  padding: 0;
-  border: 0;
-}
-
-.air-datepicker-buttons {
-  display: flex;
-  justify-content: space-between;
-}
-
-.air-datepicker-button {
-  padding: 0;
-  font-weight: $boldFontWeight;
-  font-size: $labelFontSize;
-  font-family: $mainFont;
-  text-transform: uppercase;
-
-  &:hover {
-    background: none;
-  }
-}
-
-.date-dropdown__calendar {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 320px;
-  padding: 20px;
-  font-size: 0.75rem;
-  font-family: $mainFont;
-  background-color: #fff;
-  border: 1px solid $dark-shade-25;
-  border-radius: 4px;
-  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-
-  @media (max-width: $smPhoneWidth) {
-    max-width: 260px;
-    padding: 20px 10px;
-  }
-}
