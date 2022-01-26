@@ -1,10 +1,10 @@
 mixin expandable-checkbox-list({ label, list, container, opened })
-  .expandable-checkbox(class=container)
-    .expandable-checkbox__wrapper.js-expandable-checkbox__wrapper
-      span.expandable-checkbox__label= label
-      button.expandable-checkbox__button-expand.js-expandable-checkbox__button-expand(class=`${opened && 'expandable-checkbox__button-expand_active'}`)
+  .expandable-checkbox-list(class=container)
+    .expandable-checkbox-list__wrapper.js-expandable-checkbox-list__wrapper
+      span.expandable-checkbox-list__label= label
+      button.expandable-checkbox-list__button-expand.js-expandable-checkbox-list__button-expand(class=`${opened && 'expandable-checkbox-list__button-expand_active'}`)
         img(class="expandable-checkbox__button-icon" src=require("/src/assets/img/icons/expand-more.svg"), alt="expand")
-    ul.expandable-checkbox__items.js-expandable-checkbox__items(class=`${opened && 'expandable-checkbox__items_active'}`)
+    ul.expandable-checkbox-list__items.js-expandable-checkbox-list__items(class=`${opened && 'expandable-checkbox-list__items_active'}`)
       each item in checkboxList
-        li.expandable-checkbox__item
+        li.expandable-checkbox-list__item
           +checkbox(item.label)(checked = item.checked)
