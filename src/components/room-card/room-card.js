@@ -1,5 +1,6 @@
+import 'components/rating-button/rating-button';
+
 import './room-card.scss';
-import '~components/rate-button/rate-button';
 
 class Slider {
   constructor (elem) {

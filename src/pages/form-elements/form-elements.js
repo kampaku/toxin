@@ -13,7 +13,7 @@ import 'components/pagination/pagination';
 import 'components/radio/radio';
 import 'components/toggle/toggle';
 import 'components/range-slider/range-slider';
-import 'components/rate-button/rate-button';
+import 'components/rating-button/rating-button';
 import 'components/subscription-field/subscription-field';
 import 'components/review/review';
 import ExpandCheckbox from 'components/expandable-checkbox-list/ExpandableCheckbox';

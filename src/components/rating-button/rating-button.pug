@@ -1,0 +1,10 @@
+mixin rating-button(rating, name)
+  - let ratingCount = 0;
+  .rating-button
+    while ratingCount < 5
+      if ratingCount < rating
+        input(type="radio" name=name class="rating-button__star" checked)
+        - ratingCount++
+      else
+        input(type="radio" name=name class="rating-button__star")
+        - ratingCount++

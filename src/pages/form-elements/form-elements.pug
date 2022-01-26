@@ -6,7 +6,7 @@ include /components/radio/radio
 include /components/toggle/toggle
 include /components/button-like/button-like
 include /components/pagination/pagination
-include /components/rate-button/rate-button
+include /components/rating-button/rating-button
 include /components/bullet-list/bullet-list
 include /components/about-room/about-room
 include /components/review/review
@@ -94,8 +94,8 @@ block content
           .form-elements__block.form-elements__block_margin_l
             h3.form-elements__title Rate button
             .form-elements__rate
-              +rate-button(4, "rating1")
-              +rate-button(5, "rating2")
+              +rating-button(4, "rating1")
+              +rating-button(5, "rating2")
         .form-elements__column
           .form-elements__block.form-elements__block_margin_l
             +range-slider("Range Slider")

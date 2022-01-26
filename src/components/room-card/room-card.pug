@@ -1,4 +1,4 @@
-include /components/rate-button/rate-button
+include /components/rating-button/rating-button
 mixin room-card(obj)
   -const {luxury, price, number, star, reviews, images} = obj
   .room-card.js-room-card
@@ -27,7 +27,7 @@ mixin room-card(obj)
           span.room-card__price= price
           span.room-card__price-per-day-text &nbsp;в сутки
       .room-card__rating
-        +rate-button(star)
+        +rating-button(star)
         a(class="room-card__reviews" href="/room-details.html")
           span.room-card__reviews-number= reviews
           span.room-card__reviews-text &nbsp;Отзывов
