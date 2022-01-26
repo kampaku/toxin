@@ -29,6 +29,7 @@ class DateDropdown {
     }
     this.datePick.update({
       minDate: new Date(),
+      classes: 'js-date-dropdown__calendar',
       buttons: ['clear', {
         content: () => {
           return 'применить'
@@ -45,7 +46,7 @@ class DateDropdown {
       }
     })
     const hideCalendar = (e) => {
-      if (!e.target.closest('.date-dropdown__calendar')) {
+      if (!e.target.closest('.js-date-dropdown__calendar')) {
         this.datePick.hide();
       }
     }
@@ -56,7 +57,6 @@ class DateDropdown {
     this.datePick = new AirDatepicker(this.dropdowns[0], {
       prevHtml: `<svg><path d="M 13,10 l -7,7 l 7,7"></path><path d="M 6,17 l 16,0"></path></svg>`,
       nextHtml: `<svg><path d="M 19,10 l 7,7 l -7,7"></path><path d="M 26,17 l -16,0"></path></svg>`,
-      classes: 'date-dropdown__calendar',
       altField: this.dropdowns[1],
       altFieldDateFormat: 'dd.MM.yyyy',
       container: this.root,
@@ -86,7 +86,6 @@ class DateDropdown {
     this.datePick = new AirDatepicker(this.dropdowns[0], {
       prevHtml: `<svg><path d='M 13,10 l -7,7 l 7,7'></path><path d='M 6,17 l 16,0'></path></svg>`,
       nextHtml: `<svg><path d='M 19,10 l 7,7 l -7,7'></path><path d='M 26,17 l -16,0'></path></svg>`,
-      classes: 'date-dropdown__calendar',
       inline: this.inline,
       container: this.root,
       range: true,
