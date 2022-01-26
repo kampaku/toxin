@@ -1,15 +1,19 @@
 import './dropdown.scss';
 
-function getDeclension(n, wordForms) {
-  n = Math.abs(n) % 100;
-  let n1 = n % 10;
-  if (n > 10 && n < 20) {
+function getDeclension(value, wordForms) {
+  value = Math.abs(value) % 100;
+  const num = value % 10;
+  const isThirdForm = value > 10 && value < 20;
+  const isSecondForm = num > 1 && num < 5;
+  const isFirstForm = num === 1;
+
+  if (isThirdForm) {
     return wordForms[2];
   }
-  if (n1 > 1 && n1 < 5) {
+  if (isSecondForm) {
     return wordForms[1];
   }
-  if (n1 === 1) {
+  if (isFirstForm) {
     return wordForms[0];
   }
   return wordForms[2];
@@ -55,12 +59,16 @@ class Dropdown {
       }
       return prev + 0;
     }, 0);
-    if (this.dropdownType.wordForms && sum > 0) {
+
+    const isDeclined = this.dropdownType.wordForms && sum > 0;
+
+    if (isDeclined) {
       textValue.push(`${sum} ${getDeclension(sum, this.dropdownType.wordForms)}`);
     }
 
     this.dropdownType.items.forEach((item) => {
-      if (item.wordForms && item.value > 0) {
+      const isDeclined = item.wordForms && item.value > 0;
+      if (isDeclined) {
         textValue.push(`${item.value} ${getDeclension(item.value, item.wordForms)}`);
       }
     });
