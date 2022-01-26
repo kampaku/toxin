@@ -127,29 +127,29 @@ block content
             +dropdown({
               label: 'dropdown',
               items: ['спальни', 'кровати', 'ванные комнаты'],
-              container: 'js-comfort-opened',
+              container: 'js-comfort-expanded',
               holder: 'Удобства',
-              opened: true
+              expanded: true
             })
         .form-elements__column
           .form-elements__block
             +dropdown({
               label: 'dropdown',
               items: ['взрослые', 'дети', 'младенцы'],
-              container: 'js-zero-guest-opened',
+              container: 'js-zero-guest-expanded',
               holder: 'Сколько гостей',
               buttons: true,
-              opened: true
+              expanded: true
             })
         .form-elements__column
           .form-elements__block
             +dropdown({
               label: 'dropdown',
               items: ['взрослые', 'дети', 'младенцы'],
-              container: 'js-guest-opened',
+              container: 'js-guest-expanded',
               holder: 'Сколько гостей',
               buttons: true,
-              opened: true
+              expanded: true
             })
       .form-elements__row.form-elements__row_margin_xl
         .form-elements__column
@@ -163,8 +163,8 @@ block content
             +expandable-checkbox-list({
               label: 'expandable checkbox list',
               list: checkboxList,
-              container: 'js-expand-box-opened',
-              opened: true
+              container: 'js-expand-box-expanded',
+              expanded: true
             })
         .form-elements__column
           .form-elements__block.form-elements__block_size_s

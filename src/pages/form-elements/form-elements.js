@@ -25,12 +25,12 @@ import './form-elements.scss';
 
 const maskedInput = document.querySelector('.js-input-text__input');
 const expandCheckbox = document.querySelector('.js-expand-box');
-const expandCheckboxOpened = document.querySelector('.js-expand-box-opened');
+const expandCheckboxExpanded = document.querySelector('.js-expand-box-expanded');
 const dropdownGuestElement = document.querySelector('.js-guest');
-const dropdownGuestOpenedElement = document.querySelector('.js-guest-opened');
-const dropdownZeroGuestElement = document.querySelector('.js-zero-guest-opened');
+const dropdownGuestExpandedElement = document.querySelector('.js-guest-expanded');
+const dropdownZeroGuestElement = document.querySelector('.js-zero-guest-expanded');
 const dropdownComfortElement = document.querySelector('.js-comfort');
-const dropdownComfortElementOpened = document.querySelector('.js-comfort-opened');
+const dropdownComfortElementExpanded = document.querySelector('.js-comfort-expanded');
 const doubleDate = document.querySelector('.js-double-date');
 const filterDate = document.querySelector('.js-filter-date');
 const { rooms, guests, zeroGuests } = dropdownTypes;
@@ -47,12 +47,12 @@ if (dropdownGuestElement) {
   new Dropdown(dropdownGuestElement, zeroGuests);
 }
 
-if (dropdownGuestOpenedElement) {
-  new Dropdown(dropdownGuestOpenedElement, guests);
+if (dropdownGuestExpandedElement) {
+  new Dropdown(dropdownGuestExpandedElement, guests);
 }
 
-if (dropdownComfortElementOpened) {
-  new Dropdown(dropdownComfortElementOpened, rooms)
+if (dropdownComfortElementExpanded) {
+  new Dropdown(dropdownComfortElementExpanded, rooms)
 }
 
 if (dropdownComfortElement) {
@@ -79,7 +79,7 @@ if (maskedInput) {
   )
 }
 
-if (expandCheckboxOpened) {
-  new ExpandCheckbox(expandCheckboxOpened)
+if (expandCheckboxExpanded) {
+  new ExpandCheckbox(expandCheckboxExpanded)
 }
 new ExpandCheckbox(expandCheckbox);

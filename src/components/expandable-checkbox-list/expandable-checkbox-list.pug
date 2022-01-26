@@ -1,10 +1,10 @@
-mixin expandable-checkbox-list({ label, list, container, opened })
+mixin expandable-checkbox-list({ label, list, container, expanded })
   .expandable-checkbox-list(class=container)
     .expandable-checkbox-list__wrapper.js-expandable-checkbox-list__wrapper
       span.expandable-checkbox-list__label= label
-      button.expandable-checkbox-list__button-expand.js-expandable-checkbox-list__button-expand(class=`${opened && 'expandable-checkbox-list__button-expand_active'}`)
+      button.expandable-checkbox-list__button-expand.js-expandable-checkbox-list__button-expand(class=`${expanded && 'expandable-checkbox-list__button-expand_active'}`)
         img(class="expandable-checkbox-list__button-icon" src=require("/src/assets/img/icons/expand-more.svg"), alt="expand")
-    ul.expandable-checkbox-list__items.js-expandable-checkbox-list__items(class=`${opened && 'expandable-checkbox-list__items_active'}`)
+    ul.expandable-checkbox-list__items.js-expandable-checkbox-list__items(class=`${expanded && 'expandable-checkbox-list__items_active'}`)
       each item in checkboxList
         li.expandable-checkbox-list__item
           +checkbox(item.label)(checked = item.checked)
