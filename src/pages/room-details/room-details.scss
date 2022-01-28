@@ -15,7 +15,8 @@
     display: grid;
     grid-template-rows: repeat(2, 243px);
     grid-template-columns: repeat(3, auto);
-    margin-bottom: 70px;
+    max-width: 1440px;
+    margin: 0 auto 70px;
 
     @media screen and (max-width: $phoneWidth) {
       grid-template-rows: repeat(3, auto);
