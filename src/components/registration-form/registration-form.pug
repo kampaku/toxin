@@ -2,6 +2,7 @@ include /components/input-text/input-text
 include /components/radio/radio
 include /components/toggle/toggle
 include /components/button/button
+
 mixin registration-form()
   form.registration-form.js-registration-form
     .registration-form__inner
@@ -17,7 +18,7 @@ mixin registration-form()
         .registration-form__radio-button
           +radio('Женщина')(name='name')
       .registration-form__masked-field
-        +input-text({ label: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', mask: 'mask', type: 'text' })
+        +input-text({ label: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', maskContainer: 'js-input-text__input', type: 'text' })
       .registration-form__text-fields
         .registration-form__text-field
           +input-text({ label: 'данные для входа в сервис', placeholder: 'Email', type: 'email' })

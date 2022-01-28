@@ -1,14 +1,11 @@
 import '~scss/main.scss';
 
-import IMask from 'imask';
-
 import 'components/logo/logo';
 import 'components/about-room/about-room';
 import 'components/bullet-list/bullet-list';
 import 'components/button/button';
 import 'components/checkbox/checkbox';
 import 'components/button-like/ButtonLike';
-import 'components/input-text/input-text';
 import 'components/pagination/pagination';
 import 'components/radio/radio';
 import 'components/toggle/toggle';
@@ -20,6 +17,7 @@ import { dropdownTypes } from 'components/dropdown/dropdown-types';
 import { DateDropdown } from 'components/date-dropdown/DateDropdown';
 import { Dropdown } from 'components/dropdown/Dropdown';
 import RangeSlider from 'components/range-slider/range-slider';
+import InputDateMask from 'components/input-text/input-text';
 
 import './form-elements.scss';
 
@@ -66,19 +64,7 @@ if (dropdownZeroGuestElement) {
 }
 
 if (maskedInput) {
-  IMask(
-    maskedInput,
-    {
-      mask: Date,
-      overwrite: true,
-      autofix: true,
-      blocks: {
-        d: {mask: IMask.MaskedRange, placeholderChar: 'd', from: 1, to: 31, maxLength: 2},
-        m: {mask: IMask.MaskedRange, placeholderChar: 'm', from: 1, to: 12, maxLength: 2},
-        Y: {mask: IMask.MaskedRange, placeholderChar: 'y', from: 1900, to: 2020, maxLength: 4}
-      }
-    }
-  )
+  new InputDateMask(maskedInput);
 }
 
 if (expandCheckboxExpanded) {
