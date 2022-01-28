@@ -35,6 +35,19 @@
       font-size: 1.2rem;
     }
 
+    &:hover {
+      font-weight: $boldFontWeight;
+    }
+
+    &::before {
+      display: block;
+      height: 0;
+      overflow: hidden;
+      font-weight: $boldFontWeight;
+      visibility: hidden;
+      content: attr(data-text);
+    }
+
     &_expand {
       padding-right: 17px;
     }

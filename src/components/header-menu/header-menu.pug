@@ -3,10 +3,10 @@ mixin header-menu(items)
     each item in items
       li.header-menu__item
         if item.submenu
-          .header-menu__link.header-menu__link_expand.js-header-menu__link_expand= item.label
+          .header-menu__link.header-menu__link_expand.js-header-menu__link_expand(data-text=item.label)= item.label
           ul.header-menu__submenu
             each element in item.submenu
               li.header-menu__submenu-item
-                a(class='header-menu__link' href= element.link)= element.label
+                a(class='header-menu__link' href=element.link)= element.label
         else
-          a(class='header-menu__link' href= item.link)= item.label
+          a(class='header-menu__link' href=item.link data-text=item.label)= item.label
