@@ -4,29 +4,43 @@ import 'nouislider/dist/nouislider.css';
 
 import './range-slider.scss';
 
-let rangeSlider = document.querySelector('.js-range-slider__container');
-let value = document.querySelector('.js-range-slider__value');
-
-if (rangeSlider) {
-  noUiSlider.create(rangeSlider, {
-    start: [5000, 10000],
-    behaviour: 'drag',
-    step: 1000,
-    connect: true,
-    range: {
-      'min': 0,
-      'max': 15000
-    },
-    format: wNumb({
-      decimals: 0,
-      thousand: ' ',
-      suffix: '₽'
-    })
-  });
-
-  rangeSlider.noUiSlider.on('update', function (values) {
-    value.innerHTML = values.join(' - ');
-  });
+const defaultOptions = {
+  start: [5000, 10000],
+  step: 1000,
+  min: 0,
+  max: 15000
 }
 
-export default rangeSlider;
+class RangeSlider {
+  constructor(element, options= defaultOptions) {
+    this.container = element.querySelector('.js-range-slider__container');
+    this.options = options;
+    this.valueInput = element.querySelector('.js-range-slider__value');
+    this.init();
+  }
+
+  init() {
+    const {start, step, min, max} = this.options;
+    noUiSlider.create(this.container, {
+      start,
+      step,
+      range: {
+        min,
+        max
+      },
+      behaviour: 'drag',
+      connect: true,
+      format: wNumb({
+        decimals: 0,
+        thousand: ' ',
+        suffix: '₽'
+      }),
+    })
+
+    this.container.noUiSlider.on('update', (values) => {
+      this.valueInput.innerHTML = values.join(' - ');
+    });
+  }
+}
+
+export default RangeSlider;

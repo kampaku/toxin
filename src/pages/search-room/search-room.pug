@@ -43,7 +43,11 @@ block content
           buttons: true,
           holder: 'Сколько гостей'})
       .search-room__range-slider
-        +range-slider('диапазон цены', 'Стоимость за сутки пребывания в номере')
+        +range-slider({
+          label: 'диапазон цены',
+          text: 'Стоимость за сутки пребывания в номере',
+          container: 'js-range-slider'
+        })
       .search-room__checkbox
         span.search-room__checkbox-title правила дома
         .search-room__checkbox-wrapper

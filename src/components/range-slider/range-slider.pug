@@ -1,5 +1,5 @@
-mixin range-slider(label, text)
-  .range-slider
+mixin range-slider({ label, text, container })
+  .range-slider(class=container)
     .range-slider__header
       span.range-slider__label= label
       span.range-slider__value.js-range-slider__value
