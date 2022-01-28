@@ -71,7 +71,7 @@
     grid-row-gap: 35px;
     grid-column-gap: 70px;
     grid-template-rows: repeat(3, auto);
-    grid-template-columns: minmax(250px, 291px) minmax(300px, 349px) 380px;
+    grid-template-columns: minmax(200px, 291px) minmax(230px, 349px) minmax(330px, 380px);
     justify-items: left;
 
     @media screen and (max-width: $smDesktopWidth) {
@@ -190,8 +190,10 @@
     width: 100%;
 
     @media screen and (max-width: $smDesktopWidth) {
+      display: flex;
       grid-row: 4 / 5;
       grid-column: 1 / 4;
+      justify-content: center;
     }
 
     @media screen and (max-width: $phoneWidth) {
