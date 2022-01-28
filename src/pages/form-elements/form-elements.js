@@ -12,7 +12,6 @@ import 'components/input-text/input-text';
 import 'components/pagination/pagination';
 import 'components/radio/radio';
 import 'components/toggle/toggle';
-import 'components/range-slider/range-slider';
 import 'components/rating-button/rating-button';
 import 'components/subscription-field/subscription-field';
 import 'components/review/review';
@@ -20,6 +19,7 @@ import ExpandCheckbox from 'components/expandable-checkbox-list/ExpandableCheckb
 import { dropdownTypes } from 'components/dropdown/dropdown-types';
 import { DateDropdown } from 'components/date-dropdown/DateDropdown';
 import { Dropdown } from 'components/dropdown/Dropdown';
+import RangeSlider from 'components/range-slider/range-slider';
 
 import './form-elements.scss';
 
@@ -33,6 +33,8 @@ const dropdownComfortElement = document.querySelector('.js-comfort');
 const dropdownComfortElementExpanded = document.querySelector('.js-comfort-expanded');
 const doubleDate = document.querySelector('.js-double-date');
 const filterDate = document.querySelector('.js-filter-date');
+const slider = document.querySelector('.js-range-slider');
+
 const { rooms, guests, zeroGuests } = dropdownTypes;
 
 if (doubleDate) {
@@ -83,3 +85,7 @@ if (expandCheckboxExpanded) {
   new ExpandCheckbox(expandCheckboxExpanded)
 }
 new ExpandCheckbox(expandCheckbox);
+
+if (slider) {
+  new RangeSlider(slider);
+}
