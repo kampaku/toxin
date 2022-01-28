@@ -20,9 +20,9 @@
   --adp-cell-background-color-selected: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   --adp-background-color-selected-other-month: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
   --adp-background-color-selected-other-month-focused: linear-gradient(
-      180deg,
-      #bc9cff 0%,
-      #8ba4f9 100%
+    180deg,
+    #bc9cff 0%,
+    #8ba4f9 100%
   );
   --adp-cell-background-color-in-range: rgba(188, 156, 255, 0.25);
   --adp-cell-background-color-selected-hover: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
@@ -242,4 +242,3 @@
     @extend %label-text;
   }
 }
-
