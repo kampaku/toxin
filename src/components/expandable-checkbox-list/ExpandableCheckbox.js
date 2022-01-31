@@ -1,6 +1,6 @@
 import './expandable-checkbox-list.scss';
 
-export default class ExpandableCheckbox {
+class ExpandableCheckbox {
   constructor(elem) {
     this.container = elem.querySelector('.js-expandable-checkbox-list__wrapper');
     this.list = elem.querySelector('.js-expandable-checkbox-list__items');
@@ -15,3 +15,5 @@ export default class ExpandableCheckbox {
     })
   }
 }
+
+export default ExpandableCheckbox;
