@@ -5,9 +5,9 @@ mixin checkbox(title, description)
     if description
       span.checkbox__text.checkbox__text_rich
         span.checkbox__title
-          =title
+          !=title
         span.checkbox__description
-          =description
+          !=description
     else
       span.checkbox__text
-        =title
+        !=title
