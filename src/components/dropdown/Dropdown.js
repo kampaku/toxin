@@ -24,6 +24,7 @@ class Dropdown {
     this.dropdown = dropdown;
     this.dropdownType = dropdownType;
     this.buttonHandler = this.buttonHandler.bind(this);
+    this.toggle = this.toggle.bind(this);
     this.clear = this.clear.bind(this);
     this.apply = this.apply.bind(this);
     this.init();
@@ -137,6 +138,11 @@ class Dropdown {
     this.changeText(sum);
   }
 
+  toggle() {
+    this.list.classList.toggle('dropdown__inner_active');
+    this.openBtn.classList.toggle('dropdown__header_active');
+  }
+
   init() {
     this.openBtn = this.dropdown.querySelector('.js-dropdown__header');
     this.list = this.dropdown.querySelector('.js-dropdown__inner');
@@ -145,10 +151,7 @@ class Dropdown {
     this.listItems = this.list.querySelectorAll('.js-dropdown__item');
 
     if (this.openBtn) {
-      this.openBtn.addEventListener('click', () => {
-        this.list.classList.toggle('dropdown__inner_active');
-        this.openBtn.classList.toggle('dropdown__header_active');
-      });
+      this.openBtn.addEventListener('click', this.toggle);
     }
 
     this.render();

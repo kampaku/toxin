@@ -11,6 +11,7 @@ class Slider {
     this.dotsWrap = elem.querySelector('.js-room-card__slider-dots');
     this.activeDot = 'room-card__slider-dot_active';
     this.dots = elem.querySelectorAll('.js-room-card__slider-dot');
+    this.dotsHandler = this.dotsHandler.bind(this);
     this.init();
   }
 
@@ -33,6 +34,15 @@ class Slider {
     this.showSlides(this.slideIndex = sliderNum)
   }
 
+  dotsHandler({ target }) {
+    if (!target.matches('.js-room-card__slider-dot')) return;
+    this.dots.forEach((dot, i) => {
+      if (target === this.dots[i - 1]) {
+        this.currentSlide(i);
+      }
+    })
+  }
+
   init() {
 
     this.prev.addEventListener('click', () => {
@@ -43,15 +53,7 @@ class Slider {
       this.nextSlide(1);
     });
 
-    this.dotsWrap.addEventListener('click', (event) => {
-      let target = event.target;
-
-      for (let i = 0; i < this.dots.length + 1; i++) {
-        if (target.classList.contains('room-card__slider-dot') && target === this.dots[i - 1]) {
-          this.currentSlide(i);
-        }
-      }
-    });
+    this.dotsWrap.addEventListener('click', this.dotsHandler);
 
     this.showSlides(this.slideIndex);
   }
