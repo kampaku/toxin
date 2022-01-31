@@ -36,6 +36,7 @@
     }
 
     &:hover {
+      color: $dark-shade-75;
       font-weight: $boldFontWeight;
     }
 
@@ -74,15 +75,15 @@
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+    position: absolute;
+    left: 50%;
+    z-index: 2;
+    background-color: #fff;
+    transform: translateX(-50%);
 
     &_active {
-      position: absolute;
-      left: 50%;
-      z-index: 2;
       display: flex;
       flex-direction: column;
-      background-color: #fff;
-      transform: translateX(-50%);
     }
 
     &-item {
