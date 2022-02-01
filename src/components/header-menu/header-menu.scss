@@ -67,18 +67,18 @@
   }
 
   &__submenu {
+    position: absolute;
+    left: 50%;
+    z-index: 2;
     display: none;
     width: 120px;
     margin: 0;
     padding: 0 5px 10px;
     list-style: none;
+    background-color: #fff;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-    position: absolute;
-    left: 50%;
-    z-index: 2;
-    background-color: #fff;
     transform: translateX(-50%);
 
     &_active {
