@@ -7,6 +7,7 @@ class DateDropdown {
   constructor(root, inline = false) {
     this.root = root;
     this.inline = inline;
+    this.handleShow = this.handleShow.bind(this);
     this.init();
   }
 
@@ -75,11 +76,7 @@ class DateDropdown {
       },
     })
 
-    this.dropdowns[1].addEventListener('click', () => {
-      if (!this.datePick.$datepicker.isConnected) {
-        this.datePick.show();
-      }
-    })
+    this.dropdowns[1].addEventListener('click', this.handleShow);
   }
 
   initializeOne() {
@@ -98,13 +95,15 @@ class DateDropdown {
     })
   }
 
+  handleShow() {
+    if (!this.datePick.$datepicker.isConnected) {
+      this.datePick.show();
+    }
+  }
+
   bindListeners() {
     const expandButtons = this.root.querySelectorAll('.js-date-dropdown__expand-button');
-    expandButtons.forEach(btn => btn.addEventListener('click', () => {
-      if (!this.datePick.$datepicker.isConnected) {
-        this.datePick.show();
-      }
-    }))
+    expandButtons.forEach(btn => btn.addEventListener('click', this.handleShow));
   }
 }
 
