@@ -37,10 +37,10 @@ class Slider {
   dotsHandler({ target }) {
     if (!target.matches('.js-room-card__slider-dot')) return;
     this.dots.forEach((dot, i) => {
-      if (target === this.dots[i - 1]) {
-        this.currentSlide(i);
+      if (target === dot) {
+        this.currentSlide(i + 1);
       }
-    })
+    });
   }
 
   init() {
