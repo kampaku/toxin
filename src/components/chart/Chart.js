@@ -1,6 +1,6 @@
 import './chart.scss';
 
-export default class Chart {
+class Chart {
   constructor(elem, options) {
     this.units = elem.querySelectorAll('.js-chart__unit');
     this.votes = elem.querySelector('.js-chart__number');
@@ -22,3 +22,5 @@ export default class Chart {
     });
   }
 }
+
+export default Chart;
