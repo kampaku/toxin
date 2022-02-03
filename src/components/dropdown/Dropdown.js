@@ -100,7 +100,7 @@ class Dropdown {
   }
 
   checkNegativeValue(itemElement) {
-    const btnMinus = itemElement.querySelector('.js-dropdown__item-button_icon_minus');
+    const btnMinus = itemElement.querySelector('[data-button="minus"]');
     const item = this.getItem(itemElement);
 
     if (item.value === 0) {
@@ -168,4 +168,4 @@ class Dropdown {
   }
 }
 
-export { Dropdown };
+export default Dropdown;

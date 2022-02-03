@@ -15,7 +15,7 @@ import 'components/review/review';
 import ExpandCheckbox from 'components/expandable-checkbox-list/ExpandableCheckbox';
 import { dropdownTypes } from 'components/dropdown/dropdown-types';
 import { DateDropdown } from 'components/date-dropdown/DateDropdown';
-import { Dropdown } from 'components/dropdown/Dropdown';
+import Dropdown from 'components/dropdown/Dropdown';
 import RangeSlider from 'components/range-slider/range-slider';
 import InputDateMask from 'components/input-text/input-text';
 
