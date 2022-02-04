@@ -53,7 +53,7 @@ class Dropdown {
 
   changeText(sum) {
     let textValue = [];
-    const dropdownText = this.dropdown.querySelector('.js-dropdown__text');
+    const dropdownText = this.dropdown.querySelector('.js-dropdown__input');
     sum -= this.dropdownType.items.reduce((prev, curr) => {
       if (curr.ignore) {
         return prev + curr.value;
