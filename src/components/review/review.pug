@@ -5,7 +5,7 @@ mixin review(obj)
     img(class="review__img", src=src, alt="ava")
     span.review__name
       =name
-    span.review__time
+    time.review__time
       =time
     +button-like(likes, liked)
     p.review__comment
