@@ -10,7 +10,7 @@
 %item-title {
   color: $dark-shade-100;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.188rem;
   font-family: $mainFont;
   font-style: normal;
   line-height: 1.2;
@@ -29,8 +29,15 @@
 %body-text {
   color: $dark-shade-75;
   font-weight: 400;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-family: $mainFont;
   font-style: normal;
   line-height: $largeLineHeight;
+}
+
+%material-icons {
+  font-size: $sub-sectionFontSize;
+  font-family: 'Material Icons';
+  line-height: 1;
+  text-transform: none;
 }
