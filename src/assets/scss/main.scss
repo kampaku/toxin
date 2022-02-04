@@ -21,13 +21,3 @@ body {
   margin: 0;
   padding: 0;
 }
-
-@media (max-width: $phoneWidth) {
-  html {
-    font-size: 90%;
-  }
-
-  .container {
-    padding: 0 10px;
-  }
-}
