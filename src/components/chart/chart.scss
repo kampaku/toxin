@@ -1,11 +1,17 @@
 .chart {
   display: flex;
 
+  @media screen and (max-width: $tableWidth) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__units {
     margin-right: 28px;
 
-    @media screen and (max-width: $smPhoneWidth) {
-      margin-right: 10px;
+    @media screen and (max-width: $tableWidth) {
+      margin: 0 0 20px;
     }
   }
 
@@ -57,6 +63,10 @@
     line-height: $mainLineHeight;
     list-style: none;
     @extend %body-text;
+
+    @media screen and (max-width: $tableWidth) {
+      align-self: inherit;
+    }
   }
 
   &__legend-item {

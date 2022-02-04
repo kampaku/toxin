@@ -1,5 +1,6 @@
 .header-menu {
   display: flex;
+  gap: 19px;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -13,14 +14,6 @@
 
   &__item {
     position: relative;
-  }
-
-  &__item:not(:last-child) {
-    margin-right: 25px;
-
-    @media screen and (max-width: $smDesktopWidth) {
-      margin: 0 0 20px;
-    }
   }
 
   &__link {
@@ -50,7 +43,7 @@
     }
 
     &_expand {
-      padding-right: 17px;
+      padding-right: 21px;
     }
 
     &_expand::after {
