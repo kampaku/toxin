@@ -1,4 +1,5 @@
 .button-like {
+  position: relative;
   width: 40px;
   height: 20px;
   padding-left: 19px;
@@ -6,14 +7,26 @@
   font-size: 0.625rem;
   font-family: $mainFont;
   line-height: 1.2;
-  background: url('/src/assets/img/icons/like.svg') 15% 50% no-repeat;
+  background: none;
   border: 1px solid $dark-shade-25;
   border-radius: 10px;
   cursor: pointer;
 
+  &::after {
+    @extend %material-icons;
+    position: absolute;
+    left: 5px;
+    font-size: 0.625rem;
+    content: 'favorite_border';
+  }
+
   &_active {
     color: $mainBrandColor;
-    background: url('/src/assets/img/icons/like-active.svg') 15% 50% no-repeat;
     border-color: $mainBrandColor;
+
+    &::after {
+      position: absolute;
+      content: 'favorite';
+    }
   }
 }

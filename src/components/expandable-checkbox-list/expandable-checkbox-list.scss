@@ -16,8 +16,16 @@
 
   &__button-expand {
     width: 44px;
+    color: $dark-shade-50;
     background: none;
+    border: 0;
     cursor: pointer;
+    transition: transform 0.3s;
+    @extend %material-icons;
+
+    &_active {
+      transform: rotate(180deg);
+    }
   }
 
   &__items {
@@ -40,15 +48,6 @@
       transform: translateY(0);
       visibility: visible;
       opacity: 1;
-    }
-  }
-
-  &__button-expand {
-    border: 0;
-    transition: transform 0.3s;
-
-    &_active {
-      transform: rotate(180deg);
     }
   }
 

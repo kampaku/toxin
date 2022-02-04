@@ -37,8 +37,8 @@ block variables
     ]
 
     const aboutRoomItems = [
-      {src: require("/src/assets/img/icons/insert-emoticon.svg"), title: "Комфорт", text: "Шумопоглощающие стены"},
-      {src: require("/src/assets/img/icons/location-city.svg"), title: "Удобство", text: "Окно в каждой из спален"},
+      {icon: "insert_emoticon", title: "Комфорт", text: "Шумопоглощающие стены"},
+      {icon: "location_city", title: "Удобство", text: "Окно в каждой из спален"},
     ]
 block content
   .form-elements
@@ -159,7 +159,7 @@ block content
               list: checkboxList,
               container: 'js-expand-box'
             })
-          .form-elements__block.form-elements__block_margin_xl.form-elements__block_size_s
+          .form-elements__block.form-elements__block_margin_m.form-elements__block_size_s
             +expandable-checkbox-list({
               label: 'expandable checkbox list',
               list: checkboxList,

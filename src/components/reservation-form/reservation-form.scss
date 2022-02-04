@@ -79,7 +79,7 @@
         word-wrap: break-word;
 
         @media (max-width: $phoneWidth) {
-          max-width: 190px;
+          max-width: 220px;
         }
       }
 
@@ -96,11 +96,22 @@
   }
 
   &__info-icon {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: $dark-shade-25;
+    font-weight: $boldFontWeight;
+    font-size: $labelFontSize;
+    border: 1px solid $dark-shade-25;
+    border-radius: 50%;
+    user-select: none;
   }
 
   &__tooltip {
     position: absolute;
+    top: 100%;
     left: 0;
     z-index: 5;
     width: auto;

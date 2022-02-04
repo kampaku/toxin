@@ -1,20 +1,19 @@
 mixin dropdown(obj)
-  -const {label, items, container, holder, buttons, expanded} = obj
+  -const {label, items, container, holder, buttons, expanded = ''} = obj
   div(class=`dropdown ${container}`)
     p.dropdown__label= label
     .dropdown__header.js-dropdown__header(class=`${expanded && 'dropdown__header_active'}`)
-      input(class="dropdown__text js-dropdown__text" readonly placeholder=holder type='text')
-      button(class="dropdown__button-expand" type="button")
-        img(src=require("/src/assets/img/icons/expand-more.svg"), alt="expand")
+      input(class="dropdown__input js-dropdown__input" readonly placeholder=holder type='text')
+      button(class="dropdown__button-expand" type="button") expand_more
     .dropdown__inner.js-dropdown__inner(class=`${expanded && 'dropdown__inner_active'}`)
       ul(class="dropdown__list")
         each el in items
           li(class="dropdown__item js-dropdown__item" data-type=el)
             span.dropdown__item-text= el
             .dropdown__item-inner
-              button(class="dropdown__item-button js-dropdown__item-button dropdown__item-button_icon_minus js-dropdown__item-button_icon_minus" type="button" data-button="minus")
+              button(class="dropdown__item-button js-dropdown__item-button js-dropdown__item-button_icon_minus" type="button" data-button="minus") -
               span.dropdown__item-amount.js-dropdown__item-amount 0
-              button(class="dropdown__item-button js-dropdown__item-button dropdown__item-button_icon_plus" type="button" data-button="plus")
+              button(class="dropdown__item-button js-dropdown__item-button" type="button" data-button="plus") +
       if buttons
         .dropdown__buttons
           button(class="dropdown__button-clear js-dropdown__button-clear" type="button") очистить

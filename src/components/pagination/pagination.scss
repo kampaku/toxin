@@ -40,11 +40,13 @@
     text-align: center;
     text-decoration: none;
     border-radius: 22px;
-  }
 
-  &__next {
-    background: url('/src/assets/img/icons/arrow-white.svg') no-repeat center,
-      linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    &_arrow_next {
+      color: $background-color;
+      font-size: $sub-sectionFontSize;
+      font-family: $iconFont;
+      background: $secondaryGradient;
+    }
   }
 
   &__text {

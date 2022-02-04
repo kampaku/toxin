@@ -55,14 +55,11 @@
 
     &_expand::after {
       position: absolute;
-      top: 2px;
+      top: 50%;
       right: 0;
-      width: 9px;
-      height: 9px;
-      border-top: 2px solid $dark-shade-75;
-      border-right: 2px solid $dark-shade-75;
-      transform: rotate(135deg);
-      content: '';
+      transform: translateY(-50%);
+      content: 'expand_more';
+      @extend %material-icons;
     }
   }
 

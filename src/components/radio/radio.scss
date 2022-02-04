@@ -13,8 +13,11 @@
     clip: rect(0 0 0 0);
 
     &:checked + .radio__button {
-      background: url('/src/assets/img/icons/radio.svg') 50% 50% no-repeat;
       box-shadow: 0 0 0 1px $mainBrandColor;
+    }
+
+    &:checked + .radio__button::after {
+      background: $mainGradient;
     }
 
     &:checked ~ .radio__label {
@@ -27,10 +30,21 @@
   }
 
   &__button {
+    position: relative;
     width: 20px;
     height: 20px;
     margin-right: 10px;
     border-radius: 50%;
     box-shadow: 0 0 0 1px $dark-shade-25;
+
+    &::after {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      content: '';
+    }
   }
 }
