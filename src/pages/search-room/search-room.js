@@ -5,9 +5,9 @@ import 'components/footer/footer';
 import 'components/header/header';
 import 'components/pagination/pagination';
 import 'components/room-card/room-card';
-import { DateDropdown } from 'components/date-dropdown/DateDropdown';
+import DateDropdown from 'components/date-dropdown/DateDropdown';
 import Dropdown from 'components/dropdown/Dropdown';
-import { dropdownTypes } from 'components/dropdown/dropdown-types';
+import dropdownTypes from 'components/dropdown/dropdown-types';
 import ExpandableCheckbox from 'components/expandable-checkbox-list/ExpandableCheckbox';
 import RangeSlider from 'components/range-slider/range-slider';
 

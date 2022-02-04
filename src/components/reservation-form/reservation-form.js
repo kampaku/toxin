@@ -1,6 +1,6 @@
 import 'components/button/button';
-import { DateDropdown } from 'components/date-dropdown/DateDropdown';
-import { dropdownTypes } from 'components/dropdown/dropdown-types';
+import DateDropdown from 'components/date-dropdown/DateDropdown';
+import dropdownTypes from 'components/dropdown/dropdown-types';
 import Dropdown from 'components/dropdown/Dropdown';
 
 import './reservation-form.scss';

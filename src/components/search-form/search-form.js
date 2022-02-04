@@ -1,7 +1,7 @@
 import 'components/button/button';
-import { dropdownTypes } from 'components/dropdown/dropdown-types';
+import dropdownTypes from 'components/dropdown/dropdown-types';
 import Dropdown from 'components/dropdown/Dropdown';
-import { DateDropdown } from 'components/date-dropdown/DateDropdown';
+import DateDropdown from 'components/date-dropdown/DateDropdown';
 
 import './search-form.scss';
 

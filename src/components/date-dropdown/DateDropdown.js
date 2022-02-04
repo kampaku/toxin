@@ -107,4 +107,4 @@ class DateDropdown {
   }
 }
 
-export { DateDropdown };
+export default DateDropdown;

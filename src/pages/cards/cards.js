@@ -6,7 +6,7 @@ import 'components/registration-form/registration-form';
 import 'components/reservation-form/reservation-form';
 import 'components/room-card/room-card';
 import 'components/search-form/search-form';
-import { DateDropdown } from 'components/date-dropdown/DateDropdown';
+import DateDropdown from 'components/date-dropdown/DateDropdown';
 
 import './cards.scss';
 

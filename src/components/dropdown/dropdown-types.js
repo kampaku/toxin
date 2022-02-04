@@ -24,4 +24,4 @@ const dropdownTypes = {
   },
 };
 
-export { dropdownTypes };
+export default dropdownTypes;
