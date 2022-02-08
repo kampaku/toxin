@@ -21,7 +21,8 @@
   font-weight: 400;
   font-family: 'Material Icons';
   font-style: normal;
-  src: local('Material Icons'), url('/src/assets/fonts/material-icons-regular.woff2') format('woff2'),
+  src: local('Material Icons'),
+    url('/src/assets/fonts/material-icons-regular.woff2') format('woff2'),
     url('/src/assets/fonts/material-icons-regular.woff') format('woff');
   font-display: swap;
 }
