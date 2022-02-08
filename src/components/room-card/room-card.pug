@@ -7,10 +7,8 @@ mixin room-card(obj)
         each img in images
           img(class="room-card__slider-slide js-room-card__slider-slide" src=require(`/src/assets/img/rooms-photo/${img}`), alt="room picture")
       .room-card__slider-dots.js-room-card__slider-dots
-        .room-card__slider-dot.js-room-card__slider-dot
-        .room-card__slider-dot.js-room-card__slider-dot
-        .room-card__slider-dot.js-room-card__slider-dot
-        .room-card__slider-dot.js-room-card__slider-dot
+        each dot in images
+          .room-card__slider-dot.js-room-card__slider-dot
       .room-card__slider-buttons
         button.room-card__slider-button.room-card__slider-button_direction_left.js-room-card__slider-button_direction_left
           |navigate_before
