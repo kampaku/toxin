@@ -1,3 +1,59 @@
+.date-dropdown {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 320px;
+
+  &__header {
+    position: relative;
+
+    &:hover,
+    &:focus-within {
+      color: $dark-shade-75;
+      border-color: $dark-shade-50;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &__expand-button {
+    position: absolute;
+    right: 0;
+    width: 44px;
+    height: 100%;
+    color: $dark-shade-50;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    @extend %material-icons;
+  }
+
+  &__input {
+    width: 100%;
+    height: 44px;
+    padding: 0 40px 0 15px;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    @extend %body-text;
+
+    &:hover,
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__label {
+    margin: 0 0 5px;
+    @extend %label-text;
+  }
+}
+
 .air-datepicker {
   box-sizing: border-box;
   width: 100%;
@@ -9,6 +65,10 @@
   border: 1px solid $dark-shade-25;
   border-radius: 4px;
   box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+
+  @media (max-width: $phoneWidth) {
+    max-width: 310px;
+  }
 
   @media (max-width: $smPhoneWidth) {
     max-width: 260px;
@@ -52,6 +112,11 @@
     font-weight: $boldFontWeight;
     font-size: $titleFontSize;
     line-height: 1.2;
+  }
+
+  &-nav--action {
+    color: $mainBrandColor;
+    @extend %material-icons;
   }
 
   &--navigation {
@@ -187,61 +252,5 @@
     &:hover {
       background: none;
     }
-  }
-}
-
-.date-dropdown {
-  display: flex;
-  gap: 20px;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 320px;
-
-  &__header {
-    position: relative;
-
-    &:hover,
-    &:focus-within {
-      color: $dark-shade-75;
-      border-color: $dark-shade-50;
-    }
-  }
-
-  &__wrapper {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  &__expand-button {
-    position: absolute;
-    right: 0;
-    width: 44px;
-    height: 100%;
-    color: $dark-shade-50;
-    background: none;
-    border: 0;
-    cursor: pointer;
-    @extend %material-icons;
-  }
-
-  &__input {
-    width: 100%;
-    height: 44px;
-    padding: 0 40px 0 15px;
-    border: 1px solid $dark-shade-25;
-    border-radius: 4px;
-    cursor: pointer;
-    user-select: none;
-    @extend %body-text;
-
-    &:hover,
-    &:focus-visible {
-      outline: none;
-    }
-  }
-
-  &__label {
-    margin: 0 0 5px;
-    @extend %label-text;
   }
 }
