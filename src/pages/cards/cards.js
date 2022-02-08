@@ -17,8 +17,8 @@ if (dateElement) {
   const calendar = new DateDropdown(dateElement, true);
 }
 
-const firstDate = new Date('2022-02-20');
-const secondDate = new Date('2022-02-25');
+const firstDate = new Date('2022-02-24');
+const secondDate = new Date('2022-02-28');
 
 new ReservationForm({
   dates: [firstDate, secondDate],
