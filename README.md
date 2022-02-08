@@ -11,6 +11,8 @@ ___
 
 `npm run stylelint:fix` - исправление стилей
 
+`npm run lint` - запуск eslint
+
 ### Список страниц:
 
 1. [Главная](https://hotel-toxin.vercel.app/landing-page.html)
