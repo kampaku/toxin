@@ -8,29 +8,38 @@ class DateDropdown {
     this.root = root;
     this.inline = inline;
     this.handleShow = this.handleShow.bind(this);
+    this.initializeOne = this.initializeOne.bind(this);
+    this.initializeDouble = this.initializeDouble.bind(this);
+    this.hideCalendar = this.hideCalendar.bind(this);
     this.init();
   }
 
-  init() {
-    this.dropdowns = this.root.querySelectorAll('.js-date-dropdown__input');
-
-    if (this.inline) {
-      const label = this.root.querySelector('.js-date-dropdown__label');
-      const input = this.root.querySelector('.js-date-dropdown__input');
-      const expandButton = this.root.querySelector('.js-date-dropdown__expand-button');
-      label.style.display = 'none';
-      input.style.display = 'none';
-      expandButton.style.display = 'none';
+  selectDates(date1, date2) {
+    if (date1 && date2) {
+      this.datePick.selectDate([date1, date2]);
     }
+  }
 
-    if (this.dropdowns.length === 2) {
-      this.initializeDouble();
-    } else if (this.dropdowns.length === 1) {
-      this.initializeOne();
-    }
+  addOnSelectCallback(func) {
     this.datePick.update({
+      onSelect() {
+        func()
+      }
+    })
+  }
+
+  getDefaultOptions() {
+    return {
+      prevHtml: 'arrow_back',
+      nextHtml: 'arrow_forward',
       minDate: new Date(),
       classes: 'js-date-dropdown__calendar',
+      container: this.root,
+      range: true,
+      multipleDates: true,
+      navTitles: {
+        days: 'MMMM yyyy',
+      },
       buttons: ['clear', {
         content: () => {
           return 'применить'
@@ -40,64 +49,83 @@ class DateDropdown {
         }
       }],
       onShow: () => {
-        document.addEventListener('mousedown', hideCalendar)
+        document.addEventListener('mousedown', this.hideCalendar);
       },
       onHide: () => {
-        document.removeEventListener('mousedown', hideCalendar)
+        document.removeEventListener('mousedown', this.hideCalendar);
       }
-    })
-    const hideCalendar = (e) => {
-      if (!e.target.closest('.js-date-dropdown__calendar')) {
-        this.datePick.hide();
-      }
+    }
+  }
+
+  init() {
+    this.dropdowns = this.root.querySelectorAll('.js-date-dropdown__input');
+    const options = this.getDefaultOptions();
+
+    if (this.inline) {
+      this.initializeInline(options);
+    }
+    if (this.dropdowns.length === 2) {
+      this.initializeDouble(options);
+    } else if (this.dropdowns.length === 1) {
+      this.initializeOne(options);
     }
     this.bindListeners();
   }
 
-  initializeDouble() {
+  initializeDouble(options) {
     this.datePick = new AirDatepicker(this.dropdowns[0], {
-      prevHtml: `<svg><path d="M 13,10 l -7,7 l 7,7"></path><path d="M 6,17 l 16,0"></path></svg>`,
-      nextHtml: `<svg><path d="M 19,10 l 7,7 l -7,7"></path><path d="M 26,17 l -16,0"></path></svg>`,
+      dateFormat(data) {
+        return data[0].toLocaleString(false, {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric'
+        })
+      },
       altField: this.dropdowns[1],
-      altFieldDateFormat: 'dd.MM.yyyy',
-      container: this.root,
-      range: true,
-      multipleDates: true,
-      dateFormat: 'dd.MM.yyyy',
-      navTitles: {
-        days: 'MMMM yyyy',
+      altFieldDateFormat(data) {
+        if (!data[1]) return '';
+        return data[1].toLocaleString(false, {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric'
+        })
       },
-      onSelect: ( {datepicker, formattedDate}) => {
-        this.dropdowns[1].value = '';
-        if (datepicker.selectedDates.length > 1) {
-          this.dropdowns[0].value = formattedDate[0]
-          this.dropdowns[1].value = formattedDate[1]
-        }
-      },
+      ...options
     })
 
     this.dropdowns[1].addEventListener('click', this.handleShow);
   }
 
-  initializeOne() {
+  initializeOne(options) {
     this.datePick = new AirDatepicker(this.dropdowns[0], {
-      prevHtml: `<svg><path d='M 13,10 l -7,7 l 7,7'></path><path d='M 6,17 l 16,0'></path></svg>`,
-      nextHtml: `<svg><path d='M 19,10 l 7,7 l -7,7'></path><path d='M 26,17 l -16,0'></path></svg>`,
-      inline: this.inline,
-      container: this.root,
-      range: true,
-      multipleDates: true,
       multipleDatesSeparator: ' - ',
       dateFormat: 'dd MMM',
-      navTitles: {
-        days: 'MMMM yyyy',
-      },
+      ...options
+    })
+  }
+
+  initializeInline(options) {
+    const label = this.root.querySelector('.js-date-dropdown__label');
+    const input = this.root.querySelector('.js-date-dropdown__input');
+    const expandButton = this.root.querySelector('.js-date-dropdown__expand-button');
+    label.style.display = 'none';
+    input.style.display = 'none';
+    expandButton.style.display = 'none';
+    this.datePick = new AirDatepicker(this.dropdowns[0], {
+      inline: true,
+      ...options
     })
   }
 
   handleShow() {
     if (!this.datePick.$datepicker.isConnected) {
       this.datePick.show();
+    }
+  }
+
+  hideCalendar(e) {
+    if (!e.target.closest('.js-date-dropdown__calendar')) {
+      this.datePick.hide();
     }
   }
 
