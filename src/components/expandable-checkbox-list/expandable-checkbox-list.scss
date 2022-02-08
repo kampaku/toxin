@@ -2,16 +2,16 @@
   position: relative;
   max-width: 266px;
 
-  &__label {
-    @extend %label-text;
-  }
-
   &__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 5px;
     cursor: pointer;
+  }
+
+  &__label {
+    @extend %label-text;
   }
 
   &__button-expand {

@@ -5,6 +5,16 @@
   width: 100%;
   max-width: 320px;
 
+  &__wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  &__label {
+    margin: 0 0 5px;
+    @extend %label-text;
+  }
+
   &__header {
     position: relative;
 
@@ -13,23 +23,6 @@
       color: $dark-shade-75;
       border-color: $dark-shade-50;
     }
-  }
-
-  &__wrapper {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  &__expand-button {
-    position: absolute;
-    right: 0;
-    width: 44px;
-    height: 100%;
-    color: $dark-shade-50;
-    background: none;
-    border: 0;
-    cursor: pointer;
-    @extend %material-icons;
   }
 
   &__input {
@@ -48,9 +41,16 @@
     }
   }
 
-  &__label {
-    margin: 0 0 5px;
-    @extend %label-text;
+  &__expand-button {
+    position: absolute;
+    right: 0;
+    width: 44px;
+    height: 100%;
+    color: $dark-shade-50;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    @extend %material-icons;
   }
 }
 

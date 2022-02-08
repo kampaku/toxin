@@ -5,10 +5,6 @@
   border-bottom-left-radius: 4px;
   box-shadow: 0 10px 20px $dark-shade-5;
 
-  &__inner {
-    padding: 20px 20px 20px 22px;
-  }
-
   &__slider {
     position: relative;
 
@@ -103,6 +99,10 @@
     }
   }
 
+  &__inner {
+    padding: 20px 20px 20px 22px;
+  }
+
   &__info {
     display: flex;
     align-items: center;
@@ -110,12 +110,6 @@
     margin-bottom: 8px;
     padding-bottom: 10px;
     border-bottom: 1px solid $dark-shade-5;
-  }
-
-  &__rating {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   }
 
   &__room-number-link {
@@ -141,6 +135,16 @@
     text-transform: uppercase;
   }
 
+  &__price-per-day-text {
+    font-size: $labelFontSize;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &__price-per-day,
   &__reviews {
     color: $dark-shade-50;
@@ -160,9 +164,5 @@
     font-family: $mainFont;
     font-style: normal;
     line-height: $mainLineHeight;
-  }
-
-  &__price-per-day-text {
-    font-size: $labelFontSize;
   }
 }

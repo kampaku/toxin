@@ -28,6 +28,71 @@
     }
   }
 
+  &__column_size {
+    &_s {
+      grid-column: span 2;
+
+      @media (max-width: $tableWidth) {
+        display: none;
+      }
+    }
+
+    &_m {
+      grid-column: span 3;
+
+      &:not(:first-child) {
+        @media (max-width: $tableWidth) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    margin-bottom: 15px;
+
+    @media (max-width: $tableWidth) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__description {
+    margin: 0;
+    line-height: $largeLineHeight;
+    @extend %body-text;
+
+    @media (max-width: $tableWidth) {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin: 5px 0 20px 0;
+    @extend %label-text;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &-item:not(:last-child) {
+      margin-bottom: 19px;
+    }
+  }
+
+  &__link {
+    color: $dark-shade-50;
+    line-height: 1.2;
+    text-decoration: none;
+    @extend %body-text;
+  }
+
+  &__subscribe {
+    margin-bottom: 20px;
+    @extend %body-text;
+  }
+
   &__copyright {
     padding: 24px 0;
     border-top: 1px solid #dedee3;
@@ -56,73 +121,8 @@
     }
   }
 
-  &__logo {
-    margin-bottom: 15px;
-
-    @media (max-width: $tableWidth) {
-      margin-bottom: 0;
-    }
-  }
-
-  &__link {
-    color: $dark-shade-50;
-    line-height: 1.2;
-    text-decoration: none;
-    @extend %body-text;
-  }
-
-  &__title {
-    margin: 5px 0 20px 0;
-    @extend %label-text;
-  }
-
-  &__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  &__list-item:not(:last-child) {
-    margin-bottom: 19px;
-  }
-
-  &__subscribe {
-    margin-bottom: 20px;
-    @extend %body-text;
-  }
-
-  &__description {
-    margin: 0;
-    line-height: $largeLineHeight;
-    @extend %body-text;
-
-    @media (max-width: $tableWidth) {
-      display: none;
-    }
-  }
-
   &__social {
     display: flex;
     gap: 20px;
-  }
-
-  &__column_size {
-    &_s {
-      grid-column: span 2;
-
-      @media (max-width: $tableWidth) {
-        display: none;
-      }
-    }
-
-    &_m {
-      grid-column: span 3;
-
-      &:not(:first-child) {
-        @media (max-width: $tableWidth) {
-          display: none;
-        }
-      }
-    }
   }
 }

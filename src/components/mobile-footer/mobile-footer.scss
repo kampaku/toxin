@@ -14,13 +14,13 @@
     margin-bottom: 15px;
   }
 
-  &__social {
-    display: flex;
-    column-gap: 20px;
-  }
-
   &__copyright {
     margin: 0 0 20px;
     @extend %body-text;
+  }
+
+  &__social {
+    display: flex;
+    column-gap: 20px;
   }
 }

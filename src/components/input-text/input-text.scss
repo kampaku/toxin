@@ -1,6 +1,17 @@
 .input-text {
   max-width: 320px;
 
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+  &__label {
+    @extend %label-text;
+  }
+
   &__input {
     width: 100%;
     max-width: 320px;
@@ -16,23 +27,5 @@
       border-color: $dark-shade-50;
       outline: none;
     }
-  }
-
-  &__title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 5px;
-  }
-
-  &__label {
-    @extend %label-text;
-  }
-
-  &__state {
-    color: $dark-shade-50;
-    font-size: 0.75rem;
-    font-family: $mainFont;
-    text-transform: uppercase;
   }
 }

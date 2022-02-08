@@ -31,6 +31,11 @@
     box-shadow: 0 0 0 1px $dark-shade-25;
   }
 
+  &__text_rich {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__title {
     margin-bottom: 10px;
     font-weight: $boldFontWeight;
@@ -46,10 +51,5 @@
     font-family: $mainFont;
     font-style: normal;
     line-height: 1.1;
-  }
-
-  &__text_rich {
-    display: flex;
-    flex-direction: column;
   }
 }

@@ -1,4 +1,15 @@
 .subscription-field {
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+
+  &__label {
+    @extend %label-text;
+  }
+
   &__wrapper {
     position: relative;
     display: flex;
@@ -11,17 +22,6 @@
       border-color: $dark-shade-50;
       outline: none;
     }
-  }
-
-  &__title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 5px;
-  }
-
-  &__label {
-    @extend %label-text;
   }
 
   &__input {

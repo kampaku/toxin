@@ -2,6 +2,11 @@
   position: relative;
   max-width: 320px;
 
+  &__label {
+    margin: 0 0 5px;
+    @extend %label-text;
+  }
+
   &__header {
     position: relative;
     height: 44px;
@@ -21,11 +26,6 @@
     }
   }
 
-  &__label {
-    margin: 0 0 5px;
-    @extend %label-text;
-  }
-
   &__input {
     width: 100%;
     height: 44px;
@@ -37,6 +37,19 @@
     cursor: pointer;
     user-select: none;
     @extend %body-text;
+  }
+
+  &__button-expand {
+    position: absolute;
+    right: 0;
+    width: 44px;
+    height: 100%;
+    color: $dark-shade-50;
+    background: none;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    @extend %material-icons;
   }
 
   &__inner {
@@ -82,11 +95,6 @@
       column-gap: 10px;
     }
 
-    &-amount {
-      padding: 0 12px;
-      vertical-align: middle;
-    }
-
     &-button {
       width: 30px;
       height: 30px;
@@ -102,20 +110,18 @@
         cursor: default;
         opacity: 0.38;
       }
+
+      &-amount {
+        padding: 0 12px;
+        vertical-align: middle;
+      }
     }
   }
 
-  &__button-expand {
-    position: absolute;
-    right: 0;
-    width: 44px;
-    height: 100%;
-    color: $dark-shade-50;
-    background: none;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    @extend %material-icons;
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
   }
 
   &__button-apply,
@@ -138,11 +144,5 @@
     &:hover {
       color: $dark-shade-50;
     }
-  }
-
-  &__buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
   }
 }
