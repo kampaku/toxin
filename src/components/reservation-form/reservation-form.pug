@@ -1,17 +1,22 @@
 include /components/date-dropdown/date-dropdown
 include /components/dropdown/dropdown
 include /components/button/button
-mixin reservation-form(luxury)
+mixin reservation-form({ luxury, room, price, discount, additionalService })
+  -
+   const totalDays =
+           `<span class="reservation-form__total-days js-reservation-form__total-days">0</span>`;
+   const discountElement =
+           `<span class="reservation-form__discount js-reservation-form__discount">${discount}₽</span>`;
   form.reservation-form.js-reservation-form
     .reservation-form__inner
       .reservation-form__header
         .reservation-form__room-number-wrapper
-          span.reservation-form__room-number-sign №
-          span.reservation-form__room-number &nbsp;888
-          if luxury
+          span.reservation-form__room-number-sign №&nbsp;
+          span.reservation-form__room-number= room
+          if luxury === true
             span.reservation-form__luxury-text &nbsp;люкс
         .reservation-form__price-wrapper
-          span.reservation-form__price 9&nbsp;990₽
+          span.reservation-form__price.js-reservation-form__price(data-price = price)!= `${price}₽`
           span.reservation-form__price-text &nbsp;в сутки
       .reservation-form__date-dropdown
         +date-dropdown({ label1: 'прибытие', label2: 'выезд', container: 'js-date-dropdown' })
@@ -19,11 +24,12 @@ mixin reservation-form(luxury)
         +dropdown({label: 'гости', items:['взрослые', 'дети', 'младенцы'], container:'js-guest', holder: 'Сколько гостей', buttons: true })
       .reservation-form__prices
         .reservation-form__prices-item
-          span.reservation-form__prices-item-text 9&nbsp;990₽ х 4 суток
-          span.reservation-form__prices-item-price 39&nbsp;960₽
+          span.reservation-form__prices-item-text
+            span.reservation-form__prices-wrapper !{price}₽ х !{totalDays} суток
+          span.reservation-form__full-price.js-reservation-form__full-price 0₽
         .reservation-form__prices-item
           .reservation-form__prices-item-text
-            |Сбор за услуги: скидка 2&nbsp;179₽
+            span.reservation-form__prices-wrapper Сбор за услуги: скидка !{discountElement}
             .reservation-form__prices-item-info
               span.reservation-form__info-icon i
               span.reservation-form__tooltip подсказка
@@ -34,11 +40,11 @@ mixin reservation-form(luxury)
             .reservation-form__prices-item-info
               span.reservation-form__info-icon i
               span.reservation-form__tooltip подсказка
-          span.reservation-form__prices-item-price 300₽
+          span.reservation-form__additional-service.js-reservation-form__additional-service #{additionalService}₽
       .reservation-form__total
         span.reservation-form__total-text Итого
         .reservation-form__total-dashed
-        span.reservation-form__total-price 38&nbsp;081₽
+        span.reservation-form__total-price.js-reservation-form__total-price 0₽
       +button({
         "color": "arrow",
         "tag": "button",

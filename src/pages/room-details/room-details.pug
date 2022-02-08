@@ -65,4 +65,10 @@ block content
             |Бесплатная отмена в течение 48 ч. После этого при отмене не
             |позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
         .room-details__reservation
-          +reservation-form('luxury')
+          +reservation-form({
+            luxury: true,
+            room: 888,
+            price: "9&nbsp;990",
+            discount: "2&nbsp;179",
+            additionalService: "300"
+          })
