@@ -14,7 +14,7 @@ const dateElement = document.querySelector('.js-cards-date-dropdown');
 const reservationForm = document.querySelector('.js-reservation-form');
 
 if (dateElement) {
-  const calendar = new DateDropdown(dateElement, true);
+  new DateDropdown(dateElement, true);
 }
 
 const firstDate = new Date('2022-02-24');
