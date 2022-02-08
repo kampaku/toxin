@@ -1,10 +1,11 @@
 mixin button(options)
   -
-    const { color, tag, text, href, size, submit = false } = options
+    const { color = null, tag, text, href, size, submit = false } = options
     const themes = {
       'white': 'button_theme_white',
       'blue': 'button_theme_blue',
-      'arrow': 'button_theme_arrow'
+      'arrow': 'button_theme_arrow',
+      'transparent': ''
     }
 
     const sizes = {
