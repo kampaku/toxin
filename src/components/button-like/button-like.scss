@@ -2,7 +2,7 @@
   position: relative;
   width: 40px;
   height: 20px;
-  padding-left: 19px;
+  padding-left: 12px;
   color: $dark-shade-25;
   font-size: 0.625rem;
   font-family: $mainFont;
@@ -15,7 +15,9 @@
   &::after {
     @extend %material-icons;
     position: absolute;
-    left: 5px;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 0.625rem;
     content: 'favorite_border';
   }
