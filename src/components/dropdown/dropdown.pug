@@ -1,9 +1,8 @@
 mixin dropdown(obj)
-  -const {label, items, container, holder, buttons, expanded = ''} = obj
-  div(class=`dropdown ${container}`)
+  -const {label, items, placeholder, buttons, expanded = '', type, name = null } = obj
+  div(class='dropdown js-dropdown' data-type = type)
     p.dropdown__label= label
     .dropdown__header.js-dropdown__header(class=`${expanded && 'dropdown__header_active'}`)
-      input(class="dropdown__input js-dropdown__input" readonly placeholder=holder type='text')
       input(class="dropdown__input js-dropdown__input" readonly placeholder=placeholder type='text' name=name)
       button(class="dropdown__button-expand" type="button") expand_more
     .dropdown__inner.js-dropdown__inner(class=`${expanded && 'dropdown__inner_active'}`)

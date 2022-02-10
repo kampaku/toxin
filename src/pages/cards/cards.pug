@@ -32,7 +32,8 @@ block content
           +login-form()
       .cards__column
         .cards__item
-          +date-dropdown({ label1: 'прибытие', container: 'js-cards-date-dropdown' })
+          .cards__calendar.js-cards__calendar
+             +date-dropdown({ label1: 'прибытие' })
         .cards__item.cards__item_size_s
           +room-card({
             luxury: true,

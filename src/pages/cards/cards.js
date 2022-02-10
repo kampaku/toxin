@@ -10,7 +10,7 @@ import ReservationForm from 'components/reservation-form/ReservationForm';
 
 import './cards.scss';
 
-const dateElement = document.querySelector('.js-cards-date-dropdown');
+const dateElement = document.querySelector('.js-cards__calendar');
 const reservationForm = document.querySelector('.js-reservation-form');
 
 if (dateElement) {

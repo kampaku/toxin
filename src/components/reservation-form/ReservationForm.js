@@ -8,17 +8,16 @@ import Dropdown from 'components/dropdown/Dropdown';
 import './reservation-form.scss';
 
 const reservationForm = document.querySelector('.js-reservation-form');
-const dropdownGuestElement = reservationForm && reservationForm.querySelector('.js-guest');
-const { guests } = dropdownTypes;
+const dropdownElement = reservationForm && reservationForm.querySelector('.js-dropdown');
 
 class ReservationForm {
   constructor({ form, dates = null }) {
     this.dates = dates;
-    this.form = form
+    this.form = form;
     this.format = wNumb({
       decimals: 0,
       thousand: '\u00A0',
-      suffix: '₽'
+      suffix: '₽',
     });
     this.onSelect = this.onSelect.bind(this);
     this.init();
@@ -85,8 +84,8 @@ class ReservationForm {
   }
 }
 
-if (dropdownGuestElement) {
-  new Dropdown(dropdownGuestElement, guests)
+if (dropdownElement) {
+  new Dropdown(dropdownElement, dropdownTypes[dropdownElement.dataset.type]);
 }
 
 export default ReservationForm;

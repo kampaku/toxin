@@ -22,7 +22,7 @@ function getDeclension(value, wordForms) {
 class Dropdown {
   constructor(dropdown, dropdownType) {
     this.dropdown = dropdown;
-    this.dropdownType = dropdownType;
+    this.dropdownType = JSON.parse(JSON.stringify(dropdownType));
     this.buttonHandler = this.buttonHandler.bind(this);
     this.toggle = this.toggle.bind(this);
     this.clear = this.clear.bind(this);
@@ -151,6 +151,7 @@ class Dropdown {
     this.listItems = this.list.querySelectorAll('.js-dropdown__item');
 
     if (this.openBtn) {
+
       this.openBtn.addEventListener('click', this.toggle);
     }
 
