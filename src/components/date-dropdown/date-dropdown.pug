@@ -1,15 +1,17 @@
-mixin date-dropdown({ label1, label2, container })
-  .date-dropdown(class=container)
+mixin date-dropdown({ label1, label2, name1, name2 })
+  .date-dropdown.js-date-dropdown
     .date-dropdown__wrapper
       .date-dropdown__label.js-date-dropdown__label= label1
       .date-dropdown__header
-        input(class='date-dropdown__input js-date-dropdown__input' readonly placeholder='ДД.ММ.ГГГГ')
+        input(class='date-dropdown__input js-date-dropdown__input'
+          readonly placeholder='ДД.ММ.ГГГГ' name = name1)
         button(class="date-dropdown__expand-button js-date-dropdown__expand-button" type="button")
           |expand_more
     if label2
       .date-dropdown__wrapper
         .date-dropdown__label= label2
         .date-dropdown__header
-          input(class='date-dropdown__input js-date-dropdown__input' readonly placeholder='ДД.ММ.ГГГГ')
+          input(class='date-dropdown__input js-date-dropdown__input'
+            readonly placeholder='ДД.ММ.ГГГГ' name = name2)
           button(class="date-dropdown__expand-button js-date-dropdown__expand-button" type="button")
             |expand_more

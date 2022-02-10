@@ -1,5 +1,5 @@
-mixin expandable-checkbox-list({ label, list, container, expanded = false })
-  .expandable-checkbox-list(class=container)
+mixin expandable-checkbox-list({ label, list, expanded = false })
+  .expandable-checkbox-list.js-expandable-checkbox-list
     .expandable-checkbox-list__wrapper.js-expandable-checkbox-list__wrapper
       span.expandable-checkbox-list__label= label
       button.expandable-checkbox-list__button-expand.js-expandable-checkbox-list__button-expand(
@@ -8,4 +8,4 @@ mixin expandable-checkbox-list({ label, list, container, expanded = false })
     ul.expandable-checkbox-list__items.js-expandable-checkbox-list__items(class=`${expanded && 'expandable-checkbox-list__items_active'}`)
       each item in checkboxList
         li.expandable-checkbox-list__item
-          +checkbox(item.label)(checked = item.checked)
+          +checkbox({ title: item.title, name: item.name })(checked = item.checked)

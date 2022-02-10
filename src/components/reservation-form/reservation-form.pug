@@ -3,10 +3,10 @@ include /components/dropdown/dropdown
 include /components/button/button
 mixin reservation-form({ luxury, room, price, discount, additionalService })
   -
-   const totalDays =
-           `<span class="reservation-form__total-days js-reservation-form__total-days">0</span>`;
-   const discountElement =
-           `<span class="reservation-form__discount js-reservation-form__discount">${discount}₽</span>`;
+    const totalDays =
+            `<span class='reservation-form__total-days js-reservation-form__total-days'>0</span>`;
+    const discountElement =
+            `<span class='reservation-form__discount js-reservation-form__discount'>${discount}₽</span>`;
   form.reservation-form.js-reservation-form
     .reservation-form__inner
       .reservation-form__header
@@ -19,9 +19,21 @@ mixin reservation-form({ luxury, room, price, discount, additionalService })
           span.reservation-form__price.js-reservation-form__price(data-price = price)!= `${price}₽`
           span.reservation-form__price-text &nbsp;в сутки
       .reservation-form__date-dropdown
-        +date-dropdown({ label1: 'прибытие', label2: 'выезд', container: 'js-date-dropdown' })
+        +date-dropdown({
+          label1: 'прибытие',
+          label2: 'выезд',
+          name1: 'arrive',
+          name2: 'leave',
+        })
       .reservation-form__dropdown
-        +dropdown({label: 'гости', items:['взрослые', 'дети', 'младенцы'], container:'js-guest', holder: 'Сколько гостей', buttons: true })
+        +dropdown({
+          label: 'гости',
+          items: ['взрослые', 'дети', 'младенцы'],
+          type: 'guests',
+          placeholder: 'Сколько гостей',
+          buttons: true,
+          name: 'guests-quantity'
+        })
       .reservation-form__prices
         .reservation-form__prices-item
           span.reservation-form__prices-item-text
@@ -36,7 +48,7 @@ mixin reservation-form({ luxury, room, price, discount, additionalService })
           span.reservation-form__prices-item-price 0₽
         .reservation-form__prices-item
           .reservation-form__prices-item-text
-            |Сбор за дополнительные услуги
+            | Сбор за дополнительные услуги
             .reservation-form__prices-item-info
               span.reservation-form__info-icon i
               span.reservation-form__tooltip подсказка
