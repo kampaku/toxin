@@ -1,4 +1,4 @@
-mixin logo(text)
+mixin logo({ text = false } = {})
   .logo
     a(class="logo__link" href='/')
       if (text)
