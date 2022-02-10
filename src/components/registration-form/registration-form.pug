@@ -9,23 +9,23 @@ mixin registration-form()
       h3.registration-form__title Регистрация аккаунта
       .registration-form__text-fields
         .registration-form__text-field
-          +input-text({ placeholder: 'Имя' })
+          +input-text({ placeholder: 'Имя', name: 'name' })
         .registration-form__text-field
-          +input-text({ placeholder: 'Фамилия' })
+          +input-text({ placeholder: 'Фамилия', name: 'lastname' })
       .registration-form__radio
         .registration-form__radio-button
-          +radio('Мужчина')(name='name', checked)
+          +radio('Мужчина')(name='gender', checked)
         .registration-form__radio-button
-          +radio('Женщина')(name='name')
+          +radio('Женщина')(name='gender')
       .registration-form__masked-field
-        +input-text({ label: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', maskContainer: 'js-input-text__input', type: 'text' })
+        +input-text({ label: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', mask: true, type: 'text', name: 'birthday' })
       .registration-form__text-fields
         .registration-form__text-field
-          +input-text({ label: 'данные для входа в сервис', placeholder: 'Email', type: 'email' })
+          +input-text({ label: 'данные для входа в сервис', placeholder: 'Email', type: 'email', name: 'email' })
         .registration-form__text-field
-          +input-text({ placeholder: 'Пароль', type: 'password' })
+          +input-text({ placeholder: 'Пароль', type: 'password', name: 'password' })
       .registration-form__toggle
-        +toggle('Получать спецпредложения')
+        +toggle('Получать спецпредложения', 'specials')
       .registration-form__button
         +button({"tag": "button", "color": "arrow", "text": "зарегистрироваться", "size": "m", "submit": true})
       .registration-form__login

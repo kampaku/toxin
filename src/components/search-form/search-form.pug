@@ -6,14 +6,20 @@ mixin search-form()
     .search-form__inner
       h2.search-form__title Найдём номера под ваши пожелания
       .search-form__date-dropdown
-        +date-dropdown({ label1: 'прибытие', label2: 'выезд', container: 'js-date-dropdown' })
+        +date-dropdown({
+          label1: 'прибытие',
+          label2: 'выезд',
+          name1: 'arrive',
+          name2: 'leave',
+        })
       .search-form__dropdown
         +dropdown({
           label: 'гости',
           items: ['взрослые', 'дети', 'младенцы'],
-          container: 'js-guest',
-          holder: 'Сколько гостей',
-          buttons: true
+          type: 'guests',
+          placeholder: 'Сколько гостей',
+          buttons: true,
+          name: 'guests-quantity'
         })
       +button({
         "color": "arrow",

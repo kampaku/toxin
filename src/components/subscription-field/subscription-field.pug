@@ -5,5 +5,5 @@ mixin subscription-field({ label = false, placeholder = "Email" } = {})
         span.subscription-field__label= label
     .subscription-field__wrapper
       input(class="subscription-field__input" type="email"
-        placeholder=placeholder autofocus=attributes.autofocus)
+        placeholder=placeholder autofocus=attributes.autofocus name="email")
       button(class="subscription-field__button" type="submit") arrow_forward

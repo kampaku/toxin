@@ -31,14 +31,14 @@ block variables
     }
 
     const checkboxList = [
-      { label: 'Завтрак' }, { label: 'Письменный стол', checked: true },
-      { label: 'Стул для кормления', checked: true }, { label: 'Кроватка', checked: true },
-      { label: 'Телевизор' }, { label: 'Шампунь' }
+      { title: 'Завтрак', name: 'breakfast' }, { title: 'Письменный стол', name: 'desk', checked: true },
+      { title: 'Стул для кормления', name: 'food-chair', checked: true }, { title: 'Кроватка', name: 'bed', checked: true },
+      { title: 'Телевизор', name: 'tv', }, { title: 'Шампунь', name: 'shampoo' }
     ]
 
     const aboutRoomItems = [
-      {icon: "insert_emoticon", title: "Комфорт", text: "Шумопоглощающие стены"},
-      {icon: "location_city", title: "Удобство", text: "Окно в каждой из спален"},
+      { icon: "insert_emoticon", title: "Комфорт", text: "Шумопоглощающие стены" },
+      { icon: "location_city", title: "Удобство", text: "Окно в каждой из спален" },
     ]
 block content
   .form-elements
@@ -55,25 +55,29 @@ block content
             +dropdown({
               label: 'dropdown',
               items: ['взрослые', 'дети', 'младенцы'],
-              container: 'js-guest',
-              holder: 'Сколько гостей',
+              type: 'guests',
+              placeholder: 'Сколько гостей',
               buttons: true
             })
           .form-elements__block
-            +input-text({ label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', maskContainer: 'js-input-text__input' })
+            +input-text({
+              label: 'masked text field',
+              placeholder: 'ДД.ММ.ГГГГ',
+              mask: true
+            })
           .form-elements__block.form-elements__block_margin_l
-            +date-dropdown({ label1: 'date Dropdown', label2: 'date Dropdown', container: 'js-double-date' })
+            +date-dropdown({ label1: 'date Dropdown', label2: 'date Dropdown' })
           .form-elements__block.form-elements__block_margin_l.form-elements__block_size_s
-            +date-dropdown({ label1: 'filter date dropdown', container: 'js-filter-date' })
+            +date-dropdown({ label1: 'filter date dropdown' })
           .form-elements__block.form-elements__block_margin_l
             +subscription-field({ label: 'subscription text field' })
         .form-elements__column
           .form-elements__block.form-elements__block_margin_l
             h3.form-elements__title Checkbox Buttons
             .form-elements__checkbox
-              +checkbox('Можно курить')
-              +checkbox('Можно с питомцами')(checked)
-              +checkbox('Можно пригласить гостей (до&nbsp;10&nbsp;человек)')(checked)
+              +checkbox({ title: 'Можно курить' })
+              +checkbox({ title: 'Можно с питомцами' })(checked)
+              +checkbox({ title: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)' })(checked)
           .form-elements__block.form-elements__block_margin_xl
             h3.form-elements__title Radio buttons
             .form-elements__radio
@@ -98,7 +102,7 @@ block content
               +rating-button(5, "rating2")
         .form-elements__column
           .form-elements__block.form-elements__block_margin_l
-            +range-slider({ label: "Range Slider", container: 'js-range-slider' })
+            +range-slider({ label: "Range Slider" })
           .form-elements__block.form-elements__block_margin_xl
             h3.form-elements__title Buttons
             .form-elements__buttons
@@ -120,15 +124,15 @@ block content
             +dropdown({
               label: 'dropdown',
               items: ['спальни', 'кровати', 'ванные комнаты'],
-              container: 'js-comfort',
-              holder: 'Удобства'
+              type: 'rooms',
+              placeholder: 'Удобства'
             })
           .form-elements__block.form-elements__block_size_s
             +dropdown({
               label: 'dropdown',
               items: ['спальни', 'кровати', 'ванные комнаты'],
-              container: 'js-comfort-expanded',
-              holder: 'Удобства',
+              type: 'rooms',
+              placeholder: 'Удобства',
               expanded: true
             })
         .form-elements__column
@@ -136,8 +140,8 @@ block content
             +dropdown({
               label: 'dropdown',
               items: ['взрослые', 'дети', 'младенцы'],
-              container: 'js-zero-guest-expanded',
-              holder: 'Сколько гостей',
+              type: 'zeroGuests',
+              placeholder: 'Сколько гостей',
               buttons: true,
               expanded: true
             })
@@ -146,8 +150,8 @@ block content
             +dropdown({
               label: 'dropdown',
               items: ['взрослые', 'дети', 'младенцы'],
-              container: 'js-guest-expanded',
-              holder: 'Сколько гостей',
+              type: 'guests',
+              placeholder: 'Сколько гостей',
               buttons: true,
               expanded: true
             })
@@ -157,21 +161,19 @@ block content
             +expandable-checkbox-list({
               label: 'expandable checkbox list',
               list: checkboxList,
-              container: 'js-expand-box'
             })
           .form-elements__block.form-elements__block_margin_m.form-elements__block_size_s
             +expandable-checkbox-list({
               label: 'expandable checkbox list',
               list: checkboxList,
-              container: 'js-expand-box-expanded',
               expanded: true
             })
         .form-elements__column
           .form-elements__block.form-elements__block_size_s
             h3.form-elements__title rich Checkbox Buttons
             .form-elements__checkbox
-              +checkbox('Широкий коридор', 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.')
-              +checkbox('Помощник для инвалидов', 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.')
+              +checkbox({ title: 'Широкий коридор', description: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.' })
+              +checkbox({ title: 'Помощник для инвалидов', description: 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.' })
         .form-elements__column
           .form-elements__block
             h3.form-elements__title bullet list

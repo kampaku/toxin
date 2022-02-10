@@ -1,6 +1,8 @@
-mixin input-text({label, placeholder, maskContainer = false, type = 'text'})
+mixin input-text({label, placeholder, mask = false, type = 'text', name = null})
+  -const maskClass = mask ? 'js-input-text__input' : '';
   .input-text
     if label
       .input-text__title
         span.input-text__label= label
-    input(class=`input-text__input ${maskContainer || ''}` type=type placeholder=placeholder autofocus=attributes.autofocus)
+    input(class=`input-text__input ${maskClass}` name=name
+      type=type placeholder=placeholder autofocus=attributes.autofocus)
