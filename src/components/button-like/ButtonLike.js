@@ -1,6 +1,6 @@
 import './button-like.scss';
 
-export default class ButtonLike {
+class ButtonLike {
   constructor(element) {
     this.button = element;
     this.buttonHandler = this.buttonHandler.bind(this);
@@ -22,3 +22,5 @@ export default class ButtonLike {
     this.button.textContent = value + 1;
   }
 }
+
+export default ButtonLike;
