@@ -8,22 +8,106 @@ include /components/room-card/room-card
 include /components/pagination/pagination
 block variables
   -
-    const title= 'Подбор номеров'
+    const title = 'Подбор номеров'
 
     const cards = [
-        {luxury: true, number: 888, price: '9 900₽', star: 5, reviews: 145, images: ['room-1.jpg', 'room-2.jpg', 'room-1.jpg', 'room-2.jpg']},
-        {luxury: false, number: 840, price: '9 900₽', star: 4, reviews: 65, images: ['room-2.jpg', 'room-3.jpg', 'room-2.jpg', 'room-3.jpg']},
-        {luxury: false, number: 980, price: '8 500₽', star: 3, reviews: 35, images: ['room-3.jpg', 'room-2.jpg', 'room-3.jpg', 'room-2.jpg']},
-        {luxury: false, number: 856, price: '7 300₽', star: 5, reviews: 19, images: ['room-4.jpg', 'room-3.jpg', 'room-4.jpg', 'room-3.jpg']},
-        {luxury: false, number: 740, price: '6 000₽', star: 4, reviews: 44, images: ['room-5.jpg', 'room-4.jpg', 'room-5.jpg', 'room-4.jpg']},
-        {luxury: false, number: 982, price: '5 800₽', star: 3, reviews: 56, images: ['room-6.jpg', 'room-5.jpg', 'room-6.jpg', 'room-5.jpg']},
-        {luxury: false, number: 678, price: '5 500₽', star: 5, reviews: 45, images: ['room-7.jpg', 'room-6.jpg', 'room-7.jpg', 'room-6.jpg']},
-        {luxury: false, number: 450, price: '5 300₽', star: 4, reviews: 39, images: ['room-8.jpg', 'room-7.jpg', 'room-8.jpg', 'room-7.jpg']},
-        {luxury: false, number: 350, price: '5 000₽', star: 3, reviews: 77, images: ['room-9.jpg', 'room-8.jpg', 'room-9.jpg', 'room-8.jpg']},
-        {luxury: false, number: 666, price: '5 000₽', star: 5, reviews: 25, images: ['room-10.jpg', 'room-9.jpg', 'room-10.jpg', 'room-9.jpg']},
-        {luxury: false, number: 444, price: '5 000₽', star: 3, reviews: 15, images: ['room-11.jpg', 'room-10.jpg', 'room-11.jpg', 'room-10.jpg']},
-        {luxury: false, number: 352, price: '5 000₽', star: 3, reviews: 55, images: ['room-12.jpg', 'room-11.jpg', 'room-12.jpg', 'room-11.jpg']}
-      ]
+      {
+        luxury: true,
+        number: 888,
+        price: '9 900₽',
+        star: 5,
+        reviews: 145,
+        images: ['room-1.jpg', 'room-2.jpg', 'room-1.jpg', 'room-2.jpg']
+      },
+      {
+        luxury: false,
+        number: 840,
+        price: '9 900₽',
+        star: 4,
+        reviews: 65,
+        images: ['room-2.jpg', 'room-3.jpg', 'room-2.jpg', 'room-3.jpg']
+      },
+      {
+        luxury: false,
+        number: 980,
+        price: '8 500₽',
+        star: 3,
+        reviews: 35,
+        images: ['room-3.jpg', 'room-2.jpg', 'room-3.jpg', 'room-2.jpg']
+      },
+      {
+        luxury: false,
+        number: 856,
+        price: '7 300₽',
+        star: 5,
+        reviews: 19,
+        images: ['room-4.jpg', 'room-3.jpg', 'room-4.jpg', 'room-3.jpg']
+      },
+      {
+        luxury: false,
+        number: 740,
+        price: '6 000₽',
+        star: 4,
+        reviews: 44,
+        images: ['room-5.jpg', 'room-4.jpg', 'room-5.jpg', 'room-4.jpg']
+      },
+      {
+        luxury: false,
+        number: 982,
+        price: '5 800₽',
+        star: 3,
+        reviews: 56,
+        images: ['room-6.jpg', 'room-5.jpg', 'room-6.jpg', 'room-5.jpg']
+      },
+      {
+        luxury: false,
+        number: 678,
+        price: '5 500₽',
+        star: 5,
+        reviews: 45,
+        images: ['room-7.jpg', 'room-6.jpg', 'room-7.jpg', 'room-6.jpg']
+      },
+      {
+        luxury: false,
+        number: 450,
+        price: '5 300₽',
+        star: 4,
+        reviews: 39,
+        images: ['room-8.jpg', 'room-7.jpg', 'room-8.jpg', 'room-7.jpg']
+      },
+      {
+        luxury: false,
+        number: 350,
+        price: '5 000₽',
+        star: 3,
+        reviews: 77,
+        images: ['room-9.jpg', 'room-8.jpg', 'room-9.jpg', 'room-8.jpg']
+      },
+      {
+        luxury: false,
+        number: 666,
+        price: '5 000₽',
+        star: 5,
+        reviews: 25,
+        images: ['room-10.jpg', 'room-9.jpg', 'room-10.jpg', 'room-9.jpg']
+      },
+      {
+        luxury: false,
+        number: 444,
+        price: '5 000₽',
+        star: 3,
+        reviews: 15,
+        images: ['room-11.jpg', 'room-10.jpg', 'room-11.jpg', 'room-10.jpg']
+      },
+      {
+        luxury: false,
+        number: 352,
+        price: '5 000₽',
+        star: 3,
+        reviews: 55,
+        images: ['room-12.jpg', 'room-11.jpg', 'room-12.jpg', 'room-11.jpg']
+      }
+    ]
 
     const checkboxList = [
       { title: 'Завтрак', name: 'breakfast' },
@@ -39,13 +123,20 @@ block content
       .search-room__date-filter
         +date-dropdown({ label1: 'даты пребывания в отеле', name1: 'date-filter' })
       .search-room__guest
-        +dropdown({ label: 'гости', items: ['взрослые', 'дети', 'младенцы'], type: 'guests', buttons: true, holder: 'Сколько гостей', name: 'guests-quantity' })
+        +dropdown({
+          label: 'гости',
+          items: ['взрослые', 'дети', 'младенцы'],
+          type: 'guests',
+          buttons: true,
+          holder: 'Сколько гостей',
+          name: 'guests-quantity'
+        })
       .search-room__range-slider
         +range-slider({ label: 'диапазон цены', text: 'Стоимость за сутки пребывания в номере' })
       .search-room__checkbox
         span.search-room__checkbox-title правила дома
         .search-room__checkbox-wrapper
-          +checkbox({ title: 'Можно курить', name: 'smoke'})
+          +checkbox({ title: 'Можно курить', name: 'smoke' })
           +checkbox({ title: 'Можно с питомцами', name: 'pets' })(checked)
           +checkbox({ title: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)', name: 'guests' })(
             checked
@@ -53,10 +144,24 @@ block content
       .search-room__checkbox
         span.search-room__checkbox-title доступность
         .search-room__checkbox-wrapper
-          +checkbox({ title: 'Широкий коридор', description: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.', name: 'wide hall'})
-          +checkbox({ title: 'Помощник для инвалидов', description: 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.', name: 'helper'})
+          +checkbox({
+            title: 'Широкий коридор',
+            description: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.',
+            name: 'wide hall'
+          })
+          +checkbox({
+            title: 'Помощник для инвалидов',
+            description: 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.',
+            name: 'helper'
+          })
       .search-room__comfort
-        +dropdown({ label: 'удобства номера', items: ['спальни', 'кровати', 'ванные комнаты'], type: 'rooms', holder: 'Удобства', name: 'room-comfort' })
+        +dropdown({
+          label: 'удобства номера',
+          items: ['спальни', 'кровати', 'ванные комнаты'],
+          type: 'rooms',
+          holder: 'Удобства',
+          name: 'room-comfort'
+        })
       .search-room__expandable-checkbox
         +expandable-checkbox-list({ label: 'дополнительные удобства', list: checkboxList, })
     .search-room__search-results
