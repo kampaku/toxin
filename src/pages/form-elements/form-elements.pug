@@ -19,7 +19,7 @@ include /components/logo/logo
 
 block variables
   -
-    const title = "Form Elements"
+    const title = 'Form Elements'
 
     const review = {
       name: 'Мурад Сарафанов',
@@ -27,44 +27,42 @@ block variables
       time: '5 дней назад',
       likes: '12',
       liked: true,
-      comment: 'Великолепный матрас на&nbsp;кровати в&nbsp;основной спальне! А&nbsp;пуфик вообще потрясающий. И&nbsp;стены, действительно, шумоподавляющие. Выкрикивал комплименты повару&nbsp;&mdash; никто не&nbsp;жаловался из&nbsp;соседей.'
+      comment: `Великолепный матрас на&nbsp;кровати в&nbsp;основной спальне!
+        А&nbsp;пуфик вообще потрясающий. И&nbsp;стены, действительно, шумоподавляющие.
+        Выкрикивал комплименты повару&nbsp;&mdash; никто не&nbsp;жаловался из&nbsp;соседей.`
     }
 
     const checkboxList = [
       { title: 'Завтрак', name: 'breakfast' }, { title: 'Письменный стол', name: 'desk', checked: true },
-      { title: 'Стул для кормления', name: 'food-chair', checked: true }, { title: 'Кроватка', name: 'bed', checked: true },
+      { title: 'Стул для кормления', name: 'food-chair', checked: true }, {
+        title: 'Кроватка',
+        name: 'bed',
+        checked: true
+      },
       { title: 'Телевизор', name: 'tv', }, { title: 'Шампунь', name: 'shampoo' }
     ]
 
     const aboutRoomItems = [
-      { icon: "insert_emoticon", title: "Комфорт", text: "Шумопоглощающие стены" },
-      { icon: "location_city", title: "Удобство", text: "Окно в каждой из спален" },
+      { icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены' },
+      { icon: 'location_city', title: 'Удобство', text: 'Окно в каждой из спален' },
     ]
 block content
   .form-elements
     header.form-elements__header
-      +logo()
+      +logo
     .form-elements__wrapper
       .form-elements__row
         .form-elements__column
           .form-elements__block
             +input-text({ label: 'text field', placeholder: 'Email', type: 'email' })
           .form-elements__block
-            +input-text({ label: 'text-field', placeholder: 'This is pretty awesome' })(autofocus)
+            +input-text({ label: 'text-field', placeholder: 'This is pretty awesome' })(
+              autofocus
+            )
           .form-elements__block
-            +dropdown({
-              label: 'dropdown',
-              items: ['взрослые', 'дети', 'младенцы'],
-              type: 'guests',
-              placeholder: 'Сколько гостей',
-              buttons: true
-            })
+            +dropdown({ label: 'dropdown', items: ['взрослые', 'дети', 'младенцы'], type: 'guests', placeholder: 'Сколько гостей', buttons: true })
           .form-elements__block
-            +input-text({
-              label: 'masked text field',
-              placeholder: 'ДД.ММ.ГГГГ',
-              mask: true
-            })
+            +input-text({ label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', mask: true })
           .form-elements__block.form-elements__block_margin_l
             +date-dropdown({ label1: 'date Dropdown', label2: 'date Dropdown' })
           .form-elements__block.form-elements__block_margin_l.form-elements__block_size_s
@@ -77,14 +75,16 @@ block content
             .form-elements__checkbox
               +checkbox({ title: 'Можно курить' })
               +checkbox({ title: 'Можно с питомцами' })(checked)
-              +checkbox({ title: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)' })(checked)
+              +checkbox({ title: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)' })(
+                checked
+              )
           .form-elements__block.form-elements__block_margin_xl
             h3.form-elements__title Radio buttons
             .form-elements__radio
               .form-elements__radio-button
-                +radio('Мужчина')(name='gender' checked)
+                +radio('Мужчина')(name="gender", checked)
               .form-elements__radio-button
-                +radio('Женщина')(name='gender')
+                +radio('Женщина')(name="gender")
           .form-elements__block.form-elements__block_margin_l
             h3.form-elements__title Toggle
             .form-elements__toggle
@@ -94,80 +94,48 @@ block content
             h3.form-elements__title like button
             .form-elements__button-like
               +button-like(2)
-              +button-like(12, "liked")
+              +button-like(12, 'liked')
           .form-elements__block.form-elements__block_margin_l
             h3.form-elements__title Rate button
             .form-elements__rate
-              +rating-button(4, "rating1")
-              +rating-button(5, "rating2")
+              +rating-button(4, 'rating1')
+              +rating-button(5, 'rating2')
         .form-elements__column
           .form-elements__block.form-elements__block_margin_l
-            +range-slider({ label: "Range Slider" })
+            +range-slider({ label: 'Range Slider' })
           .form-elements__block.form-elements__block_margin_xl
             h3.form-elements__title Buttons
             .form-elements__buttons
-              +button({ 'color': 'blue', 'tag': 'button', 'text': 'click me', "size": "m" })
-              +button({ 'color': 'blue', 'tag': 'button', 'text': 'click me', "size": "m" })
+              +button({ color: 'blue', tag: 'button', text: 'click me', size: 'm' })
+              +button({ color: 'blue', tag: 'button', text: 'click me', size: 'm' })
             .form-elements__buttons
-              +button({ 'color': 'white', 'tag': 'button', 'text': 'click me', "size": "m" })
-              +button({ 'color': 'white', 'tag': 'button', 'text': 'click me', "size": "m" })
+              +button({ color: 'white', tag: 'button', text: 'click me', size: 'm' })
+              +button({ color: 'white', tag: 'button', text: 'click me', size: 'm' })
             .form-elements__buttons
-              +button({ 'color': 'transparent', 'tag': 'button', 'text': 'click me', "size": "xs" })
-              +button({ 'color': 'transparent', 'tag': 'button', 'text': 'click me', "size": "xs" })
-            +button({ 'color': 'arrow', 'tag': 'button', 'text': 'перейти к оплате', "size": "m" })
+              +button({ color: 'transparent', tag: 'button', text: 'click me', size: 'xs' })
+              +button({ color: 'transparent', tag: 'button', text: 'click me', size: 'xs' })
+            +button({ color: 'arrow', tag: 'button', text: 'перейти к оплате', size: 'm' })
           .form-elements__block.form-elements__block_margin_l
             h3.form-elements__title pagination
-            +pagination()
+            +pagination
       .form-elements__row.form-elements__row_margin_l
         .form-elements__column
           .form-elements__block.form-elements__block_size_s
-            +dropdown({
-              label: 'dropdown',
-              items: ['спальни', 'кровати', 'ванные комнаты'],
-              type: 'rooms',
-              placeholder: 'Удобства'
-            })
+            +dropdown({ label: 'dropdown', items: ['спальни', 'кровати', 'ванные комнаты'], type: 'rooms', placeholder: 'Удобства' })
           .form-elements__block.form-elements__block_size_s
-            +dropdown({
-              label: 'dropdown',
-              items: ['спальни', 'кровати', 'ванные комнаты'],
-              type: 'rooms',
-              placeholder: 'Удобства',
-              expanded: true
-            })
+            +dropdown({ label: 'dropdown', items: ['спальни', 'кровати', 'ванные комнаты'], type: 'rooms', placeholder: 'Удобства', expanded: true })
         .form-elements__column
           .form-elements__block
-            +dropdown({
-              label: 'dropdown',
-              items: ['взрослые', 'дети', 'младенцы'],
-              type: 'zeroGuests',
-              placeholder: 'Сколько гостей',
-              buttons: true,
-              expanded: true
-            })
+            +dropdown({ label: 'dropdown', items: ['взрослые', 'дети', 'младенцы'], type: 'zeroGuests', placeholder: 'Сколько гостей', buttons: true, expanded: true })
         .form-elements__column
           .form-elements__block
-            +dropdown({
-              label: 'dropdown',
-              items: ['взрослые', 'дети', 'младенцы'],
-              type: 'guests',
-              placeholder: 'Сколько гостей',
-              buttons: true,
-              expanded: true
-            })
+            +dropdown({ label: 'dropdown', items: ['взрослые', 'дети', 'младенцы'], type: 'guests', placeholder: 'Сколько гостей', buttons: true, expanded: true })
       .form-elements__row.form-elements__row_margin_xl
         .form-elements__column
           .form-elements__block.form-elements__block_size_s
-            +expandable-checkbox-list({
-              label: 'expandable checkbox list',
-              list: checkboxList,
-            })
+            +expandable-checkbox-list({ label: 'expandable checkbox list', list: checkboxList, })
           .form-elements__block.form-elements__block_margin_m.form-elements__block_size_s
-            +expandable-checkbox-list({
-              label: 'expandable checkbox list',
-              list: checkboxList,
-              expanded: true
-            })
+            +expandable-checkbox-list({ label: 'expandable checkbox list', list: checkboxList, expanded: true })
         .form-elements__column
           .form-elements__block.form-elements__block_size_s
             h3.form-elements__title rich Checkbox Buttons
@@ -177,10 +145,7 @@ block content
         .form-elements__column
           .form-elements__block
             h3.form-elements__title bullet list
-            +bullet-list([
-              "Нельзя с питомцами",
-              "Без вечеринок и мероприятий",
-              "Время прибытия — после 13:00, а выезд до 12:00"])
+            +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
       .form-elements__row
         .form-elements__column
           .form-elements__block

@@ -6,37 +6,46 @@ include /components/review/review
 include /components/chart/chart
 block variables
   -
-    const title= "Информация о номере"
+    const title= 'Информация о номере'
 
     const reviews = [
       {
-        name: "Мурад Сарафанов",
-        src: require("/src/assets/img/review/4el.jpg"),
-        time: "5 дней назад",
-        likes: "12", liked: true,
-        comment: "Великолепный матрас на&nbsp;кровати в&nbsp;основной спальне! А&nbsp;пуфик вообще потрясающий. И&nbsp;стены, действительно, шумоподавляющие. Выкрикивал комплименты повару&nbsp;&mdash; никто не&nbsp;жаловался из&nbsp;соседей."},
+        name: 'Мурад Сарафанов',
+        src: require('/src/assets/img/review/4el.jpg'),
+        time: '5 дней назад',
+        likes: '12', liked: true,
+        comment: 'Великолепный матрас на&nbsp;кровати в&nbsp;основной спальне! А&nbsp;пуфик вообще потрясающий. И&nbsp;стены, действительно, шумоподавляющие. Выкрикивал комплименты повару&nbsp;&mdash; никто не&nbsp;жаловался из&nbsp;соседей.'},
       {
-        name: "Патрисия Стёклышкова",
-        src: require("/src/assets/img/review/tetka.jpg"),
-        time: "Неделю назад",
-        likes: "2",
-        comment: "Обслуживание на&nbsp;высоте! Всё аккуратно, чисто. Завтраки в&nbsp;номер советую заказать, каждый день новое блюдо и&nbsp;десерт как комплимент."}
+        name: 'Патрисия Стёклышкова',
+        src: require('/src/assets/img/review/tetka.jpg'),
+        time: 'Неделю назад',
+        likes: '2',
+        comment: 'Обслуживание на&nbsp;высоте! Всё аккуратно, чисто. Завтраки в&nbsp;номер советую заказать, каждый день новое блюдо и&nbsp;десерт как комплимент.'}
     ]
 
     const aboutRoomItems = [
-      { icon: "insert_emoticon", title: "Комфорт", text: "Шумопоглощающие стены" },
-      { icon: "location_city", title: "Удобство", text: "Окно в каждой из спален" },
-      { icon: "whatshot", title: "Уют", text: "Номер оснащён камином "}
+      { icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены' },
+      { icon: 'location_city', title: 'Удобство', text: 'Окно в каждой из спален' },
+      { icon: 'whatshot', title: 'Уют', text: 'Номер оснащён камином '}
     ]
 block content
   .room-details
     .room-details__pictures
       .room-details__picture-container
-        img(class="room-details__picture" src=require("/src/assets/img/room-details-picture/image-1.jpg"), alt="room picture")
+        img.room-details__picture(
+          src=require("/src/assets/img/room-details-picture/image-1.jpg"),
+          alt="room picture"
+        )
       .room-details__picture-container
-        img(class="room-details__picture" src=require("/src/assets/img/room-details-picture/image-2.jpg"), alt="room picture")
+        img.room-details__picture(
+          src=require("/src/assets/img/room-details-picture/image-2.jpg"),
+          alt="room picture"
+        )
       .room-details__picture-container
-        img(class="room-details__picture" src=require("/src/assets/img/room-details-picture/image-3.jpg"), alt="room picture")
+        img.room-details__picture(
+          src=require("/src/assets/img/room-details-picture/image-3.jpg"),
+          alt="room picture"
+        )
     .room-details__container
       .room-details__info
         .room-details__about-room
@@ -47,7 +56,7 @@ block content
         .room-details__rating
           .room-details__rating-title
             h3.room-details__title Впечатления от номера
-          +chart()
+          +chart
         .room-details__reviews
           .room-details__review-title
             h3.room-details__title Отзывы посетителей номера
@@ -57,18 +66,12 @@ block content
         .room-details__bullet-list
           .room-details__bullet-list-title
             h3.room-details__title Правила
-          +bullet-list(["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
+          +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
         .room-details__cancel
           .room-details__cancel-title
             h3.room-details__title Отмена
           p.room-details__cancel-text
-            |Бесплатная отмена в течение 48 ч. После этого при отмене не
-            |позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+            | Бесплатная отмена в течение 48 ч. После этого при отмене не
+            | позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
         .room-details__reservation
-          +reservation-form({
-            luxury: true,
-            room: 888,
-            price: "9&nbsp;990",
-            discount: "2&nbsp;179",
-            additionalService: "300"
-          })
+          +reservation-form({ luxury: true, room: 888, price: '9&nbsp;990', discount: '2&nbsp;179', additionalService: '300' })

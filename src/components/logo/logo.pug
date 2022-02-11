@@ -1,7 +1,7 @@
 mixin logo({ text = false } = {})
   .logo
-    a(class="logo__link" href='/')
+    a.logo__link(href="/")
       if (text)
-        img(class="logo__img" src=require("/src/assets/img/icons/logo.svg"), alt="logo")
+        img.logo__img(src=require("/src/assets/img/icons/logo.svg"), alt="logo")
       else
-        img(class="logo__img" src=require("/src/assets/img/icons/ui-logo.svg"), alt="logo")
+        img.logo__img(src=require("/src/assets/img/icons/ui-logo.svg"), alt="logo")

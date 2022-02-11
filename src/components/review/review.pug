@@ -1,15 +1,14 @@
 include /components/button-like/button-like
 mixin review(obj)
-  -const {src, name, time, comment, likes, liked} = obj
+  - const { src, name, time, comment, likes, liked } = obj;
   .review.js-review
-    img(class="review__img", src=src, alt="ava")
+    img.review__img(src=src, alt="ava")
     .review__author
       span.review__name
-        =name
+        = name
       time.review__time
-        =time
+        = time
     .review__button
       +button-like(likes, liked)
     p.review__comment
-      !=comment
-
+      != comment

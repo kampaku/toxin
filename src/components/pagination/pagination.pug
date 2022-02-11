@@ -1,11 +1,11 @@
-mixin pagination()
+mixin pagination
   -
     const links = [
-      {pageNum: "1", active: true},
-      {pageNum: "2"},
-      {pageNum: "3"},
-      {pageNum: "..."},
-      {pageNum: "15"},
+      {pageNum: '1', active: true},
+      {pageNum: '2'},
+      {pageNum: '3'},
+      {pageNum: '...'},
+      {pageNum: '15'},
     ]
   .pagination
     ul.pagination__list
@@ -14,7 +14,7 @@ mixin pagination()
           if link.pageNum === '...'
             span.pagination__link= link.pageNum
           else
-            a.pagination__link(class=link.active && "pagination__link_active" href="/mock-link")= link.pageNum
+            a.pagination__link(class=link.active && "pagination__link_active", href="/mock-link")= link.pageNum
       li.pagination__item
-        a(class="pagination__link pagination__link_arrow_next" href="/mock-link") arrow_forward
+        a.pagination__link.pagination__link_arrow_next(href="/mock-link") arrow_forward
     p.pagination__text 1 – 12 из 100+ вариантов аренды

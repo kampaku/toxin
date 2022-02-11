@@ -1,16 +1,16 @@
 include /components/input-text/input-text
 include /components/button/button
-mixin login-form()
+mixin login-form
   form.login-form
     .login-form__inner
       h3.login-form__title Войти
       .login-form__text-fields
         .login-form__text-field
-          +input-text({ placeholder: 'Email', type: 'email', name: 'email'})
+          +input-text({ placeholder: 'Email', type: 'email', name: 'email' })
         .login-form__text-field
           +input-text({ placeholder: 'Пароль', type: 'password', name: 'password' })
       .login-form__button
-        +button({"tag": "button", "color": "arrow", "text": "войти", "size": "m", "submit": true})
+        +button({ tag: 'button', color: 'arrow', text: 'войти', size: 'm', submit: true })
       .login-form__login
         span.login-form__text Нет аккаунта на Toxin?
-        +button({"tag": "a", "href": "/registration.html", "color": "white", "text": "создать", "size": "m"})
+        +button({ tag: 'a', href: '/registration.html', color: 'white', text: 'создать', size: 'm' })

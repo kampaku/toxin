@@ -21,10 +21,10 @@ mixin header(login)
               +header-menu(menuItems)
           li.header__navigation-item
             if login
-              a(class="header__user-name" href="/mock-address") Юлий Цезарь
+              a.header__user-name(href="/mock-address")= login
             else
               .header__buttons
-                +button({"color": "white", "tag": "a", "href": "/sign-in.html", "text": "войти", 'size': 's'})
-                +button({"color": "blue", "tag": "a", "href": "/registration.html", "text": "зарегистрироваться", 'size': 's'})
-        button(class="header__burger js-header__burger")
+                +button({color: 'white', tag: 'a', href: '/sign-in.html', text: 'войти', size: 's'})
+                +button({color: 'blue', tag: 'a', href: '/registration.html', text: 'зарегистрироваться', size: 's'})
+        button.header__burger.js-header__burger
           span.header__burger-line

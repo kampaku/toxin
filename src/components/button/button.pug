@@ -18,4 +18,4 @@ mixin button(options)
     const buttonType = tag === 'button' ? isSubmit : false
     const classes = `button ${themes[color]} ${sizes[size]}`
 
-  #{tag}(class=classes type=buttonType href=href)= text
+  #{tag}(class=classes, type=buttonType, href=href)= text

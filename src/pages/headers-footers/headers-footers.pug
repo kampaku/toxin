@@ -4,16 +4,16 @@ include /components/footer/footer
 include /components/mobile-footer/mobile-footer
 include /components/logo/logo
 block variables
-  -const title = "headers & footers"
+  - const title = "headers & footers";
 block content
   .headers-footers
     header.headers-footers__header
-      +logo()
+      +logo
     .headers-footers__wrapper
-      +header()
+      +header
     .headers-footers__wrapper
-      +header("login")
+      +header('Юлий Цезарь')
     .headers-footers__wrapper
-      +footer()
+      +footer
     .headers-footers__wrapper
-      +mobile-footer()
+      +mobile-footer

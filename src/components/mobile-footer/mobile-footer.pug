@@ -1,7 +1,7 @@
 include /components/logo/logo
 include /components/social-link/social-link
 
-mixin mobile-footer()
+mixin mobile-footer
   -
     const socialLinks = [
       { link: 'https://twitter.com/toxin', img: 'twitter' },
@@ -10,7 +10,7 @@ mixin mobile-footer()
     ]
   footer.mobile-footer
     .mobile-footer__logo
-      +logo("text")
+      +logo('text')
     p.mobile-footer__copyright Copyright © 2018 Toxin отель. Все права защищены.
     .mobile-footer__social
       each link in socialLinks

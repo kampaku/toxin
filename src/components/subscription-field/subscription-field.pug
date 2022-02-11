@@ -1,9 +1,13 @@
-mixin subscription-field({ label = false, placeholder = "Email" } = {})
+mixin subscription-field({ label = false, placeholder = 'Email' } = {})
   form.subscription-field.js-subscription-field
     if label
       .subscription-field__title
         span.subscription-field__label= label
     .subscription-field__wrapper
-      input(class="subscription-field__input" type="email"
-        placeholder=placeholder autofocus=attributes.autofocus name="email")
-      button(class="subscription-field__button" type="submit") arrow_forward
+      input.subscription-field__input(
+        type="email",
+        placeholder=placeholder,
+        autofocus=attributes.autofocus,
+        name="email"
+      )
+      button.subscription-field__button(type="submit") arrow_forward

@@ -1,5 +1,5 @@
 mixin toggle(text, name = null)
   label.toggle
-    input(class="toggle__button" type="checkbox" name=name checked=attributes.checked)
+    input.toggle__button(type="checkbox", name=name, checked=attributes.checked)
     span.toggle__slider
-    =text
+    = text

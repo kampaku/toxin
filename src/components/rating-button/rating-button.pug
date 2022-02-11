@@ -3,8 +3,8 @@ mixin rating-button(rating, name)
   .rating-button
     while ratingCount < 5
       if ratingCount < rating
-        input(type="radio" name=name class="rating-button__star" checked)
-        - ratingCount++
+        input.rating-button__star(type="radio", name=name, checked)
+        - ratingCount++;
       else
-        input(type="radio" name=name class="rating-button__star")
-        - ratingCount++
+        input.rating-button__star(type="radio", name=name)
+        - ratingCount++;

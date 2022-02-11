@@ -1,7 +1,7 @@
 include /components/logo/logo
 include /components/subscription-field/subscription-field
 include /components/social-link/social-link
-mixin footer()
+mixin footer
   -
     const navigationLinks = ['О нас', 'Новости', 'Служба поддержки', 'Услуги']
     const aboutUsLinks = ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы']
@@ -18,36 +18,36 @@ mixin footer()
           .footer__logo
             +logo({ text: true })
           p.footer__description
-            |Бронирование номеров в лучшем отеле 2019 года
-            |по версии ассоциации «Отельные взгляды»
+            | Бронирование номеров в лучшем отеле 2019 года
+            | по версии ассоциации «Отельные взгляды»
         .footer__column.footer__column_size_s
           .footer__navigation
             h3.footer__title навигация
             ul.footer__list
               each link in navigationLinks
                 li.footer__list-item
-                  a(class="footer__link" href="/mock-address")= link
+                  a.footer__link(href="/mock-address")= link
         .footer__column.footer__column_size_s
           h3.footer__title о нас
           ul.footer__list
             each link in aboutUsLinks
               li.footer__list-item
-                a(class="footer__link" href="/mock-address")= link
+                a.footer__link(href="/mock-address")= link
         .footer__column.footer__column_size_s
-            h3.footer__title Служба поддержки
-            ul.footer__list
-              each link in supportLinks
-                li.footer__list-item
-                  a(class="footer__link" href="/mock-address")= link
+          h3.footer__title Служба поддержки
+          ul.footer__list
+            each link in supportLinks
+              li.footer__list-item
+                a.footer__link(href="/mock-address")= link
         .footer__column.footer__column_size_m
           h3.footer__title Подписка
-          p(class="footer__subscribe") Получайте специальные предложения и новости сервиса
-          +subscription-field()
+          p.footer__subscribe Получайте специальные предложения и новости сервиса
+          +subscription-field
     .footer__copyright
       .footer__container
         .footer__copyright-wrapper
           p.footer__copyright-text
-            |Copyright © 2018 Toxin отель. Все права защищены.
+            | Copyright © 2018 Toxin отель. Все права защищены.
           .footer__social
             each link in socialLinks
               +social-link(link)

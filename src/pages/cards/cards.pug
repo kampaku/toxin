@@ -7,48 +7,28 @@ include /components/login-form/login-form
 include /components/room-card/room-card
 include /components/logo/logo
 block variables
-  -const title = "Cards"
+  - const title = "Cards";
 
 block content
   .cards
     header.cards__header
-      +logo()
+      +logo
     .cards__wrapper
       .cards__column
         .cards__item
-          +search-form()
+          +search-form
         .cards__item
-          +registration-form()
+          +registration-form
       .cards__column
         .cards__item
-          +reservation-form({
-            luxury: true,
-            room: 888,
-            price: "9 990",
-            discount: "2&nbsp;179",
-            additionalService: "300"
-          })
+          +reservation-form({ luxury: true, room: 888, price: '9 990', discount: '2&nbsp;179', additionalService: '300' })
         .cards__item
-          +login-form()
+          +login-form
       .cards__column
         .cards__item
           .cards__calendar.js-cards__calendar
-             +date-dropdown({ label1: 'прибытие' })
+            +date-dropdown({ label1: 'прибытие' })
         .cards__item.cards__item_size_s
-          +room-card({
-            luxury: true,
-            number: 888,
-            price: "9 900₽",
-            star: 5,
-            reviews: 145,
-            images: ['room-1.jpg', 'room-2.jpg', 'room-1.jpg', 'room-2.jpg',]
-          })
+          +room-card({ luxury: true, number: 888, price: '9 900₽', star: 5, reviews: 145, images: ['room-1.jpg', 'room-2.jpg', 'room-1.jpg', 'room-2.jpg',] })
         .cards__item.cards__item_size_s
-          +room-card({
-            luxury: false,
-            number: 840,
-            price: "9 900₽",
-            star: 4,
-            reviews: 65,
-            images: ['room-2.jpg', 'room-1.jpg', 'room-2.jpg', 'room-1.jpg',]
-          })
+          +room-card({ luxury: false, number: 840, price: '9 900₽', star: 4, reviews: 65, images: ['room-2.jpg', 'room-1.jpg', 'room-2.jpg', 'room-1.jpg',] })

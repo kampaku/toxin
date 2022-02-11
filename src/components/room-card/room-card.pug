@@ -1,22 +1,25 @@
 include /components/rating-button/rating-button
 mixin room-card(obj)
-  -const {luxury, price, number, star, reviews, images} = obj
+  - const { luxury, price, number, star, reviews, images } = obj;
   .room-card.js-room-card
     .room-card__slider
       .room-card__slider-slides
         each img in images
-          img(class="room-card__slider-slide js-room-card__slider-slide" src=require(`/src/assets/img/rooms-photo/${img}`), alt="room picture")
+          img.room-card__slider-slide.js-room-card__slider-slide(
+            src=require(`/src/assets/img/rooms-photo/${img}`),
+            alt="room picture"
+          )
       .room-card__slider-dots.js-room-card__slider-dots
         each dot in images
           .room-card__slider-dot.js-room-card__slider-dot
       .room-card__slider-buttons
         button.room-card__slider-button.room-card__slider-button_direction_left.js-room-card__slider-button_direction_left
-          |navigate_before
+          | navigate_before
         button.room-card__slider-button.room-card__slider-button_direction_right.js-room-card__slider-button_direction_right
-          |navigate_next
+          | navigate_next
     .room-card__inner
       .room-card__info
-        a(class="room-card__room-number-link" href="/room-details.html")
+        a.room-card__room-number-link(href="/room-details.html")
           span.room-card__room-number-sign №&nbsp;
           span.room-card__room-number= number
           if luxury
@@ -26,6 +29,6 @@ mixin room-card(obj)
           span.room-card__price-per-day-text &nbsp;в сутки
       .room-card__rating
         +rating-button(star)
-        a(class="room-card__reviews" href="/room-details.html")
+        a.room-card__reviews(href="/room-details.html")
           span.room-card__reviews-number= reviews
           span.room-card__reviews-text &nbsp;Отзывов
