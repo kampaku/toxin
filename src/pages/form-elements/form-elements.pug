@@ -33,19 +33,21 @@ block variables
     }
 
     const checkboxList = [
-      { title: 'Завтрак', name: 'breakfast' }, { title: 'Письменный стол', name: 'desk', checked: true },
-      { title: 'Стул для кормления', name: 'food-chair', checked: true }, {
-        title: 'Кроватка',
-        name: 'bed',
-        checked: true
-      },
-      { title: 'Телевизор', name: 'tv', }, { title: 'Шампунь', name: 'shampoo' }
+      { title: 'Завтрак', name: 'breakfast' },
+      { title: 'Письменный стол', name: 'desk', checked: true },
+      { title: 'Стул для кормления', name: 'food-chair', checked: true },
+      { title: 'Кроватка', name: 'bed', checked: true },
+      { title: 'Телевизор', name: 'tv' },
+      { title: 'Шампунь', name: 'shampoo' }
     ]
 
     const aboutRoomItems = [
       { icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены' },
       { icon: 'location_city', title: 'Удобство', text: 'Окно в каждой из спален' },
     ]
+
+    const bulletList = ['Нельзя с питомцами',
+      'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
 block content
   .form-elements
     header.form-elements__header
@@ -60,7 +62,13 @@ block content
               autofocus
             )
           .form-elements__block
-            +dropdown({ label: 'dropdown', items: ['взрослые', 'дети', 'младенцы'], type: 'guests', placeholder: 'Сколько гостей', buttons: true })
+            +dropdown({
+              label: 'dropdown',
+              items: ['взрослые', 'дети', 'младенцы'],
+              type: 'guests',
+              placeholder: 'Сколько гостей',
+              buttons: true
+            })
           .form-elements__block
             +input-text({ label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', mask: true })
           .form-elements__block.form-elements__block_margin_l
@@ -121,15 +129,40 @@ block content
       .form-elements__row.form-elements__row_margin_l
         .form-elements__column
           .form-elements__block.form-elements__block_size_s
-            +dropdown({ label: 'dropdown', items: ['спальни', 'кровати', 'ванные комнаты'], type: 'rooms', placeholder: 'Удобства' })
+            +dropdown({
+              label: 'dropdown',
+              items: ['спальни', 'кровати', 'ванные комнаты'],
+              type: 'rooms',
+              placeholder: 'Удобства'
+            })
           .form-elements__block.form-elements__block_size_s
-            +dropdown({ label: 'dropdown', items: ['спальни', 'кровати', 'ванные комнаты'], type: 'rooms', placeholder: 'Удобства', expanded: true })
+            +dropdown({
+              label: 'dropdown',
+              items: ['спальни', 'кровати', 'ванные комнаты'],
+              type: 'rooms',
+              placeholder: 'Удобства',
+              expanded: true
+            })
         .form-elements__column
           .form-elements__block
-            +dropdown({ label: 'dropdown', items: ['взрослые', 'дети', 'младенцы'], type: 'zeroGuests', placeholder: 'Сколько гостей', buttons: true, expanded: true })
+            +dropdown({
+              label: 'dropdown',
+              items: ['взрослые', 'дети', 'младенцы'],
+              type: 'zeroGuests',
+              placeholder: 'Сколько гостей',
+              buttons: true,
+              expanded: true
+            })
         .form-elements__column
           .form-elements__block
-            +dropdown({ label: 'dropdown', items: ['взрослые', 'дети', 'младенцы'], type: 'guests', placeholder: 'Сколько гостей', buttons: true, expanded: true })
+            +dropdown({
+              label: 'dropdown',
+              items: ['взрослые', 'дети', 'младенцы'],
+              type: 'guests',
+              placeholder: 'Сколько гостей',
+              buttons: true,
+              expanded: true
+            })
       .form-elements__row.form-elements__row_margin_xl
         .form-elements__column
           .form-elements__block.form-elements__block_size_s
@@ -140,12 +173,18 @@ block content
           .form-elements__block.form-elements__block_size_s
             h3.form-elements__title rich Checkbox Buttons
             .form-elements__checkbox
-              +checkbox({ title: 'Широкий коридор', description: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.' })
-              +checkbox({ title: 'Помощник для инвалидов', description: 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.' })
+              +checkbox({
+                title: 'Широкий коридор',
+                description: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.'
+              })
+              +checkbox({
+                title: 'Помощник для инвалидов',
+                description: 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.'
+              })
         .form-elements__column
           .form-elements__block
             h3.form-elements__title bullet list
-            +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
+            +bullet-list(bulletList)
       .form-elements__row
         .form-elements__column
           .form-elements__block
