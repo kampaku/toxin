@@ -117,53 +117,65 @@ block variables
       { title: 'Телевизор', name: 'tv', },
       { title: 'Шампунь', name: 'shampoo' }
     ]
+
+    const guestDropdown = {
+      label: 'гости',
+      items: ['взрослые', 'дети', 'младенцы'],
+      type: 'guests',
+      buttons: true,
+      placeholder: 'Сколько гостей',
+      name: 'guests-quantity'
+    }
+
+    const comfortDropdown = {
+      label: 'удобства номера',
+      items: ['спальни', 'кровати', 'ванные комнаты'],
+      type: 'rooms',
+      placeholder: 'Удобства',
+      name: 'room-comfort'
+    }
+
+    const checkboxes = [
+      { title: 'Можно курить', name: 'smoke' },
+      { title: 'Можно с питомцами', name: 'pets', checked: true },
+      { title: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)', name: 'guests', checked: true }
+    ]
+
+    const richCheckboxes = [
+      {
+        title: 'Широкий коридор',
+        description: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.',
+        name: 'wide hall'
+      },
+      {
+        title: 'Помощник для инвалидов',
+        description: 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.',
+        name: 'helper'
+      }
+    ]
 block content
   .search-room
     form.search-room__filter
       .search-room__date-filter
         +date-dropdown({ label1: 'даты пребывания в отеле', name1: 'date-filter' })
       .search-room__guest
-        +dropdown({
-          label: 'гости',
-          items: ['взрослые', 'дети', 'младенцы'],
-          type: 'guests',
-          buttons: true,
-          holder: 'Сколько гостей',
-          name: 'guests-quantity'
-        })
+        +dropdown(guestDropdown)
       .search-room__range-slider
         +range-slider({ label: 'диапазон цены', text: 'Стоимость за сутки пребывания в номере' })
       .search-room__checkbox
         span.search-room__checkbox-title правила дома
         .search-room__checkbox-wrapper
-          +checkbox({ title: 'Можно курить', name: 'smoke' })
-          +checkbox({ title: 'Можно с питомцами', name: 'pets' })(checked)
-          +checkbox({ title: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)', name: 'guests' })(
-            checked
-          )
+          each checkbox in checkboxes
+            +checkbox(checkbox)
       .search-room__checkbox
         span.search-room__checkbox-title доступность
         .search-room__checkbox-wrapper
-          +checkbox({
-            title: 'Широкий коридор',
-            description: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.',
-            name: 'wide hall'
-          })
-          +checkbox({
-            title: 'Помощник для инвалидов',
-            description: 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.',
-            name: 'helper'
-          })
+          each checkbox in richCheckboxes
+            +checkbox(checkbox)
       .search-room__comfort
-        +dropdown({
-          label: 'удобства номера',
-          items: ['спальни', 'кровати', 'ванные комнаты'],
-          type: 'rooms',
-          holder: 'Удобства',
-          name: 'room-comfort'
-        })
+        +dropdown(comfortDropdown)
       .search-room__expandable-checkbox
-        +expandable-checkbox-list({ label: 'дополнительные удобства', list: checkboxList, })
+        +expandable-checkbox-list({ label: 'дополнительные удобства', list: checkboxList })
     .search-room__search-results
       h1.search-room__title Номера, которые мы для вас подобрали
       .search-room__room-cards
