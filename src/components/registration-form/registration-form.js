@@ -1,7 +1,7 @@
 import 'components/button/button';
 import 'components/radio/radio';
 import 'components/toggle/toggle';
-import InputDateMask from 'components/input-text/input-text';
+import InputDateMask from 'components/input-text/InputDateMask';
 
 import './registration-form.scss';
 

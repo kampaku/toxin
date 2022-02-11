@@ -5,7 +5,6 @@ import 'components/about-room/about-room';
 import 'components/bullet-list/bullet-list';
 import 'components/button/button';
 import 'components/checkbox/checkbox';
-import 'components/button-like/ButtonLike';
 import 'components/pagination/pagination';
 import 'components/radio/radio';
 import 'components/toggle/toggle';
@@ -17,10 +16,10 @@ import dropdownTypes from 'components/dropdown/dropdown-types';
 import DateDropdown from 'components/date-dropdown/DateDropdown';
 import Dropdown from 'components/dropdown/Dropdown';
 import RangeSlider from 'components/range-slider/RangeSlider';
-import InputDateMask from 'components/input-text/input-text';
+import InputDateMask from 'components/input-text/InputDateMask';
+import ButtonLike from 'components/button-like/ButtonLike';
 
 import './form-elements.scss';
-import ButtonLike from '../../components/button-like/ButtonLike';
 
 const maskedInput = document.querySelector('.js-input-text__input');
 const checkboxLists = document.querySelectorAll('.js-expandable-checkbox-list');
