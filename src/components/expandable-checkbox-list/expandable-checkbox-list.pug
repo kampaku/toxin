@@ -11,4 +11,4 @@ mixin expandable-checkbox-list({ label, list, expanded = false })
     )
       each item in checkboxList
         li.expandable-checkbox-list__item
-          +checkbox({ title: item.title, name: item.name })(checked=item.checked)
+          +checkbox({ title: item.title, name: item.name, checked: item.checked })

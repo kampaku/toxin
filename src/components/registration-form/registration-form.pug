@@ -14,9 +14,9 @@ mixin registration-form
           +input-text({ placeholder: 'Фамилия', name: 'lastname' })
       .registration-form__radio
         .registration-form__radio-button
-          +radio('Мужчина')(name="gender", checked)
+          +radio({ label: 'Мужчина', name: 'gender', checked: true })
         .registration-form__radio-button
-          +radio('Женщина')(name="gender")
+          +radio({ label: 'Женщина', name: 'gender' })
       .registration-form__masked-field
         +input-text({ label: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', mask: true, type: 'text', name: 'birthday' })
       .registration-form__text-fields
