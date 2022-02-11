@@ -48,6 +48,41 @@ block variables
 
     const bulletList = ['Нельзя с питомцами',
       'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']
+
+    const checkboxes = [
+      { title: 'Можно курить', name: 'smoke' },
+      { title: 'Можно с питомцами', name: 'pets', checked: true },
+      { title: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)', name: 'guests', checked: true }
+    ]
+
+    const guestDropdown = {
+      label: 'dropdown',
+      items: ['взрослые', 'дети', 'младенцы'],
+      type: 'guests',
+      buttons: true,
+      placeholder: 'Сколько гостей'
+    }
+
+    const comfortDropdown = {
+      label: 'удобства номера',
+      items: ['спальни', 'кровати', 'ванные комнаты'],
+      type: 'rooms',
+      placeholder: 'Удобства',
+      name: 'room-comfort'
+    }
+
+    const richCheckboxes = [
+      {
+        title: 'Широкий коридор',
+        description: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.',
+        name: 'wide hall'
+      },
+      {
+        title: 'Помощник для инвалидов',
+        description: 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.',
+        name: 'helper'
+      }
+    ]
 block content
   .form-elements
     header.form-elements__header
@@ -62,13 +97,7 @@ block content
               autofocus
             )
           .form-elements__block
-            +dropdown({
-              label: 'dropdown',
-              items: ['взрослые', 'дети', 'младенцы'],
-              type: 'guests',
-              placeholder: 'Сколько гостей',
-              buttons: true
-            })
+            +dropdown(guestDropdown)
           .form-elements__block
             +input-text({ label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', mask: true })
           .form-elements__block.form-elements__block_margin_l
@@ -81,18 +110,15 @@ block content
           .form-elements__block.form-elements__block_margin_l
             h3.form-elements__title Checkbox Buttons
             .form-elements__checkbox
-              +checkbox({ title: 'Можно курить' })
-              +checkbox({ title: 'Можно с питомцами' })(checked)
-              +checkbox({ title: 'Можно пригласить гостей (до&nbsp;10&nbsp;человек)' })(
-                checked
-              )
+              each checkbox in checkboxes
+                +checkbox(checkbox)
           .form-elements__block.form-elements__block_margin_xl
             h3.form-elements__title Radio buttons
             .form-elements__radio
               .form-elements__radio-button
-                +radio('Мужчина')(name="gender", checked)
+                +radio({ label: 'Мужчина', name: 'gender', checked: true })
               .form-elements__radio-button
-                +radio('Женщина')(name="gender")
+                +radio({ label: 'Женщина', name: 'gender' })
           .form-elements__block.form-elements__block_margin_l
             h3.form-elements__title Toggle
             .form-elements__toggle
@@ -129,40 +155,15 @@ block content
       .form-elements__row.form-elements__row_margin_l
         .form-elements__column
           .form-elements__block.form-elements__block_size_s
-            +dropdown({
-              label: 'dropdown',
-              items: ['спальни', 'кровати', 'ванные комнаты'],
-              type: 'rooms',
-              placeholder: 'Удобства'
-            })
+            +dropdown(comfortDropdown)
           .form-elements__block.form-elements__block_size_s
-            +dropdown({
-              label: 'dropdown',
-              items: ['спальни', 'кровати', 'ванные комнаты'],
-              type: 'rooms',
-              placeholder: 'Удобства',
-              expanded: true
-            })
+            +dropdown({ ...comfortDropdown, expanded: true })
         .form-elements__column
           .form-elements__block
-            +dropdown({
-              label: 'dropdown',
-              items: ['взрослые', 'дети', 'младенцы'],
-              type: 'zeroGuests',
-              placeholder: 'Сколько гостей',
-              buttons: true,
-              expanded: true
-            })
+            +dropdown({ ...guestDropdown, expanded: true, type: 'zeroGuests' })
         .form-elements__column
           .form-elements__block
-            +dropdown({
-              label: 'dropdown',
-              items: ['взрослые', 'дети', 'младенцы'],
-              type: 'guests',
-              placeholder: 'Сколько гостей',
-              buttons: true,
-              expanded: true
-            })
+            +dropdown({ ...guestDropdown, expanded: true })
       .form-elements__row.form-elements__row_margin_xl
         .form-elements__column
           .form-elements__block.form-elements__block_size_s
@@ -173,14 +174,8 @@ block content
           .form-elements__block.form-elements__block_size_s
             h3.form-elements__title rich Checkbox Buttons
             .form-elements__checkbox
-              +checkbox({
-                title: 'Широкий коридор',
-                description: 'Ширина коридоров в&nbsp;номере не&nbsp;менее 91&nbsp;см.'
-              })
-              +checkbox({
-                title: 'Помощник для инвалидов',
-                description: 'На&nbsp;1&nbsp;этаже вас встретит специалист и&nbsp;проводит до&nbsp;номера.'
-              })
+              each checkbox in richCheckboxes
+                +checkbox(checkbox)
         .form-elements__column
           .form-elements__block
             h3.form-elements__title bullet list
