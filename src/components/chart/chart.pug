@@ -1,15 +1,12 @@
 mixin chart
+  - let chartLegends = ["Великолепно", "Хорошо", "Удовлетворительно", "Разочарован"];
   .chart.js-chart
     svg.chart__units(width="122", height="122", viewBox="0 0 34 34")
-      circle.chart__unit.js-chart__unit(r="15.9", cx="50%", cy="50%")
-      circle.chart__unit.js-chart__unit(r="15.9", cx="50%", cy="50%")
-      circle.chart__unit.js-chart__unit(r="15.9", cx="50%", cy="50%")
-      circle.chart__unit.js-chart__unit(r="15.9", cx="50%", cy="50%")
+      each legend in chartLegends
+        circle.chart__unit.js-chart__unit(r="15.9", cx="50%", cy="50%")
       g.chart__text
         text.chart__number.js-chart__number(x="50%", y="50%")
         text.chart__label(x="50%", y="50%") голосов
     ul.chart__legend
-      li.chart__legend-item Великолепно
-      li.chart__legend-item Хорошо
-      li.chart__legend-item Удовлетворительно
-      li.chart__legend-item Разочарован
+      each legend in chartLegends
+        li.chart__legend-item= legend
