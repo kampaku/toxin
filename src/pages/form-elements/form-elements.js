@@ -11,7 +11,7 @@ import 'components/toggle/toggle';
 import 'components/rating-button/rating-button';
 import 'components/subscription-field/subscription-field';
 import 'components/review/review';
-import ExpandCheckbox from 'components/expandable-checkbox-list/ExpandableCheckbox';
+import 'components/expandable-checkbox-list/init';
 import dropdownTypes from 'components/dropdown/dropdown-types';
 import DateDropdown from 'components/date-dropdown/DateDropdown';
 import Dropdown from 'components/dropdown/Dropdown';
@@ -22,11 +22,21 @@ import ButtonLike from 'components/button-like/ButtonLike';
 import './form-elements.scss';
 
 const maskedInput = document.querySelector('.js-input-text__input');
-const checkboxLists = document.querySelectorAll('.js-expandable-checkbox-list');
 const dropdowns = document.querySelectorAll('.js-dropdown');
 const dateDropdowns = document.querySelectorAll('.js-date-dropdown');
 const slider = document.querySelector('.js-range-slider');
-const buttonsLike = document.querySelectorAll('.js-button-like');
+const buttonsLikeContainer = document.querySelector('.form-elements__button-like');
+
+if (maskedInput) {
+  new InputDateMask(maskedInput);
+}
+
+if (buttonsLikeContainer) {
+  const buttonsLike = buttonsLikeContainer.querySelectorAll('.js-button-like');
+  buttonsLike.forEach(button => {
+    new ButtonLike(button);
+  });
+}
 
 if (dateDropdowns) {
   dateDropdowns.forEach(dropdown => {
@@ -38,21 +48,6 @@ if (dropdowns) {
   dropdowns.forEach(dropdown => {
     new Dropdown(dropdown, dropdownTypes[dropdown.dataset.type]);
   });
-}
-
-if (maskedInput) {
-  new InputDateMask(maskedInput);
-}
-
-if (checkboxLists) {
-  checkboxLists.forEach(checkbox => {
-    new ExpandCheckbox(checkbox);
-  });
-}
-if (buttonsLike) {
-  buttonsLike.forEach(button => {
-    new ButtonLike(button);
-  })
 }
 
 if (slider) {

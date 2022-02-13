@@ -59,6 +59,4 @@ class Slider {
   }
 }
 
-const roomCards = document.querySelectorAll('.js-room-card');
-
-roomCards.forEach(card => new Slider(card))
+export default Slider;

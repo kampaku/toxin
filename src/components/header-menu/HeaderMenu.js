@@ -1,8 +1,5 @@
 import './header-menu.scss';
 
-const headerMenu = document.querySelector('.js-header-menu');
-
-
 class HeaderMenu {
   constructor(element) {
     this.headerMenu = element;
@@ -43,4 +40,4 @@ class HeaderMenu {
   }
 }
 
-new HeaderMenu(headerMenu);
+export default HeaderMenu;

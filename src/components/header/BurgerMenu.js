@@ -1,5 +1,4 @@
 import 'components/button/button';
-import 'components/header-menu/header-menu'
 
 import './header.scss';
 
