@@ -2,7 +2,7 @@ import '~scss/main.scss';
 
 import 'components/checkbox/checkbox';
 import 'components/footer/footer';
-import 'components/header/header';
+import 'components/header/init';
 import 'components/pagination/pagination';
 import 'components/room-card/room-card';
 import DateDropdown from 'components/date-dropdown/DateDropdown';

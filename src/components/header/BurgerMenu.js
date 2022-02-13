@@ -3,8 +3,6 @@ import 'components/header-menu/header-menu'
 
 import './header.scss';
 
-const header = document.querySelector('.js-header');
-
 class BurgerMenu {
   constructor(element) {
     this.button = element.querySelector('.js-header__burger');
@@ -31,4 +29,4 @@ class BurgerMenu {
   }
 }
 
-new BurgerMenu(header);
+export default BurgerMenu;
