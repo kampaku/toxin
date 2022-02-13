@@ -23,9 +23,9 @@ class DateDropdown {
   addOnSelectCallback(func) {
     this.datePick.update({
       onSelect() {
-        func()
-      }
-    })
+        func();
+      },
+    });
   }
 
   getDefaultOptions() {
@@ -42,19 +42,19 @@ class DateDropdown {
       },
       buttons: ['clear', {
         content: () => {
-          return 'применить'
+          return 'применить';
         },
         onClick: (dp) => {
           dp.hide();
-        }
+        },
       }],
       onShow: () => {
         document.addEventListener('mousedown', this.hideCalendar);
       },
       onHide: () => {
         document.removeEventListener('mousedown', this.hideCalendar);
-      }
-    }
+      },
+    };
   }
 
   init() {
@@ -73,25 +73,23 @@ class DateDropdown {
   }
 
   initializeDouble(options) {
+    const dateFormat = {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+    };
+
     this.datePick = new AirDatepicker(this.dropdowns[0], {
       dateFormat(data) {
-        return data[0].toLocaleString(false, {
-          day: '2-digit',
-          month: '2-digit',
-          year: 'numeric'
-        })
+        return data[0].toLocaleString(false, dateFormat);
       },
       altField: this.dropdowns[1],
       altFieldDateFormat(data) {
         if (!data[1]) return '';
-        return data[1].toLocaleString(false, {
-          day: '2-digit',
-          month: '2-digit',
-          year: 'numeric'
-        })
+        return data[1].toLocaleString(false, dateFormat);
       },
-      ...options
-    })
+      ...options,
+    });
 
     this.dropdowns[1].addEventListener('click', this.handleShow);
   }
@@ -100,8 +98,8 @@ class DateDropdown {
     this.datePick = new AirDatepicker(this.dropdowns[0], {
       multipleDatesSeparator: ' - ',
       dateFormat: 'dd MMM',
-      ...options
-    })
+      ...options,
+    });
   }
 
   initializeInline(options) {
@@ -113,8 +111,8 @@ class DateDropdown {
     expandButton.style.display = 'none';
     this.datePick = new AirDatepicker(this.dropdowns[0], {
       inline: true,
-      ...options
-    })
+      ...options,
+    });
   }
 
   handleShow() {
