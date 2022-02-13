@@ -1,7 +1,7 @@
-mixin logo({ text = false } = {})
+mixin logo({ withText = false } = {})
   .logo
     a.logo__link(href="/")
-      if (text)
+      if (withText)
         img.logo__img(src=require("/src/assets/img/icons/logo.svg"), alt="logo")
       else
         img.logo__img(src=require("/src/assets/img/icons/ui-logo.svg"), alt="logo")
