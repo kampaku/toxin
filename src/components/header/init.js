@@ -1,7 +1,7 @@
 import BurgerMenu from './BurgerMenu';
 
-const header = document.querySelectorAll('.js-header');
+const headers = document.querySelectorAll('.js-header');
 
-header.forEach(header => {
+headers.forEach(header => {
   new BurgerMenu(header);
 })
