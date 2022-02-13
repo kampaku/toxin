@@ -122,6 +122,7 @@ class Dropdown {
   }
 
   apply() {
+    this.openBtn.classList.remove('dropdown__header_active');
     this.list.classList.remove('dropdown__inner_active');
   }
 
