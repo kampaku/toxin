@@ -1,24 +1,5 @@
 import './dropdown.scss';
 
-function getDeclension(value, wordForms) {
-  value = Math.abs(value) % 100;
-  const num = value % 10;
-  const isThirdForm = value > 10 && value < 20;
-  const isSecondForm = num > 1 && num < 5;
-  const isFirstForm = num === 1;
-
-  if (isThirdForm) {
-    return wordForms[2];
-  }
-  if (isSecondForm) {
-    return wordForms[1];
-  }
-  if (isFirstForm) {
-    return wordForms[0];
-  }
-  return wordForms[2];
-}
-
 class Dropdown {
   constructor(dropdown, dropdownType) {
     this.dropdown = dropdown;
@@ -32,8 +13,7 @@ class Dropdown {
 
   getItem(itemElement) {
     const itemType = itemElement.dataset.type;
-    let item = this.dropdownType.items.find((type) => type.name === itemType);
-    return item;
+    return this.dropdownType.items.find((type) => type.name === itemType);
   }
 
   buttonHandler(e) {
@@ -52,7 +32,7 @@ class Dropdown {
   }
 
   changeText(sum) {
-    let textValue = [];
+    const textValue = [];
     const dropdownText = this.dropdown.querySelector('.js-dropdown__input');
     sum -= this.dropdownType.items.reduce((prev, curr) => {
       if (curr.ignore) {
@@ -64,13 +44,13 @@ class Dropdown {
     const isDeclined = this.dropdownType.wordForms && sum > 0;
 
     if (isDeclined) {
-      textValue.push(`${sum} ${getDeclension(sum, this.dropdownType.wordForms)}`);
+      textValue.push(`${sum} ${this.getDeclension(sum, this.dropdownType.wordForms)}`);
     }
 
     this.dropdownType.items.forEach((item) => {
       const isDeclined = item.wordForms && item.value > 0;
       if (isDeclined) {
-        textValue.push(`${item.value} ${getDeclension(item.value, item.wordForms)}`);
+        textValue.push(`${item.value} ${this.getDeclension(item.value, item.wordForms)}`);
       }
     });
 
@@ -124,6 +104,25 @@ class Dropdown {
   apply() {
     this.openBtn.classList.remove('dropdown__header_active');
     this.list.classList.remove('dropdown__inner_active');
+  }
+
+  getDeclension(value, wordForms) {
+    value = Math.abs(value) % 100;
+    const num = value % 10;
+    const isThirdForm = value > 10 && value < 20;
+    const isSecondForm = num > 1 && num < 5;
+    const isFirstForm = num === 1;
+
+    if (isThirdForm) {
+      return wordForms[2];
+    }
+    if (isSecondForm) {
+      return wordForms[1];
+    }
+    if (isFirstForm) {
+      return wordForms[0];
+    }
+    return wordForms[2];
   }
 
   render() {
