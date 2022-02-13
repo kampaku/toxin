@@ -1,6 +1,6 @@
 mixin chart
   -
-    let chartLegends = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'];
+    const chartLegends = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'];
   .chart.js-chart
     svg.chart__units(width="122", height="122", viewBox="0 0 34 34")
       each legend in chartLegends
