@@ -2,7 +2,7 @@
   display: flex;
   align-items: flex-start;
   max-width: max-content;
-  line-height: 1.2;
+  line-height: 1.28;
   cursor: pointer;
   @extend %body-text;
 
@@ -37,12 +37,12 @@
   }
 
   &__title {
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     font-weight: $boldFontWeight;
     font-size: $mainFontSize;
     font-family: $mainFont;
     font-style: normal;
-    line-height: $mainLineHeight;
+    line-height: 1.285;
   }
 
   &__description {
@@ -50,6 +50,6 @@
     font-size: $labelFontSize;
     font-family: $mainFont;
     font-style: normal;
-    line-height: 1.1;
+    line-height: 1.166;
   }
 }

@@ -145,6 +145,10 @@
     justify-content: space-between;
   }
 
+  &__price-per-day {
+    align-self: flex-end;
+  }
+
   &__price-per-day,
   &__reviews {
     color: $dark-shade-50;
@@ -156,11 +160,14 @@
     text-decoration: none;
   }
 
+  &__price-per-day-text {
+    font-size: $labelFontSize;
+  }
+
   &__price-per-day-text,
   &__reviews-text {
     color: $dark-shade-50;
     font-weight: $mainFontWeight;
-    font-size: $mainFontSize;
     font-family: $mainFont;
     font-style: normal;
     line-height: $mainLineHeight;

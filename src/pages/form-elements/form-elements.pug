@@ -64,7 +64,7 @@ block variables
     }
 
     const comfortDropdown = {
-      label: 'удобства номера',
+      label: 'dropdown',
       items: ['спальни', 'кровати', 'ванные комнаты'],
       type: 'rooms',
       placeholder: 'Удобства',
@@ -97,7 +97,7 @@ block content
               autofocus
             )
           .form-elements__block
-            +dropdown(guestDropdown)
+            +dropdown({ ...guestDropdown, type: 'zeroGuests' })
           .form-elements__block
             +input-text({ label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', mask: true })
           .form-elements__block.form-elements__block_margin_l
@@ -124,7 +124,7 @@ block content
             .form-elements__toggle
               +toggle('Получать спецпредложения')(checked)
               +toggle('Получать спецпредложения')
-          .form-elements__block.form-elements__block_margin_xl
+          .form-elements__block.form-elements__block_margin_xxl
             h3.form-elements__title like button
             .form-elements__button-like
               +button-like(2)
@@ -178,10 +178,10 @@ block content
                 +checkbox(checkbox)
         .form-elements__column
           .form-elements__block
-            h3.form-elements__title bullet list
+            h3.form-elements__title.form-elements__title_margin_s bullet list
             +bullet-list(bulletList)
       .form-elements__row
-        .form-elements__column
+        .form-elements__column.form-elements__column_align_center
           .form-elements__block
             +about-room(aboutRoomItems)
         .form-elements__column.form-elements__column_size_l

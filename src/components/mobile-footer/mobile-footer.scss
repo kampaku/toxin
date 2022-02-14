@@ -11,16 +11,16 @@
   box-shadow: 0 10px 20px $dark-shade-5;
 
   &__logo {
-    margin-bottom: 15px;
+    margin-bottom: 13px;
   }
 
   &__copyright {
-    margin: 0 0 20px;
+    margin: 0 0 23px;
     @extend %body-text;
   }
 
   &__social {
     display: flex;
-    column-gap: 20px;
+    column-gap: 22px;
   }
 }

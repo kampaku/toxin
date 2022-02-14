@@ -1,6 +1,7 @@
 .cards {
+  background-color: #f4f4f6;
+
   &__header {
-    margin-bottom: 70px;
     margin-left: 30px;
     padding-top: 30px;
   }
@@ -17,6 +18,19 @@
   &__column {
     display: flex;
     flex-direction: column;
+    margin-top: 69px;
+
+    //&:nth-child(1n) {
+    //  margin-top: 69px;
+    //}
+    //
+    //&:nth-child(2n) {
+    //  margin-top: 71px;
+    //}
+    //
+    //&:nth-child(3n) {
+    //  margin-top: 82px;
+    //}
   }
 
   &__item {

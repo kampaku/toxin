@@ -2,17 +2,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 683px;
-  padding: 0 20px;
-  background: center 100% / cover no-repeat url('assets/img/backgrounds/registration-bg.jpg');
+  padding: 19px;
+  background: center 54% / 107% no-repeat url('assets/img/backgrounds/registration-bg.jpg');
 
   @media (max-width: $phoneWidth) {
-    padding: 0 10px;
+    padding: 10px;
   }
 
   &__form {
+    display: flex;
+    justify-content: center;
     width: 100%;
-    max-width: 380px;
-    margin: 10px auto;
+    margin: 0 auto 0 5px;
   }
 }
