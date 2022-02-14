@@ -4,9 +4,9 @@
     '. form .'
     '. text .';
   grid-template-rows: repeat(2, minmax(385px, max-content));
-  grid-template-columns: auto minmax(280px, 1160px) auto;
+  grid-template-columns: auto minmax(280px, 1170px) auto;
   padding: 0 20px;
-  background: center / cover no-repeat url('assets/img/backgrounds/landing-page-bg.jpg');
+  background: center 65% / 110% no-repeat url('assets/img/backgrounds/landing-page-bg.jpg');
 
   @media (max-width: $phoneWidth) {
     padding: 0 10px;
@@ -15,6 +15,7 @@
   &__search-form {
     grid-area: form;
     margin-top: 70px;
+    margin-left: 5px;
   }
 
   &__text {
@@ -22,7 +23,7 @@
     align-self: end;
     justify-self: right;
     max-width: 290px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     text-align: right;
     @extend %body-text;
   }
