@@ -5,8 +5,11 @@
     '. text .';
   grid-template-rows: repeat(2, minmax(385px, max-content));
   grid-template-columns: auto minmax(280px, 1170px) auto;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
   padding: 0 20px;
-  background: center 65% / 110% no-repeat url('assets/img/backgrounds/landing-page-bg.jpg');
+  background: center 65% / cover no-repeat url('assets/img/backgrounds/landing-page-bg.jpg');
 
   @media (max-width: $phoneWidth) {
     padding: 0 10px;

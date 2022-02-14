@@ -2,8 +2,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
   padding: 19px;
-  background: center 54% / 107% no-repeat url('assets/img/backgrounds/registration-bg.jpg');
+  background: center 54% / cover no-repeat url('assets/img/backgrounds/registration-bg.jpg');
 
   @media (max-width: $phoneWidth) {
     padding: 10px;
