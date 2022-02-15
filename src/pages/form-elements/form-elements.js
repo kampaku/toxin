@@ -12,11 +12,11 @@ import 'components/rating-button/rating-button';
 import 'components/subscription-field/subscription-field';
 import 'components/review/review';
 import 'components/expandable-checkbox-list/init';
+import 'components/input-text/init';
 import dropdownTypes from 'components/dropdown/dropdown-types';
 import DateDropdown from 'components/date-dropdown/DateDropdown';
 import Dropdown from 'components/dropdown/Dropdown';
 import RangeSlider from 'components/range-slider/RangeSlider';
-import 'components/input-text/init';
 
 import './form-elements.scss';
 
