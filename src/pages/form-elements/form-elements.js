@@ -16,27 +16,13 @@ import dropdownTypes from 'components/dropdown/dropdown-types';
 import DateDropdown from 'components/date-dropdown/DateDropdown';
 import Dropdown from 'components/dropdown/Dropdown';
 import RangeSlider from 'components/range-slider/RangeSlider';
-import InputDateMask from 'components/input-text/InputDateMask';
-import ButtonLike from 'components/button-like/ButtonLike';
+import 'components/input-text/init';
 
 import './form-elements.scss';
 
-const maskedInput = document.querySelector('.js-input-text__input');
 const dropdowns = document.querySelectorAll('.js-dropdown');
 const dateDropdowns = document.querySelectorAll('.js-date-dropdown');
 const slider = document.querySelector('.js-range-slider');
-const buttonsLikeContainer = document.querySelector('.form-elements__button-like');
-
-if (maskedInput) {
-  new InputDateMask(maskedInput);
-}
-
-if (buttonsLikeContainer) {
-  const buttonsLike = buttonsLikeContainer.querySelectorAll('.js-button-like');
-  buttonsLike.forEach(button => {
-    new ButtonLike(button);
-  });
-}
 
 if (dateDropdowns) {
   dateDropdowns.forEach(dropdown => {
