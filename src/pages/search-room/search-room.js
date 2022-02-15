@@ -3,7 +3,6 @@ import '~scss/main.scss';
 import 'components/checkbox/checkbox';
 import 'components/footer/footer';
 import 'components/header/init';
-import 'components/header-menu/init';
 import 'components/pagination/pagination';
 import 'components/expandable-checkbox-list/init';
 import 'components/room-card/init';

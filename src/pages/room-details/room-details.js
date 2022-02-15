@@ -3,7 +3,6 @@ import '~scss/main.scss';
 import 'components/about-room/about-room';
 import 'components/bullet-list/bullet-list';
 import 'components/header/init';
-import 'components/header-menu/init'
 import 'components/footer/footer';
 import 'components/review/review.js';
 import ReservationForm from 'components/reservation-form/ReservationForm';
