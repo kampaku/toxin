@@ -1,7 +1,5 @@
 import IMask from 'imask';
 
-import './input-text.scss';
-
 class InputDateMask {
   constructor(element) {
     this.element = element;

@@ -1,5 +1,3 @@
-import './header-menu.scss';
-
 class HeaderMenu {
   constructor(element) {
     this.headerMenu = element;

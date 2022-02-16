@@ -1,7 +1,3 @@
-import 'components/button/button';
-
-import './header.scss';
-
 class BurgerMenu {
   constructor(element) {
     this.button = element.querySelector('.js-header__burger');

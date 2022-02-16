@@ -1,5 +1,3 @@
-import './expandable-checkbox-list.scss';
-
 class ExpandableCheckbox {
   constructor(elem) {
     this.container = elem.querySelector('.js-expandable-checkbox-list__wrapper');

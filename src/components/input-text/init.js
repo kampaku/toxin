@@ -1,4 +1,5 @@
 import InputDateMask from './InputDateMask';
+import './input-text.scss';
 
 const masks = document.querySelectorAll('.js-input-text__input');
 

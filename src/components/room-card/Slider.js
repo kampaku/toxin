@@ -1,7 +1,3 @@
-import 'components/rating-button/rating-button';
-
-import './room-card.scss';
-
 class Slider {
   constructor (elem) {
     this.slideIndex = 1;
