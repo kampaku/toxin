@@ -31,6 +31,7 @@
   }
 
   &__luxury-text {
+    margin-left: 8px;
     color: $mainBrandColor;
     font-size: $labelFontSize;
     text-transform: uppercase;
@@ -39,7 +40,7 @@
   &__date-dropdown {
     width: 100%;
     max-width: 320px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   &__dropdown {
@@ -64,13 +65,13 @@
   }
 
   &__prices {
-    margin-bottom: 35px;
+    margin-bottom: 32px;
     color: $dark-shade-75;
     font-weight: $mainFontWeight;
     font-size: $mainFontSize;
     font-family: $mainFont;
     font-style: normal;
-    line-height: 1.2;
+    line-height: 1.18;
 
     &-item {
       display: flex;
@@ -140,8 +141,6 @@
   &__total {
     display: flex;
     justify-content: space-between;
-    //display: grid;
-    //grid-template-columns: min-content 1fr min-content;
     margin-bottom: 20px;
     @extend %item-title;
 

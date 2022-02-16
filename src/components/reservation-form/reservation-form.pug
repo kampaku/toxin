@@ -14,7 +14,7 @@ mixin reservation-form({ luxury, room, price, discount, additionalService })
           span.reservation-form__room-number-sign №&nbsp;
           span.reservation-form__room-number= room
           if luxury === true
-            span.reservation-form__luxury-text &nbsp;люкс
+            span.reservation-form__luxury-text люкс
         .reservation-form__price-wrapper
           span.reservation-form__price.js-reservation-form__price(data-price=price)!= `${price}₽`
           span.reservation-form__price-text &nbsp;в сутки

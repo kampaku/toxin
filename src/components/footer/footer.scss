@@ -17,7 +17,7 @@
   &__wrapper {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    padding: 100px 0;
+    padding: 101px 0 100px;
     column-gap: 40px;
 
     @media (max-width: $tableWidth) {
@@ -69,6 +69,10 @@
   &__title {
     margin: 3px 0 20px 0;
     @extend %label-text;
+
+    &_size_s {
+      margin-bottom: 18px;
+    }
   }
 
   &__list {
@@ -94,7 +98,7 @@
   }
 
   &__copyright {
-    padding: 24px 0;
+    padding: 23px 0 20px;
     border-top: 1px solid #dedee3;
 
     @media (max-width: $tableWidth) {

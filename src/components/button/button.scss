@@ -21,6 +21,7 @@
     &_blue {
       padding: 0 20px;
       color: #fff;
+      line-height: 1.4;
       background: $mainGradient;
       border-radius: 22px;
 
@@ -51,8 +52,8 @@
       position: relative;
       width: 100%;
       max-width: 320px;
-      padding: 0 20px;
       color: #fff;
+      line-height: 1.4;
       background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       border-radius: 22px;
 
@@ -73,8 +74,7 @@
   &_size {
     &_m {
       min-width: 99px;
-      padding-top: 14px;
-      padding-bottom: 15px;
+      padding: 13px 16px;
     }
 
     &_s {
