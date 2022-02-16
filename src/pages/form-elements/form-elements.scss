@@ -66,16 +66,12 @@
     margin-top: 45px;
   }
 
-  &__block + &__block_margin_xxl {
-    margin-top: 47px;
-  }
-
   &__block_size_s {
     max-width: 266px;
   }
 
   &__title {
-    margin: 0 0 16px;
+    margin: 0 0 15px;
     @extend %label-text;
 
     &_margin_s {
@@ -100,7 +96,7 @@
   &__toggle {
     display: flex;
     flex-direction: column;
-    row-gap: 17px;
+    row-gap: 15px;
   }
 
   &__button-like {

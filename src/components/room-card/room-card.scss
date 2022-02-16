@@ -50,7 +50,7 @@
     }
 
     &-dot:not(:last-child) {
-      margin-right: 4px;
+      margin-right: 3px;
     }
 
     &-button {
@@ -141,7 +141,7 @@
 
   &__rating {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
   }
 
