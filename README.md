@@ -22,7 +22,7 @@ ___
 5. [Вход](https://hotel-toxin.vercel.app/sign-in.html)
 6. [Цвета и шрифты](https://hotel-toxin.vercel.app/colors-types.html)
 7. [Элементы форм](https://hotel-toxin.vercel.app/form-elements.html)
-8. [Хедер и футер](https://hotel-toxin.vercel.app/headers&footers.html)
+8. [Хедер и футер](https://hotel-toxin.vercel.app/headers-footers.html)
 8. [Карточки](https://hotel-toxin.vercel.app/cards.html)
 
 #### Использованные плагины:
