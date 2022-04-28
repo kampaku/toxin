@@ -1,8 +1,8 @@
 mixin dropdown(obj)
-  - const { label, items, placeholder, buttons, expanded = "", type, name = null } = obj;
+  - const { label, items, placeholder, buttons, expanded = false, type, name = null } = obj;
   .dropdown.js-dropdown(data-type=type)
     p.dropdown__label= label
-    .dropdown__header.js-dropdown__header(class=`${expanded && 'dropdown__header_active'}`)
+    .dropdown__header.js-dropdown__header(class= expanded && 'dropdown__header_active')
       input.dropdown__input.js-dropdown__input(
         readonly,
         placeholder=placeholder,
@@ -10,7 +10,7 @@ mixin dropdown(obj)
         name=name
       )
       button.dropdown__button-expand(type="button") expand_more
-    .dropdown__inner.js-dropdown__inner(class=`${expanded && 'dropdown__inner_active'}`)
+    .dropdown__inner.js-dropdown__inner(class= expanded && 'dropdown__inner_active')
       ul.dropdown__list
         each el in items
           li.dropdown__item.js-dropdown__item(data-type=el)
