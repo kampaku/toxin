@@ -16,6 +16,9 @@ import './search-room.scss';
 const dateDropdown = document.querySelector('.js-date-dropdown');
 const dropdowns = document.querySelectorAll('.js-dropdown');
 const slider = document.querySelector('.js-range-slider');
+const filterForm = document.querySelector('.js-search-room__filter');
+
+filterForm.addEventListener('submit', e => e.preventDefault());
 
 if (dropdowns) {
   dropdowns.forEach(dropdown => {
