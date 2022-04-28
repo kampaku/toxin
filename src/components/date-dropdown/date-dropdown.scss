@@ -152,8 +152,10 @@
   &-cell {
     font-size: 0.75rem;
     font-family: $mainFont;
+    aspect-ratio: 1/1;
 
-    &.-current- {
+    &.-current-,
+    &.-current-.-other-month- {
       color: #ffffff;
       font-weight: 700;
       background: $secondaryGradient;
@@ -196,7 +198,8 @@
       }
     }
 
-    &.-range-to- {
+    &.-range-to-,
+    &.-other-month-.-range-to- {
       color: #ffffff;
       font-weight: 700;
       background: $mainGradient;
