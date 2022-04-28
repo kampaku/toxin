@@ -19,7 +19,7 @@ mixin reservation-form({ luxury, room, price, discount, additionalService })
           span.reservation-form__price.js-reservation-form__price(data-price=price)!= `${price}₽`
           span.reservation-form__price-text &nbsp;в сутки
       .reservation-form__date-dropdown
-        +date-dropdown({ label1: 'прибытие', label2: 'выезд', name1: 'arrive', name2: 'leave', })
+        +date-dropdown([{ label: 'прибытие', name: 'arrive'}, { label: 'выезд',  name: 'leave' }])
       .reservation-form__dropdown
         +dropdown({ label: 'гости', items: ['взрослые', 'дети', 'младенцы'], type: 'guests', placeholder: 'Сколько гостей', buttons: true, name: 'guests-quantity' })
       .reservation-form__prices

@@ -155,9 +155,9 @@ block variables
     ]
 block content
   .search-room
-    form.search-room__filter
+    form.search-room__filter.js-search-room__filter
       .search-room__date-filter
-        +date-dropdown({ label1: 'даты пребывания в отеле', name1: 'date-filter' })
+        +date-dropdown([{ label: 'даты пребывания в отеле', name: 'date-filter' }])
       .search-room__guest
         +dropdown(guestDropdown)
       .search-room__range-slider

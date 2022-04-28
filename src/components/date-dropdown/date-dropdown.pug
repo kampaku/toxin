@@ -1,23 +1,13 @@
-mixin date-dropdown({ label1, label2, name1, name2 })
+mixin date-dropdown(options = [])
   .date-dropdown.js-date-dropdown
-    .date-dropdown__wrapper
-      .date-dropdown__label.js-date-dropdown__label= label1
-      .date-dropdown__header
-        input.date-dropdown__input.js-date-dropdown__input(
-          readonly,
-          placeholder="ДД.ММ.ГГГГ",
-          name=name1
-        )
-        button.date-dropdown__expand-button.js-date-dropdown__expand-button(type="button")
-          | expand_more
-    if label2
+    each item in options
       .date-dropdown__wrapper
-        .date-dropdown__label= label2
+        .date-dropdown__label.js-date-dropdown__label= item.label
         .date-dropdown__header
           input.date-dropdown__input.js-date-dropdown__input(
             readonly,
             placeholder="ДД.ММ.ГГГГ",
-            name=name2
+            name= item.name
           )
           button.date-dropdown__expand-button.js-date-dropdown__expand-button(type="button")
             | expand_more
