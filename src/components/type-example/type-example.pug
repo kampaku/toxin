@@ -1,12 +1,14 @@
 mixin type-example({ tag, text })
   -
-    const classes = {
+    const typesModifiers = {
       'H1': 'type-example__text_size_xl',
       'H2': 'type-example__text_size_l',
       'H3': 'type-example__text_size_m',
       'Body': 'type-example__text_size_s'
     }
 
-  .type-example(class=`${classes[tag]}`)
+    const classes = [typesModifiers[tag]]
+
+  .type-example(class=`${classes}`)
     .type-example__tag= tag
     .type-example__text!= text
