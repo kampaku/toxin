@@ -29,7 +29,7 @@ class ReservationForm {
   }
 
   calculateDuration() {
-    const selectedDates = this.datePick.datePick.selectedDates;
+    const selectedDates = this.datePicker.datePick.selectedDates;
     if (selectedDates.length === 2) {
       this.duration = (selectedDates[1] - selectedDates[0]) / (60 * 60 * 24 * 1000);
     } else {
@@ -48,14 +48,14 @@ class ReservationForm {
     this.totalPrice.textContent = this.format.to(totalPrice > 0 ? totalPrice : 0);
   }
 
-  createDatePick(dates) {
-    this.datePick = new DateDropdown(this.dateDropdown);
+  createDatePicker(dates) {
+    this.datePicker = new DateDropdown(this.dateDropdown);
 
     if (dates) {
-      this.datePick.selectDates(...dates);
+      this.datePicker.selectDates(...dates);
     }
 
-    this.datePick.addOnSelectCallback(this.onSelect);
+    this.datePicker.addOnSelectCallback(this.onSelect);
   }
 
   findItems() {
@@ -63,8 +63,7 @@ class ReservationForm {
     this.roomPrice = this.form.querySelector('.js-reservation-form__price');
     this.totalDays = this.form.querySelector('.js-reservation-form__total-days');
     this.discount = this.form.querySelector('.js-reservation-form__discount');
-    this.additionalServices =
-      this.form.querySelector('.js-reservation-form__additional-service');
+    this.additionalServices = this.form.querySelector('.js-reservation-form__additional-service');
     this.fullPrice = this.form.querySelector('.js-reservation-form__full-price');
     this.totalPrice = this.form.querySelector('.js-reservation-form__total-price');
   }
@@ -74,11 +73,11 @@ class ReservationForm {
   }
 
   init() {
-    this.form.addEventListener('submit', e => {
+    this.form.addEventListener('submit', (e) => {
       e.preventDefault();
     });
     this.findItems();
-    this.createDatePick(this.dates);
+    this.createDatePicker(this.dates);
     this.calculateDuration();
     this.calculatePrice();
   }

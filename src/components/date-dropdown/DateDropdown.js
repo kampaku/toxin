@@ -129,7 +129,7 @@ class DateDropdown {
 
   bindListeners() {
     const expandButtons = this.root.querySelectorAll('.js-date-dropdown__expand-button');
-    expandButtons.forEach(btn => btn.addEventListener('click', this.handleShow));
+    expandButtons.forEach(button => button.addEventListener('click', this.handleShow));
   }
 }
 

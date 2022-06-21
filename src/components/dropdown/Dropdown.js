@@ -80,13 +80,13 @@ class Dropdown {
   }
 
   checkNegativeValue(itemElement) {
-    const btnMinus = itemElement.querySelector('[data-button="minus"]');
+    const buttonMinus = itemElement.querySelector('[data-button="minus"]');
     const item = this.getItem(itemElement);
 
     if (item.value === 0) {
-      btnMinus.disabled = 'true';
+      buttonMinus.disabled = 'true';
     } else {
-      btnMinus.disabled = '';
+      buttonMinus.disabled = '';
     }
   }
 
@@ -102,7 +102,7 @@ class Dropdown {
   }
 
   apply() {
-    this.openBtn.classList.remove('dropdown__header_active');
+    this.openButton.classList.remove('dropdown__header_active');
     this.list.classList.remove('dropdown__inner_active');
   }
 
@@ -140,19 +140,19 @@ class Dropdown {
 
   toggle() {
     this.list.classList.toggle('dropdown__inner_active');
-    this.openBtn.classList.toggle('dropdown__header_active');
+    this.openButton.classList.toggle('dropdown__header_active');
   }
 
   init() {
-    this.openBtn = this.dropdown.querySelector('.js-dropdown__header');
+    this.openButton = this.dropdown.querySelector('.js-dropdown__header');
     this.list = this.dropdown.querySelector('.js-dropdown__inner');
     this.clearButton = this.dropdown.querySelector('.js-dropdown__button-clear');
     this.applyButton = this.dropdown.querySelector('.js-dropdown__button-apply');
     this.listItems = this.list.querySelectorAll('.js-dropdown__item');
 
-    if (this.openBtn) {
+    if (this.openButton) {
 
-      this.openBtn.addEventListener('click', this.toggle);
+      this.openButton.addEventListener('click', this.toggle);
     }
 
     this.render();
