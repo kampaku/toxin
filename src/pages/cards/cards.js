@@ -1,5 +1,4 @@
 import '~scss/main.scss';
-
 import 'components/logo/logo';
 import 'components/login-form/login-form';
 import 'components/registration-form/registration-form';
@@ -27,4 +26,3 @@ if (reservationForm) {
     form: reservationForm,
   });
 }
-

@@ -1,5 +1,4 @@
 import '~scss/main.scss';
-
 import 'components/checkbox/checkbox';
 import 'components/footer/footer';
 import 'components/header/init';

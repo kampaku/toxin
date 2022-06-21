@@ -1,5 +1,4 @@
 import '~scss/main.scss';
-
 import 'components/logo/logo';
 import 'components/about-room/about-room';
 import 'components/bullet-list/bullet-list';
