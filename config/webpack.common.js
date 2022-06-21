@@ -46,7 +46,7 @@ module.exports = {
       {
         test: /\.pug$/, use: [
           {
-            loader: 'pug-loader',
+            loader: 'simple-pug-loader',
             options: {
               root: paths.src,
             },
