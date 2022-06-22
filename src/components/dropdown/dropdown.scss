@@ -144,5 +144,9 @@
     &:hover {
       color: $dark-shade-50;
     }
+
+    &_hidden {
+      visibility: hidden;
+    }
   }
 }

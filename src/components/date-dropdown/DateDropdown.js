@@ -106,9 +106,9 @@ class DateDropdown {
     const label = this.root.querySelector('.js-date-dropdown__label');
     const input = this.root.querySelector('.js-date-dropdown__input');
     const expandButton = this.root.querySelector('.js-date-dropdown__expand-button');
-    label.style.display = 'none';
-    input.style.display = 'none';
-    expandButton.style.display = 'none';
+    label.classList.add('hidden');
+    input.classList.add('hidden');
+    expandButton.classList.add('hidden');
     this.datePick = new AirDatepicker(this.dropdowns[0], {
       inline: true,
       ...options,

@@ -25,9 +25,9 @@ class Dropdown {
     this.changeText(sum);
     if (!this.clearButton) return;
     if (sum === 0) {
-      this.clearButton.style.visibility = 'hidden';
+      this.clearButton.classList.add('dropdown__button-clear_hidden');
     } else {
-      this.clearButton.style.visibility = 'visible';
+      this.clearButton.classList.remove('dropdown__button-clear_hidden');
     }
   }
 
@@ -99,7 +99,7 @@ class Dropdown {
     this.listItems.forEach((item) => {
       this.checkNegativeValue(item);
     });
-    this.clearButton.style.visibility = 'hidden';
+    this.clearButton.classList.add('dropdown__button-clear_hidden')
   }
 
   apply() {
@@ -134,7 +134,7 @@ class Dropdown {
     const sum = this.itemsAmount();
 
     if (sum === 0) {
-      this.clearButton.style.visibility = 'hidden';
+      this.clearButton.classList.add('dropdown__button-clear_hidden');
     }
     this.changeText(sum);
   }

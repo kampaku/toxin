@@ -15,10 +15,10 @@ class Slider {
     if (sliderNum > this.slides.length) this.slideIndex = 1;
     if (sliderNum < 1) this.slideIndex = this.slides.length;
 
-    this.slides.forEach((slide) => slide.style.display = "none");
+    this.slides.forEach((slide) => slide.classList.add('hidden'));
     this.dots.forEach((dot) => dot.classList.remove(this.activeDot));
 
-    this.slides[this.slideIndex - 1].style.display = "block";
+    this.slides[this.slideIndex - 1].classList.remove('hidden');
     this.dots[this.slideIndex - 1].classList.add(this.activeDot);
   }
 

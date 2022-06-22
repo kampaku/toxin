@@ -9,10 +9,10 @@ class BurgerMenu {
 
   toggleMenu() {
     if (this.menuIsActive) {
-      document.body.style.overflow = 'visible';
+      document.body.classList.remove('overflow-hidden');
       this.menuIsActive = !this.menuIsActive;
     } else {
-      document.body.style.overflow = 'hidden';
+      document.body.classList.add('overflow-hidden');
       this.menuIsActive = !this.menuIsActive;
     }
     this.button.classList.toggle('header__burger_active');
