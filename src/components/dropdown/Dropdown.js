@@ -32,19 +32,20 @@ class Dropdown {
   }
 
   changeText(sum) {
+    let newSum = sum;
     const textValue = [];
     const dropdownText = this.dropdown.querySelector('.js-dropdown__input');
-    sum -= this.dropdownType.items.reduce((prev, curr) => {
+    newSum -= this.dropdownType.items.reduce((prev, curr) => {
       if (curr.ignore) {
         return prev + curr.value;
       }
       return prev + 0;
     }, 0);
 
-    const isDeclined = this.dropdownType.wordForms && sum > 0;
+    const isDeclined = this.dropdownType.wordForms && newSum > 0;
 
     if (isDeclined) {
-      textValue.push(`${sum} ${this.getDeclension(sum, this.dropdownType.wordForms)}`);
+      textValue.push(`${newSum} ${this.getDeclension(newSum, this.dropdownType.wordForms)}`);
     }
 
     this.dropdownType.items.forEach((item) => {
@@ -107,9 +108,9 @@ class Dropdown {
   }
 
   getDeclension(value, wordForms) {
-    value = Math.abs(value) % 100;
-    const num = value % 10;
-    const isThirdForm = value > 10 && value < 20;
+    const newValue = Math.abs(value) % 100;
+    const num = newValue % 10;
+    const isThirdForm = newValue > 10 && newValue < 20;
     const isSecondForm = num > 1 && num < 5;
     const isFirstForm = num === 1;
 
