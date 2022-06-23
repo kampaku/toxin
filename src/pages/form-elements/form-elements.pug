@@ -26,7 +26,7 @@ block variables
       src: require('/src/assets/img/review/4el.jpg'),
       time: '5 дней назад',
       likes: '12',
-      liked: true,
+      withLike: true,
       comment: `Великолепный матрас на&nbsp;кровати в&nbsp;основной спальне!
         А&nbsp;пуфик вообще потрясающий. И&nbsp;стены, действительно, шумоподавляющие.
         Выкрикивал комплименты повару&nbsp;&mdash; никто не&nbsp;жаловался из&nbsp;соседей.`
@@ -59,7 +59,7 @@ block variables
       label: 'dropdown',
       items: ['взрослые', 'дети', 'младенцы'],
       type: 'guests',
-      buttons: true,
+      withButtons: true,
       placeholder: 'Сколько гостей'
     }
 
@@ -99,7 +99,7 @@ block content
           .form-elements__block
             +dropdown({ ...guestDropdown, type: 'zeroGuests' })
           .form-elements__block
-            +input-text({ label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', mask: true })
+            +input-text({ label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', withMask: true })
           .form-elements__block.form-elements__block_margin_l
             +date-dropdown({ label1: 'date Dropdown', label2: 'date Dropdown' })
           .form-elements__block.form-elements__block_margin_l.form-elements__block_size_s
@@ -128,7 +128,7 @@ block content
             h3.form-elements__title like button
             .form-elements__button-like
               +button-like(2)
-              +button-like(12, 'liked')
+              +button-like(12, true)
           .form-elements__block.form-elements__block_margin_l
             h3.form-elements__title Rate button
             .form-elements__rate
@@ -157,19 +157,19 @@ block content
           .form-elements__block.form-elements__block_size_s
             +dropdown(comfortDropdown)
           .form-elements__block.form-elements__block_size_s
-            +dropdown({ ...comfortDropdown, expanded: true })
+            +dropdown({ ...comfortDropdown, isExpand: true })
         .form-elements__column
           .form-elements__block
-            +dropdown({ ...guestDropdown, expanded: true, type: 'zeroGuests' })
+            +dropdown({ ...guestDropdown, isExpand: true, type: 'zeroGuests' })
         .form-elements__column
           .form-elements__block
-            +dropdown({ ...guestDropdown, expanded: true })
+            +dropdown({ ...guestDropdown, isExpand: true })
       .form-elements__row.form-elements__row_margin_xl
         .form-elements__column
           .form-elements__block.form-elements__block_size_s
             +expandable-checkbox-list({ label: 'expandable checkbox list', list: checkboxList, })
           .form-elements__block.form-elements__block_margin_m.form-elements__block_size_s
-            +expandable-checkbox-list({ label: 'expandable checkbox list', list: checkboxList, expanded: true })
+            +expandable-checkbox-list({ label: 'expandable checkbox list', list: checkboxList, isExpand: true })
         .form-elements__column
           .form-elements__block.form-elements__block_size_s
             h3.form-elements__title rich Checkbox Buttons

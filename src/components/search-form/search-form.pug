@@ -9,4 +9,4 @@ mixin search-form
         +date-dropdown([ { label: 'прибытие', name: 'arrive'}, { label: 'выезд', name: 'leave' }])
       .search-form__dropdown
         +dropdown({ label: 'гости', items: ['взрослые', 'дети', 'младенцы'], type: 'guests', placeholder: 'Сколько гостей', buttons: true, name: 'guests-quantity' })
-      +button({ color: 'arrow', tag: 'button', text: 'подобрать номер', size: 'm', submit: true })
+      +button({ color: 'arrow', tag: 'button', text: 'подобрать номер', size: 'm', isSubmit: true })

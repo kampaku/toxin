@@ -12,7 +12,7 @@ block variables
 
     const cards = [
       {
-        luxury: true,
+        isLuxury: true,
         number: 888,
         price: '9 900₽',
         star: 5,
@@ -20,7 +20,6 @@ block variables
         images: ['room-1.jpg', 'room-2.jpg', 'room-1.jpg', 'room-2.jpg']
       },
       {
-        luxury: false,
         number: 840,
         price: '9 900₽',
         star: 4,
@@ -28,7 +27,7 @@ block variables
         images: ['room-2.jpg', 'room-3.jpg', 'room-2.jpg', 'room-3.jpg']
       },
       {
-        luxury: false,
+        isLuxury: true,
         number: 980,
         price: '8 500₽',
         star: 3,
@@ -36,7 +35,6 @@ block variables
         images: ['room-3.jpg', 'room-2.jpg', 'room-3.jpg', 'room-2.jpg']
       },
       {
-        luxury: false,
         number: 856,
         price: '7 300₽',
         star: 5,
@@ -44,7 +42,6 @@ block variables
         images: ['room-4.jpg', 'room-3.jpg', 'room-4.jpg', 'room-3.jpg']
       },
       {
-        luxury: false,
         number: 740,
         price: '6 000₽',
         star: 4,
@@ -52,7 +49,6 @@ block variables
         images: ['room-5.jpg', 'room-4.jpg', 'room-5.jpg', 'room-4.jpg']
       },
       {
-        luxury: false,
         number: 982,
         price: '5 800₽',
         star: 3,
@@ -60,7 +56,6 @@ block variables
         images: ['room-6.jpg', 'room-5.jpg', 'room-6.jpg', 'room-5.jpg']
       },
       {
-        luxury: false,
         number: 678,
         price: '5 500₽',
         star: 5,
@@ -68,7 +63,6 @@ block variables
         images: ['room-7.jpg', 'room-6.jpg', 'room-7.jpg', 'room-6.jpg']
       },
       {
-        luxury: false,
         number: 450,
         price: '5 300₽',
         star: 4,
@@ -76,7 +70,6 @@ block variables
         images: ['room-8.jpg', 'room-7.jpg', 'room-8.jpg', 'room-7.jpg']
       },
       {
-        luxury: false,
         number: 350,
         price: '5 000₽',
         star: 3,
@@ -84,7 +77,6 @@ block variables
         images: ['room-9.jpg', 'room-8.jpg', 'room-9.jpg', 'room-8.jpg']
       },
       {
-        luxury: false,
         number: 666,
         price: '5 000₽',
         star: 5,
@@ -92,7 +84,6 @@ block variables
         images: ['room-10.jpg', 'room-9.jpg', 'room-10.jpg', 'room-9.jpg']
       },
       {
-        luxury: false,
         number: 444,
         price: '5 000₽',
         star: 3,
@@ -100,7 +91,6 @@ block variables
         images: ['room-11.jpg', 'room-10.jpg', 'room-11.jpg', 'room-10.jpg']
       },
       {
-        luxury: false,
         number: 352,
         price: '5 000₽',
         star: 3,
@@ -122,7 +112,7 @@ block variables
       label: 'гости',
       items: ['взрослые', 'дети', 'младенцы'],
       type: 'guests',
-      buttons: true,
+      withButtons: true,
       placeholder: 'Сколько гостей',
       name: 'guests-quantity'
     }

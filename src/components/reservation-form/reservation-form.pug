@@ -1,7 +1,7 @@
 include /components/date-dropdown/date-dropdown
 include /components/dropdown/dropdown
 include /components/button/button
-mixin reservation-form({ luxury, room, price, discount, additionalService })
+mixin reservation-form({ isLuxury, room, price, discount, additionalService })
   -
     const totalDays =
             `<span class="reservation-form__total-days js-reservation-form__total-days">0</span>`;
@@ -13,7 +13,7 @@ mixin reservation-form({ luxury, room, price, discount, additionalService })
         .reservation-form__room-number-wrapper
           span.reservation-form__room-number-sign №&nbsp;
           span.reservation-form__room-number= room
-          if luxury === true
+          if isLuxury === true
             span.reservation-form__luxury-text люкс
         .reservation-form__price-wrapper
           span.reservation-form__price.js-reservation-form__price(data-price=price)!= `${price}₽`
@@ -45,4 +45,4 @@ mixin reservation-form({ luxury, room, price, discount, additionalService })
         span.reservation-form__total-text Итого
         .reservation-form__total-dashed
         span.reservation-form__total-price.js-reservation-form__total-price 0₽
-      +button({ color: 'arrow', tag: 'button', text: 'забронировать', size: 'm', submit: true })
+      +button({ color: 'arrow', tag: 'button', text: 'забронировать', size: 'm', isSubmit: true })

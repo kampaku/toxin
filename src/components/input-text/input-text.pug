@@ -1,5 +1,5 @@
-mixin input-text({label, placeholder, mask = false, type = 'text', name = null})
-  - const maskClass = mask ? "js-input-text__input" : "";
+mixin input-text({label, placeholder, withMask = false, type = 'text', name = null})
+  - const maskClass = withMask ? "js-input-text__input" : "";
   .input-text
     if label
       .input-text__title

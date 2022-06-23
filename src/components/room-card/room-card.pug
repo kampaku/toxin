@@ -1,6 +1,6 @@
 include /components/rating-button/rating-button
 mixin room-card(obj)
-  - const { luxury, price, number, star, reviews, images } = obj;
+  - const { isLuxury = false, price, number, star, reviews, images } = obj;
   .room-card.js-room-card
     .room-card__slider
       .room-card__slider-slides
@@ -22,7 +22,7 @@ mixin room-card(obj)
         a.room-card__room-number-link(href="/room-details.html")
           span.room-card__room-number-sign №&nbsp;
           span.room-card__room-number= number
-          if luxury
+          if isLuxury
             span.room-card__luxury-text &nbsp;люкс
         .room-card__price-per-day
           span.room-card__price= price

@@ -18,7 +18,7 @@ mixin registration-form
         .registration-form__radio-button
           +radio({ label: 'Женщина', name: 'gender' })
       .registration-form__masked-field
-        +input-text({ label: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', mask: true, type: 'text', name: 'birthday' })
+        +input-text({ label: 'дата рождения', placeholder: 'ДД.ММ.ГГГГ', withMask: true, type: 'text', name: 'birthday' })
       .registration-form__text-fields
         .registration-form__text-field
           +input-text({ label: 'данные для входа в сервис', placeholder: 'Email', type: 'email', name: 'email' })
@@ -27,7 +27,7 @@ mixin registration-form
       .registration-form__toggle
         +toggle('Получать спецпредложения', 'specials')
       .registration-form__button
-        +button({ tag: 'button', color: 'arrow', text: 'зарегистрироваться', size: 'm', submit: true })
+        +button({ tag: 'button', color: 'arrow', text: 'зарегистрироваться', size: 'm', isSubmit: true })
       .registration-form__login
         span.registration-form__text Уже есть аккаунт на Toxin
         +button({ color: 'white', tag: 'a', href: '/sign-in.html', text: 'войти', size: 'm' })
