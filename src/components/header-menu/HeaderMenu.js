@@ -1,27 +1,29 @@
 class HeaderMenu {
   constructor(element) {
+    this.element = element;
     this.headerMenu = element;
-    this.expandMenus = element.querySelectorAll('.js-header-menu__link_expand');
     this.expand = false;
-    this.toggleMenu = this.toggleMenu.bind(this);
-    this.closeAll = this.closeAll.bind(this);
-    this.closeListener = this.closeListener.bind(this);
+    this.searchElements();
     this.bindListener();
   }
 
-  closeAll() {
+  searchElements = () => {
+    this.expandMenus = this.element.querySelectorAll('.js-header-menu__link_expand');
+  }
+
+  closeAll = () => {
     this.expandMenus.forEach(menu => {
       menu.nextElementSibling.classList.remove('header-menu__submenu_active');
     });
     document.removeEventListener('click', this.closeListener);
   }
 
-  closeListener({ target }) {
+  closeListener = ({ target }) => {
     if (target.matches('.js-header-menu__link_expand')) return;
     this.closeAll();
   }
 
-  toggleMenu({ target }) {
+  toggleMenu = ({ target }) => {
     if (!target.matches('.js-header-menu__link_expand')) return;
     const submenu = target.nextElementSibling;
     if (submenu.classList.contains('header-menu__submenu_active')) {
@@ -33,7 +35,7 @@ class HeaderMenu {
     }
   }
 
-  bindListener() {
+  bindListener = () => {
     this.headerMenu.addEventListener('click', this.toggleMenu);
   }
 }

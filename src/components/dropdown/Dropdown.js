@@ -4,19 +4,15 @@ class Dropdown {
   constructor(dropdown, dropdownType) {
     this.dropdown = dropdown;
     this.dropdownType = JSON.parse(JSON.stringify(dropdownType));
-    this.buttonHandler = this.buttonHandler.bind(this);
-    this.toggle = this.toggle.bind(this);
-    this.clear = this.clear.bind(this);
-    this.apply = this.apply.bind(this);
     this.init();
   }
 
-  getItem(itemElement) {
+  getItem = (itemElement) => {
     const itemType = itemElement.dataset.type;
     return this.dropdownType.items.find((type) => type.name === itemType);
   }
 
-  buttonHandler(e) {
+  buttonHandler = (e) => {
     const target = e.target.closest('.js-dropdown__item-button');
     if (!target) return;
 
@@ -31,7 +27,7 @@ class Dropdown {
     }
   }
 
-  changeText(sum) {
+  changeText = (sum) => {
     let newSum = sum;
     const textValue = [];
     const dropdownText = this.dropdown.querySelector('.js-dropdown__input');
@@ -58,7 +54,7 @@ class Dropdown {
     dropdownText.value = textValue.join(', ');
   }
 
-  calculateItem(target) {
+  calculateItem = (target) => {
     const itemElement = target.closest('li');
     const itemAmount = itemElement.querySelector('.js-dropdown__item-amount');
     const item = this.getItem(itemElement);
@@ -76,11 +72,11 @@ class Dropdown {
     this.checkNegativeValue(itemElement);
   }
 
-  itemsAmount() {
+  itemsAmount = () => {
     return this.dropdownType.items.reduce((acc, curr) => curr.value + acc, 0);
   }
 
-  checkNegativeValue(itemElement) {
+  checkNegativeValue = (itemElement) => {
     const buttonMinus = itemElement.querySelector('[data-button="minus"]');
     const item = this.getItem(itemElement);
 
@@ -91,7 +87,7 @@ class Dropdown {
     }
   }
 
-  clear() {
+  clear = () => {
     const itemAmounts = this.list.querySelectorAll('.js-dropdown__item-amount');
     this.dropdownType.items.forEach((item) => (item.value = 0));
     itemAmounts.forEach((amount) => (amount.textContent = 0));
@@ -102,12 +98,12 @@ class Dropdown {
     this.clearButton.classList.add('dropdown__button-clear_hidden')
   }
 
-  apply() {
+  apply = () => {
     this.openButton.classList.remove('dropdown__header_active');
     this.list.classList.remove('dropdown__inner_active');
   }
 
-  getDeclension(value, wordForms) {
+  getDeclension = (value, wordForms) => {
     const newValue = Math.abs(value) % 100;
     const num = newValue % 10;
     const isThirdForm = newValue > 10 && newValue < 20;
@@ -126,7 +122,7 @@ class Dropdown {
     return wordForms[2];
   }
 
-  render() {
+  render = () => {
     this.listItems.forEach((item) => {
       const itemAmount = item.querySelector('.js-dropdown__item-amount');
       itemAmount.textContent = this.getItem(item).value;
@@ -139,12 +135,12 @@ class Dropdown {
     this.changeText(sum);
   }
 
-  toggle() {
+  toggle = () => {
     this.list.classList.toggle('dropdown__inner_active');
     this.openButton.classList.toggle('dropdown__header_active');
   }
 
-  init() {
+  init = () => {
     this.openButton = this.dropdown.querySelector('.js-dropdown__header');
     this.list = this.dropdown.querySelector('.js-dropdown__inner');
     this.clearButton = this.dropdown.querySelector('.js-dropdown__button-clear');

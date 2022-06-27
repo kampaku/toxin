@@ -7,20 +7,16 @@ class DateDropdown {
   constructor(root, inline = false) {
     this.root = root;
     this.inline = inline;
-    this.handleShow = this.handleShow.bind(this);
-    this.initializeOne = this.initializeOne.bind(this);
-    this.initializeDouble = this.initializeDouble.bind(this);
-    this.hideCalendar = this.hideCalendar.bind(this);
     this.init();
   }
 
-  selectDates(date1, date2) {
+  selectDates = (date1, date2) => {
     if (date1 && date2) {
       this.datePick.selectDate([date1, date2]);
     }
   }
 
-  addOnSelectCallback(func) {
+  addOnSelectCallback = (func) => {
     this.datePick.update({
       onSelect() {
         func();
@@ -28,7 +24,7 @@ class DateDropdown {
     });
   }
 
-  getDefaultOptions() {
+  getDefaultOptions = () => {
     return {
       prevHtml: 'arrow_back',
       nextHtml: 'arrow_forward',
@@ -57,7 +53,7 @@ class DateDropdown {
     };
   }
 
-  init() {
+  init = () => {
     this.dropdowns = this.root.querySelectorAll('.js-date-dropdown__input');
     const options = this.getDefaultOptions();
 
@@ -72,7 +68,7 @@ class DateDropdown {
     this.bindListeners();
   }
 
-  initializeDouble(options) {
+  initializeDouble = (options) => {
     const dateFormat = {
       day: '2-digit',
       month: '2-digit',
@@ -94,7 +90,7 @@ class DateDropdown {
     this.dropdowns[1].addEventListener('click', this.handleShow);
   }
 
-  initializeOne(options) {
+  initializeOne = (options) => {
     this.datePick = new AirDatepicker(this.dropdowns[0], {
       multipleDatesSeparator: ' - ',
       dateFormat: 'dd MMM',
@@ -102,7 +98,7 @@ class DateDropdown {
     });
   }
 
-  initializeInline(options) {
+  initializeInline = (options) => {
     const label = this.root.querySelector('.js-date-dropdown__label');
     const input = this.root.querySelector('.js-date-dropdown__input');
     const expandButton = this.root.querySelector('.js-date-dropdown__expand-button');
@@ -115,19 +111,19 @@ class DateDropdown {
     });
   }
 
-  handleShow() {
+  handleShow = () => {
     if (!this.datePick.$datepicker.isConnected) {
       this.datePick.show();
     }
   }
 
-  hideCalendar(e) {
+  hideCalendar = (e) => {
     if (!e.target.closest('.js-date-dropdown__calendar')) {
       this.datePick.hide();
     }
   }
 
-  bindListeners() {
+  bindListeners = () => {
     const expandButtons = this.root.querySelectorAll('.js-date-dropdown__expand-button');
     expandButtons.forEach(button => button.addEventListener('click', this.handleShow));
   }

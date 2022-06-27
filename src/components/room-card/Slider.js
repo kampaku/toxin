@@ -1,36 +1,40 @@
 class Slider {
   constructor (elem) {
+    this.elem = elem;
     this.slideIndex = 1;
-    this.slides = elem.querySelectorAll('.js-room-card__slider-slide');
-    this.prev = elem.querySelector('.js-room-card__slider-button_direction_left');
-    this.next = elem.querySelector('.js-room-card__slider-button_direction_right');
-    this.dotsWrap = elem.querySelector('.js-room-card__slider-dots');
-    this.activeDot = 'room-card__slider-dot_active';
-    this.dots = elem.querySelectorAll('.js-room-card__slider-dot');
-    this.dotsHandler = this.dotsHandler.bind(this);
+    this.activeDotClass = 'room-card__slider-dot_active';
+    this.searchElements();
     this.init();
   }
 
-  showSlides(sliderNum) {
+  searchElements = () => {
+    this.slides = this.elem.querySelectorAll('.js-room-card__slider-slide');
+    this.prev = this.elem.querySelector('.js-room-card__slider-button_direction_left');
+    this.next = this.elem.querySelector('.js-room-card__slider-button_direction_right');
+    this.dotsWrap = this.elem.querySelector('.js-room-card__slider-dots');
+    this.dots = this.elem.querySelectorAll('.js-room-card__slider-dot');
+  }
+
+  showSlides = (sliderNum) => {
     if (sliderNum > this.slides.length) this.slideIndex = 1;
     if (sliderNum < 1) this.slideIndex = this.slides.length;
 
     this.slides.forEach((slide) => slide.classList.add('hidden'));
-    this.dots.forEach((dot) => dot.classList.remove(this.activeDot));
+    this.dots.forEach((dot) => dot.classList.remove(this.activeDotClass));
 
     this.slides[this.slideIndex - 1].classList.remove('hidden');
-    this.dots[this.slideIndex - 1].classList.add(this.activeDot);
+    this.dots[this.slideIndex - 1].classList.add(this.activeDotClass);
   }
 
-  nextSlide (sliderNum) {
+  nextSlide = (sliderNum) => {
     this.showSlides(this.slideIndex += sliderNum)
   }
 
-  currentSlide (sliderNum) {
+  currentSlide = (sliderNum) => {
     this.showSlides(this.slideIndex = sliderNum)
   }
 
-  dotsHandler({ target }) {
+  dotsHandler = ({ target }) => {
     if (!target.matches('.js-room-card__slider-dot')) return;
     this.dots.forEach((dot, i) => {
       if (target === dot) {
@@ -39,7 +43,7 @@ class Slider {
     });
   }
 
-  init() {
+  init = () => {
 
     this.prev.addEventListener('click', () => {
       this.nextSlide(-1);

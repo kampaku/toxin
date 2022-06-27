@@ -19,16 +19,15 @@ class ReservationForm {
       thousand: '\u00A0',
       suffix: '₽',
     });
-    this.onSelect = this.onSelect.bind(this);
     this.init();
   }
 
-  onSelect() {
+  onSelect = () => {
     this.calculateDuration();
     this.calculatePrice();
   }
 
-  calculateDuration() {
+  calculateDuration = () => {
     const selectedDates = this.datePicker.datePick.selectedDates;
     if (selectedDates.length === 2) {
       this.duration = (selectedDates[1] - selectedDates[0]) / (60 * 60 * 24 * 1000);
@@ -38,7 +37,7 @@ class ReservationForm {
     this.totalDays.textContent = this.duration;
   }
 
-  calculatePrice() {
+  calculatePrice = () => {
     const pricePerDay = this.convertToNumber(this.roomPrice.textContent);
     const discount = this.convertToNumber(this.discount.textContent);
     const additional = this.convertToNumber(this.additionalServices.textContent);
@@ -48,7 +47,7 @@ class ReservationForm {
     this.totalPrice.textContent = this.format.to(totalPrice > 0 ? totalPrice : 0);
   }
 
-  createDatePicker(dates) {
+  createDatePicker = (dates) => {
     this.datePicker = new DateDropdown(this.dateDropdown);
 
     if (dates) {
@@ -58,7 +57,7 @@ class ReservationForm {
     this.datePicker.addOnSelectCallback(this.onSelect);
   }
 
-  findItems() {
+  findItems = () => {
     this.dateDropdown = this.form.querySelector('.js-date-dropdown');
     this.roomPrice = this.form.querySelector('.js-reservation-form__price');
     this.totalDays = this.form.querySelector('.js-reservation-form__total-days');
@@ -68,11 +67,11 @@ class ReservationForm {
     this.totalPrice = this.form.querySelector('.js-reservation-form__total-price');
   }
 
-  convertToNumber(str) {
+  convertToNumber = (str) => {
     return parseInt(str.replace(/\s+/g, ''));
   }
 
-  init() {
+  init = () => {
     this.form.addEventListener('submit', (e) => {
       e.preventDefault();
     });

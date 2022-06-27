@@ -1,13 +1,23 @@
 import './chart.scss';
 
 class Chart {
-  constructor(elem, options) {
-    this.units = elem.querySelectorAll('.js-chart__unit');
-    this.votes = elem.querySelector('.js-chart__number');
-    this.chartValues = Object.values(options);
-    this.sum = this.chartValues.reduce((prev, curr) => prev + curr);
+  constructor(root, options) {
+    this.root = root;
+    this.options = options;
     this.dashoffset = 0;
+    this.calculateSum();
+    this.searchElements();
     this.init();
+  }
+
+  calculateSum = () => {
+    this.chartValues = Object.values(this.options);
+    this.sum = this.chartValues.reduce((prev, curr) => prev + curr);
+  }
+
+  searchElements = () => {
+    this.units = this.root.querySelectorAll('.js-chart__unit');
+    this.votes = this.root.querySelector('.js-chart__number');
   }
 
   init() {

@@ -1,13 +1,17 @@
 class BurgerMenu {
-  constructor(element) {
-    this.button = element.querySelector('.js-header__burger');
-    this.menu = element.querySelector('.js-header__navigation-list');
+  constructor(container) {
+    this.container = container;
     this.menuIsActive = false;
-    this.toggleMenu = this.toggleMenu.bind(this);
+    this.searchElements();
     this.bindListener();
   }
 
-  toggleMenu() {
+  searchElements = () => {
+    this.button = this.container.querySelector('.js-header__burger');
+    this.menu = this.container.querySelector('.js-header__navigation-list');
+  }
+
+  toggleMenu = () => {
     if (this.menuIsActive) {
       document.body.classList.remove('overflow-hidden');
       this.menuIsActive = !this.menuIsActive;
@@ -19,7 +23,7 @@ class BurgerMenu {
     this.menu.classList.toggle('header__navigation-list_active');
   }
 
-  bindListener() {
+  bindListener = () => {
     this.button.addEventListener('click', this.toggleMenu);
   }
 }

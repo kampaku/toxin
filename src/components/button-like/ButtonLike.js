@@ -1,7 +1,6 @@
 class ButtonLike {
   constructor(element) {
     this.button = element;
-    this.buttonHandler = this.buttonHandler.bind(this);
     this.bindListener();
   }
 
@@ -9,7 +8,7 @@ class ButtonLike {
     this.button.addEventListener('click', this.buttonHandler);
   }
 
-  buttonHandler() {
+  buttonHandler = () => {
     const value = Number(this.button.textContent);
     if (this.button.classList.contains('button-like_active')) {
       this.button.textContent = value - 1;

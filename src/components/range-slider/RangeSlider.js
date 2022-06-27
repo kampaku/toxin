@@ -13,13 +13,18 @@ const defaultOptions = {
 
 class RangeSlider {
   constructor(element, options= defaultOptions) {
-    this.container = element.querySelector('.js-range-slider__container');
+    this.element = element;
     this.options = options;
-    this.valueInput = element.querySelector('.js-range-slider__value');
+    this.searchElements();
     this.init();
   }
 
-  init() {
+  searchElements = () => {
+    this.container = this.element.querySelector('.js-range-slider__container');
+    this.valueInput = this.element.querySelector('.js-range-slider__value');
+  }
+
+  init = () => {
     const {start, step, min, max} = this.options;
     noUiSlider.create(this.container, {
       start,
