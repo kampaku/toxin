@@ -5,10 +5,10 @@ class ButtonLike {
   }
 
   bindListener() {
-    this.button.addEventListener('click', this.buttonHandler);
+    this.button.addEventListener('click', this.handleButtonClick);
   }
 
-  buttonHandler = () => {
+  handleButtonClick = () => {
     const value = Number(this.button.textContent);
     if (this.button.classList.contains('button-like_active')) {
       this.button.textContent = value - 1;

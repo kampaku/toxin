@@ -12,7 +12,7 @@ class Dropdown {
     return this.dropdownType.items.find((type) => type.name === itemType);
   }
 
-  buttonHandler = (e) => {
+  handleItemButtonClick = (e) => {
     const target = e.target.closest('.js-dropdown__item-button');
     if (!target) return;
 
@@ -87,7 +87,7 @@ class Dropdown {
     }
   }
 
-  clear = () => {
+  handleButtonClearClick = () => {
     const itemAmounts = this.list.querySelectorAll('.js-dropdown__item-amount');
     this.dropdownType.items.forEach((item) => (item.value = 0));
     itemAmounts.forEach((amount) => (amount.textContent = 0));
@@ -98,7 +98,7 @@ class Dropdown {
     this.clearButton.classList.add('dropdown__button-clear_hidden')
   }
 
-  apply = () => {
+  handleButtonApplyClick = () => {
     this.openButton.classList.remove('dropdown__header_active');
     this.list.classList.remove('dropdown__inner_active');
   }
@@ -135,7 +135,7 @@ class Dropdown {
     this.changeText(sum);
   }
 
-  toggle = () => {
+  handleOpenButtonClick = () => {
     this.list.classList.toggle('dropdown__inner_active');
     this.openButton.classList.toggle('dropdown__header_active');
   }
@@ -149,7 +149,7 @@ class Dropdown {
 
     if (this.openButton) {
 
-      this.openButton.addEventListener('click', this.toggle);
+      this.openButton.addEventListener('click', this.handleOpenButtonClick);
     }
 
     this.render();
@@ -158,10 +158,10 @@ class Dropdown {
       this.checkNegativeValue(item);
     });
 
-    this.list.addEventListener('click', this.buttonHandler);
+    this.list.addEventListener('click', this.handleItemButtonClick);
     if (this.clearButton && this.applyButton) {
-      this.clearButton.addEventListener('click', this.clear);
-      this.applyButton.addEventListener('click', this.apply);
+      this.clearButton.addEventListener('click', this.handleButtonClearClick);
+      this.applyButton.addEventListener('click', this.handleButtonApplyClick);
     }
   }
 }

@@ -15,15 +15,15 @@ class HeaderMenu {
     this.expandMenus.forEach(menu => {
       menu.nextElementSibling.classList.remove('header-menu__submenu_active');
     });
-    document.removeEventListener('click', this.closeListener);
+    document.removeEventListener('click', this.handleDocumentClick);
   }
 
-  closeListener = ({ target }) => {
+  handleDocumentClick = ({ target }) => {
     if (target.matches('.js-header-menu__link_expand')) return;
     this.closeAll();
   }
 
-  toggleMenu = ({ target }) => {
+  handleMenuClick = ({ target }) => {
     if (!target.matches('.js-header-menu__link_expand')) return;
     const submenu = target.nextElementSibling;
     if (submenu.classList.contains('header-menu__submenu_active')) {
@@ -31,12 +31,12 @@ class HeaderMenu {
     } else {
       this.closeAll();
       target.nextElementSibling.classList.add('header-menu__submenu_active');
-      document.addEventListener('click', this.closeListener);
+      document.addEventListener('click', this.handleDocumentClick);
     }
   }
 
   bindListener = () => {
-    this.headerMenu.addEventListener('click', this.toggleMenu);
+    this.headerMenu.addEventListener('click', this.handleMenuClick);
   }
 }
 

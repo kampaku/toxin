@@ -45,10 +45,10 @@ class DateDropdown {
         },
       }],
       onShow: () => {
-        document.addEventListener('mousedown', this.hideCalendar);
+        document.addEventListener('mousedown', this.handleDocumentClick);
       },
       onHide: () => {
-        document.removeEventListener('mousedown', this.hideCalendar);
+        document.removeEventListener('mousedown', this.handleDocumentClick);
       },
     };
   }
@@ -87,7 +87,7 @@ class DateDropdown {
       ...options,
     });
 
-    this.dropdowns[1].addEventListener('click', this.handleShow);
+    this.dropdowns[1].addEventListener('click', this.handleDropdownClickShow);
   }
 
   initializeOne = (options) => {
@@ -111,13 +111,13 @@ class DateDropdown {
     });
   }
 
-  handleShow = () => {
+  handleDropdownClickShow = () => {
     if (!this.datePick.$datepicker.isConnected) {
       this.datePick.show();
     }
   }
 
-  hideCalendar = (e) => {
+  handleDocumentClick = (e) => {
     if (!e.target.closest('.js-date-dropdown__calendar')) {
       this.datePick.hide();
     }
@@ -125,7 +125,7 @@ class DateDropdown {
 
   bindListeners = () => {
     const expandButtons = this.root.querySelectorAll('.js-date-dropdown__expand-button');
-    expandButtons.forEach(button => button.addEventListener('click', this.handleShow));
+    expandButtons.forEach(button => button.addEventListener('click', this.handleDropdownClickShow));
   }
 }
 

@@ -11,7 +11,7 @@ class BurgerMenu {
     this.menu = this.container.querySelector('.js-header__navigation-list');
   }
 
-  toggleMenu = () => {
+  handleBurgerMenuClick = () => {
     if (this.menuIsActive) {
       document.body.classList.remove('overflow-hidden');
       this.menuIsActive = !this.menuIsActive;
@@ -24,7 +24,7 @@ class BurgerMenu {
   }
 
   bindListener = () => {
-    this.button.addEventListener('click', this.toggleMenu);
+    this.button.addEventListener('click', this.handleBurgerMenuClick);
   }
 }
 

@@ -34,7 +34,7 @@ class Slider {
     this.showSlides(this.slideIndex = sliderNum)
   }
 
-  dotsHandler = ({ target }) => {
+  handlerDotClick = ({ target }) => {
     if (!target.matches('.js-room-card__slider-dot')) return;
     this.dots.forEach((dot, i) => {
       if (target === dot) {
@@ -53,7 +53,7 @@ class Slider {
       this.nextSlide(1);
     });
 
-    this.dotsWrap.addEventListener('click', this.dotsHandler);
+    this.dotsWrap.addEventListener('click', this.handlerDotClick);
 
     this.showSlides(this.slideIndex);
   }

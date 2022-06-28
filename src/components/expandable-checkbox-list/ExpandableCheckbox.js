@@ -11,13 +11,13 @@ class ExpandableCheckbox {
     this.img = this.elem.querySelector('.js-expandable-checkbox-list__button-expand');
   }
 
-  toggle = () => {
+  handleContainerClick = () => {
     this.list.classList.toggle('expandable-checkbox-list__items_active');
     this.img.classList.toggle('expandable-checkbox-list__button-expand_active');
   }
 
   init = () => {
-    this.container.addEventListener('click', this.toggle);
+    this.container.addEventListener('click', this.handleContainerClick);
   }
 }
 
