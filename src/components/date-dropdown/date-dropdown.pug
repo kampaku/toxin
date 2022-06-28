@@ -1,13 +1,14 @@
 mixin date-dropdown(options = [])
   .date-dropdown.js-date-dropdown
     each item in options
+      - const { label, name } = item;
       .date-dropdown__wrapper
-        .date-dropdown__label.js-date-dropdown__label= item.label
+        .date-dropdown__label.js-date-dropdown__label= label
         .date-dropdown__header
           input.date-dropdown__input.js-date-dropdown__input(
             readonly,
             placeholder="ДД.ММ.ГГГГ",
-            name= item.name
+            name= name
           )
           button.date-dropdown__expand-button.js-date-dropdown__expand-button(type="button")
             | expand_more

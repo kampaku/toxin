@@ -3,13 +3,14 @@ mixin expandable-checkbox-list({ label, list, isExpand = false })
     .expandable-checkbox-list__wrapper.js-expandable-checkbox-list__wrapper
       span.expandable-checkbox-list__label= label
       button.expandable-checkbox-list__button-expand.js-expandable-checkbox-list__button-expand(
-        class= isExpand && 'expandable-checkbox-list__button-expand_active'
-        type='button'
+        class=isExpand && "expandable-checkbox-list__button-expand_active",
+        type="button"
       ) expand_more
 
     ul.expandable-checkbox-list__items.js-expandable-checkbox-list__items(
-      class= isExpand && 'expandable-checkbox-list__items_active'
+      class=isExpand && "expandable-checkbox-list__items_active"
     )
       each item in checkboxList
+        - const { title, name, checked } = item;
         li.expandable-checkbox-list__item
-          +checkbox({ title: item.title, name: item.name, checked: item.checked })
+          +checkbox({ title, name, checked })

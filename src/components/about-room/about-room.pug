@@ -3,5 +3,6 @@ include /components/about-room-item/about-room-item
 mixin about-room(items)
   .about-room
     each item in items
+      - const { icon, title, text } = item;
       .about-room__item
-        +about-room-item(item.icon, item.title, item.text)
+        +about-room-item(icon, title, text)

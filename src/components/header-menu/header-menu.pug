@@ -1,14 +1,16 @@
 mixin header-menu(items)
   ul.header-menu.js-header-menu
     each item in items
+      - const { submenu, label } = item;
       li.header-menu__item
-        if item.submenu
+        if submenu
           .header-menu__link.header-menu__link_expand.js-header-menu__link_expand(
-            data-text=item.label
-          )= item.label
+            data-text= label
+          )= label
           ul.header-menu__submenu
-            each element in item.submenu
+            each element in submenu
+              - const {link, label} = element
               li.header-menu__submenu-item
-                a.header-menu__link(href=element.link)= element.label
+                a.header-menu__link(href=link)= label
         else
-          a.header-menu__link(href=item.link, data-text=item.label)= item.label
+          a.header-menu__link(href=link, data-text=label)= label
