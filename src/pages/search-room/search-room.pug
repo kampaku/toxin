@@ -144,32 +144,33 @@ block variables
       }
     ]
 block content
-  .search-room
-    form.search-room__filter.js-search-room__filter
-      .search-room__date-filter
-        +date-dropdown([{ label: 'даты пребывания в отеле', name: 'date-filter' }])
-      .search-room__guest
-        +dropdown(guestDropdown)
-      .search-room__range-slider
-        +range-slider({ label: 'диапазон цены', text: 'Стоимость за сутки пребывания в номере' })
-      .search-room__checkbox
-        span.search-room__checkbox-title правила дома
-        .search-room__checkbox-wrapper
-          each checkbox in checkboxes
-            +checkbox(checkbox)
-      .search-room__checkbox
-        span.search-room__checkbox-title доступность
-        .search-room__checkbox-wrapper
-          each checkbox in richCheckboxes
-            +checkbox(checkbox)
-      .search-room__comfort
-        +dropdown(comfortDropdown)
-      .search-room__expandable-checkbox
-        +expandable-checkbox-list({ label: 'дополнительные удобства', list: checkboxList })
-    .search-room__search-results
-      h1.search-room__title Номера, которые мы для вас подобрали
-      .search-room__room-cards
-        each card in cards
-          +room-card(card)
-      .search-room__pagination
-        +pagination
+  .search-room__wrapper
+    .search-room
+      form.search-room__filter.js-search-room__filter
+        .search-room__date-filter
+          +date-dropdown([{ label: 'даты пребывания в отеле', name: 'date-filter' }])
+        .search-room__guest
+          +dropdown(guestDropdown)
+        .search-room__range-slider
+          +range-slider({ label: 'диапазон цены', text: 'Стоимость за сутки пребывания в номере' })
+        .search-room__checkbox
+          span.search-room__checkbox-title правила дома
+          .search-room__checkbox-wrapper
+            each checkbox in checkboxes
+              +checkbox(checkbox)
+        .search-room__checkbox
+          span.search-room__checkbox-title доступность
+          .search-room__checkbox-wrapper
+            each checkbox in richCheckboxes
+              +checkbox(checkbox)
+        .search-room__comfort
+          +dropdown(comfortDropdown)
+        .search-room__expandable-checkbox
+          +expandable-checkbox-list({ label: 'дополнительные удобства', list: checkboxList })
+      .search-room__search-results
+        h1.search-room__title Номера, которые мы для вас подобрали
+        .search-room__room-cards
+          each card in cards
+            +room-card(card)
+        .search-room__pagination
+          +pagination

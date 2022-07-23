@@ -6,8 +6,11 @@
   justify-content: space-between;
   width: 100%;
   max-width: 1280px;
-  margin: 30px auto 73px;
   column-gap: 20px;
+
+  &__wrapper {
+    margin: 30px auto 73px;
+  }
 
   @media screen and (max-width: $tableWidth) {
     grid-template-areas:

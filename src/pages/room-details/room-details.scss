@@ -1,5 +1,9 @@
 .room-details {
-  margin-bottom: 75px;
+
+  &__wrapper {
+    width: 100%;
+    margin-bottom: 75px;
+  }
 
   &__pictures {
     display: grid;

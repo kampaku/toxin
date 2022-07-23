@@ -7,9 +7,13 @@
   grid-template-columns: auto minmax(280px, 1170px) auto;
   width: 100%;
   max-width: 1920px;
-  margin: 0 auto;
   padding: 0 20px;
   background: center 65% / cover no-repeat url('assets/img/backgrounds/landing-page-bg.jpg');
+
+  &__wrapper {
+    width: 100%;
+    margin: 0 auto;
+  }
 
   @media (max-width: $phoneWidth) {
     padding: 0 10px;

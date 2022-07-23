@@ -29,49 +29,50 @@ block variables
       { icon: 'whatshot', title: 'Уют', text: 'Номер оснащён камином '}
     ]
 block content
-  .room-details
-    .room-details__pictures
-      .room-details__picture-container
-        img.room-details__picture(
-          src=require("/src/assets/img/room-details-picture/image-1.jpg"),
-          alt="room picture"
-        )
-      .room-details__picture-container
-        img.room-details__picture(
-          src=require("/src/assets/img/room-details-picture/image-2.jpg"),
-          alt="room picture"
-        )
-      .room-details__picture-container
-        img.room-details__picture(
-          src=require("/src/assets/img/room-details-picture/image-3.jpg"),
-          alt="room picture"
-        )
-    .room-details__container
-      .room-details__info
-        .room-details__about-room
-          .room-details__about-room-title
-            h3.room-details__title Сведения о номере
-          .room-details__about-room-container
-            +about-room(aboutRoomItems)
-        .room-details__rating
-          .room-details__rating-title
-            h3.room-details__title Впечатления от номера
-          +chart
-        .room-details__reviews
-          .room-details__review-title
-            h3.room-details__title Отзывы посетителей номера
-            span.room-details__review-count 2&nbsp;отзыва
-          each review in reviews
-            +review(review)
-        .room-details__bullet-list
-          .room-details__bullet-list-title
-            h3.room-details__title Правила
-          +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
-        .room-details__cancel
-          .room-details__cancel-title
-            h3.room-details__title Отмена
-          p.room-details__cancel-text
-            | Бесплатная отмена в течение 48 ч. После этого при отмене не
-            | позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-        .room-details__reservation
-          +reservation-form({ isLuxury: true, room: 888, price: '9&nbsp;990', discount: '2&nbsp;179', additionalService: '300' })
+  .room-details__wrapper
+    .room-details
+      .room-details__pictures
+        .room-details__picture-container
+          img.room-details__picture(
+            src=require("/src/assets/img/room-details-picture/image-1.jpg"),
+            alt="room picture"
+          )
+        .room-details__picture-container
+          img.room-details__picture(
+            src=require("/src/assets/img/room-details-picture/image-2.jpg"),
+            alt="room picture"
+          )
+        .room-details__picture-container
+          img.room-details__picture(
+            src=require("/src/assets/img/room-details-picture/image-3.jpg"),
+            alt="room picture"
+          )
+      .room-details__container
+        .room-details__info
+          .room-details__about-room
+            .room-details__about-room-title
+              h3.room-details__title Сведения о номере
+            .room-details__about-room-container
+              +about-room(aboutRoomItems)
+          .room-details__rating
+            .room-details__rating-title
+              h3.room-details__title Впечатления от номера
+            +chart
+          .room-details__reviews
+            .room-details__review-title
+              h3.room-details__title Отзывы посетителей номера
+              span.room-details__review-count 2&nbsp;отзыва
+            each review in reviews
+              +review(review)
+          .room-details__bullet-list
+            .room-details__bullet-list-title
+              h3.room-details__title Правила
+            +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
+          .room-details__cancel
+            .room-details__cancel-title
+              h3.room-details__title Отмена
+            p.room-details__cancel-text
+              | Бесплатная отмена в течение 48 ч. После этого при отмене не
+              | позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+          .room-details__reservation
+            +reservation-form({ isLuxury: true, room: 888, price: '9&nbsp;990', discount: '2&nbsp;179', additionalService: '300' })

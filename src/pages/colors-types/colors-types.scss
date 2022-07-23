@@ -1,5 +1,4 @@
 .colors-types {
-  margin-bottom: 140px;
   background-color: #fff;
 
   &__header {
@@ -11,7 +10,7 @@
   &__container {
     display: flex;
     max-width: 1141px;
-    margin: 0 auto;
+    margin: 0 auto 140px;
     column-gap: 415px;
   }
 
