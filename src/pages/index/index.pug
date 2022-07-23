@@ -10,24 +10,27 @@ html(lang="ru")
       .pages-links__wrapper
         h3.page-links__title Страницы:
         ul.url-list__pages
-          li.url-list__item
-            a.url-list__link(href="/landing-page.html") Главная
-          li.url-list__item
-            a.url-list__link(href="/registration.html") Регистрация
-          li.url-list__item
-            a.url-list__link(href="/sign-in.html") Вход
-          li.url-list__item
-            a.url-list__link(href="/search-room.html") Подбор номеров
-          li.url-list__item
-            a.url-list__link(href="/room-details.html") Информация о номере
+          -
+            const mainPages = {
+              "Главная": "/landing-page.html" ,
+              "Регистрация": "/registration.html" ,
+              "Вход": "/sign-in.html" ,
+              "Подбор номеров": "/search-room.html" ,
+              "Информация о номере": "/room-details.html"
+            }
+          each link, title in mainPages
+            li.url-list__item
+              a.url-list__link(href=link)= title
       .pages-links__wrapper
         h3.page-links__title UI:
         ul.url-list__ui
-          li.url-list__item
-            a.url-list__link(href="/colors-types.html") Colors and types
-          li.url-list__item
-            a.url-list__link(href="/headers-footers.html") Headers and Footers
-          li.url-list__item
-            a.url-list__link(href="/cards.html") Cards
-          li.url-list__item
-            a.url-list__link(href="/form-elements.html") Form elements
+          -
+            const uiPages = {
+              "Colors and types": "/colors-types.html" ,
+              "Headers and Footers": "/headers-footers.html" ,
+              "Cards": "/cards.html" ,
+              "Form elements": "/form-elements.html"
+            }
+          each link, title in uiPages
+            li.url-list__item
+              a.url-list__link(href=link)= title
