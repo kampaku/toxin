@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Можно курить",
+    "name": "smoke"
+  },
+  {
+    "title": "Можно с питомцами",
+    "name": "pets",
+    "checked": true
+  },
+  {
+    "title": "Можно пригласить гостей (до&nbsp;10&nbsp;человек)",
+    "name": "guests",
+    "checked": true
+  }
+]

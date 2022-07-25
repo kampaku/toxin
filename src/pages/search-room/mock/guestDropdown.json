@@ -1,0 +1,8 @@
+{
+  "label": "гости",
+  "items": ["взрослые", "дети", "младенцы"],
+  "type": "guests",
+  "withButtons": true,
+  "placeholder": "Сколько гостей",
+  "name": "guests-quantity"
+}

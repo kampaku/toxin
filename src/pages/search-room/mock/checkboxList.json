@@ -1,0 +1,29 @@
+[
+  {
+    "title":"Завтрак",
+    "name":"breakfast"
+  },
+  {
+    "title":"Письменный стол",
+    "name":"desk",
+    "checked":true
+  },
+  {
+    "title":"Стул для кормления",
+    "name":"food-chair",
+    "checked":true
+  },
+  {
+    "title":"Кроватка",
+    "name":"bed",
+    "checked":true
+  },
+  {
+    "title":"Телевизор",
+    "name":"tv"
+  },
+  {
+    "title":"Шампунь",
+    "name":"shampoo"
+  }
+]
